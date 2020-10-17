@@ -1,6 +1,6 @@
 ---
 # Title, summary, and page position.
-linktitle: "Lecture 1"
+linktitle: "Lecture 2"
 weight: 2
 icon: ""
 icon_pack: fas
