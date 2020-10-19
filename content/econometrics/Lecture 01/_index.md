@@ -2,8 +2,6 @@
 # Title, summary, and page position.
 linktitle: "Introduction to Econometrics"
 weight: 1
-icon: ""
-icon_pack: fas
 
 # Page metadata.
 title: Introduction to Econometrics

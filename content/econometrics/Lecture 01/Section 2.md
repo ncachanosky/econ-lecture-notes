@@ -2,8 +2,6 @@
 # Title, summary, and page position.
 linktitle: "Sub Capitulo 1"
 weight: 3
-icon: ""
-icon_pack: fas
 
 # Page metadata.
 title: Sub capitulo
