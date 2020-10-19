@@ -55,12 +55,14 @@ subtitle = ""
 This site contains economic lecture notes for undegraduate courses:
 
 - Econometrics
-- Other courses: Content under construction
+- *Other courses: Content under construction*
 
 
 {{% callout note %}}
 This is a live document with content under construction.
 {{% /callout %}}
+
+---
 
 ## Contact information
 
