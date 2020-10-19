@@ -9,6 +9,8 @@ icon_pack: fas
 title: Introduction to Econometrics
 date: "2018-09-09T00:00:00Z"
 type: book  # Do not modify.
+
+[[% toc %]]]]
 ---
 
 ---
