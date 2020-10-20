@@ -14,17 +14,17 @@ type: book  # Do not modify.
 
 ## What is econometrics?
 
-In short, [**econometrics**](https://en.wikipedia.org/wiki/Econometrics) is an *economic measurement* statistical technique. Or, in other words, econometrics an economic application of statistical theory. 
+It is easy to infer a definition of what [**econometrics**](https://en.wikipedia.org/wiki/Econometrics) is from itsetymology. The literal interpretation of the word *econometrics* is *economic measurement*. More precisely, econometrics is the application of statistical techniques to economics.
 
-Economic theory estipulates *qualitative* relationships. For instance. a demand function can be represented as $Q^D = a - bp$; where $Q^D$ is the quantity demanded, $p$ is the price, and $a, b$ are two parameters. From economic **theory** we know that $a$ and $b$ are positive $(a, b, >0)$. However, economic theory **does not** give values to either $a$ or $b$. Econometrics is the method through which the values of $a$ and $b$ are estimated. If economic theory is **qualitative**, econometrics is **quantitative**.
+Econoemtrics is not in itself economic theory. It is, however, one of its complements. Economic theory estipulates *qualitative* relationships. For instance, a demand function can be represented as $Q^D = a - bp$; where $Q^D$ is the quantity demanded, $p$ is the price of the good in question, and $a$ and $b$ are two parameters. From economic **theory** we know that $a$ and $b$ are positive $(a, b, >0)$. However, economic theory **does not** give values to either $a$ or $b$. Econometrics is the method through which the values of $a$ and $b$ are estimated. If economic theory is **qualitative**, econometrics is **quantitative**.
 
-Note that econometrics uses the values **observable** economic **variables** (such as $Q^D$ and $p$ in the demand function) to estimate what would be a **parameter** in an economic model (such as $a$ and $b$ in the demand function). 
+Note that econometrics uses the values of **observable** economic **variables** (such as the quantities and prices) to estimate what would be the **parameters** in an economic model (such as $a$ and $b$ in the demand function). 
 
 ---
 ## Uses of econometrics
 
 Because econometrics itself is a method to measure economic parameters, it can be used in different ways such as:
 
-* Test an hypothesis
-* Make an economic description
-* Forecast or predict the unobserved value of economic variables
+* To test an hypothesis
+* To make an economic description
+* To forecast or predict the unobserved value of economic variables
