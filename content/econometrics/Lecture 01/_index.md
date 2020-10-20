@@ -36,7 +36,7 @@ These are three very distinctive uses of econometrics. These different uses also
 ### Regression analysis and the estimation rule
 There are different ways to estimate the value of a parameter, such as the slope of a demand function. One alternative is to ask your mother what value she thinks the slope has. This is an easy method, but also very likely to be very innacurate. Econometrics applies regression analysis to infer a more accurate estimation of these parameters. 
 
-The estimation of the slope of a demand funciton makes use (ideally) of a large set of price and quantities. All these prices and quantities do not offer a perfect match to one and unique slope of the demand function. Therefore, we need a rule to decide how the slope must be estimated. The econometric technique is mostly built to minimize errors between what the econometric model estimates and the observed data.
+The estimation of the slope of a demand function makes use (ideally) of a large set of price and quantities. All these prices and quantities do not offer a perfect match to one and unique slope of the demand function. Therefore, we need a rule to decide how the slope must be estimated. The econometric technique is mostly built to minimize errors between what the econometric model estimates and the observed data.
 
 ### Example
 Let the quantity demanded of a good $(Q^D)$ depend on its price $p$, the price of a substitute good $p_S$, and the level of disposable income of potential customers $Y_D$. Then, we can represnet this relationship in the following way
@@ -53,6 +53,15 @@ $$ \hat{Q^D} = 25 - 0.25 P + 0.15 P_S + 0.10 Y_D $$
 
 At this point is enough to point to two issues. The first one is that there is *hat* on top of $Q^D$. This means that once you have your beta estimations,you can use the prices and disposable income informatio to *predict* or *estimate* values of $Q^D$. The second one is that there is no error term. The error term, which is unobservable, is estimated by the *residual* $(e)$, which will be the difference between the real and observed $Q^D$ and the model estimation $\hat{Q^D}$: $e = Q^D - \hat{Q^D}$.
 
+Now, some terminology. The left-hand variable $(Q^D)$ is called the dependent variable. The right-hand variables are called the **regressors** (what would be the *independent* variables).
+
+{{% callout warning %}}
+In econometrics, the word **explanation** means that a change of a variable is correlated ("explains") part of the change of the dependent variable."
+
+In econometrics, the word **explanation** does not have a teleoogical meaning: It does not mean that a change of a regressor is the cause of a change in the dependent variable
+
+{{% \callout %}}
+
 ---
 ## Types of datasets
 What type of econometric techniques can be used depends on the type of data at your disposal. There are three types of datasets:
@@ -65,7 +74,7 @@ What type of econometric techniques can be used depends on the type of data at y
 
 **Time-series** data is the inverse situation. The dataset has information of one section for a number of years. For instance, the unemployment rate of the state of Colorado between 1920 and 1950.
 
-**Panel-data** is the combinatino of the other two. Now the dataset includes information for more than one section and more than one time period. For instance, income for the 50 U.S. states between 1920 and 1950.
+**Panel-data** is the combination of the other two. Now the dataset includes information for more than one section and more than one time period. For instance, income for the 50 U.S. states between 1920 and 1950.
 
 
 ---
