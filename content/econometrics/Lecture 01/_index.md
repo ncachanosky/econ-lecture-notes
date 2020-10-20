@@ -26,17 +26,32 @@ Because econometrics itself is a method to measure economic parameters, it can b
 * To make an economic description
 * To forecast or predict the unobserved value of economic variables
 
-For instance, you may want to test they hunch or intutions (the hypothesis) that the point-elasiticy of the demand function equals 1 at a given price.[^1] Alternatively, you may just be interested in what the slope of the demand is at a given price range, so that you can plan your business strategy accordingly. Finally, you may want to estimate what the quantity demanded of a gadget you produce would be in a country where you do not operate by looking at data from countries where you do have business operations.
+For instance, you may want to test the hunch or intuition (the hypothesis) that the point-elasiticy of the demand function equals 1 at a given price.[^1] Alternatively, you may just be interested in what the slope of the demand is at a given price range, so that you can plan your business strategy accordingly. Finally, you may want to estimate what the quantity demanded of a gadget you produce would be in a country where you do not operate by looking at data from countries where you do have business operations.
 
 These are three very distinctive uses of econometrics. These different uses also shows that econometrics, and doing empirical work, is not just about testing hypothesis. Furthermore, this also means that, epistemologically speaking, doing econometrics and empirical work does not mean one is necessarily being a logical positivist (later known as [logical empiricism](https://plato.stanford.edu/entries/logical-empiricism/)).
 
 
 ---
 ## The econometric technique
+### Regression analysis and the estimation rule
 There are different ways to estimate the value of a parameter, such as the slope of a demand function. One alternative is to ask your mother what value she thinks the slope has. This is an easy method, but also very likely to be very innacurate. Econometrics applies regression analysis to infer a more accurate estimation of these parameters. 
 
 The estimation of the slope of a demand funciton makes use (ideally) of a large set of price and quantities. All these prices and quantities do not offer a perfect match to one and unique slope of the demand function. Therefore, we need a rule to decide how the slope must be estimated. The econometric technique is mostly built to minimize errors between what the econometric model estimates and the observed data.
 
+### Example
+Let the quantity demanded of a good $(Q^D)$ depend on its price $p$, the price of a substitute good $p_S$, and the level of disposable income of potential customers $Y_D$. Then, we can represnet this relationship in the following way
+
+$$ Q^D = \beta_0 + \beta_1 P + \beta_2 P_S + \beta_3 Y_D + \epsilon $$
+
+Through data collection (observation) we know values of $Q^D$, $P$, $P_S$, and $Y_D$. The betas $(\beta_1, ..., \beta_3)$ represent the marginal effects of each variable has on $Q^D$. We also know that our observations are going to be imperfect and, therefore, there is some *error* $(\epsilon)$ between our observed data and $Q^D$. As will be clear later, regressions typically have a constant term $(\beta_0)$.
+
+After applying a regression analysis we get an estimation of the parameters, that is, the betas. Our estimated model may look the following way (where the *hats* denote estimated values):
+
+$$ \hat{Q^D} = \hat{\beta_0} + \hat{\beta_1} P + \hat{\beta_2} P_S + \hat{\beta_3} Y_D $$
+
+$$ \hat{Q^D} = 25 - 0.25 P + 0.15 P_S + 0.10 Y_D $$
+
+At this point is enough to point to two issues. The first one is that there is *hat* on top of $Q^D$. This means that once you have your beta estimations,you can use the prices and disposable income informatio to *predict* or *estimate* values of $Q^D$. The second one is that there is no error term. The error term, which is unobservable, is estimated by the *residual* $(e)$, which will be the difference between the real and observed $Q^D$ and the model estimation $\hat{Q^D}$: $e = Q^D - \hat{Q^D}$.
 
 ---
 ## Types of datasets
@@ -68,7 +83,7 @@ These implications mean that, even if an estimatino is obtained following strict
 
 Therefore, econometrics is not only a scientific application, it also an **art**, in the sense that each econometric application is driven by a subjective point of view that can vary from person to person.
 
-### A word of advice: Do not confuse econmetrics with economics
+### A word of advice: Do not confuse econometrics with economics
 Even thouth econometrics is an important field in economics, neither econometrics is economics nor economics is econometrics. 
 
 Anyone can be an excellent economisit and at the same time have a very limited knowledge of econometrics. In fact, some of the most influential scholars such as [James M. Buchanan](https://en.wikipedia.org/wiki/James_M._Buchanan[), [Ronald H. Coase](https://en.wikipedia.org/wiki/Ronald_Coase), or [Friedrich A. von Hayek](https://en.wikipedia.org/wiki/Friedrich_Hayek) made little of use intense mathematics or econometric applications.
