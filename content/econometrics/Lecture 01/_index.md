@@ -20,6 +20,7 @@ Economic theory estipulates *qualitative* relationships. For instance. a demand 
 
 Note that econometrics uses the values **observable** economic **variables** (such as $Q^D$ and $p$ in the demand function) to estimate what would be a **parameter** in an economic model (such as $a$ and $b$ in the demand function). 
 
+---
 ## Uses of econometrics
 
 Because econometrics itself is a method to measure economic parameters, it can be used in different ways such as:
