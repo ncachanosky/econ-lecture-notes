@@ -60,7 +60,7 @@ In econometrics, the word **explanation** means that a change of a variable is c
 
 In econometrics, the word **explanation** does not have a teleoogical meaning: It does not mean that a change of a regressor is the cause of a change in the dependent variable
 
-{{% \callout %}}
+{{% /callout %}}
 
 ---
 ## Types of datasets
