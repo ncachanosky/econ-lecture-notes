@@ -1,10 +1,10 @@
 ---
 # Title, summary, and page position.
 linktitle: "Evaluating the quality of a regression"
-weight: 2
+weight: 3
 
 # Page metadata.
-title: Multivariate Regression Models
+title: Evaluating the quality of a regression
 date: "2018-09-09T00:00:00Z"
 type: book  # Do not modify.
 ---
