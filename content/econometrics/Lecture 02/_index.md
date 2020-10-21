@@ -1,16 +1,12 @@
 ---
 # Title, summary, and page position.
-linktitle: "Lecture 2"
+linktitle: "Ordinary Least Squares (OLS)"
 weight: 2
-icon: ""
-icon_pack: fas
 
 # Page metadata.
 title: Introduction to Econometrics
-date: "2018-09-09T00:00:00Z"
+# date: "2018-09-09T00:00:00Z"
 type: book  # Do not modify.
 ---
 
 
-Lecture 2
-LOs

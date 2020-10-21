@@ -9,9 +9,7 @@ date: "2018-09-09T00:00:00Z"
 type: book  # Do not modify.
 ---
 
-{{% callout warning %}}
-Content under development
-{{% /callout %}}
+
 
 ---
 ## What is econometrics?
@@ -72,13 +70,13 @@ What type of econometric techniques can be used depends on the type of data at y
 
 1. Cross-sectional
 2. Time-series
-3. Panel data
+3. Panel data (also known as longitudinal data)
 
 **Cross-sectional** data is the case when the data includes a number of *sections* with data for one time-period only. For instance, income and unemlpoyment informatio for the 50 U.S. states for the year 1930.
 
 **Time-series** data is the inverse situation. The dataset has information of one section for a number of years. For instance, the unemployment rate of the state of Colorado between 1920 and 1950.
 
-**Panel-data** is the combination of the other two. Now the dataset includes information for more than one section and more than one time period. For instance, income for the 50 U.S. states between 1920 and 1950.
+**Panel data** is the combination of the other two. Now the dataset includes information for more than one section and more than one time period. For instance, income for the 50 U.S. states between 1920 and 1950.
 
 
 ---
