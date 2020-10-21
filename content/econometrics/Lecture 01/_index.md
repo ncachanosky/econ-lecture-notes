@@ -12,7 +12,7 @@ type: book  # Do not modify.
 
 
 ---
-# What is econometrics?
+## What is econometrics?
 It is easy to infer a definition of [**econometrics**](https://en.wikipedia.org/wiki/Econometrics) from its etymology. The literal interpretation of the word *econometrics* is *economic measurement*. More precisely, econometrics is the application of statistical techniques to economics.
 
 Econometrics is not in itself economic theory. It is, however, one of its complements. Economic theory estipulates *qualitative* relationships. For instance, a demand function can be represented as $Q^D = a - bp$; where $Q^D$ is the quantity demanded, $p$ is the price of the good in question, and $a$ and $b$ are two parameters. From economic **theory** we know that $a$ and $b$ are positive $(a, b, >0)$. However, economic theory **does not** give values to either $a$ or $b$. We do not know, just from theory, how steep the demand line is. Econometrics is a method through which the values of $a$ and $b$ are estimated. If economic theory is **qualitative**, then econometrics is **quantitative**.
@@ -21,7 +21,7 @@ Note that econometrics uses the values of **observable** economic **variables** 
 
 
 ---
-# Uses of econometrics
+## Uses of econometrics
 Because econometrics itself is a method to measure economic parameters, it can be used in different ways such as:
 
 * To test an hypothesis
@@ -34,8 +34,8 @@ These are three very distinctive uses of econometrics. These different uses also
 
 
 ---
-# The econometric technique
-## Regression analysis and the estimation rule
+## The econometric technique
+### Regression analysis and the estimation rule
 There are different ways to estimate the value of a parameter, such as the slope of a demand function. One alternative is to ask your mother what value she thinks the slope has. This is an easy method, but also very likely to be very innacurate. Econometrics applies regression analysis to infer a more accurate estimation of these parameters. 
 
 The estimation of the slope of a demand function makes use (ideally) of a large set of price and quantities. All these prices and quantities do not offer a perfect match to one and unique slope of the demand function. Therefore, we need a rule to decide how the slope must be estimated. The econometric technique is mostly built to minimize errors between what the econometric model estimates and the observed data.
