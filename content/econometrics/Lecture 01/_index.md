@@ -56,9 +56,9 @@ At this point is enough to point to two issues. The first one is that there is *
 Now, some terminology. The left-hand variable $(Q^D)$ is called the dependent variable. The right-hand variables are called the **regressors** (what would be the *independent* variables).
 
 {{% callout warning %}}
-In econometrics, the word **explanation** means that a change of a variable is correlated ("explains") part of the change of the dependent variable."
+In econometrics, the word **explanation** means that a change of a variable is correlated ("explains") part of the change of the dependent variable.
 
-In econometrics, the word **explanation** does not have a teleoogical meaning: It does not mean that a change of a regressor is the cause of a change in the dependent variable
+In econometrics, the word **explanation** does not have a *cause-effect* meaning: It does not mean that a change of a regressor is the cause of a change in the dependent variable
 
 {{% /callout %}}
 
@@ -81,7 +81,7 @@ What type of econometric techniques can be used depends on the type of data at y
 ## A recommendation and a word of advice
 Before delving into the details of econometric analysis, a recommednation and a word of advice
 
-### A recommendation: Econometrics is an art more than a hard-science
+### A recommendation: Think of econometrics more an art more than as hard-science
 Econometrics can be highly technical and theoretical. There is a reason why econometrics has the fame of being a difficulty subject. However, econometrics is the applciation of **statistical** methods. This has two important implications.
 
 First, there is no unique answer to the question of what value is the right estimation of your unknown parameters. This means that differnet people will disagree on what the right approach should be. And in many times there is no definite way to sort out those disagreements.
@@ -97,7 +97,7 @@ Even thouth econometrics is an important field in economics, neither econometric
 
 Anyone can be an excellent economisit and at the same time have a very limited knowledge of econometrics. In fact, some of the most influential scholars such as [James M. Buchanan](https://en.wikipedia.org/wiki/James_M._Buchanan[), [Ronald H. Coase](https://en.wikipedia.org/wiki/Ronald_Coase), or [Friedrich A. von Hayek](https://en.wikipedia.org/wiki/Friedrich_Hayek) made little of use intense mathematics or econometric applications.
 
-Inversely, someone can be an outstanding econometrician while being clueless about economics. Economics is way of thinking (theory) about how the world looks. Economics itself is not a way of testing an hypothesis. Statistics without a theory is not economics, it is just statistics. To wit, [economics is not statistics (and vice versa)](https://www.peterleeson.com/Economics_is_Not_Statistics.pdf)
+Inversely, someone can be an outstanding econometrician while being clueless about economics. Economics is way of thinking (theory) about how the world looks. Economics itself is not a way of testing an hypothesis. Statistics without a theory is not economics, it is just statistics. To wit, [economics is not statistics (and vice versa)](https://www.peterleeson.com/Economics_is_Not_Statistics.pdf).
 
 
 
