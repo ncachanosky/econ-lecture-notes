@@ -9,6 +9,10 @@ date: "2018-09-09T00:00:00Z"
 type: book  # Do not modify.
 ---
 
+{{% callout warning %}}
+Content under development
+{{% /callout %}}
+
 ---
 ## What is econometrics?
 It is easy to infer a definition of [**econometrics**](https://en.wikipedia.org/wiki/Econometrics) from its etymology. The literal interpretation of the word *econometrics* is *economic measurement*. More precisely, econometrics is the application of statistical techniques to economics.
@@ -81,7 +85,7 @@ What type of econometric techniques can be used depends on the type of data at y
 ## A recommendation and a word of advice
 Before delving into the details of econometric analysis, a recommednation and a word of advice
 
-### A recommendation: Think of econometrics more an art more than as hard-science
+### A recommendation: Think of econometrics more as an art more than as hard-science
 Econometrics can be highly technical and theoretical. There is a reason why econometrics has the fame of being a difficulty subject. However, econometrics is the applciation of **statistical** methods. This has two important implications.
 
 First, there is no unique answer to the question of what value is the right estimation of your unknown parameters. This means that differnet people will disagree on what the right approach should be. And in many times there is no definite way to sort out those disagreements.
