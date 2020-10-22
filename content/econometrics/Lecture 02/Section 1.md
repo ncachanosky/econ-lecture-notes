@@ -103,14 +103,38 @@ To find the $betas$ that minimize the sum of the squared residuals we proceed in
 4. Confirm the silution is a minimum by checking the second order conditions (SOCs) (not included in this example)
 
 **Step 1:** Set the optimization problem
-
 $$ \operatorname*{min}_{\beta} \sum_n (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n)^2 $$
 
 **Step 2:** Find the FOCs
-
 $$
 \begin{align}
 FOC_0: \frac{\partial \sum e^2}{\partial \hat{\beta_0}} &= -2 \sum (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) = 0 \\\\[10pt]
-FOC_1: \frac{\partial \sum e^2}{\partial \hat{\beta_1}} &= -2x_n \sum(Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) = 0
+FOC_1: \frac{\partial \sum e^2}{\partial \hat{\beta_1}} &= -2 \sum(Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) x_n = 0
 \end{align}
 $$
+
+Notat that from both FOCs we are setting our problme to find $betas$ such that $\sum e = 0$ (the parenthesis in each FOC is $e$).
+
+**Part 3:** Solve the system of equations defined by the FOCs
+Get $\beta_0$ from the first equation by making use of the following property: $\sum x = N\bar{x}$ where $\bar{x} = \frac{1}{N} \sum x$.
+
+$$
+\begin{align}
+-2 \sum (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) &= 0 \\\\[10pt]
+\sum (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) = 0
+N \bar{Y} - N \hat{\beta_0} - hat{\beta_1} N \bar{x} &= 0 \\\\[10pt]
+\hat{\beta_0} &= \bar{Y} - \hat{\beta_1} \bar{x}
+\end{align}
+$$
+
+Replace now $\hat{\beta_0}$ into the second equation.
+
+$$
+\begin{align}
+-2 \sum(Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) x_n &= 0 \\\\[10pt]
+- \sum(Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) x_n &= 0 \\\\[10pt]
+- \sum Y_n x_t + \sum \bar{Y} x_t - \hat{\beta_1} \sum \bar{x} x_n + \hat{\beta_1} \sum x_t^2 &=0 \\\\[10pt]
+- \sum Y_n x_n + \sum \bar{Y} x_n + \hat{\beta_1} (\sum x_n^2 - \sum \bar{x} x_t) &=0 \\\\[10pt]
+\hat{\beta_1} &= \frac{\sum Y_n x_n - \sum \bar{Y} x_n}{\sum x_n^2 - \sum \bar{x} x_n}
+
+\end{align}
