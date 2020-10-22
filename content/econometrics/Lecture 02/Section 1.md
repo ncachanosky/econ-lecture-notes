@@ -116,13 +116,13 @@ $$
 Note that from both FOCs we are setting our problme to find $betas$ such that $\sum e = 0$ (the parenthesis in each FOC is $e$).
 
 **Part 3:** Solve the system of equations defined by the FOCs.  
-Get $\beta_0$ from the first equation by making use of the following property: $\sum x = N\bar{x}$ where $\bar{x} = \frac{1}{N} \sum x$.
+Get $\beta_0$ from the first equation. Use of the following property: $\sum x = N\bar{x}$ where $\bar{x} = \frac{1}{N} \sum x$.
 
 $$
 \begin{align}
 -2 \sum (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) &= 0 \\\\[10pt]
-\sum (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) = 0
-N \bar{Y} - N \hat{\beta_0} - hat{\beta_1} N \bar{x} &= 0 \\\\[10pt]
+\sum (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) = 
+N \bar{Y} - N \hat{\beta_0} - \hat{\beta_1} N \bar{x} &= 0 \\\\[10pt]
 \hat{\beta_0} &= \bar{Y} - \hat{\beta_1} \bar{x}
 \end{align}
 $$
@@ -136,6 +136,5 @@ $$
 - \sum Y_n x_t + \sum \bar{Y} x_t - \hat{\beta_1} \sum \bar{x} x_n + \hat{\beta_1} \sum x_t^2 &=0 \\\\[10pt]
 - \sum Y_n x_n + \sum \bar{Y} x_n + \hat{\beta_1} (\sum x_n^2 - \sum \bar{x} x_t) &=0 \\\\[10pt]
 \hat{\beta_1} &= \frac{\sum Y_n x_n - \sum \bar{Y} x_n}{\sum x_n^2 - \sum \bar{x} x_n}
-
 \end{align}
 $$
