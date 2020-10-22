@@ -10,7 +10,6 @@ type: book  # Do not modify.
 
 ---
 ## What is Ordinary Least Squares (OLS)?
-
 [OLS](https://en.wikipedia.org/wiki/Ordinary_least_squares) is the most common method to estimate the *parameters* of a linear regression such that the sum of the **square errors** is minimized. In more general terms, OLS is one application of a group of *linear least squares* methods.
 
 Assume we want to estimate the linear relationship between mileage (mpg) $(Y)$ of autombiles with respect to its weight $(x_1)$. The dependent variable is $Y$ and $x_1$ is the regressor. Then, we are assuming that $Y$ has a linear relationship with respect to its weight.
@@ -22,7 +21,7 @@ $$ Y_n = \beta_0 + \beta_1 x_{1,n} + \varepsilon_n $$
 
 The error term $(\varepsilon)$ is capturing random situation that would affect the mileage of the car, such as weather conditions, average speed of the driver, or altitude.
 
-Let's use the 1978 automobile dataset in `STATA` and run a [scatter plot](https://en.wikipedia.org/wiki/Scatter_plot) between mileage and weight. The following `STATA` code will produce the scatter plot ([Figure 1](#Figure--scatter-plot-mileage-versus-weight)). The dataset has 74 observations, therefore the scatter plot will have 74 points (mileage-weight relationships).
+Let's use the 1978 automobile dataset in `STATA` and run a [scatter plot](https://en.wikipedia.org/wiki/Scatter_plot) between mileage and weight. The following `STATA` code will produce the scatter plot ([Figure 1](#figure--scatter-plot-mileage-versus-weight)). The dataset has 74 observations, therefore the scatter plot will have 74 points (mileage-weight relationships).
 
 
 ```stata
@@ -48,6 +47,10 @@ twoway scatter mpg weight, ///
 *|THE END|=====================================================================*
 *==============================================================================*
 ```
-{{< figure library="true" src="lecture 01/Fig 1.01.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
+{{< figure library="true" src="econometrics/lecture 01/Fig 1.01.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
 
+We can draw an infinite number of lines that go through the scatter plot. But, we are not looking for *any* line, we are looking for a line that would minimize errors on the prediction of mileage when looking at the weight of a car. OLS is a method to efficiently fit a line through those 74 points. 
+
+---
+## The OLS method
 
