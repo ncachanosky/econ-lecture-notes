@@ -126,7 +126,7 @@ twoway scatter mpg weight, ///
 *==============================================================================*
 ```
 
-{{< figure library="true" src="econometrics/lecture 02/Fig 2.01.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
+{{< figure library="true" src="econometrics/lecture 02/Fig 2.02.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
 
 ### Algebraic solution
 To find the $betas$ that minimize the sum of the squared residuals we proceed in a typical way:
