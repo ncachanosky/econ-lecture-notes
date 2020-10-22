@@ -77,11 +77,19 @@ Yet, there is still another problem. We can still fit an infinite number of line
 
 To deal with this issue, OLS minimizes **squared** residuals. The OLS problem now becomes the following
 
-$$ \underbrace{min}_{\{beta}} = \sum_n e_n^2 $$ 
+$$ \underbrace{min}_{\_text{{}beta\text{}}} = \sum_n e_n^2 $$ 
 
 $$
 \begin{align}
-y &= f(x) \\
+y &= f(x) \\\\
+zyz &= f(w)
+\end{align}
+$$
+
+
+$$
+\begin{align}
+y &= f(x) ,\\\\
 zyz &= f(w)
 \end{align}
 $$
