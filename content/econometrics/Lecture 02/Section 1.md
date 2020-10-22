@@ -145,7 +145,8 @@ $$
 -2 \sum (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) x_n &= 0 \\\\[10pt]
 \sum (Y_n - \bar{Y} + \hat{\beta_1} \bar{x} - \hat{\beta_1} x_n) x_n &=0 \\\\[10pt]
 \sum Y_n x_n - \sum \bar{Y} x_n + \hat{\beta_1} \sum \bar{x} x_n - \hat{\beta_1} \sum x_n^2 &=0 \\\\[10pt]
-\sum Y_n x_n - \sum \bar{Y} x_n + \hat{\beta_1} \left( \bar{x} x_n - \sum x_n^2 \right) &=0
+\sum Y_n x_n - \sum \bar{Y} x_n + \hat{\beta_1} \left( \bar{x} x_n - \sum x_n^2 \right) &=0 \\\\[10pt]
+\hat{\beta_1} &= \frac{\sum Y_n x_n - \sum \bar{Y} x_n}{\sum x_n^2 - \sum \bar{x} x_n}
 \end{align}
 $$
 
