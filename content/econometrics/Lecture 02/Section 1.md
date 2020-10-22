@@ -57,6 +57,7 @@ We can draw an infinite number of lines that go through the scatter plot. But, w
 
 ---
 ## The OLS method
+### What is OLS doing?
 We need to find the values of $\beta_0$ and $\beta_1$ that would minimize estimation mistakes. Once we have estimated values for our $betas$, we can use the $weight$ data to predict $mileage$. 
 
 $$ \hat{Y_n} = \hat{\beta_0} + \hat{\beta_1} x_n $$
@@ -82,10 +83,33 @@ $$
 
 Yet, there is still another problem. We can still fit an infinite number of lines that will make the sumation of all the residuals equal to zero $(\sum^{74}_{n=1} e_n = 0)$ (residuals on one side of the real data cancel out with residuals on the other side of the real data). Minimizing the resiudals is not enough, as it will set an undefined problem.
 
-To deal with this issue, OLS minimizes **squared** residuals. The OLS problem now becomes the following
+To deal with this issue, OLS minimizes **squared** residuals. The OLS problem now becomes the following (where $\beta$ is a vector that contains $\beta_0$ and $\beta_1$):
 
 $$
 \operatorname*{min}_{\beta} \sum_n e_N^2 = \operatorname*{min}_{\beta} \sum_n (Y_n - (\hat{\beta_0} + \hat{\beta_1} x_n))^2
 $$
 
+Squaring the residuals have the following two attributes:
 
+1. Allows to find a unique solution to the OLS problem.
+2. It penalizes at a higher rate larger than smaller residuals.
+
+### Algebraic solution
+To find the $betas$ that minimize the sum of the squared residuals we proceed in a typical way:
+
+1. Set the optimization problem.
+2. Find the first order conditions (FOCs).
+3. Solve the system of equations defined by the FOCs.
+4. Confirm the silution is a minimum by checking the second order conditions (SOCs) (not included in this example)
+
+**Step 1:** Set the optimization problem
+
+$$ \operatorname*{min}_{\beta} \sum_n (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n)^2 $$
+
+**Step 2:** Find the FOCs
+
+$$
+\begin{align}
+FOC_0 \rarrow \frac{\partial \sum e^2}{\partial \hat{\beta_0}} &= -2 \sum (Y_n - \hat{\beta_0}^{OLS} - \hat{\beta_1}^{OLS} x_n) = 0 \\\\[10pt]
+FOC_1 \rarrow \frac{\partial \sum e^2}{\partial \hat{\beta_1}} &= -2x_n \sum(Y_n - \hat{\beta_0}^{OLS} - \hat{\beta_1}^{OLS} x_n)
+$$
