@@ -37,10 +37,10 @@ sysuse auto				// Load 1978 Automobile Data from STATA
 
 *|CELL 2|----------------------------------------------------------------------*
 *|Build scatter plots
-twoway scatter mpg weight,	///
-	   title("Scatter plot: mileage versus weight", size(medium))	///
-	   mcolor(blue%50)	///
-	   xlabel(, grid labsize(small)) xtitle(, size(small))	///
+twoway scatter mpg weight, ///
+	   title("Scatter plot: mileage versus weight", size(medium)) ///
+	   mcolor(blue%50) ///
+	   xlabel(, grid labsize(small)) xtitle(, size(small)) ///
 	   ylabel(, grid labsize(small)) ytitle(, size(small))
 	   
 twoway scatter mpg length,											///
@@ -55,6 +55,6 @@ twoway scatter mpg length,											///
 *==============================================================================*
 ```
 
-{{< figure library="lecture 01\Fig 1.01.png" numbered="true" >}}  
-{{< figure library="lecture 01/Fig 1.02.png" >}}
+{{< figure library="true" src="lecture 01\Fig 1.01.png" numbered="true" >}}  
+{{< figure library="true" src="lecture 01/Fig 1.02.png" >}}
 
