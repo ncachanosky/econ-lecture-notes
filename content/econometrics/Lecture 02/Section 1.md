@@ -142,7 +142,6 @@ $$
 
 $$
 \begin{align}
--2 \sum(Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) x_n &= 0 \\\\[10pt]
-- \sum(Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) x_n &= 0
+-2 \sum (Y_n - \hat{\beta_0} - \hat{\beta_1 x_n} x_n) &= 0
 \end{align}
 $$
