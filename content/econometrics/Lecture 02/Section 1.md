@@ -8,7 +8,7 @@ title: Univariate regression
 type: book  # Do not modify.
 ---
 
-
+---
 ## What is Ordinary Least Squares (OLS)?
 
 OLS is the most common method to estimate the *parameters* of a linear regression such that the sum of the **square errors** are minimized. In more general terms, OLS is one application of a group of *linear least squares* methods.
@@ -22,7 +22,39 @@ $$ Y_n = \beta_0 + \beta_1 x_{1,n} + \beta_2 x_{2,n} + \varepsilon_n $$
 
 The error term $(\varepsilon)$ is capturing random situation that would affect the mileage of the car, such as weather conditions, average speed of the driver, or altitude. 
 
+
+```stata
+*==============================================================================*
+* ORDINARLY LEAST SQUARES
+* Univariate regression
+* Code sample: 1
+*==============================================================================*
+
+*|CELL 1|----------------------------------------------------------------------*
+*|Settings and required data
+set scheme scientific	// Set plot scheme
+sysuse auto				// Load 1978 Automobile Data from STATA
+
+*|CELL 2|----------------------------------------------------------------------*
+*|Build scatter plots
+twoway scatter mpg weight,													 ///
+	   title("Scatter plot: mileage versus weight", size(medium))			 ///
+	   mcolor(blue%50)														 ///
+	   xlabel(, grid labsize(small)) xtitle(, size(small))					 ///
+	   ylabel(, grid labsize(small)) ytitle(, size(small))
+	   
+twoway scatter mpg length,													 ///
+	   title("Scatter plot: mileage versus length", size(medium))			 ///
+	   mcolor(red%50)														 ///
+	   xlabel(, grid labsize(small)) xtitle(, size(small))					 ///
+	   ylabel(, grid labsize(small)) ytitle(, size(small))
+	   
+
+*==============================================================================*
+*|THE END|=====================================================================*
+*==============================================================================*
+```
+
 {{< figure src="lecture 01/Fig_1.01.png" numbered="true" >}}  
 {{< figure src="lecture 01/Fig 1.02.png" >}}
 
-![Fig 01](Fig 01.png)
