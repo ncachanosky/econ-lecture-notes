@@ -131,17 +131,6 @@ Replace now $\hat{\beta_0}$ into the second equation.
 
 $$
 \begin{align}
--2 \sum(Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) x_n &= 0 \\\\[10pt]
-- \sum(Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) x_n &= 0 \\\\[10pt]
-- \sum Y_n x_t + \sum \bar{Y} x_t - \hat{\beta_1} \sum \bar{x} x_n + \hat{\beta_1} \sum x_t^2 &=0 \\\\[10pt]
-- \sum Y_n x_n + \sum \bar{Y} x_n + \hat{\beta_1} (\sum x_n^2 - \sum \bar{x} x_t) &=0 \\\\[10pt]
-\hat{\beta_1} &= \frac{\sum Y_n x_n - \sum \bar{Y} x_n}{\sum x_n^2 - \sum \bar{x} x_n}
-\end{align}
-$$
-
-
-$$
-\begin{align}
 -2 \sum (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) x_n &= 0 \\\\[10pt]
 \sum (Y_n - \bar{Y} + \hat{\beta_1} \bar{x} - \hat{\beta_1} x_n) x_n &=0 \\\\[10pt]
 \sum Y_n x_n - \sum \bar{Y} x_n + \hat{\beta_1} \sum \bar{x} x_n - \hat{\beta_1} \sum x_n^2 &=0 \\\\[10pt]
@@ -149,7 +138,17 @@ $$
 \hat{\beta_1} &= \frac{\sum Y_n x_n - \sum \bar{Y} x_n}{\sum x_n^2 - \sum \bar{x} x_n} \\\\[10pt]
 \hat{\beta_1} &= \frac{\sum Y_n x_n - \bar{Y} \sum x_n}{\sum x_n^2 - \bar{x} \sum x_n} \\\\[10pt]
 \hat{\beta_1} &= \frac{\sum Y_n x_n - N \bar{Y} \bar{x}}{\sum x_n^2 - N \bar{x}^2} \\\\[10pt]
-\hat{\beta_1} &= \frac{\sum (x_n - \bar{x})(Y_n - \bar{Y})}{\sum (x_n \bar{x})^2}
+\hat{\beta_1}^* &= \frac{\sum (x_n - \bar{x})(Y_n - \bar{Y})}{\sum (x_n - \bar{x})^*}
 \end{align}
 $$
 
+Knowing the value of $\hat{\beta_1}^*$ you can now get the value of $\hat{\beta_0}^*$:
+
+$$ \hat{\beta_0}^* = \bar{Y} - \hat{\beta_1}^* \bar{x} $$
+
+This method achieves the following two objectives:
+
+1. Minimize the squared residuals $(\sum e_n^2)$
+2. Make all residuals cancel out $(\sum e = 0)$
+
+There is one more lesson to get from this excercise. As you can probably imagine, findin the optimal $betas$ can become increasingly complicated very fast as we add more regressors to the model. Matrix algebra (very common in econometrics) can make the mathematics of econometrics much simpler. An example of this is in the next section, where we solve the same problem for a regression with multiple regressors. 
