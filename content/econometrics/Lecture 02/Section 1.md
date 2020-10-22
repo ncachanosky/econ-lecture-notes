@@ -53,4 +53,18 @@ We can draw an infinite number of lines that go through the scatter plot. But, w
 
 ---
 ## The OLS method
+We need to find the values of $\beta_0$ and $\beta_1$ that would minimize estimatio mistakes. Once we have estimated values for our $betas$, we can use the $weight$ data to predict $mileage$. 
+
+$$ \hat{Y} = \hat{\beta_0} + \hat{\beta_1} x_1 $$
+
+{{% callout warning %}}
+Do not confuse the **error** term with the **residual**.
+{{% /callout %}}
+
+Before proceeding, is important to distinguish betweeen the **error** term $(\varepsilon)$ and the **residual** $(e)$. The *residual* is the random events that produce a difference between weight and mileage. Because this is a random variable (for instance changes in weather) the residual is also referred as the **stochastic residual** term. The residual is unobservable. If all these randome events were known, then we would be able to add them to the model. The *error* term is the difference between the model prediction and the real world data. In this sense is like a *proxy* of the unovserbable residual. Because the error is unobservable, OLS minimizes the residual.
+
+More precisely, the residual equals: $e = Y_n - \hat{Y_n}$. For instance, after you estimate the $betas$ of the equation, a weight of 2000 pounds predicts a mileage of 27 mpg. However, you know that a car with a weight of 2000 pounds has a mileage of 25 mps. The residual of the model, for that observation, is 2 mpg.
+
+Our example has 74 observations. Then, the model can predict one mpg for each car weight. Therefore, a dataset with 74 observations will have 74 residuals; one for each observation. 
+
 
