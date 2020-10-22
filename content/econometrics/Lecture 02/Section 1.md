@@ -48,6 +48,6 @@ twoway scatter mpg weight, ///
 *==============================================================================*
 ```
 New try  
-{{< figure library="true" src="lecture 01/Fig 1.01.png" numbered="true" >}}  
+{{< figure library="true" src="lecture 01/Fig 1.01.png" numbered="true" title="Scatter plot: Mileage versus Weight">}}  
 
 
