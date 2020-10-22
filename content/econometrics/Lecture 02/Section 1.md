@@ -110,6 +110,6 @@ $$ \operatorname*{min}_{\beta} \sum_n (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n)^
 
 $$
 \begin{align}
-FOC_0 \rarrow \frac{\partial \sum e^2}{\partial \hat{\beta_0}} &= -2 \sum (Y_n - \hat{\beta_0}^{OLS} - \hat{\beta_1}^{OLS} x_n) = 0 \\\\[10pt]
-FOC_1 \rarrow \frac{\partial \sum e^2}{\partial \hat{\beta_1}} &= -2x_n \sum(Y_n - \hat{\beta_0}^{OLS} - \hat{\beta_1}^{OLS} x_n)
+FOC_0: \frac{\partial \sum e^2}{\partial \hat{\beta_0}} &= -2 \sum (Y_n - \hat{\beta_0}^{OLS} - \hat{\beta_1}^{OLS} x_n) = 0 \\\\[10pt]
+FOC_1: \frac{\partial \sum e^2}{\partial \hat{\beta_1}} &= -2x_n \sum(Y_n - \hat{\beta_0}^{OLS} - \hat{\beta_1}^{OLS} x_n)
 $$
