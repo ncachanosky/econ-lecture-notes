@@ -73,16 +73,19 @@ Our example has 74 observations. Then, the model can predict one mpg for each ca
 
 Because $\hat{Y_n} = \hat{\beta_0} + \hat{\beta_1} x_n$, we can see that
 
-$$ e_n = Y_n - \hat{Y_n} $$
-
-$$ e_n = Y_n - (\hat{\beta_0} + \hat{\beta_1} x_n) $$
+$$
+\begin{align}
+e_n &= Y_n - \hat{Y_n} \\\\[10pt]
+e_n &= Y_n - (\hat{\beta_0} + \hat{\beta_1} x_n)
+\end{align}
+$$
 
 Yet, there is still another problem. We can still fit an infinite number of lines that will make the sumation of all the residuals equal to zero $(\sum^{74}_{n=1} e_n = 0)$ (residuals on one side of the real data cancel out with residuals on the other side of the real data). Minimizing the resiudals is not enough, as it will set an undefined problem.
 
 To deal with this issue, OLS minimizes **squared** residuals. The OLS problem now becomes the following
 
-
-$$ \operatorname*{min}_{\beta} \sum_n e_N^2 $$
-
+$$
+\operatorname*{min}_{\beta} \sum_n e_N^2 = \operatorname*{min}_{\beta} \sum_n (Y_n - (\hat{\beta_0} + \hat{\beta_1} x_n))^2
+$$
 
 
