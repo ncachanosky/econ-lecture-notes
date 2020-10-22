@@ -121,7 +121,7 @@ Get $\beta_0$ from the first equation. Use of the following property: $\sum x = 
 $$
 \begin{align}
 -2 \sum (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) &= 0 \\\\[10pt]
-\sum (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) = 
+\sum (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) = 0 \\\\[10pt]
 N \bar{Y} - N \hat{\beta_0} - \hat{\beta_1} N \bar{x} &= 0 \\\\[10pt]
 \hat{\beta_0} &= \bar{Y} - \hat{\beta_1} \bar{x}
 \end{align}
@@ -137,4 +137,11 @@ $$
 - \sum Y_n x_n + \sum \bar{Y} x_n + \hat{\beta_1} (\sum x_n^2 - \sum \bar{x} x_t) &=0 \\\\[10pt]
 \hat{\beta_1} &= \frac{\sum Y_n x_n - \sum \bar{Y} x_n}{\sum x_n^2 - \sum \bar{x} x_n}
 \end{align}
+$$
+
+
+$$
+\begin{align}
+-2 \sum(Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) x_n &= 0 \\\\[10pt]
+- \sum(Y_n - \hat{\beta_0} - \hat{\beta_1} x_n) x_n &= 0
 $$
