@@ -113,9 +113,9 @@ FOC_1: \frac{\partial \sum e^2}{\partial \hat{\beta_1}} &= -2 \sum(Y_n - \hat{\b
 \end{align}
 $$
 
-Notat that from both FOCs we are setting our problme to find $betas$ such that $\sum e = 0$ (the parenthesis in each FOC is $e$).
+Note that from both FOCs we are setting our problme to find $betas$ such that $\sum e = 0$ (the parenthesis in each FOC is $e$).
 
-**Part 3:** Solve the system of equations defined by the FOCs
+**Part 3:** Solve the system of equations defined by the FOCs.  
 Get $\beta_0$ from the first equation by making use of the following property: $\sum x = N\bar{x}$ where $\bar{x} = \frac{1}{N} \sum x$.
 
 $$
@@ -138,3 +138,4 @@ $$
 \hat{\beta_1} &= \frac{\sum Y_n x_n - \sum \bar{Y} x_n}{\sum x_n^2 - \sum \bar{x} x_n}
 
 \end{align}
+$$
