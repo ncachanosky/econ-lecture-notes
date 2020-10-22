@@ -18,15 +18,10 @@ Let $n = 1,...,N$ be the number of observations; that is, how many mileage and w
 
 $$
 \begin{align}
-mpg_n &= \beta_0 + \beta_1 weight_n + \varepsilon_n \\\\
+mpg_n &= \beta_0 + \beta_1 weight_n + \varepsilon_n \\\\[10pt]
 Y_n   &= \beta_0 + \beta_1 x_n + \varepsilon_n
 \end{align}
 $$
-
-
-
-$$ mpg_n = \beta_0 + \beta_1 weight_n + \varepsilon_n  $$
-$$ Y_n = \beta_0 + \beta_1 x_n + \varepsilon_n $$
 
 The error term $(\varepsilon)$ is capturing random situation that would affect the mileage of the car, such as weather conditions, average speed of the driver, or altitude.
 
@@ -86,15 +81,8 @@ Yet, there is still another problem. We can still fit an infinite number of line
 
 To deal with this issue, OLS minimizes **squared** residuals. The OLS problem now becomes the following
 
-$$ \underbrace{min}_{\_text{{}beta\text{}}} = \sum_n e_n^2 $$ 
 
 $$ \operatorname*{min}_{\beta} \sum_n e_N^2 $$
 
-$$
-\begin{align}
-y &= f(x) \\\\
-zyz &= f(w)
-\end{align}
-$$
 
 
