@@ -22,6 +22,6 @@ $$ Y_n = \beta_0 + \beta_1 x_{1,n} + \beta_2 x_{2,n} + \varepsilon_n $$
 
 The error term $(\varepsilon)$ is capturing random situation that would affect the mileage of the car, such as weather conditions, average speed of the driver, or altitude. 
 
-{{< figure src="Fig 01.png" title="A caption" >}}
-{{< figure src="Fig 02.png" title="A caption" >}}
+{{< figure src="Fig 01.png" >}}
+{{< figure src="Fig 02.png" >}}
 
