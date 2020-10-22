@@ -16,6 +16,15 @@ Assume we want to estimate the linear relationship between mileage (mpg) $(Y)$ o
 
 Let $n = 1,...,N$ be the number of observations; that is, how many mileage and weight observations we have at our disposal. The theoretical representation of this relationship is the following.
 
+$$
+\begin{align}
+mpg_n &= \beta_0 + \beta_1 weight_n + \varepsilon_n \\\\
+Y_n   &= \beta_0 + \beta_1 x_n + \varepsilon_n
+\end{align}
+$$
+
+
+
 $$ mpg_n = \beta_0 + \beta_1 weight_n + \varepsilon_n  $$
 $$ Y_n = \beta_0 + \beta_1 x_n + \varepsilon_n $$
 
@@ -79,6 +88,8 @@ To deal with this issue, OLS minimizes **squared** residuals. The OLS problem no
 
 $$ \underbrace{min}_{\_text{{}beta\text{}}} = \sum_n e_n^2 $$ 
 
+$$ \operatorname*{min}_{\beta} \sum_n e_N^2 $$
+
 $$
 \begin{align}
 y &= f(x) \\\\
@@ -87,9 +98,3 @@ zyz &= f(w)
 $$
 
 
-$$
-\begin{align}
-y &= f(x) ,\\\\
-zyz &= f(w)
-\end{align}
-$$
