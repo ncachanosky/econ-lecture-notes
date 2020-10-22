@@ -146,7 +146,10 @@ $$
 \sum (Y_n - \bar{Y} + \hat{\beta_1} \bar{x} - \hat{\beta_1} x_n) x_n &=0 \\\\[10pt]
 \sum Y_n x_n - \sum \bar{Y} x_n + \hat{\beta_1} \sum \bar{x} x_n - \hat{\beta_1} \sum x_n^2 &=0 \\\\[10pt]
 \sum Y_n x_n - \sum \bar{Y} x_n + \hat{\beta_1} \left( \bar{x} x_n - \sum x_n^2 \right) &=0 \\\\[10pt]
-\hat{\beta_1} &= \frac{\sum Y_n x_n - \sum \bar{Y} x_n}{\sum x_n^2 - \sum \bar{x} x_n}
+\hat{\beta_1} &= \frac{\sum Y_n x_n - \sum \bar{Y} x_n}{\sum x_n^2 - \sum \bar{x} x_n} \\\\[10pt]
+\hat{\beta_1} &= \frac{\sum Y_n x_n - \bar{Y} \sum x_n}{\sum x_n^2 - \bar{x} \sum x_n} \\\\[10pt]
+\hat{\beta_1} &= \frac{\sum Y_n x_n - N \bar{Y} \bar{x}}{\sum x_n^2 - N \bar{x}^2} \\\\[10pt]
+\hat{\beta_1} &= \frac{\sum (x_n - \bar{x})(Y_n - \bar{Y})}{\sum (x_n \bar{x})^2}
 \end{align}
 $$
 
