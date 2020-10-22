@@ -12,12 +12,12 @@ type: book  # Do not modify.
 ## What is Ordinary Least Squares (OLS)?
 [OLS](https://en.wikipedia.org/wiki/Ordinary_least_squares) is the most common method to estimate the *parameters* of a linear regression such that the sum of the **square errors** is minimized. In more general terms, OLS is one application of a group of *linear least squares* methods.
 
-Assume we want to estimate the linear relationship between mileage (mpg) $(Y)$ of autombiles with respect to its weight $(x_1)$. The dependent variable is $Y$ and $x_1$ is the regressor. Then, we are assuming that $Y$ has a linear relationship with respect to its weight.
+Assume we want to estimate the linear relationship between mileage (mpg) $(Y)$ of autombiles with respect to its weight $(x)$. The dependent variable is $Y$ and $x$ is the regressor. Then, we are assuming that $Y$ has a linear relationship with respect to its weight.
 
 Let $n = 1,...,N$ be the number of observations; that is, how many mileage and weight observations we have at our disposal. The theoretical representation of this relationship is the following.
 
 $$ mpg_n = \beta_0 + \beta_1 weight_n + \varepsilon_n  $$
-$$ Y_n = \beta_0 + \beta_1 x_{1,n} + \varepsilon_n $$
+$$ Y_n = \beta_0 + \beta_1 x_n + \varepsilon_n $$
 
 The error term $(\varepsilon)$ is capturing random situation that would affect the mileage of the car, such as weather conditions, average speed of the driver, or altitude.
 
@@ -53,18 +53,26 @@ We can draw an infinite number of lines that go through the scatter plot. But, w
 
 ---
 ## The OLS method
-We need to find the values of $\beta_0$ and $\beta_1$ that would minimize estimatio mistakes. Once we have estimated values for our $betas$, we can use the $weight$ data to predict $mileage$. 
+We need to find the values of $\beta_0$ and $\beta_1$ that would minimize estimation mistakes. Once we have estimated values for our $betas$, we can use the $weight$ data to predict $mileage$. 
 
-$$ \hat{Y} = \hat{\beta_0} + \hat{\beta_1} x_1 $$
+$$ \hat{Y_n} = \hat{\beta_0} + \hat{\beta_1} x_n $$
 
 {{% callout warning %}}
 Do not confuse the **error** term with the **residual**.
 {{% /callout %}}
 
-Before proceeding, is important to distinguish betweeen the **error** term $(\varepsilon)$ and the **residual** $(e)$. The *residual* is the random events that produce a difference between weight and mileage. Because this is a random variable (for instance changes in weather) the residual is also referred as the **stochastic residual** term. The residual is unobservable. If all these randome events were known, then we would be able to add them to the model. The *error* term is the difference between the model prediction and the real world data. In this sense is like a *proxy* of the unovserbable residual. Because the error is unobservable, OLS minimizes the residual.
+Before proceeding, is important to distinguish betweeen the **error** term $(\varepsilon)$ and the **residual** $(e).$ The *residual* captures the random events that produce a difference between weight and mileage. Because this is a random variable (for instance changes in weather) the residual is also referred as the **stochastic residual** term. The residual is unobservable. If all these random events were known, then we would be able to add them to the model. The *error* term is the difference between the model prediction and the real world data. In this sense is like a *proxy* of the unovserbable residual. Because the error is unobservable, OLS minimizes the residual.
 
-More precisely, the residual equals: $e = Y_n - \hat{Y_n}$. For instance, after you estimate the $betas$ of the equation, a weight of 2000 pounds predicts a mileage of 27 mpg. However, you know that a car with a weight of 2000 pounds has a mileage of 25 mps. The residual of the model, for that observation, is 2 mpg.
+More precisely, the residual equals: $e_n = Y_n - \hat{Y_n}$. For instance, after you estimate the $betas$ of the equation, a weight of 2000 pounds predicts a mileage of 27 mpg. However, you know that a car with a weight of 2000 pounds has a mileage of 25 mps. The residual of the model, for that specific observation, is 2 mpg.
 
 Our example has 74 observations. Then, the model can predict one mpg for each car weight. Therefore, a dataset with 74 observations will have 74 residuals; one for each observation. 
 
+Since $\hat{Y_n} = \hat{\beta_0} + \hat{\beta_1} x_n$:
 
+$$ e_n = Y_n - \hat{Y_n} $$
+
+$$ e_n = Y_n - (\hat{\beta_0} + \hat{\beta_1} x_n) $$
+
+Yet, there is still another problem. We can still fit an infinite number of lines that will make the sumation of all the residuals equal to zero $(\sum^{74}_{n=1} e_n = 0)$ (residuals on one side of the real data cancel out with residuals on the other side of the real data). Minimizing the resiudals is not enough, as it will set an undefined problem.
+
+To deal with this issue, OLS minimizes **squared** residuals. 
