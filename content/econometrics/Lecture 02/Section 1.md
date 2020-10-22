@@ -176,7 +176,7 @@ $$
 \end{align}
 $$
 
-Knowing the value of $\hat{\beta_1}^*$ you can now get the value of $\hat{\beta_0}^*$:
+Knowing the value of $\hat{\beta_1}$ you can now get the value of $\hat{\beta_0}$:
 
 $$ \hat{\beta_0}^* = \bar{Y} - \hat{\beta_1}^* \bar{x} $$
 
