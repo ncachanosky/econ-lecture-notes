@@ -69,11 +69,11 @@ Before proceeding, is important to distinguish betweeen the **error (or disturba
 
 
 {{% callout warning %}}
-Do not confuse the [**error term** with the **residual**](https://en.wikipedia.org/wiki/Errors_and_residuals).
+Do not confuse the [**error term** with the **residual**](https://en.wikipedia.org/wiki/Errors_and_residuals).[^2]
 
 ---
 **The error $(\varepsilon)$ term**  
-The *error* is the difference between the **conditional expected** value of the dependent variable $(E[Y|x])$ and a random observation taken from the sample: $\varepsilon_i = E[Y|x_i] - Y_i$. If the mean mileage of a car with a weight of 2000 pounds is 27 mpg and a randomly observed car has an mpg of 25, then the error is 2 mpg. A regression assumes these errors are random. The error captures random effects that make the dependent variable deviate from its mean (for instance random measurement errors).
+The *error* is the difference between the **expected** value of the dependent variable $(E[Y])$ and a random observation taken from the sample: $\varepsilon_i = E[Y] - Y_i$. If the mean mileage of a car with a weight of 2000 pounds is 27 mpg and a randomly observed car has an mpg of 25, then the error is 2 mpg. A regression assumes these errors are random. The error captures random effects that make the dependent variable deviate from its mean (for instance random measurement errors).
 
 **The residual $(e)$**  
 The residual (or fitting deviation) is the difference between an observed value $(Y_i)$ and its prediction $(\hat{Y_i})$: $e_i = Y_i - \hat{Y_i}$. For instance, the observe mileage of a car if 27 mpg and the model predicts 23 mpg, then the residual is 4 mpg (the unexplained residue of the model) In this sense, the *residual* is like an observable *proxy* of the unovserbable *error*.
@@ -262,3 +262,5 @@ However, a univariate regression is very useful *pedagogically* because it offer
 
 <!-- FOOTNOTES -->
 [^1]: Of course, the regressors may also be stochastic variables. However, a regression **assumes** they are deterministic. 
+
+[^2]: A more precise exposition of the *error* and *residual* would be in conditional terms. For instance, the average mileage (mpg) of a car conditional on having a specific weight. Cars with different weights will have a random distribution of different mileage around their mean. The error term would be $Y_i - E[Y|x_i]$. 
