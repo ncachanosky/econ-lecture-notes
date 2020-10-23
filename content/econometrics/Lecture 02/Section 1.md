@@ -224,13 +224,13 @@ Now use the value of $\hat{\beta_1}$ to get the value of $\hat{\beta_0}$:
 
 $$ \hat{\beta_{0}^{*}} = \bar{Y} - \hat{\beta_{1}^{*}} \bar{x} $$
 
-If we now replace $\hat{\beta_0}$ into the equation:
+If we now replace $\hat{\beta_0}$ into the equation, we can express $\hat{Y}$ as deviations from its mean when $x_i$ deviates from its own mean:
 
 $$
 \begin{align}
 \hat{Y}_i &= \hat{\beta_0} + \hat{\beta_1} x_i \\\\[10pt]
-          &= \left( \bar{Y} - \hat{\beta_1} \bar{x} \right) + \hat{\beta_1} x_i \\\\[10pt]
-          &= \bar{Y} + \hat{\beta_1} (x_i - \bar{x})
+\hat{Y}_i &= \left( \bar{Y} - \hat{\beta_1} \bar{x} \right) + \hat{\beta_1} x_i \\\\[10pt]
+\hat{Y}_i &= \bar{Y} + \hat{\beta_1} (x_i - \bar{x})
 \end{align}
 $$
 
