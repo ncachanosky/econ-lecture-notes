@@ -69,13 +69,14 @@ Before proceeding, is important to distinguish betweeen the **error (or disturba
 
 
 {{% callout warning %}}
-Do not confuse the [**error** term with the **residual**](https://en.wikipedia.org/wiki/Errors_and_residuals).
+Do not confuse the [**error term** with the **residual**](https://en.wikipedia.org/wiki/Errors_and_residuals).
 
+---
 **The error $(\varepsilon)$ term**  
 The *error* is the difference between the **conditional expected** value of the dependent variable $(E[Y|x])$ and a random observation taken from the sample: $\varepsilon_i = E[Y|x_i] - Y_i$. If the mean mileage of a car with a weight of 2000 pounds is 27 mpg and a randomly observed car has an mpg of 25, then the error is 2 mpg. A regression assumes these errors are random. The error captures random effects that make the dependent variable deviate from its mean (for instance random measurement errors).
 
 **The residual $(e)$**  
-The residual (or fitting deviation) is the difference between the conditional mean of the dependent variable $(E[Y|x])$ and the predicted value $(\hat{Y})$: $e_i = E[Y|x] - \hat{Y_i}$. In other words, the residual is the difference between the observed data (sample) and the model predictions. In this sense. the *residual* is like a *proxy* of the unovserbable *error*. Because the *error* is unobservable, OLS minimizes the *residual*.
+The residual (or fitting deviation) is the difference between the conditional mean of the dependent variable $(E[Y|x])$ and the predicted value $(\hat{Y})$: $e_i = E[Y|x] - \hat{Y_i}$. In other words, the residual is the difference between the observed data (sample) and the model predictions. In this sense. the *residual* is like a *proxy* of the unovserbable *error*.
 {{% /callout %}}
 
 Our example has 74 observations. Because the model can predict one $mpg$ for each car $weight$, there is one *residual* for each observation. Because $\hat{Y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$, we can see that
@@ -87,7 +88,7 @@ e_i &= Y_i - (\hat{\beta_0} + \hat{\beta_1} x_i)
 \end{align}
 $$
 
-Yet, there is still a situation that requires a solution. We can fit an infinite number of lines that will make the sumation of all the residuals equal to zero $(\sum^{74}_{i=1} e_i = 0)$ (residuals cancel out)). Canceling the residuals is not enough because only one of those infinite lines is the one we are looking for. To deal with this issue, OLS minimizes **squared** residuals. The OLS problem now becomes the following:
+Yet, there is still a situation that requires a solution. We can fit an infinite number of lines that will make the sumation of all the *residuals* equal to zero $(\sum^{74}_{i=1} e_i = 0)$ (residuals cancel out)). Canceling the residuals is not enough because only one of those infinite lines is the one we are looking for. To find the line we are looking for OLS minimizes the **squared** residuals. We can now state the OLS problem in more precise terms:
 
 $$
 \operatorname*{min}_{\beta_{1,2}} \sum_i e_i^2 = \operatorname*{min}_{\beta} \sum_n (Y_i - \hat{\beta_0} - \hat{\beta_1} x_i)^2
