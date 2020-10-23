@@ -191,4 +191,5 @@ There is one more lesson to get from this excercise. As you can probably imagine
 
 static\media\econometrics\lecture 02\OLS (simple example).xlsx
 
+---
 ## How useful are univariate regressions?
