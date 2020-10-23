@@ -65,17 +65,11 @@ We need to find the values of $\beta_0$ and $\beta_1$ that would minimize predic
 
 $$ \hat{Y_i} = \hat{\beta_0} + \hat{\beta_1} x_i $$
 
+Before proceeding, is important to distinguish betweeen the **error (or disturbance)** term $(\varepsilon)$ and the **residual** $(e).$
+
 {{% callout warning %}}
 Do not confuse the **error** term with the **residual**.
 {{% /callout %}}
-
-> Before proceeding, is important to distinguish betweeen the **error (or disturbance)** term $(\varepsilon)$ and the **residual** $(e).$
-
-> **The error $(\varepsilon)$ term**  
-The *error* is the difference between the **conditional expected** value of the dependent variable $(E[Y|x])$ and a random observation taken from the sample: $\varepsilon_i = E[Y|x_i] - Y_i$. If the mean mileage of a car with a weight of 2000 pounds is 27 mpg and a randomly observed car has an mpg of 25, then the error is 2 mpg. A regression assumes these errors are random. The error captures random effects that make the dependent variable deviate from its mean (for instance random measurement errors).
-
-> **The residual $(e)$**  
-The residual (or fitting deviation) is the difference between the conditional mean of the dependent variable $(E[Y|x])$ and the predicted value $(\hat{Y})$: $e_i = E[Y|x] - \hat{Y_i}$. In other words, the residual is the difference between the observed data (sample) and the model predictions. In this sense. the *residual* is like a *proxy* of the unovserbable *error*. Because the *error* is unobservable, OLS minimizes the *residual*.
 
 {{% callout warning %}}
 Do not confuse the **error** term with the **residual**.
@@ -86,15 +80,6 @@ The *error* is the difference between the **conditional expected** value of the 
 **The residual $(e)$**  
 The residual (or fitting deviation) is the difference between the conditional mean of the dependent variable $(E[Y|x])$ and the predicted value $(\hat{Y})$: $e_i = E[Y|x] - \hat{Y_i}$. In other words, the residual is the difference between the observed data (sample) and the model predictions. In this sense. the *residual* is like a *proxy* of the unovserbable *error*. Because the *error* is unobservable, OLS minimizes the *residual*.
 {{% /callout %}}
-
-
-
-
-
-
-
-
-More precisely, the residual equals: $e_i = Y_i - \hat{Y_i}$. For instance, after you estimate the $betas$ of the equation, a weight of 2000 pounds predicts a mileage of 27 mpg. However, you know that a car with a weight of 2000 pounds has a mileage of 25 mps. The residual of the model, for that specific observation, is 2 mpg.
 
 Our example has 74 observations. Because the model can predict one $mpg$ for each car $weight$, there is one *residual* for each observation. Because $\hat{Y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$, we can see that
 
