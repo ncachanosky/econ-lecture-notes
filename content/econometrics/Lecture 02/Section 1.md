@@ -37,8 +37,8 @@ Let's use the 1978 automobile dataset in `STATA` and run a [scatter plot](https:
 
 *|CELL 1|----------------------------------------------------------------------*
 *|Settings and required data
-set scheme scientific	// Set plot scheme
-sysuse auto				// Load 1978 Automobile Data from STATA
+set scheme scientific  // Set plot scheme
+sysuse auto  // Load 1978 Automobile Data from STATA
 
 *|CELL 2|----------------------------------------------------------------------*
 *|Build scatter plots
@@ -54,12 +54,12 @@ twoway scatter mpg weight, ///
 
 {{< figure library="true" src="econometrics/lecture 02/Fig 2.01.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
 
-We can draw an infinite number of lines that go through the scatter plot. But, we are not looking for *any* line, we are looking for the line that would minimize errors on the prediction of mileage when looking at the weight of a car. OLS is a method (not the only one) to find such line. 
+We can draw an infinite number of lines that go through the scatter plot. But, we are not looking for *any* line, we are looking for the line that would minimize errors of the prediction of mileage when looking at the weight of a car. OLS is a method to find such line. 
 
 ---
 ## The OLS method
 ### What is OLS doing?
-We need to find the values of $\beta_0$ and $\beta_1$ that would minimize estimation mistakes. Once we have estimated values for our $betas$, we can use the $weight$ data to predict $mileage$. 
+We need to find the values of $\beta_0$ and $\beta_1$ that would minimize estimation mistakes. Once we have estimated values for our $betas$, we can use the $weight$ data to predict $mileage$ with the smaller errors possible. The estimated $betas, (\hat{\beta_0}, \hat{\beta_1})$, can be used to estimate $mileage, (\hat{Y_n})$ for each $weight (x_n)$.
 
 $$ \hat{Y_n} = \hat{\beta_0} + \hat{\beta_1} x_n $$
 
@@ -67,13 +67,11 @@ $$ \hat{Y_n} = \hat{\beta_0} + \hat{\beta_1} x_n $$
 Do not confuse the **error** term with the **residual**.
 {{% /callout %}}
 
-> Before proceeding, is important to distinguish betweeen the **error** term $(\varepsilon)$ and the **residual** $(e).$ The *residual* captures the random events that produce a difference between weight and mileage. Because this is a random variable (for instance changes in weather) the error is also referred as the **stochastic error** term. The errort is unobservable. If all these random events were known, then we would be able to add them to the model. The *residual* term is the difference between the model prediction and the real world data (the residue that the model fails to explain). In this sense is like a *proxy* of the unovserbable *error*. Because the *error* is unobservable, OLS minimizes the *residual*.
+> Before proceeding, is important to distinguish betweeen the **error** term $(\varepsilon)$ and the **residual** $(e).$ The *error* captures the random events that produce a difference between weight and mileage. Because this is a random variable (for instance changes in weather) the error is also referred as the **stochastic error** term. The error is unobservable. If all these random events were known, then we would be able to add them to the model. The *residual* term is the difference between the model prediction and the real world data (the residue that the model fails to explain). In this sense. the *residual* is like a *proxy* of the unovserbable *error*. Because the *error* is unobservable, OLS minimizes the *residual*.
 
 More precisely, the residual equals: $e_n = Y_n - \hat{Y_n}$. For instance, after you estimate the $betas$ of the equation, a weight of 2000 pounds predicts a mileage of 27 mpg. However, you know that a car with a weight of 2000 pounds has a mileage of 25 mps. The residual of the model, for that specific observation, is 2 mpg.
 
-Our example has 74 observations. Then, the model can predict one $mpg$ for each car $weight$. Therefore, a dataset with 74 observations will have 74 residuals; one for each observation. 
-
-Because $\hat{Y_n} = \hat{\beta_0} + \hat{\beta_1} x_n$, we can see that
+Our example has 74 observations. Because the model can predict one $mpg$ for each car $weight$, there is one *residual* for each observation. Because $\hat{Y_n} = \hat{\beta_0} + \hat{\beta_1} x_n$, we can see that
 
 $$
 \begin{align}
@@ -82,12 +80,10 @@ e_n &= Y_n - (\hat{\beta_0} + \hat{\beta_1} x_n)
 \end{align}
 $$
 
-Yet, there is still another problem. We can still fit an infinite number of lines that will make the sumation of all the residuals equal to zero $(\sum^{74}_{n=1} e_n = 0)$ (residuals cancel out)). Canceling the resiudals is not enough, as it will set an undefined problem.
-
-To deal with this issue, OLS minimizes **squared** residuals. The OLS problem now becomes the following:
+Yet, there is still a situation that requires a solution. We can fit an infinite number of lines that will make the sumation of all the residuals equal to zero $(\sum^{74}_{n=1} e_n = 0)$ (residuals cancel out)). Canceling the residuals is not enough because only one of those infinite lines is the one we are looking for. To deal with this issue, OLS minimizes **squared** residuals. The OLS problem now becomes the following:
 
 $$
-\operatorname*{min}_{\beta_(1,2)} \sum_n e_N^2 = \operatorname*{min}_{\beta} \sum_n (Y_n - (\hat{\beta_0} + \hat{\beta_1} x_n))^2
+\operatorname*{min}_{\beta_{1,2}} \sum_n e_N^2 = \operatorname*{min}_{\beta} \sum_n (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n)^2
 $$
 
 Squaring the residuals has the following two attributes:
@@ -95,7 +91,7 @@ Squaring the residuals has the following two attributes:
 1. Allows to find a unique solution to the OLS problem.
 2. It penalizes at a higher rate larger than smaller residuals.
 
-The OLS estimatino fits the *best* line through the points in the scatter plot. We can see the result below and then proceed to discuss the estimation technique (how to mathematically get the $betas$).
+The OLS estimation fits the *best* line through the points in the scatter plot. Where *best* is defined as minimizins the squared residuals constrained on the prediction being a straight line. We can see the result below and then proceed to discuss the mathematical estimation technique in more detail.
 
 ```stata
 *==============================================================================*
@@ -137,7 +133,7 @@ To find the $betas$ that minimize the sum of the squared residuals we proceed in
 4. Confirm the silution is a minimum by checking the second order conditions (SOCs) (not included in this example)
 
 **Step 1:** Set the optimization problem
-$$ \operatorname*{min}_{\beta} \sum_n (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n)^2 $$
+$$ \operatorname*{min}_{{\beta}} \sum_n (Y_n - \hat{\beta_0} - \hat{\beta_1} x_n)^2 $$
 
 **Step 2:** Find the FOCs
 $$
@@ -147,10 +143,10 @@ FOC_1: \frac{\partial \sum e^2}{\partial \hat{\beta_1}} &= -2 \sum(Y_n - \hat{\b
 \end{align}
 $$
 
-Note that both FOCs imply that the solution will also make the residuals cancel out $(\sum e = 0)$ (the parenthesis in each FOC is $e$).
+Note that the FOCs imply that the solution will also make the residuals cancel out $(\sum e = 0)$ (the term in parenthesis is $e$).
 
 **Part 3:** Solve the system of equations defined by the FOCs.  
-Get $\beta_0$ from the first equation. Use the following property: $\sum x = N\bar{x}$ where $\bar{x} = \frac{1}{N} \sum x$.
+Get $\hat{\beta_0}$ from the first equation. Use the following property: $\sum x = N\bar{x}$ where $\bar{x} = \frac{1}{N} \sum x$.
 
 $$
 \begin{align}
@@ -176,17 +172,23 @@ $$
 \end{align}
 $$
 
-Knowing the value of $\hat{\beta_1}$ you can now get the value of $\hat{\beta_0}$:
+Now use the value of $\hat{\beta_1}$ to get the value of $\hat{\beta_0}$:
 
-$$ \hat{\beta_0}^* = \bar{Y} - \hat{\beta_1}^* \bar{x} $$
+$$ \hat{\beta_{0}^{*}} = \bar{Y} - \hat{\beta_{1}^{*}} \bar{x} $$
 
 This method achieves the following two objectives:
 
 1. Minimize the squared residuals $(\sum e_n^2)$
 2. Make all residuals cancel out $(\sum e = 0)$
 
-There is one more lesson to get from this excercise. As you can probably imagine, findin the optimal $betas$ can become increasingly complicated very fast as we add more regressors to the model. Matrix algebra (very common in econometrics) can make the mathematics of econometrics much simpler. An example of this is in the next section, where we solve the same problem for a regression with multiple regressors. 
+There is one more lesson to get from this excercise. As you can probably imagine, finding the optimal $betas$ can become increasingly complicated very fast as we add more regressors to the model. Matrix algebra (very common in econometrics) can make the mathematics of econometrics much simpler. An example of this simpler approach is included in the next section, where we solve the same problem for a regression with multiple regressors. 
 
-{{<icon name="file-download" pack="fas" >}} {{% staticref "econometrics/lecture 02/OLS (simple example).xlsx" %}}Download Excel file with example.{{% /staticref %}}
+{{<icon name="file-download" pack="fas" >}} [Download simple OLS example](static/media/econometrics/lecture 02/OLS (simple example).xlsx))
 
 
+{{% staticref "econometrics/lecture 02/OLS (simple example).xlsx" %}}Download Excel file with example.{{% /staticref %}}
+
+
+static\media\econometrics\lecture 02\OLS (simple example).xlsx
+
+## How useful are univariate regressions?
