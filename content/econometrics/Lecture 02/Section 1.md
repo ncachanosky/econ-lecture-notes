@@ -186,7 +186,7 @@ There is one more lesson to get from this excercise. As you can probably imagine
 {{<icon name="file-download" pack="fas" >}} [Download simple OLS example](static/media/econometrics/lecture 02/OLS (simple example).xlsx)
 
 
-{{% staticref "econometrics/lecture 02/OLS (simple example).xlsx" %}}Download Excel file with example.{{% /staticref %}}
+{{% staticref "media/econometrics/lecture 02/OLS (simple example).xlsx" %}}Download Excel file with example.{{% /staticref %}}
 
 
 static\media\econometrics\lecture 02\OLS (simple example).xlsx
