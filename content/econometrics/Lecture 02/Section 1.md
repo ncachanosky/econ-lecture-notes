@@ -229,7 +229,7 @@ If we now replace $\hat{\beta_0}$ into the equation:
 $$
 \begin{align}
 \hat{Y}_i &= \hat{\beta_0} + \hat{\beta_1} x_i \\\\[10pt]
-          &= \right( \bar{Y} - \hat{\beta_1} \bar{x} \left) + \hat{\beta_1) x_i} \\\\[10pt]
+          &= \left( \bar{Y} - \hat{\beta_1} \bar{x} \right) + \hat{\beta_1) x_i} \\\\[10pt]
           &= \bar{Y} + \hat{\beta_1} (x_i - \bar{x})
 \end{align}
 $$
