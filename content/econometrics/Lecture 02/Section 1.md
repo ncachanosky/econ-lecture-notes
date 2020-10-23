@@ -76,7 +76,7 @@ Do not confuse the [**error term** with the **residual**](https://en.wikipedia.o
 The *error* is the difference between the **conditional expected** value of the dependent variable $(E[Y|x])$ and a random observation taken from the sample: $\varepsilon_i = E[Y|x_i] - Y_i$. If the mean mileage of a car with a weight of 2000 pounds is 27 mpg and a randomly observed car has an mpg of 25, then the error is 2 mpg. A regression assumes these errors are random. The error captures random effects that make the dependent variable deviate from its mean (for instance random measurement errors).
 
 **The residual $(e)$**  
-The residual (or fitting deviation) is the difference between the conditional mean of the dependent variable $(E[Y|x])$ and the predicted value $(\hat{Y})$: $e_i = E[Y|x] - \hat{Y_i}$. In other words, the residual is the difference between the observed data (sample) and the model predictions. In this sense. the *residual* is like a *proxy* of the unovserbable *error*.
+The residual (or fitting deviation) is the difference between an observed value $(Y_i)$ and its prediction $(\hat{Y_i})$: $e_i = Y_i - \hat{Y_i}$. For instance, the observe mileage of a car if 27 mpg and the model predicts 23 mpg, then the residual is 4 mpg (the unexplained residue of the model) In this sense, the *residual* is like an observable *proxy* of the unovserbable *error*.
 {{% /callout %}}
 
 Our example has 74 observations. Because the model can predict one $mpg$ for each car $weight$, there is one *residual* for each observation. Because $\hat{Y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$, we can see that
