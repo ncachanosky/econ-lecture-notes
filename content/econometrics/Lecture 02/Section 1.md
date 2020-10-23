@@ -104,8 +104,8 @@ The OLS estimation fits the *best* line through the points in the scatter plot. 
 
 *|CELL 1|----------------------------------------------------------------------*
 *|Settings and required data
-set scheme scientific	// Set plot scheme
-sysuse auto				// Load 1978 Automobile Data from STATA
+set scheme scientific  // Set plot scheme
+sysuse auto  // Load 1978 Automobile Data from STATA
 
 *|CELL 2|----------------------------------------------------------------------*
 *|Build scatter plots
@@ -128,7 +128,7 @@ twoway scatter mpg weight, ///
 
 The dashed line plots the fitted line, that is, all the $\hat{Y}$ values estimated by the regression. This line can be interpreted as the expected value of $Y$ conditional on a given value of $x$. Because $e$ is random, $E[Y|x] = \hat{Y}$.
 
-We can use the same dataset to illustrate the importance of having a large and representative sample. The `STATA` code below creates to random subsamples with half obsercations each. The figure shows how different samples of the same populatoin can lead to different regression results (because the code uses random values, your own results will not coincide with the ones below)
+We can use the same dataset to illustrate the importance of having a large and representative sample. The `STATA` code below creates two random subsamples with half observations each. The figure shows how different samples of the same populatoin can lead to different regression results (because the code uses random values, your own results will not coincide with the ones below)
 
 ```stata
 *==============================================================================*
@@ -139,8 +139,8 @@ We can use the same dataset to illustrate the importance of having a large and r
 
 *|CELL 1|----------------------------------------------------------------------*
 *|Settings and required data
-set scheme scientific	// Set plot scheme
-sysuse auto				// Load 1978 Automobile Data from STATA
+set scheme scientific  // Set plot scheme
+sysuse auto  // Load 1978 Automobile Data from STATA
 
 *|CELL 2|----------------------------------------------------------------------*
 *|Sort the dataset randomly
@@ -224,10 +224,22 @@ Now use the value of $\hat{\beta_1}$ to get the value of $\hat{\beta_0}$:
 
 $$ \hat{\beta_{0}^{*}} = \bar{Y} - \hat{\beta_{1}^{*}} \bar{x} $$
 
+If we now replace $\hat{\beta_0}$ into the equation:
+
+$$
+\begin{align}
+\hat{Y}_i &= \hat{\beta_0} + \hat{\beta_1} x_i \\\\[10pt]
+          &= \right( \bar{Y} - \hat{\beta_1 \bar{x}} \left) + \hat{\beta_1) x_i} \\\\[10pt]
+          &= \bar{Y} + \hat{\beta_1} (x_i - \bar{x})
+\end{align}
+$$
+
 This method achieves the following two objectives:
 
 1. Minimize the squared residuals $(\sum e_n^2)$
-2. Make all residuals cancel out $(\sum e = 0)$
+1. Make all residuals cancel out $(\sum e = 0)$
+1. The fitted line passes through the sample means $(\bar{Y}, \bar{x})$.
+1. The mean value of $Y$ equals the mean value of $\hat{Y}$.
 
 There is one more lesson to get from this excercise. As you can probably imagine, finding the optimal $betas$ can become increasingly complicated very fast as we add more regressors to the model. Matrix algebra (very common in econometrics) can make the mathematics of econometrics much simpler. An example of this simpler approach is included in the next section, where we solve the same problem for a regression with multiple regressors. 
 
