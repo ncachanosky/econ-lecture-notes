@@ -64,6 +64,11 @@ In econometrics, the word **explanation** does not have a *cause-effect* meaning
 
 {{% /callout %}}
 
+## Regression and causality
+*Cause and effect* relationships belong the real of economic *theory*. Econometrics is about *measurement*. A regression captures correlations between variables, that is, co-movements. The fact that two variables are somehow correlated does not mean in itself there is a cause-effect relationship between these two variables regardless of how strong the statistical relationship is. 
+
+The fact that econometrics is built over an economic theory, or over some cause-effect hunch, does not mean a regression is showing causality. For instance, variables $x$ and $y$ may have no causality relationship and still be correlated if both of them are independnetly related to the same variable $z$. The overlap of a regression over a theory should not lead us to confussion about what a regression can and cannot show. 
+
 ---
 ## Types of datasets
 What type of econometric techniques can be used depends on the type of data at your disposal. There are three types of datasets:

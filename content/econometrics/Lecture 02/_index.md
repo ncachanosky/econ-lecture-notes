@@ -8,5 +8,5 @@ title: Ordinary Least Squares (OLS)
 type: book  # Do not modify.
 ---
 
-{{% toc %}}
+
 

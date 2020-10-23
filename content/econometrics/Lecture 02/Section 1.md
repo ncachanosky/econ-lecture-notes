@@ -23,7 +23,9 @@ Y_n   &= \beta_0 + \beta_1 x_n + \varepsilon_n
 \end{align}
 $$
 
-The error term $(\varepsilon)$ is capturing random situations that would affect the mileage of the car, such as weather conditions, average speed of the driver, or altitude.
+The error term $(\varepsilon)$ is capturing random situations that would affect the mileage of the car, such as weather conditions, average speed of the driver, or altitude. The error term is purely random and captures the variations of $Y$ that cannot be explained by $x$. An econometric regression has a deterministic component (the constant plus the regressors) and a stochastic component (the error term). Therefore, the dependent variable $Y$ is also stochastic. There is an assymmetry in how variables are treated; while the dependent variable is assumed to be *stochastic*, the regressors are assumed to be *deterministic*.[^1]
+
+We can also see that $\beta_1$ is the **marginal effect** of $x$ on $Y$: $\frac{\partial Y}{\partial x} = \beta_1$.
 
 Let's use the 1978 automobile dataset in `STATA` and run a [scatter plot](https://en.wikipedia.org/wiki/Scatter_plot) between mileage and weight. The following `STATA` code will produce the scatter plot shown below ([Figure 1](#figure--scatter-plot-mileage-versus-weight)). The dataset has 74 observations, therefore the scatter plot will have 74 points (mileage-weight relationships).
 
@@ -124,6 +126,8 @@ twoway scatter mpg weight, ///
 
 {{< figure library="true" src="econometrics/lecture 02/Fig 2.02.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
 
+The dashed line plots the fitted line, that is, all the $\hat{Y}$ values estimated by the regression. This line can be interpreted as the expected value of $Y$ conditional on a given value of $x$: $E[Y|x] = \hat{Y}$ (because $e$ is random, $E[e] = 0$.
+
 ### Algebraic solution
 To find the $betas$ that minimize the sum of the squared residuals we proceed in a typical way:
 
@@ -191,3 +195,8 @@ There is one more lesson to get from this excercise. As you can probably imagine
 Using a single regressor has very limited *practical* applications. Most regressions use several regressors to (1) achieve a better estimation and (2) obtain a more accurate intepretation of the $betas$. 
 
 However, a univariate regression is very useful *pedagogically* because it offers a simple way to understand what a statistical software is doing behind the scenes when you run a regression. The most important lesson of this section is to understand what OLS is doing, and how is it doing it.
+
+
+
+<!-- FOOTNOTES -->
+[^1]: Of course, the regressors may also be stochastic variables. However, a regression **assumes** they are deterministic. 
