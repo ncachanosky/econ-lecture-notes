@@ -65,11 +65,11 @@ We need to find the values of $\beta_0$ and $\beta_1$ that would minimize predic
 
 $$ \hat{Y_i} = \hat{\beta_0} + \hat{\beta_1} x_i $$
 
-Before proceeding, is important to distinguish betweeen the **error (or disturbance)** term $(\varepsilon)$ and the **residual** $(e).$
+Before proceeding, is important to distinguish betweeen the **error (or disturbance)** term $(\varepsilon)$ and the **residual** $(e).$[^2]
 
 
 {{% callout warning %}}
-Do not confuse the [**error term** with the **residual**](https://en.wikipedia.org/wiki/Errors_and_residuals).[^2]
+Do not confuse the [**error term** with the **residual**](https://en.wikipedia.org/wiki/Errors_and_residuals).
 
 ---
 **The error $(\varepsilon)$ term**  
@@ -91,7 +91,7 @@ $$
 Yet, there is still a situation that requires a solution. We can fit an infinite number of lines that will make the sumation of all the *residuals* equal to zero $(\sum^{74}_{i=1} e_i = 0)$ (residuals cancel out)). Canceling the residuals is not enough because only one of those infinite lines is the one we are looking for. To find the line we are looking for OLS minimizes the **squared** residuals. We can now state the OLS problem in more precise terms:
 
 $$
-\operatorname*{min}_{\beta_{1,2}} \sum_i e_i^2 = \operatorname*{min}_{\beta} \sum_n (Y_i - \hat{\beta_0} - \hat{\beta_1} x_i)^2
+\operatorname*{min}_{\beta_{0,1}} \sum_i e_i^2 = \operatorname*{min}_{\beta_{0,1}} \sum_n (Y_i - \hat{\beta_0} - \hat{\beta_1} x_i)^2
 $$
 
 Squaring the residuals has the following two attributes:
