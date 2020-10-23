@@ -229,7 +229,7 @@ If we now replace $\hat{\beta_0}$ into the equation:
 $$
 \begin{align}
 \hat{Y}_i &= \hat{\beta_0} + \hat{\beta_1} x_i \\\\[10pt]
-          &= \left( \bar{Y} - \hat{\beta_1} \bar{x} \right) + \hat{\beta_1) x_i} \\\\[10pt]
+          &= \left( \bar{Y} - \hat{\beta_1} \bar{x} \right) + \hat{\beta_1} x_i \\\\[10pt]
           &= \bar{Y} + \hat{\beta_1} (x_i - \bar{x})
 \end{align}
 $$
@@ -239,7 +239,7 @@ This method achieves the following two objectives:
 1. Minimize the squared residuals $(\sum e_n^2)$
 1. Make all residuals cancel out $(\sum e = 0)$
 1. The fitted line passes through the sample means $(\bar{Y}, \bar{x})$.
-1. The mean value of $Y$ equals the mean value of $\hat{Y}$.
+1. The mean value of $Y$ equals the mean value of $\hat{Y}$ (because $\sum (x_i - \bar{x}) =0$).
 
 There is one more lesson to get from this excercise. As you can probably imagine, finding the optimal $betas$ can become increasingly complicated very fast as we add more regressors to the model. Matrix algebra (very common in econometrics) can make the mathematics of econometrics much simpler. An example of this simpler approach is included in the next section, where we solve the same problem for a regression with multiple regressors. 
 
