@@ -187,6 +187,6 @@ This method achieves the following two objectives:
 
 There is one more lesson to get from this excercise. As you can probably imagine, findin the optimal $betas$ can become increasingly complicated very fast as we add more regressors to the model. Matrix algebra (very common in econometrics) can make the mathematics of econometrics much simpler. An example of this is in the next section, where we solve the same problem for a regression with multiple regressors. 
 
-{{<icon name="file-download" pack="fas" >}} Download Excel file with example.
+{{<icon name="file-download" pack="fas" >}} {{% staticref "econometrics/lecture 02/OLS (simple example).xlsx" %}}Download Excel file with example.{{ /staticref %}}
 
 
