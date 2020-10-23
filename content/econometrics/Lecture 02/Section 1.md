@@ -67,12 +67,9 @@ $$ \hat{Y_i} = \hat{\beta_0} + \hat{\beta_1} x_i $$
 
 Before proceeding, is important to distinguish betweeen the **error (or disturbance)** term $(\varepsilon)$ and the **residual** $(e).$
 
-{{% callout warning %}}
-Do not confuse the **error** term with the **residual**.
-{{% /callout %}}
 
 {{% callout warning %}}
-Do not confuse the **error** term with the **residual**.
+Do not confuse the [**error** term with the **residual**](https://en.wikipedia.org/wiki/Errors_and_residuals).
 
 **The error $(\varepsilon)$ term**  
 The *error* is the difference between the **conditional expected** value of the dependent variable $(E[Y|x])$ and a random observation taken from the sample: $\varepsilon_i = E[Y|x_i] - Y_i$. If the mean mileage of a car with a weight of 2000 pounds is 27 mpg and a randomly observed car has an mpg of 25, then the error is 2 mpg. A regression assumes these errors are random. The error captures random effects that make the dependent variable deviate from its mean (for instance random measurement errors).
