@@ -93,7 +93,7 @@ Squaring the residuals has the following two attributes:
 1. Allows to find a unique solution to the OLS problem.
 2. It penalizes at a higher rate larger than smaller residuals.
 
-The OLS estimation fits the *best* line through the points in the scatter plot. Where *best* is defined as minimizins the squared residuals constrained on the prediction being a straight line. We can see the result below and then proceed to discuss the mathematical estimation technique in more detail.
+The OLS estimation fits the *best* line through the points in the scatter plot. Where *best* is defined as minimizins the squared residuals constrained on the prediction being a straight line. The following `STATA` code adds the regression result to the scatter plot.
 
 ```stata
 *==============================================================================*
@@ -126,7 +126,51 @@ twoway scatter mpg weight, ///
 
 {{< figure library="true" src="econometrics/lecture 02/Fig 2.02.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
 
-The dashed line plots the fitted line, that is, all the $\hat{Y}$ values estimated by the regression. This line can be interpreted as the expected value of $Y$ conditional on a given value of $x$: $E[Y|x] = \hat{Y}$ (because $e$ is random, $E[e] = 0$.
+The dashed line plots the fitted line, that is, all the $\hat{Y}$ values estimated by the regression. This line can be interpreted as the expected value of $Y$ conditional on a given value of $x$. Because $e$ is random, $E[Y|x] = \hat{Y}$.
+
+We can use the same dataset to illustrate the importance of having a large and representative sample. The `STATA` code below creates to random subsamples with half obsercations each. The figure shows how different samples of the same populatoin can lead to different regression results (because the code uses random values, your own results will not coincide with the ones below)
+
+```stata
+*==============================================================================*
+* ORDINARLY LEAST SQUARES
+* Univariate regression
+* Code sample: 2.3
+*==============================================================================*
+
+*|CELL 1|----------------------------------------------------------------------*
+*|Settings and required data
+set scheme scientific	// Set plot scheme
+sysuse auto				// Load 1978 Automobile Data from STATA
+
+*|CELL 2|----------------------------------------------------------------------*
+*|Sort the dataset randomly
+generate random = runiform()
+sort random
+
+generate id = _n <= 74/2
+
+*|CELL 3|----------------------------------------------------------------------*
+*|Build scatter plots
+twoway scatter mpg weight if id==0, ///
+	   mcolor(red%50) ///
+	   xlabel(2000(500)5000) ///
+	   ylabel(10(5)40) ///
+	   xlabel(, grid labsize(small)) xtitle(, size(small)) ///
+	   ylabel(, grid labsize(small)) ytitle(, size(small)) ///
+	 ||lfit mpg weight if id==0, ///
+	   lcolor(red%50) ///
+	 ||scatter mpg weight if id==1, ///
+	   mcolor(green%50) msymbol(O) ///
+	 ||lfit mpg weight if id==1, ///
+	   lcolor(green%50) ///
+	   legend(off)
+	   
+*==============================================================================*
+*|THE END|=====================================================================*
+*==============================================================================*
+```
+
+{{< figure library="true" src="econometrics/lecture 02/Fig 2.03.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
 
 ### Algebraic solution
 To find the $betas$ that minimize the sum of the squared residuals we proceed in a typical way:
