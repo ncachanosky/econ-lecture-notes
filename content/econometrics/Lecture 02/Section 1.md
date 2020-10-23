@@ -183,13 +183,11 @@ This method achieves the following two objectives:
 
 There is one more lesson to get from this excercise. As you can probably imagine, finding the optimal $betas$ can become increasingly complicated very fast as we add more regressors to the model. Matrix algebra (very common in econometrics) can make the mathematics of econometrics much simpler. An example of this simpler approach is included in the next section, where we solve the same problem for a regression with multiple regressors. 
 
-{{<icon name="file-download" pack="fas" >}} [Download simple OLS example](static/media/econometrics/lecture 02/OLS (simple example).xlsx)
+{{<icon name="file-excel" pack="fas" >}} {{% staticref "media/econometrics/lecture 02/OLS (simple example).xlsx" %}}Download OLS simple example.{{% /staticref %}}
 
-
-{{% staticref "media/econometrics/lecture 02/OLS (simple example).xlsx" %}}Download Excel file with example.{{% /staticref %}}
-
-
-static\media\econometrics\lecture 02\OLS (simple example).xlsx
 
 ---
 ## How useful are univariate regressions?
+Using a single regressor has very limited *practical* applications. Most regressions use several regressors to (1) achieve a better estimation and (2) obtain a more accurate intepretation of the $betas$. 
+
+However, a univariate regression is very useful *pedagogically* because it offers a simple way to understand what a statistical software is doing behind the scenes when you run a regression. The most important lesson of this section is to understand what OLS is doing, and how is it doing it.
