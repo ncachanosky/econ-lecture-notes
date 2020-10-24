@@ -15,14 +15,14 @@ type: book  # Do not modify.
 ## What is econometrics?
 It is easy to infer a definition of [**econometrics**](https://en.wikipedia.org/wiki/Econometrics) from its etymology. The literal interpretation of the word *econometrics* is *economic measurement*. More precisely, econometrics is the application of statistical techniques to economics.
 
-Econometrics is not in itself economic theory. It is, however, one of its complements. Economic theory estipulates *qualitative* relationships. For instance, a demand function can be represented as $Q^D = a - bp$; where $Q^D$ is the quantity demanded, $p$ is the price of the good in question, and $a$ and $b$ are two parameters. From economic **theory** we know that $a$ and $b$ are positive $(a, b, >0)$. However, economic theory **does not** give values to either $a$ or $b$. We do not know, just from theory, how steep the demand line is. Econometrics is a method through which the values of $a$ and $b$ are estimated. If economic theory is **qualitative**, then econometrics is **quantitative**.
+Econometrics is not in itself economic theory. It is, however, one of its important complements. Economic theory estipulates *qualitative* relationships. For instance, a demand function can be represented as $q^D = a - bp$; where $q^D$ is the quantity demanded, $p$ is the price of the good in question, and $a$ and $b$ are two parameters. From economic **theory** we know that $a$ and $b$ are positive $(a, b, >0)$. However, economic theory **does not** give values to either $a$ or $b$. We do not know, just from theory, how steep the demand line is. Econometrics is a statistical method through which the values of $a$ and $b$ are estimated. Put it differently, if economic theory is **qualitative**, then econometrics is **quantitative**.
 
 Note that econometrics uses the values of **observable** economic **variables** (such as quantities and prices) to estimate what would be the **parameters** in an economic model (such as $a$ and $b$ in the demand function). This is a different excercise from finding, say, an $x^*$ that optimizes the value of $y = f(x)$ with **given** parameter values.
 
 
 ---
 ## Uses of econometrics
-Because econometrics itself is a method to measure economic parameters, it can be used in different ways such as:
+Econometrics is a technique that can be used in different ways such as:
 
 * To test an hypothesis
 * To make an economic description
@@ -30,7 +30,7 @@ Because econometrics itself is a method to measure economic parameters, it can b
 
 For instance, you may want to test the hunch or intuition (the hypothesis) that the point-elasiticy of the demand function equals 1 at a given price.[^1] Alternatively, you may just be interested in what the slope of the demand is at a given price range, so that you can plan your business strategy accordingly. Finally, you may want to estimate what the quantity demanded of a gadget you produce would be in a country where you do not operate by looking at data from countries where you do have business operations.
 
-These are three very distinctive uses of econometrics. These different uses also shows that econometrics, and doing empirical work, is not just about testing hypothesis. Furthermore, this also means that, epistemologically speaking, doing econometrics and empirical work does not mean one is necessarily being a logical positivist (later known as [logical empiricism](https://plato.stanford.edu/entries/logical-empiricism/)).
+These are three very distinctive uses of econometrics. These different uses also shows that econometrics, and doing empirical work, is not just about testing hypothesis. It can also be descriptive or predictive. Furthermore, this also means that, epistemologically speaking, doing econometrics and empirical work does not mean one is necessarily being a logical positivist (later known as [logical empiricism](https://plato.stanford.edu/entries/logical-empiricism/)).
 
 
 ---
@@ -38,24 +38,22 @@ These are three very distinctive uses of econometrics. These different uses also
 ### Regression analysis and the estimation rule
 There are different ways to estimate the value of a parameter, such as the slope of a demand function. One alternative is to ask your mother what value she thinks the slope has. This is an easy method, but also very likely to be very innacurate. Econometrics applies regression analysis to infer a more accurate estimation of these parameters. 
 
-The estimation of the slope of a demand function makes use (ideally) of a large set of price and quantities. All these prices and quantities do not offer a perfect match to one and unique slope of the demand function. Therefore, we need a rule to decide how the slope must be estimated. The econometric technique is mostly built to minimize errors between what the econometric model estimates and the observed data.
+The estimation of the slope of a demand function makes use (ideally) of a large set of price and quantities. All these prices and quantities do not offer a perfect match to one and unique slope of the demand function. Therefore, we need a *rule* to decide how the slope must be estimated. The econometric technique is mostly built to minimize mistakes between what the econometric model estimates and the observed data.
 
-### Example
-Let the quantity demanded of a good $(Q^D)$ depend on its price $p$, the price of a substitute good $p_S$, and the level of disposable income of potential customers $Y_D$. Then, we can represnet this relationship in the following way
+### Illustrative example
+Let the quantity demanded of a good $(q^D)$ depend on its price $p$, the price of a substitute good $p_S$, and the level of disposable income of potential customers $Y_D$. Then, we can represent this relationship in the following way
 
-$$ Q^D = \beta_0 + \beta_1 P + \beta_2 P_S + \beta_3 Y_D + \epsilon $$
+$$ q^D = \beta_0 + \beta_1 P + \beta_2 P_S + \beta_3 Y_D + \varepsilon $$
 
-Through data collection (observation) we know values of $Q^D$, $P$, $P_S$, and $Y_D$. The betas $(\beta_1, ..., \beta_3)$ represent the marginal effects of each variable has on $Q^D$. We also know that our observations are going to be imperfect and, therefore, there is some *error* $(\epsilon)$ between our observed data and $Q^D$. As will be clear later, regressions typically have a constant term $(\beta_0)$.
+Through data collection (observation) we know values of $q^D$, $p$, $p_S$, and $Y_D$. The betas $(\beta_1, ..., \beta_3)$ represent the marginal effects of each variable has on $q^D$. After applying a regression analysis we get an estimation of the parameters, that is, the $betas$. Our estimated model may look the following way (where the *hats* denote estimated values):
 
-After applying a regression analysis we get an estimation of the parameters, that is, the betas. Our estimated model may look the following way (where the *hats* denote estimated values):
+$$ \hat{q^D} = \hat{\beta_0} + \hat{\beta_1} p + \hat{\beta_2} p_S + \hat{\beta_3} Y_D $$
 
-$$ \hat{Q^D} = \hat{\beta_0} + \hat{\beta_1} P + \hat{\beta_2} P_S + \hat{\beta_3} Y_D $$
+$$ \hat{q^D} = 25 - 0.25 p + 0.15 p_S + 0.10 Y_D $$
 
-$$ \hat{Q^D} = 25 - 0.25 P + 0.15 P_S + 0.10 Y_D $$
+At this point is enough to point to two issues. The first one is that there is *hat* on top of $q^D$. This means that once you have your $beta$ estimations, you can use the prices and disposable income informatio to *predict* or *estimate* values of $q^D$. The second one is that there is no error term in the estimated equation. 
 
-At this point is enough to point to two issues. The first one is that there is *hat* on top of $Q^D$. This means that once you have your beta estimations,you can use the prices and disposable income informatio to *predict* or *estimate* values of $Q^D$. The second one is that there is no error term. The error term, which is unobservable, is estimated by the *residual* $(e)$, which will be the difference between the real and observed $Q^D$ and the model estimation $\hat{Q^D}$: $e = Q^D - \hat{Q^D}$.
-
-Now, some terminology. The left-hand variable $(Q^D)$ is called the dependent variable. The right-hand variables are called the **regressors** (what would be the *independent* variables).
+Now, some terminology. The left-hand variable $(q^D)$ is called the dependent variable. The right-hand variables are called the **regressors** (what would be the *independent* variables).
 
 {{% callout warning %}}
 In econometrics, the word **explanation** means that a change of a variable is correlated ("explains") part of the change of the dependent variable.
@@ -65,19 +63,23 @@ In econometrics, the word **explanation** does not have a *cause-effect* meaning
 {{% /callout %}}
 
 ## Regression and causality
-*Cause and effect* relationships belong the real of economic *theory*. Econometrics is about *measurement*. A regression captures correlations between variables, that is, co-movements. The fact that two variables are somehow correlated does not mean in itself there is a cause-effect relationship between these two variables regardless of how strong the statistical relationship is. 
+*Cause and effect* relationships belong to the realm of economic *theory*. Econometrics is about *measurement*. A regression captures correlations between variables, that is, co-movements. The fact that two variables are somehow correlated does not mean in itself there is a cause-effect relationship between these two variables regardless of how strong the statistical relationship is. 
 
 The fact that econometrics is built over an economic theory, or over some cause-effect hunch, does not mean a regression is showing causality. For instance, variables $x$ and $y$ may have no causality relationship and still be correlated if both of them are independnetly related to the same variable $z$. The overlap of a regression over a theory should not lead us to confussion about what a regression can and cannot show. 
 
+{{% callout note %}}
+A regression shows **correlations**, it does not show or prove **causality**.
+{{% /callout %}}
+
 ---
-## Types of datasets
-What type of econometric techniques can be used depends on the type of data at your disposal. There are three types of datasets:
+## Types of data
+What type of econometric techniques can be used depends on the type of data you have at your disposal. There are three types of datasets:
 
 1. Cross-sectional
 2. Time-series
 3. Panel data (also known as longitudinal data)
 
-**Cross-sectional** data is the case when the data includes a number of *sections* with data for one time-period only. For instance, income and unemlpoyment informatio for the 50 U.S. states for the year 1930.
+**Cross-sectional** data is the case when you have a number of *sections* with data for one time-period only. For instance, income and unemlpoyment information for the 50 U.S. states for the year 1930.
 
 **Time-series** data is the inverse situation. The dataset has information of one section for a number of years. For instance, the unemployment rate of the state of Colorado between 1920 and 1950.
 
@@ -102,9 +104,11 @@ Therefore, econometrics is not only a scientific application, it also an **art**
 ### A word of advice: Do not confuse econometrics with economics
 Even thouth econometrics is an important field in economics, neither econometrics is economics nor economics is econometrics. 
 
-Anyone can be an excellent economisit and at the same time have a very limited knowledge of econometrics. In fact, some of the most influential scholars such as [James M. Buchanan](https://en.wikipedia.org/wiki/James_M._Buchanan[), [Ronald H. Coase](https://en.wikipedia.org/wiki/Ronald_Coase), or [Friedrich A. von Hayek](https://en.wikipedia.org/wiki/Friedrich_Hayek) made little of use intense mathematics or econometric applications.
+Anyone can be an excellent economist and at the same time have a very limited knowledge of econometrics. In fact, some of the most influential scholars such as [James M. Buchanan](https://en.wikipedia.org/wiki/James_M._Buchanan[), [Ronald H. Coase](https://en.wikipedia.org/wiki/Ronald_Coase), or [Friedrich A. von Hayek](https://en.wikipedia.org/wiki/Friedrich_Hayek) made little use of intense mathematics or econometric applications.
 
-Inversely, someone can be an outstanding econometrician while being clueless about economics. Economics is way of thinking (theory) about how the world looks. Economics itself is not a way of testing an hypothesis. Statistics without a theory is not economics, it is just statistics. To wit, [economics is not statistics (and vice versa)](https://www.peterleeson.com/Economics_is_Not_Statistics.pdf).
+Inversely, someone can be an outstanding econometrician while being clueless about economics. Economics is a way of thinking (theory) about how the world works. Economics itself is not a way of testing an hypothesis. Statistics without a theory is not economics, it is just statistics. To wit, [economics is not statistics (and vice versa)](https://www.peterleeson.com/Economics_is_Not_Statistics.pdf).
+
+To sum, you can be a great economists with little knowledge of econometrics, such as you can become a great econometrician but not become a great economist.
 
 
 

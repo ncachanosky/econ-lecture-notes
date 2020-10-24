@@ -254,7 +254,7 @@ There is one more lesson to get from this excercise. As you can probably imagine
 
 ---
 ## How useful are univariate regressions?
-Using a single regressor has very limited *practical* applications. Most regressions use several regressors to (1) achieve a better estimation and (2) obtain a more accurate intepretation of the $betas$. 
+Using a single regressor has very limited *practical* applications. Most regressions use several regressors to (1) achieve a better estimation of the dependent variable and (2) obtain a more accurate intepretation of the $betas$. 
 
 However, a univariate regression is very useful *pedagogically* because it offers a simple way to understand what a statistical software is doing behind the scenes when you run a regression. The most important lesson of this section is to understand what OLS is doing, and how is it doing it.
 
