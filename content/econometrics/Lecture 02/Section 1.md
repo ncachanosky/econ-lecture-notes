@@ -25,7 +25,7 @@ The error term $(\varepsilon)$ is capturing random situations that would affect 
 
 We can also see that $\beta_1$ is the **marginal effect** of $x$ on $Y$: $\frac{\partial Y}{\partial x} = \beta_1$.
 
-Let's use the 1978 automobile dataset in `STATA`. The code blow produces a [scatter plot](https://en.wikipedia.org/wiki/Scatter_plot) between mileage (mpg) and weight (lbs.) The dataset has 74 observations, therefore the scatter plot will have 74 points (mileage-weight relationships).
+Let's use the 1978 automobile dataset in `STATA` to illustrate how OLS works. The code below produces a [scatter plot](https://en.wikipedia.org/wiki/Scatter_plot) between mileage (mpg) and weight (lbs.) The dataset has 74 observations, therefore the scatter plot has 74 points as well (mileage-weight relationships).
 
 
 ```stata
@@ -54,12 +54,12 @@ twoway scatter mpg weight, ///
 
 {{< figure library="true" src="econometrics/lecture 02/Fig 2.01.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
 
-We can draw an infinite number of lines that go through the scatter plot. But, we are not looking for *any* line, we are looking for the line that would minimize errors between a predicted mileage and the observed mileage when looking at the weight ofa car. OLS is a method to find such line. 
+Looking at the scatter plot, we can imagine an infinite number of lines that can go through all those points. But, we are not looking for *any* line, we are looking for the line that would minimize deviations between a predicted mileage and the observed mileage when looking at the weight ofa car. OLS is a method to find such line. 
 
 ---
 ## The OLS method
 ### What is OLS doing?
-We need to find the values of $\beta_0$ and $\beta_1$ that would minimize prediction mistakes. Once we have estimated values for our $betas$, we can use the $weight$ data to predict $mileage$ with the smaller errors possible. The following equation shows the notation of the econometric model using the estimated parameter to predict values of the dependent variables.
+We need to find the values of $\beta_0$ and $\beta_1$ that would minimize prediction mistakes. Once we have estimated values for our $betas$, we can use the $weight$ data to predict $mileage$ with the smaller errors possible. The following equation shows the notation of the econometric model using the estimated parameter to predict values of the dependent variables (note the absence of $\varepsilon$).
 
 $$ \hat{Y_i} = \hat{\beta_0} + \hat{\beta_1} x_i $$
 
@@ -71,13 +71,13 @@ Do not confuse the [**error term** with the **residual**](https://en.wikipedia.o
 
 ---
 **The error $(\varepsilon)$ term**  
-The *error* is the difference between the **expected** value of the dependent variable $(E[Y])$ and a random observation taken from the sample: $\varepsilon_i = E[Y] - Y_i$. If the mean mileage of a car with a weight of 2000 pounds is 27 mpg and a randomly observed car has an mpg of 25, then the error is 2 mpg. A regression assumes these errors are random. The error captures random effects that make the dependent variable deviate from its mean (for instance random measurement errors).
+The *error* is the difference between the **expected** value of the dependent variable $(E[Y])$ and a random observation taken from the sample: $\varepsilon_i = E[Y] - Y_i$. If the mean mileage of a car is 27 mpg and a randomly observed car has an mpg of 25, then the error is 2 mpg. A regression assumes these errors are random. The error captures random effects that make the dependent variable deviate from its mean (for instance random measurement errors).
 
 **The residual $(e)$**  
-The residual (or fitting deviation) is the difference between an observed value $(Y_i)$ and its prediction $(\hat{Y_i})$: $e_i = Y_i - \hat{Y_i}$. For instance, the observe mileage of a car if 27 mpg and the model predicts 23 mpg, then the residual is 4 mpg (the unexplained residue of the model) In this sense, the *residual* is like an observable *proxy* of the unovserbable *error*.
+The residual (or fitting deviation) is the difference between an observed value $(Y_i)$ and its prediction $(\hat{Y_i})$: $e_i = Y_i - \hat{Y_i}$. For instance, the observe mileage of a car if 27 mpg and the model predicts 23 mpg, then the residual is 4 mpg (the unexplained residue of the model). In this sense, the *residual* is an estimation of the unovserbable *error*.
 {{% /callout %}}
 
-Our example has 74 observations. Because the model can predict one $mpg$ for each car $weight$, there is one *residual* for each observation. Because $\hat{Y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$, we can see that
+Our example has 74 observations. Given that the model can predict one $mpg$ for each car $weight$, there is one *residual* for each observation. Because $\hat{Y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$, we can see that
 
 $$
 \begin{align}
@@ -86,7 +86,7 @@ e_i &= Y_i - (\hat{\beta_0} + \hat{\beta_1} x_i)
 \end{align}
 $$
 
-Yet, there is still a situation that requires a solution. We can fit an infinite number of lines that will make the sumation of all the *residuals* equal to zero $(\sum^{74}_{i=1} e_i = 0)$ (residuals cancel out)). Canceling the residuals is not enough because only one of those infinite lines is the one we are looking for. To find the line we are looking for OLS minimizes the **squared** residuals. We can now state the OLS problem in more precise terms:
+Yet, there is still a situation that requires a workaroung. We can fit an infinite number of lines that will make the sumation of all the *residuals* equal to zero $(\sum^{74}_{i=1} e_i = 0)$ (residuals cancel out). Canceling the residuals is not enough because only one of those infinite lines is the one we are looking for. To find the line we are looking for, OLS minimizes the **squared** residuals. We can now state the OLS problem in more precise terms:
 
 $$
 \operatorname*{min}_{\beta_{0,1}} \sum_i e_i^2 = \operatorname*{min}_{\beta_{0,1}} \sum_n (Y_i - \hat{\beta_0} - \hat{\beta_1} x_i)^2
@@ -118,8 +118,8 @@ twoway scatter mpg weight, ///
 	   xlabel(2000(500)5000) ///
 	   ylabel(10(5)40) ///
 	   xlabel(, grid labsize(small)) xtitle(, size(small)) ///
-	   ylabel(, grid labsize(small)) ytitle(, size(small)) || ///
-	   lfit mpg weight, ///
+	   ylabel(, grid labsize(small)) ytitle(, size(small)) ///
+	 ||lfit mpg weight, ///
 	   lcolor(black) ///
 	   legend(position(6) rows(1) size(vsmall))
 	   
@@ -132,7 +132,7 @@ twoway scatter mpg weight, ///
 
 The dashed line plots the fitted line, that is, all the $\hat{Y}$ values estimated by the regression. This line can be interpreted as the expected value of $Y$ conditional on a given value of $x$. Because $e$ is random, $E[Y|x] = \hat{Y}$.
 
-We can use the same dataset to illustrate the importance of having a large and representative sample. The `STATA` code below creates two random subsamples with half observations each. The figure shows how different samples of the same populatoin can lead to different regression results (because the code uses random values, your own results will not coincide with the ones below)
+We can use the same dataset to illustrate the importance of having a large and representative sample. The `STATA` code below splits the 74 observations in two random groups of 37 each. The figure shows how each  sample taken the same population (all 74 datapoints) can lead to different regression results (because the code uses random values, your own result will not coincide with the one shown below)
 
 ```stata
 *==============================================================================*
@@ -209,7 +209,7 @@ N \bar{Y} - N \hat{\beta_0} - \hat{\beta_1} N \bar{x} &= 0 \\\\[10pt]
 \end{align}
 $$
 
-Replace now $\hat{\beta_0}$ into the second equation.
+Now replace $\hat{\beta_0}$ into the second equation.
 
 $$
 \begin{align}
@@ -240,8 +240,8 @@ $$
 
 This method has the following properties.:
 
-1. Minimizes the squared residuals $(\sum e_n^2)$
 1. Makes all residuals cancel out $(\sum e = 0)$
+1. Minimizes the squared residuals $(\sum e_n^2)$
 1. The fitted line passes through the sample means $(\bar{Y}, \bar{x})$.
 1. The mean value of $Y$ equals the mean value of $\hat{Y}$ (because $\sum (x_i - \bar{x}) =0$).
 
@@ -252,9 +252,9 @@ There is one more lesson to get from this excercise. As you can probably imagine
 
 ---
 ## How useful are univariate regressions?
-Using a single regressor has very limited *practical* applications. Most regressions use several regressors to (1) achieve a better estimation of the dependent variable and (2) obtain a more accurate intepretation of the $betas$. 
+Using a single regressor has very limited *practical* applications. Most regressions use several regressors in order to (1) achieve a better estimation of the dependent variable and (2) obtain a more accurate intepretation of the $betas$. 
 
-However, a univariate regression is very useful *pedagogically* because it offers a simple way to understand what a statistical software is doing behind the scenes when you run a regression. The most important lesson of this section is to understand what OLS is doing, and how is it doing it.
+However, a univariate regression is very useful *pedagogically* because it offers a simple way to understand what a statistical software is doing behind the scenes when you run a regression. The most important lesson of this section is to understand what OLS is doing, and how it is doing it.
 
 
 
