@@ -10,20 +10,18 @@ type: book  # Do not modify.
 
 ---
 ## What is Ordinary Least Squares (OLS)?
-[OLS](https://en.wikipedia.org/wiki/Ordinary_least_squares) is the most common method to estimate the *parameters* of a linear regression such that the sum of the **squared errors** is minimized. In more general terms, OLS is one application of a group of *linear least squares* methods.
+[OLS](https://en.wikipedia.org/wiki/Ordinary_least_squares) is the most common method to estimate the *parameters* of a linear regression such that the sum of the **squared errors** is minimized. In more general terms, OLS is one application of a group of [*linear least squares*](https://en.wikipedia.org/wiki/Linear_least_squares) methods.
 
-Assume we want to estimate the linear relationship between mileage (mpg) $(Y)$ of autombiles with respect to its weight $(x)$. The dependent variable is $Y$ and $x$ is the regressor. Then, we are assuming that $Y$ has a linear relationship with respect to its weight.
-
-Let $i = 1,...,N$ be the number of observations; that is, how many mileage and weight observations we have at our disposal. The theoretical representation of this relationship is the following:
+Assume we want to estimate the linear relationship between mileage (mpg) $(Y)$ of autombiles with respect to its weight $(x)$. The dependent variable is $Y$ and $x$ is the regressor. Then, we are assuming that $Y$ has a linear relationship with respect to its weight. Let $i = 1,...,N$ be the number of observations; that is, how many mileage and weight observations we have at our disposal. The theoretical representation of this relationship is the following:
 
 $$
-\begin{align}
+\begin{align*}
 mpg_n &= \beta_0 + \beta_1 weight_i + \varepsilon_i \\\\[10pt]
 Y_n   &= \beta_0 + \beta_1 x_i + \varepsilon_i
-\end{align}
+\end{align*}
 $$
 
-The error term $(\varepsilon)$ is capturing random situations that would affect the mileage of the car, such as weather conditions, average speed of the driver, or altitude. The error term is purely random and captures the variations of $Y$ that cannot be explained by $x$. We can then split an econometric regression in two parts. A deterministic component (the constant plus the regressors) and a stochastic component (the error term). Because $Y$ is modeled as a function of a deterministic and a random variable, $Y$ is also a random variable $Y = f(x, e)$. There is an assymmetry in how variables are treated; while the dependent variable is assumed to be *stochastic*, the regressors are assumed to be *deterministic*.[^1]
+The error term $(\varepsilon)$ is capturing random situations that would affect the mileage of the car, such as weather conditions, altitude, or different inclinations of the roads. The error term is purely random and captures the variations of $Y$ that cannot be explained by $x$. We can then split an econometric regression in two parts. A deterministic component (the constant plus the regressors) and a stochastic component (the error term). Because $Y$ is modeled as a function of a deterministic and a random variable, $Y$ is also a random variable: $Y = f(x, e)$. There is an assymmetry in how variables are treated; while the dependent variable is assumed to be *stochastic*, the regressors are assumed to be *deterministic*.[^1]
 
 We can also see that $\beta_1$ is the **marginal effect** of $x$ on $Y$: $\frac{\partial Y}{\partial x} = \beta_1$.
 
