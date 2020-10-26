@@ -238,10 +238,12 @@ $$
 \end{align}
 $$
 
+This last representation helps to understand that in econometrics, the word *explain* means how much of the change in the dependent variable is correlated with a change in a regressor. Meaning, how much of the dependent variable deviation from its own mean can be explained by a deviation of a regressor from its own mean.
+
 This method has the following properties.:
 
-1. Makes all residuals cancel out $(\sum e = 0)$
-1. Minimizes the squared residuals $(\sum e_n^2)$
+1. Makes all residuals cancel out $(\sum e = 0)$.
+1. Minimizes the squared residuals $(\sum e_n^2)$.
 1. The fitted line passes through the sample means $(\bar{Y}, \bar{x})$.
 1. The mean value of $Y$ equals the mean value of $\hat{Y}$ (because $\sum (x_i - \bar{x}) =0$).
 

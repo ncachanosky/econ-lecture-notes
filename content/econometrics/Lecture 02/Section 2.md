@@ -1,12 +1,24 @@
 ---
 # Title, summary, and page position.
-linktitle: "Multivariate regression"
+linktitle: "Multivariate regressions"
 weight: 2
 
 # Page metadata.
-title: Multivariate regression
+title: Multivariate regressions
 type: book  # Do not modify.
 ---
 
 ---
-Section 4
+## What is a multivariate regression
+
+
+---
+## Why do a multivariate regression
+
+
+---
+## Algebraic solution
+
+
+---
+## Example
