@@ -166,9 +166,7 @@ $$
     \vdots  \\\\
     y_N
 \end{pmatrix} 
-
 = 
-
 \begin{pmatrix}
     1       & x_{1,2} & x_{1,3} & x_{1,4} & \cdots & x_{1,K}  \\\\
     1       & x_{2,2} & x_{2,3} & x_{2,4} & \cdots & x_{2,K}  \\\\
@@ -184,9 +182,7 @@ $$
     \vdots  \\\\
     \beta_{K}
 \end{pmatrix} 
-
 + 
-
 \begin{pmatrix}
     \varepsilon_1   \\\\
     \varepsilon_2   \\\\
