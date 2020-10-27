@@ -230,6 +230,7 @@ $$
 $$
 
 $$
+\begin{equation}
 \begin{pmatrix}
     y_1     \\
     y_2     \\
@@ -237,7 +238,7 @@ $$
     \vdots  \\
     y_N
 \end{pmatrix}
-
+\end{equation}
 $$
 
 
