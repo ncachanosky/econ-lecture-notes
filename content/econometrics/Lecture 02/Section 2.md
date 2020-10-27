@@ -118,7 +118,7 @@ We can split the regressors into two groups. On one side, those regressors of wh
 
 $$
 
-Y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_4}_{variables of interest} + \underbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}_{control variables} + \varepsilon
+Y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_4}^{variables of interest} + \underbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}^{control variables} + \varepsilon
 
 $$
 
