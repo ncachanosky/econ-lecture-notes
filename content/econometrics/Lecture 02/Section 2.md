@@ -127,7 +127,7 @@ $$ Y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_4}_{\text{hola con 
 $$ Y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_4}_{\text{variables of interest}} + \underbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}_{\text{control variables}} + \varepsilon $$
 
 $$ 
-$$ Y_i = \beta_0 + \overbrace{\beta_1 x_1 + ... + \beta_4 x_4}^{\text{variables of interest}} + \overbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}^{\text{control variables}} + \varepsilon $$
+Y_i = \beta_0 + \overbrace{\beta_1 x_1 + ... + \beta_4 x_4}^{\text{variables of interest}} + \overbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}^{\text{control variables}} + \varepsilon $$
 $$
 
 
