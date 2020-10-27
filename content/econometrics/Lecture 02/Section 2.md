@@ -114,13 +114,12 @@ The problem is that when OLS is looking at two houses, they may differ in other 
 
 To avoid this issue, the model must include *all* variables we want to hold constant, as if we were in a chemistry lab. If we add a second regressor looking at the age of the house, then OLS can look at the impact of size on price *keeping the age of the house constant*. This is why regressors are also referred as **control variables**, because they control variation on other variables allowing to read a coefficient as the effect of its regressors *maintaiing all other variables constant*.
 
-We can split the regressors into two groups. On one side, those regressors of which we are interested in estimating their marginal effects (the coefficients). On the other side, those regressors which we have no interest in the value of their coefficients, but we need them in the model to serve as control variables such that we can properly intepret the coefficient of the variables of interest. Let $x_i$ denote the vriables of interest and $z_j$ denote the control variables. Then, the model can be represented the following way.
+We can split the regressors into two groups. On one side, those regressors of which we are interested in estimating their marginal effects (the coefficients). On the other side, those regressors which we have no interest in the value of their coefficients, but we need them in the model to serve as control variables such that we can properly intepret the coefficient of the variables of interest. Let $x_i$ denote four varibles of interest and $z_j$ denote sever control variables. Then, the model can be represented the following way.
 
 $$
 
 Y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_4}_{variables of interest} + \underbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}_{control variables} + \varepsilon
 
-\end{align}
 $$
 
 ### Avoid ommitted variable bias
