@@ -206,11 +206,24 @@ $$
 $$
 \begin{align}
 e^2 &= \left(y - X\hat{\beta} \right)^\prime \left(y - X\hat{\beta} \right) \\\\
-e^2 &= y^\prime y - y^\prime X\hat{\beta} - 2 \hat{\beta}^\prime X^\prime y + \beta^\prime X^\prime X \beta
+e^2 &= y^\prime y - y^\prime X\hat{\beta} - \hat{\beta}^\prime X^\prime y + \beta^\prime X^\prime X \beta
 \end{align}
 $$
 
-$Y^\prime$
+**Step 3:** Proceed to obtain the FOC
+$$
+\begin{align}
+\frac{\partial e^2}{\partial \beta} &= -y^\prime X - X^\prime Y + 2 X^\prime X \hat{\beta} = 0 \\\\
+\frac{\partial e^2}{\partial \beta} &= -2 X^\prime Y + 2 X^\prime X \hat{\beta} = 0
+\end{align}
+$$
+
+**Stpe 4:** Find the optimal $betas$
+$$
+\hat{\beta}^{*} = \left( X^{\prime} X \right)^{-1} \left( X^{\prime} y \right)
+$$
+
+
 
 ---
 ## Example
