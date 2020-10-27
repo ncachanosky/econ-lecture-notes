@@ -154,7 +154,7 @@ In matrix form, a regression with $K$ regressors can be written in the following
 
 $$
 \begin{align}
-\underset{N \ times 1}{y} &= \underset{N \ times K}{X} \underset{K \ times 1}{\beta} + \underset{N \times 1}{\varepsilon} \\\\[10pt]
+\underset{N \times 1}{y} &= \underset{N \times K}{X} \underset{K \times 1}{\beta} + \underset{N \times 1}{\varepsilon} \\\\[10pt]
 \end{align}
 $$
 
