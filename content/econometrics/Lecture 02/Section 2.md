@@ -140,7 +140,7 @@ If an important variable is not included in the model, then the coefficient of t
 ## Algebraic solution
 The univariate regression example shows how to obtaing the $betas$ that minimize the squared errors. In the case of a multivariate regression a similar analytical solution would be highly impractical and, therefore, prone to error. [Matrix](https://en.wikipedia.org/wiki/Matrix_(mathematics)) algebra makes OLS solution (and econometrics in general) significantly easier. First, we need to introduce some notation. 
 
-Let **$y$** denote a $(N \times 1)$ column that includes all $N$ observations of the dependent variable $(y_\substack{N \times 1})$. Note that now $y$ does not have the $i$ subscript (a simpler notation).
+Let **$y$** denote a $(N \times 1)$ column that includes all $N$ observations of the dependent variable $y_{\substack{N a}}$. Note that now $y$ does not have the $i$ subscript (a simpler notation).
 
 ---
 ## Example
