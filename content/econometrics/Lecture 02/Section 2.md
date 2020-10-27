@@ -152,10 +152,30 @@ Finally, the error term is also a $N \times 1$ vector that includes the error of
 
 In matrix form, a regression with $K$ regressors can be written in the following simple form:
 
+$$ y = Xb + \varepsilon $$
+
+We can open the matrices to have glance of how data looks like in matrix form. Let us use the regressors in the house example above.
+
 $$
-\begin{equation}
-\underset{N \times 1}{y} = \underset{N \times K}{X} \underset{K \times 1}{\beta} + \underset{N \times 1}{\varepsilon} \\\\[10pt]
-\end{equation}
+\bordermatrix{~ & \text{price}  \cr
+              ~ &  y_1         \cr
+              ~ &  y_2         \cr
+              ~ &  y_3         \cr
+              ~ &  \vdots      \cr
+              ~ &  y_N         } = 
+
+\bordermatrix{~ & \text{constant} & \text{age} & \text{highway} & \text{high-school} & \text{neighborhood} + \text{safety}  \cr
+              ~ & 1       & x_{1,1} & x_{1,2} & x_{1,3} & \cdots & x_{1,6} \cr
+              ~ & 1       & x_{2,1} & x_{2,2} & x_{2,3} & \cdots & x_{2,6} \cr
+              ~ & 1       & x_{3,1} & x_{3,2} & x_{3,3} & \cdots & x_{3,6} \cr
+              ~ & \vdots} & \vdots  & \vdots  & \vdots  & \ddots & \vdots  \cr
+              ~ & 1       & x_{N,1} & x_{N,2} & x_{N,3} & \cdots & x_{N,6} \cr} + 
+\bordermatrix{~ & \varepsilon   \cr
+              ~ & \varepsilon_1 \cr
+              ~ & \varepsilon_2 \cr
+              ~ & \varepsilon_3 \cr
+              ~ & \vdots        \cr
+              ~ & \varepsilon_N \cr}
 $$
 
 
