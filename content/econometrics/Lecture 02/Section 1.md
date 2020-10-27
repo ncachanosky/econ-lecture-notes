@@ -120,7 +120,7 @@ twoway scatter mpg weight, ///
 	   xlabel(, grid labsize(small)) xtitle(, size(small)) ///
 	   ylabel(, grid labsize(small)) ytitle(, size(small)) ///
 	 ||lfit mpg weight, ///
-	   lcolor(black) ///
+	   lcolor(blue%50) ///
 	   legend(position(6) rows(1) size(vsmall))
 	   
 *==============================================================================*
