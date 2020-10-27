@@ -119,7 +119,7 @@ We can split the regressors into two groups. On one side, those regressors of wh
 $$
 \begin{align}
 
-Y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_5}_{\text{variables of interest}} + \underbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}_{\text{control variables}} + \varepsilon
+Y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_5}_\text{variables of interest} + \underbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}_\text{control variables} + \varepsilon
 
 \end{align}
 $$
