@@ -164,9 +164,7 @@ $$
     y_3     \\
     \vdots  \\
     y_N
-\end{pmatrix}
-
-=
+\end{pmatrix} = 
 
 \begin{pmatrix}
     1       & x_{1,2} & x_{1,3} & x_{1,4} & \cdots & x_{1,K}  \\
@@ -176,16 +174,13 @@ $$
     1       & x_{N,2} & x_{N,3} & x_{N,4} & \cdots & x_{N,K}
 \end{pmatrix}
 
-
 \begin{pmatrix}
     \beta_1 \\
     \beta_2 \\
     \beta_3 \\
     \vdots  \\
     \beta_{K}
-\end{pmatrix}
-
-+
+\end{pmatrix} + 
 
 \begin{pmatrix}
     \varepsilon_1   \\
@@ -202,11 +197,15 @@ To find the OLS solution to the problem of minimizing the square residuals we pr
 **Step 1**: Find the residuals
 $$
 \begin{align}
-y &= X \beta + \varepsilon \\\\
-\varepsilon = y - Xb
+e &= y - \hat{y}
+e &= y - X\hat{\beta}
 \end{align}
 $$
 
+**Step 2:**: Square the residuals
+$$
+e^2 = \left( y - X\hat{\beta} \right)^\prime \left( y - X\hat{\beta} \right)
+$$
 
 
 ---
