@@ -140,7 +140,29 @@ If an important variable is not included in the model, then the coefficient of t
 ## Algebraic solution
 The univariate regression example shows how to obtaing the $betas$ that minimize the squared errors. In the case of a multivariate regression a similar analytical solution would be highly impractical and, therefore, prone to error. [Matrix](https://en.wikipedia.org/wiki/Matrix_(mathematics)) algebra makes OLS solution (and econometrics in general) significantly easier. First, we need to introduce some notation. 
 
-Let **$y$** denote a $(N \times 1)$ column that includes all $N$ observations of the dependent variable $(\underset{N \times 1}{y})$. Note that now $y$ does not have the $i$ subscript (a simpler notation).
+Let **$y$** denote a $(N \times 1)$ column that includes all $N$ observations of the dependent variable. Note that now $y$ does not have the $i$ subscript (a simpler notation).
 
+The **constant** and **all** $K$ regressors (controls and variables of interest) are now included in the $X$ matrix, which has a $N \times K$ dimension. The first column is the constant term, which is represented by all ones. This way, $\beta_0$ captures the whole value of the constant term. Columnos 2 to $K$ capture all the remaining regressors. 
+
+There is subtle but important difference with our treatment so far. Previously, we talked about the *constant term plus the variables*. This is because, other than the constant, the value of each regressor value can change with each observation. Then, we have *regressors* and *variables*. The former are all the columns of the $X$ matrix including the constant term. The latter are the regressors which values can change, such as $x_1, ..., x_6$ in our previous example. In this sense, the number of regressors is $1 + \text{number of variables}$.
+
+Next we have a $N \times 1$ $beta$ vector that includes all the coefficient of all the regressors (recall, including the constant).
+
+Finally, the error term is also a $N \times 1$ vector that includes the error of each of the $N$ observations.
+
+In matrix form, a regression with $K$ regressors can be written in the following simple form:
+
+$$
+\begin{align}
+\underset{N \ times 1}{y} &= \underset{N \ times K}{X} \underset{K \ times 1}{\beta} + \underset{N \times 1}{\varepsilon} \\\\[10pt]
+\end{align}
+$$
+
+
+
+
+
+
+$(\underset{N \times 1}{y})$
 ---
 ## Example
