@@ -138,6 +138,7 @@ If an important variable is not included in the model, then the coefficient of t
 
 ---
 ## Algebraic solution
+### Matrix notation
 The univariate regression example shows how to obtaing the $betas$ that minimize the squared errors. In the case of a multivariate regression a similar analytical solution would be highly impractical and, therefore, prone to error. [Matrix](https://en.wikipedia.org/wiki/Matrix_(mathematics)) algebra makes OLS solution (and econometrics in general) significantly easier. First, we need to introduce some notation. 
 
 Let **$y$** denote a $(N \times 1)$ column that includes all $N$ observations of the dependent variable. Note that now $y$ does not have the $i$ subscript (a simpler notation).
@@ -157,7 +158,7 @@ $$ y = Xb + \varepsilon $$
 We can open the matrices to have glance of how data looks like in matrix form. Let us use the regressors in the house example above. Be carefull of the following. For notation simplicity, now the first column of the $X$ matrix are all ones: $x_{1,1} = x_{2,1} = ... =x_{N,1} = 1$.
 
 $$
-\underset{(N \times 1)}{}
+\underset{(N \times 1)}{
 \begin{pmatrix}
     y_1     \\
     y_2     \\
@@ -196,6 +197,7 @@ $$
 \end{pmatrix}
 $$
 
+### Finding the $betas$
 
 
 
