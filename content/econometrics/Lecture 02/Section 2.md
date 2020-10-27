@@ -154,37 +154,47 @@ In matrix form, a regression with $K$ regressors can be written in the following
 
 $$ y = Xb + \varepsilon $$
 
-We can open the matrices to have glance of how data looks like in matrix form. Let us use the regressors in the house example above.
+We can open the matrices to have glance of how data looks like in matrix form. Let us use the regressors in the house example above. Be carefull of the following. For notation simplicity, now the first column of the $X$ matrix are all ones: $x_{1,1} = x_{2,1} = ... =x_{N,1} = 1$.
 
 $$
-\bordermatrix{~ & x & y \cr
-              ~ & 1 & 0 \cr
-              ~ & 0 & 1 \cr}
+\underset{(N \times 1)}{}
+\begin{pmatrix}
+    y_1     \\
+    y_2     \\
+    y_3     \\
+    \vdots  \\
+    y_N
+\end{pmatrix}
+}
+=
+
+\begin{pmatrix}
+    1       & x_{1,2} & x_{1,3} & x_{1,4} & \cdots & x_{1,K}  \\
+    1       & x_{2,2} & x_{2,3} & x_{2,4} & \cdots & x_{2,K}  \\
+    1       & x_{3,2} & x_{3,3} & x_{3,4} & \cdots & x_{3,K}  \\
+    \vdots  & \cdots  & \cdots  & \cdots  & \ddots & \vdots   \\
+    1       & x_{N,2} & x_{N,3} & x_{N,4} & \cdots & x_{N,K}
+\end{pmatrix}
+
+
+\begin{pmatrix}
+    \beta_1 \\
+    \beta_2 \\
+    \beta_3 \\
+    \vdots  \\
+    \beta_{K}
+\end{pmatrix}
+
++
+
+\begin{pmatrix}
+    \varepsilon_1   \\
+    \varepsilon_2   \\
+    \varepsilon_3   \\
+    \vdots          \\
+    \varepsilon_N
+\end{pmatrix}
 $$
-
-
-$$
-\bordermatrix{~ & \text{price}  \cr
-              ~ &  y_1         \cr
-              ~ &  y_2         \cr
-              ~ &  y_3         \cr
-              ~ &  \vdots      \cr
-              ~ &  y_N         } = 
-
-\bordermatrix{~ & \text{constant} & \text{age} & \text{highway} & \text{high-school} & \text{neighborhood} + \text{safety}  \cr
-              ~ & 1       & x_{1,1} & x_{1,2} & x_{1,3} & \cdots & x_{1,6} \cr
-              ~ & 1       & x_{2,1} & x_{2,2} & x_{2,3} & \cdots & x_{2,6} \cr
-              ~ & 1       & x_{3,1} & x_{3,2} & x_{3,3} & \cdots & x_{3,6} \cr
-              ~ & \vdots} & \vdots  & \vdots  & \vdots  & \ddots & \vdots  \cr
-              ~ & 1       & x_{N,1} & x_{N,2} & x_{N,3} & \cdots & x_{N,6} \cr} + 
-\bordermatrix{~ & \varepsilon   \cr
-              ~ & \varepsilon_1 \cr
-              ~ & \varepsilon_2 \cr
-              ~ & \varepsilon_3 \cr
-              ~ & \vdots        \cr
-              ~ & \varepsilon_N \cr}
-$$
-
 
 
 
