@@ -158,7 +158,6 @@ $$ y = Xb + \varepsilon $$
 We can open the matrices to have glance of how data looks like in matrix form. Let us use the regressors in the house example above. Be carefull of the following. For notation simplicity, now the first column of the $X$ matrix are all ones: $x_{1,1} = x_{2,1} = ... =x_{N,1} = 1$.
 
 $$
-\underset{(N \times 1)}{
 \begin{pmatrix}
     y_1     \\
     y_2     \\
@@ -166,7 +165,7 @@ $$
     \vdots  \\
     y_N
 \end{pmatrix}
-}
+
 =
 
 \begin{pmatrix}
