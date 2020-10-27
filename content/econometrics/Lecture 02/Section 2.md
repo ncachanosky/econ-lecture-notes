@@ -117,9 +117,8 @@ To avoid this issue, the model must include *all* variables we want to hold cons
 We can split the regressors into two groups. On one side, those regressors of which we are interested in estimating their marginal effects (the coefficients). On the other side, those regressors which we have no interest in the value of their coefficients, but we need them in the model to serve as control variables such that we can properly intepret the coefficient of the variables of interest. Let $x_i$ denote the vriables of interest and $z_j$ denote the control variables. Then, the model can be represented the following way.
 
 $$
-\begin{align}
 
-Y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_5}_\text{variables of interest} + \underbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}_\text{control variables} + \varepsilon
+Y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_4}_\text{variables of interest} + \underbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}_\text{control variables} + \varepsilon
 
 \end{align}
 $$
