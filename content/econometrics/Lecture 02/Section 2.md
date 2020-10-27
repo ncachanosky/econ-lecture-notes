@@ -194,6 +194,12 @@ $$
 ### Finding the $betas$
 To find the OLS solution to the problem of minimizing the square residuals we proceed in a similar way than we did in the univariate regression. We start with squaring the residual and then we proceed to find the optimal $betas$.
 
+1. Step 1: Find the residuals
+1. Step 2: Square the residuals
+1. Step 3: Find the FOC
+1. Step 4: Find the $\hat{\beta}^{*}$
+
+
 **Step 1**: Find the residuals
 $$
 \begin{align}
@@ -223,6 +229,16 @@ $$
 \hat{\beta}^{*} = \left( X^{\prime} X \right)^{-1} \left( X^{\prime} y \right)
 $$
 
+$$
+\begin{pmatrix}
+    y_1     \\
+    y_2     \\
+    y_3     \\
+    \vdots  \\
+    y_N
+\end{pmatrix}
+
+$$
 
 
 ---
