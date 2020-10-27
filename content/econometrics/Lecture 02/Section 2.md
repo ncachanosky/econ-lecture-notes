@@ -120,9 +120,9 @@ A **multivariate regression** estimates the change in the dependent variable whe
 
 {{% /callout %}}
 
-We can split the regressors into two groups. On one side, those regressors of which we are interested in estimating their marginal effects (the coefficients). On the other side, those regressors which we have no interest in the value of their coefficients, but we need them in the model to serve as control variables such that we can properly intepret the coefficient of the variables of interest. Let $x_i$ denote four varibles of interest and $z_j$ denote sever control variables. Then, the model can be represented the following way.
+We can split the regressors into two groups. On one side, those regressors of which we are interested in estimating their marginal effects (the coefficients). On the other side, those regressors which we have no interest in the value of their coefficients, but we need them in the model to serve as control variables such that we can properly intepret the coefficient of the variables of interest. Let $x_i$ denote four varibles of interest and $z_j$ denote seven control variables. Then, the model can be represented the following way.
 
-$$ Y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_4}_{\text{hola}} $$
+$$ Y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_4}_{\text{hola con espacio}} $$
 
 
 
