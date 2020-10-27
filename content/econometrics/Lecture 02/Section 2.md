@@ -153,9 +153,9 @@ Finally, the error term is also a $N \times 1$ vector that includes the error of
 In matrix form, a regression with $K$ regressors can be written in the following simple form:
 
 $$
-\begin{align}
-\underset{N \times 1}{y} &= \underset{N \times K}{X} \underset{K \times 1}{\beta} + \underset{N \times 1}{\varepsilon} \\\\[10pt]
-\end{align}
+\begin{equation}
+\underset{N \times 1}{y} = \underset{N \times K}{X} \underset{K \times 1}{\beta} + \underset{N \times 1}{\varepsilon} \\\\[10pt]
+\end{equation}
 $$
 
 
@@ -163,6 +163,6 @@ $$
 
 
 
-$(\underset{N \times 1}{y})$
+
 ---
 ## Example
