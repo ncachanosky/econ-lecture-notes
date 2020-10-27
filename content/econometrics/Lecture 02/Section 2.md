@@ -157,8 +157,8 @@ $$ y = Xb + \varepsilon $$
 We can open the matrices to have glance of how data looks like in matrix form. Let us use the regressors in the house example above.
 
 $$
-\bordermatrix{~ & x & y \cr
-              ~ & 1 & 0 \cr
+\bordermatrix{~ & x & y \cr \\\\
+              ~ & 1 & 0 \cr \\\\
               ~ & 0 & 1 \cr}
 $$
 
