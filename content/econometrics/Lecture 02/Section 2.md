@@ -197,16 +197,20 @@ To find the OLS solution to the problem of minimizing the square residuals we pr
 **Step 1**: Find the residuals
 $$
 \begin{align}
-e &= y - \hat{y}
+e &= y - \hat{y}    \\\\
 e &= y - X\hat{\beta}
 \end{align}
 $$
 
 **Step 2:**: Square the residuals
 $$
-e^2 = \left( y - X\hat{\beta} \right)^\prime \left( y - X\hat{\beta} \right)
+\begin{align}
+e^2 &= \left(y - X\hat{\beta} \right)^\prime \left(y - X\hat{\beta} \right) \\\\
+e^2 &= y^\prime y - y^\prime X\hat{\beta} - 2 \hat{\beta}^\prime X^\prime y + \beta^\prime X^\prime X \beta
+\end{align}
 $$
 
+$Y^\prime$
 
 ---
 ## Example
