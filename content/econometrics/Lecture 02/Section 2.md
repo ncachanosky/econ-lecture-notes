@@ -56,7 +56,10 @@ The conceptual intepretation of $\beta_0$ is a little more challenging. In the a
 
 We can translate this into simpler terms. Remember that OLS is fitting the line that minimizes the squared residuals. This line has two components, the *slope* of the line and its *level* (or intercept). OLS is not just about finding the right slope, is also about finding the right vertical location of the best line. 
 
-If you drop from the equation the constant term because it has no clear economic meaning, you run the risk of mispecifying your model. Droping the constant term is forcing the model to find the best slope when the interepct is zero: $Y_i = 0 + \beta_1 x_1 + \varepsilon$.  
+If you drop from the equation the constant term because it has no clear economic meaning, you run the risk of mispecifying your model. Dropping the constant term is forcing the model to find the best slope when the interepct is zero: $Y_i = 0 + \beta_1 x_1 + \varepsilon$. 
+
+Another way to see that $\beta_0$ is to be included for *technical* reasons more than because of its economic interpretation is that in most cases, the domain of the value of the regressors does not inlcude zero, therefore the constnat term falls outside the region of relevant data of the regression (see the plot below)
+.
 
 The effect of dropping the constant can be seen in the plot below. Let's use again the automobile information from the previous section and add to the scatter plot two regression lines. One with an estimated constant, and a second one with no constant.
 
@@ -121,11 +124,6 @@ A **multivariate regression** estimates the change in the dependent variable whe
 {{% /callout %}}
 
 We can split the regressors into two groups. On one side, those regressors of which we are interested in estimating their marginal effects (the coefficients). On the other side, those regressors which we have no interest in the value of their coefficients, but we need them in the model to serve as control variables such that we can properly intepret the coefficient of the variables of interest. Let $x_i$ denote four varibles of interest and $z_j$ denote seven control variables. Then, the model can be represented the following way.
-
-
-$$ 
-Y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_4}_{\text{variables of interest}} + \underbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}_{\text{control variables}} + \varepsilon 
-$$
 
 $$ 
 Y_i = \beta_0 + \overbrace{\beta_1 x_1 + ... + \beta_4 x_4}^{\text{variables of interest}} + \overbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}^{\text{control variables}} + \varepsilon 
