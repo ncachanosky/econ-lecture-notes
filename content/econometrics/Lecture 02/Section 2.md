@@ -127,7 +127,7 @@ $$ Y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_4}_{\text{hola}} $$
 
 
 $$
-Y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_4}_{variables of interest} + \underbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}_{control variables} + \varepsilon
+Y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_4}_{\text{variables of interest}} + \underbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}_{\text{control variables}} + \varepsilon
 $$
 
 ### Avoid ommitted variable bias
