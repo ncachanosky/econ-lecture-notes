@@ -210,15 +210,15 @@ $$
 $$
 \begin{align}
 e^2 &= \left(y - X \hat{\beta} \right)' \left(y - X\hat{\beta} \right) \\\\
-e^2 &= y'y - y'X \hat{\beta} - \hat{\beta}' X' y + \beta X'X \beta
+e^2 &= y'y - y'X \hat{\beta} - \hat{\beta}' X' y + \beta' X'X \beta
 \end{align}
 $$
 
 **Step 3:** Proceed to obtain the FOC
 $$
 \begin{align}
-\frac{\partial e^2}{\partial \beta} &= -y'X - X'Y + 2 X'X \hat{\beta} = 0 \\\\
-\frac{\partial e^2}{\partial \beta} &= -2 X'Y + 2 X'X \hat{\beta} = 0
+\frac{\partial e^2}{\partial \hat{\beta}} &= -y'X - X'Y + 2 X'X \hat{\beta} = 0 \\\\
+\frac{\partial e^2}{\partial \hat{\beta|} &= -2 X'Y + 2 X'X \hat{\beta} = 0
 \end{align}
 $$
 
