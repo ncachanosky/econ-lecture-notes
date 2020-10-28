@@ -188,6 +188,13 @@ $$
 \end{pmatrix}
 $$
 
+$$
+\bordermatrix{
+    ~ & a & b \cr
+    ~ & 1 & 2 \cr
+    ~ & 3 & 4 \cr}
+$$
+
 ### Finding the $betas$
 To find the OLS solution to the problem of minimizing the square residuals we proceed in a similar way than we did in the univariate regression. We start with squaring the residual and then we proceed to find the optimal $betas$.
 
