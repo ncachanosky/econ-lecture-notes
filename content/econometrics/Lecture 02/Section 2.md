@@ -209,24 +209,22 @@ $$
 **Step 2:**: Square the residuals
 $$
 \begin{align}
-e^2 &= \left(y - X\hat{\beta} \right)^\prime \left(y - X\hat{\beta} \right) \\\\
-e^2 &= y^\prime y - y^\prime X\hat{\beta} - \hat{\beta}^\prime X^\prime y + \beta^\prime X^\prime X \beta
+e^2 &= \left(y - X \hat{\beta} \right)' \left(y - X\hat{\beta} \right) \\\\
+e^2 &= y'y - y'X \hat{\beta} - \hat{\beta}' X^' y + \beta X'X \beta
 \end{align}
 $$
 
 **Step 3:** Proceed to obtain the FOC
 $$
 \begin{align}
-\frac{\partial e^2}{\partial \beta} &= -y^\prime X - X^\prime Y + 2 X^\prime X \hat{\beta} = 0 \\\\
-\frac{\partial e^2}{\partial \beta} &= -2 X^\prime Y + 2 X^\prime X \hat{\beta} = 0
+\frac{\partial e^2}{\partial \beta} &= -y'X - X'Y + 2 X'X \hat{\beta} = 0 \\\\
+\frac{\partial e^2}{\partial \beta} &= -2 X'Y + 2 X'X \hat{\beta} = 0
 \end{align}
 $$
 
 **Stpe 4:** Find the optimal $betas$
 $$
-\hat{\beta}^{*} = \left( X^{\prime} X \right)^{-1} \left( X^{\prime} y \right)
+\hat{\beta}^{*} = \left( X'X \right)^{-1} \left( X'y \right)
 $$
 
-
----
-## Example
+Note how much simpler and straightforward matrix algebra is with respect to the analytical approach we used in the univariate regression. Also, note that for bhte $beta$ vector to exist, the inverse of $(X'X)$ must exist. This means that the $(X'X)$ matrix must be *full-rank*; an imortant topic in the issue of multicollinearity.
