@@ -25,11 +25,11 @@ For instance, let the price of houses be the dependent variable $(Y_i)$. The of 
 
 In this case we have 6 regressors, which can be used to build the following theoretical linear relationship:
 
-$$ Y_i = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3 + \beta_4 x_4 + \beta_5 x_5 + \beta_6 x_6 + \varepsilon $$
+$$ y_i = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_3 + \beta_4 x_4 + \beta_5 x_5 + \beta_6 x_6 + \varepsilon $$
 
 The estimated model will be:
 
-$$ \hat{Y_i} = \hat{\beta_0} + \hat{\beta_1} x_1 + \hat{\beta_2} x_2 +
+$$ \hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_1 + \hat{\beta_2} x_2 +
 \hat{\beta_3} x_3 + \hat{\beta_4} x_4 + \hat{\beta_5} x_5 + \hat{\beta_6} x_6 $$
 
 Now the expected (estimated) value of the house depends on value observed in a number of variables (size, age of the house, location, etc.) As long as the regressors included in the model are relevant to explain the price of a house, then this model will be more precise than a model with only one regressor. 
@@ -158,15 +158,13 @@ $$ y = Xb + \varepsilon $$
 We can open the matrices to have glance of how data looks like in matrix form. Let us use the regressors in the house example above. Be carefull of the following. For notation simplicity, now the first column of the $X$ matrix are all ones: $x_{1,1} = x_{2,1} = ... =x_{N,1} = 1$.
 
 $$
-\begin{equation*}
 \begin{pmatrix}
     y_1     \\\\
     y_2     \\\\
     y_3     \\\\
     \vdots  \\\\
     y_N
-\end{pmatrix} = 
-
+\end{pmatrix} =
 \begin{pmatrix}
     1       & x_{1,2} & x_{1,3} & x_{1,4} & \cdots & x_{1,K}  \\\\
     1       & x_{2,2} & x_{2,3} & x_{2,4} & \cdots & x_{2,K}  \\\\
@@ -174,15 +172,13 @@ $$
     \vdots  & \cdots  & \cdots  & \cdots  & \ddots & \vdots   \\\\
     1       & x_{N,2} & x_{N,3} & x_{N,4} & \cdots & x_{N,K}
 \end{pmatrix}
-
 \begin{pmatrix}
     \beta_1 \\\\
     \beta_2 \\\\
     \beta_3 \\\\
     \vdots  \\\\
     \beta_{K}
-    \end{pmatrix} + 
-
+\end{pmatrix} + 
 \begin{pmatrix}
     \varepsilon_1   \\\\
     \varepsilon_2   \\\\
@@ -190,7 +186,6 @@ $$
     \vdots          \\\\
     \varepsilon_N
 \end{pmatrix}
-\end{equation*}
 $$
 
 ### Finding the $betas$
