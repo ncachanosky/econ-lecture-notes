@@ -210,7 +210,7 @@ $$
 $$
 \begin{align}
 e^2 &= \left(y - X \hat{\beta} \right)' \left(y - X\hat{\beta} \right) \\\\
-e^2 &= y'y - y'X \hat{\beta} - \hat{\beta}' X^' y + \beta X'X \beta
+e^2 &= y'y - y'X \hat{\beta} - \hat{\beta}' X' y + \beta X'X \beta
 \end{align}
 $$
 
