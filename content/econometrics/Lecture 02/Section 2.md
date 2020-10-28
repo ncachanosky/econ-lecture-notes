@@ -190,7 +190,7 @@ $$
     \vdots          \\\\
     \varepsilon_N
 \end{pmatrix}
-\end{equation}
+\end{equation*}
 $$
 
 ### Finding the $betas$
