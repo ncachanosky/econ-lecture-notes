@@ -159,23 +159,23 @@ We can open the matrices to have glance of how data looks like in matrix form. L
 
 $$
 \begin{equation*}
-    \begin{pmatrix}
+\begin{pmatrix}
     y_1     \\\\
     y_2     \\\\
     y_3     \\\\
     \vdots  \\\\
     y_N
-    \end{pmatrix} = 
+\end{pmatrix} = 
 
-    \begin{pmatrix}
+\begin{pmatrix}
     1       & x_{1,2} & x_{1,3} & x_{1,4} & \cdots & x_{1,K}  \\\\
     1       & x_{2,2} & x_{2,3} & x_{2,4} & \cdots & x_{2,K}  \\\\
     1       & x_{3,2} & x_{3,3} & x_{3,4} & \cdots & x_{3,K}  \\\\
     \vdots  & \cdots  & \cdots  & \cdots  & \ddots & \vdots   \\\\
     1       & x_{N,2} & x_{N,3} & x_{N,4} & \cdots & x_{N,K}
-    \end{pmatrix}
+\end{pmatrix}
 
-    \begin{pmatrix}
+\begin{pmatrix}
     \beta_1 \\\\
     \beta_2 \\\\
     \beta_3 \\\\
@@ -183,13 +183,13 @@ $$
     \beta_{K}
     \end{pmatrix} + 
 
-    \begin{pmatrix}
+\begin{pmatrix}
     \varepsilon_1   \\\\
     \varepsilon_2   \\\\
     \varepsilon_3   \\\\
     \vdots          \\\\
     \varepsilon_N
-    \end{pmatrix}
+\end{pmatrix}
 \end{equation}
 $$
 
