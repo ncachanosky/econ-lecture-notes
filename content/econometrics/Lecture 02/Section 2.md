@@ -236,7 +236,7 @@ $$
 $$
 \begin{align}
 \frac{\partial e^2}{\partial \hat{\beta}} &= -y'X - X'Y + 2 X'X \hat{\beta} = 0 \\\\
-\frac{\partial e^2}{\partial \hat{\beta|} &= -2 X'Y + 2 X'X \hat{\beta} = 0
+\frac{\partial e^2}{\partial \hat{\beta}} &= -2 X'Y + 2 X'X \hat{\beta} = 0
 \end{align}
 $$
 
