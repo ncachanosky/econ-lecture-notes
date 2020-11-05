@@ -78,7 +78,7 @@ $$
 $$
 
 $$
- = \sum_i (\hat{y}_i - \bar{y})^2 + \sum_i e_i^2 + 2 \sum_i e_i (\hat{\beta}_0 + \hat{\beta}_1 x_{1,i} + ... + \hat{\beta}_K x_{K,i} - \bar{y})
+ = \sum_{i} (\hat{y}_{i} - \bar{y})^2 + \sum_{i} e_i^2 + 2 \sum_{i} e_{i} (\hat{\beta}_{0} + \hat{\beta}_1 x_{1,i} + ... + \hat{\beta}_{K} x_{K,i} - \bar{y})
 $$
 
 
