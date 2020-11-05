@@ -141,11 +141,11 @@ $$
 y_i = \beta_0 + \overbrace{\beta_1 x_1 + ... + \beta_4 x_4}^{\text{variables of interest}} + \overbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}^{\text{control variables}} + \varepsilon
 $$
 
-### Avoid ommitted variable bias
+### Avoid omitted variable bias
 
-Another very important reason to do multivariate regressions is to avoid having an **ommitted variable bias**. 
+Another very important reason to do multivariate regressions is to avoid having an **omitted variable bias**.
 
-If an important variable is not included in the model, then the coefficient of the included regressors can be significantly biased. Again, this is because the included coefficient cannot hold the other regressors constant when estimating its value. A graphic illustration of this problem is the graph above. By omitting the *constant* term the slope gets biased to the point that the sign of the slope changes from negative to positive. Having an ommitted variable bias means that you cannot trust the interpretation of the model because you must be forcing the line to be fitted the wrong way. Non included regressors are assumed to be zero and, just as with the constant, that can bias the estimated coefficients. Remember, any variable that is not included in the model implices assuming its coefficient is zero. If an ommited variable does not have a true coefficient of zero, then its effect will be mixed in the other coefficients. Therefore, the estimated betas may be seriously biased.
+If an important variable is not included in the model, then the coefficient of the included regressors can be significantly biased. Again, this is because the included coefficient cannot hold the other regressors constant when estimating its value. A graphic illustration of this problem is the graph above. By omitting the *constant* term the slope gets biased to the point that the sign of the slope changes from negative to positive. Having an omitted variable bias means that you cannot trust the interpretation of the model because you must be forcing the line to be fitted the wrong way. Non included regressors are assumed to be zero and, just as with the constant, that can bias the estimated coefficients. Remember, any variable that is not included in the model implies assuming its coefficient is zero. If an omitted variable does not have a true coefficient of zero, then its effect will be mixed in the other coefficients. Therefore, the estimated betas may be seriously biased.
 
 ---
 
