@@ -70,6 +70,7 @@ $$
 $$
 \begin{align}
 \sum_i (y_i - \bar{y})^2 &= \sum_i (y_i - \bar{y} + \hat{y}_i - \hat{y}_i)^2 \\\\[10pt]
+&= \sum_i \left( (y_i - \bar{y}) + (y_i - \hat{y}_i) \right)^2 \\\\[10pt]
 \end{align}
 $$
 
@@ -77,7 +78,6 @@ $$
 
 $$
 \begin{align}
-\sum_i (y_i - \bar{y})^2 &= \sum_i (y_i - \bar{y} + \hat{y}_i - \hat{y}_i)^2 \\\\[10pt]
 &= \sum_i \left( (y_i - \bar{y}) + (y_i - \hat{y}_i) \right)^2 \\\\[10pt]
 &= \sum_i \left( (y_i - \bar{y}) + e_i \right)^2 \\\\[10pt]
 &= \sum_i \left( (y_i - \bar{y})^2 + e_i^2 + 2 \sum_i (y_i - \bar{y}) e_i \right)\\\\[10pt]
