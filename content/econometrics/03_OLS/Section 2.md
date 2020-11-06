@@ -141,6 +141,10 @@ $$
 y_i = \beta_0 + \overbrace{\beta_1 x_1 + ... + \beta_4 x_4}^{\text{variables of interest}} + \overbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}^{\text{control variables}} + \varepsilon
 $$
 
+$$
+y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_4}\_{\text{variables of interest}} + \underbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}\_{\text{control variables}} + \varepsilon
+$$
+
 ### Avoid omitted variable bias
 
 Another very important reason to do multivariate regressions is to avoid having an **omitted variable bias**.
