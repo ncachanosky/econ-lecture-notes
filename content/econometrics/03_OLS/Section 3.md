@@ -45,7 +45,7 @@ $$
 
 This expression separates the total variance of the observed data between the explained and residual (non-explained) variance produced by the model. We can now build the $R^2$. It is easier to understand the relationship between $TSS$, $ESS$, and $RSS$ in a scatter plot. The figure below shows this relationship. See how the regression line goes through the mean of $y$ and $x$ and what the estimation is doing is measuring deviation from the mean of the dependent variable for each $x_i$.
 
-{{< figure library="true" src="econometrics/03_OLS/Fig_06.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
+{{< figure library="true" src="econometrics/03_OLS/Fig_06.png" numbered="true" title=" Scatter plot: Partition of sum of squares">}}  
 
 ### The $R^2$ (R-squared)
 
