@@ -181,7 +181,12 @@ twoway scatter mpg weight if id==0, ///
 
 {{< figure library="true" src="econometrics/03_OLS/Fig_03.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
 
+The *true* relationship between the dependent variable and the regressors is unobservable. We must come up with an estimation. If our sample is large enough and of good quality then it is likely that we will have a good approximation to the true line. The figure below illustrates this situation. Color blue denotes the observable data. That is, the *sample* and the regression we can estimate from those data point. The green line shows the true and unobservable relationship in the whole *population*.
+
+{{< figure library="true" src="econometrics/03_OLS/Fig_04.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
+
 ### Algebraic solution
+
 To find the $betas$ that minimize the sum of the squared residuals we proceed in a typical way:
 
 1. Set the optimization problem.

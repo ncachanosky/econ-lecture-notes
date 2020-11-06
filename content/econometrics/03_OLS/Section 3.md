@@ -43,7 +43,9 @@ $$
 \end{align}
 $$
 
-This expression separates the total variance of the observed data between the explained and residual (non-explained) variance produced by the model. We can now build the $R^2$.
+This expression separates the total variance of the observed data between the explained and residual (non-explained) variance produced by the model. We can now build the $R^2$. It is easier to understand the relationship between $TSS$, $ESS$, and $RSS$ in a scatter plot. The figure below shows this relationship. See how the regression line goes through the mean of $y$ and $x$ and what the estimation is doing is measuring deviation from the mean of the dependent variable for each $x_i$.
+
+{{< figure library="true" src="econometrics/03_OLS/Fig_06.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
 
 ### The $R^2$ (R-squared)
 
@@ -58,7 +60,7 @@ R^2 &= 1 - \frac{\sum e_i^2}{\sum (y_i - \bar{y})^2}, \in [0, 1]
 $$ 
 
 {{% callout note%}}
-$\bar{R}^2$ measures the percent of the variations of $y$ arounds its mean by a regression.
+$\bar{R}^2$ measures the percent of the variations of $y$ arounds its mean that is explained by a regression.
 {{% /callout %}}
 
 The higher $R^2$ is, the closer the estimation $(\hat{y}_i)$ is to the real and observed data $(y_i)$. In plan words, $R^2$ measures the *percentage* of the variance of $y$ that the model can explain and has the following properties.
@@ -98,7 +100,7 @@ $$
 $$
 
 {{% callout note%}}
-$\bar{R}^2$ measures the percent of the variations of $y$ arounds its mean by a regression, **adjusted by the degrees of freedom**.
+$\bar{R}^2$ measures the percent of the variations of $y$ arounds its mean that is explained by a regression, **adjusted by the degrees of freedom**.
 {{% /callout %}}
 
 Adding an irrelevant variable (no explanatory power) makes $\bar{R}^2$ decrease. The new regressor adds little information but harms the esimtation of the other regressors by reducing the amount of information (datapoints) availabe to estimate the $betas$.
@@ -132,7 +134,6 @@ $$
 \underbrace{\sum_i (y_i - \bar{y})^2}\_{\text{TSS}} &= \underbrace{\sum_i (y_i - \hat{y})^2}\_{\text{ESS}} + \underbrace{\sum_i e_i^2}\_{\text{RSS}} \\\\[10pt]
 \end{align}
 $$
-
 
 <!-- FOOTNOTES -->
 [^1]: Recall that the variance of a **random** variable $x$ is: $\sum_i = p_i (x_i - \bar{x})^2$ (where $0 < p_i< 1$). If all values of $x$ have the same probability and there are $n$ observations, then $p_i = \frac{1}{n}$.

@@ -106,7 +106,7 @@ twoway scatter mpg weight, ///
 *==============================================================================*
 ```
 
-{{< figure library="true" src="econometrics/03_OLS/Fig_04.png" numbered="true" title=" Scatter plot: The effect of dropping the constant term">}}
+{{< figure library="true" src="econometrics/03_OLS/Fig_05.png" numbered="true" title=" Scatter plot: The effect of dropping the constant term">}}
 
 The blue dashed line is the best estimation, the one that minimizes the squared residuals by estimating both the constant and the slope of the fitted line. The green solid line is the estimation that drops the constant and only estimates the slope. As mentioned above, dropping the constant is telling the model you want the constant to be zero, therefore OLS will estimate the slope that minimizes the squared errors **conditional** on the constant being zero (if you project the green line all the way to the left it will cross the $(0, 0)$ point). In this example, the effect is not just a slightly different slope, but having the opposite sign. The best line has a negative slope, but by setting the constant to be zero now the model estimates a positive relationship between weight (lbs.) and mileage (mpg).
 
