@@ -55,7 +55,7 @@ twoway scatter mpg weight, ///
 *==============================================================================*
 ```
 
-{{< figure library="true" src="econometrics/lecture 02/Fig 2.01.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
+{{< figure library="true" src="econometrics/03_OLS/Fig_01.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
 
 Looking at the scatter plot, we can imagine an infinite number of lines that can go through all those points. But, we are not looking for *any* line, we are looking for the line that would minimize deviations between a predicted mileage and the observed mileage when looking at the weight of a car. OLS is a method to find such line.
 
@@ -133,7 +133,7 @@ twoway scatter mpg weight, ///
 *==============================================================================*
 ```
 
-{{< figure library="true" src="econometrics/lecture 02/Fig 2.02.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
+{{< figure library="true" src="econometrics/03_OLS/Fig_02.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
 
 The dashed line plots the fitted line, that is, all the $\hat{y}$ values estimated by the regression. This line can be interpreted as the expected value of $y$ conditional on a given value of $x$. Because $e$ is random, $E[y|x] = \hat{y}$.
 
@@ -179,7 +179,7 @@ twoway scatter mpg weight if id==0, ///
 *==============================================================================*
 ```
 
-{{< figure library="true" src="econometrics/lecture 02/Fig 2.03.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
+{{< figure library="true" src="econometrics/03_OLS/Fig_03.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
 
 ### Algebraic solution
 To find the $betas$ that minimize the sum of the squared residuals we proceed in a typical way:
@@ -252,20 +252,18 @@ This method has the following properties.:
 1. The fitted line passes through the sample means $(\bar{y}, \bar{x})$.
 1. The mean value of $y$ equals the mean value of $\hat{y}$ (because $\sum (x_i - \bar{x}) =0$).
 
-There is one more lesson to get from this excercise. As you can probably imagine, finding the optimal $betas$ can become increasingly complicated very fast as we add more regressors to the model. Matrix algebra (very common in econometrics) can make the mathematics of econometrics much simpler. An example of this simpler approach is included in the next section, where we solve the same problem for a regression with multiple regressors. 
+There is one more lesson to get from this excercise. As you can probably imagine, finding the optimal $betas$ can become increasingly complicated very fast as we add more regressors to the model. Matrix algebra (very common in econometrics) can make the mathematics of econometrics much simpler. An example of this simpler approach is included in the next section, where we solve the same problem for a regression with multiple regressors.
 
-{{<icon name="file-excel" pack="fas" >}} {{% staticref "media/econometrics/lecture 02/OLS (simple example).xlsx" %}}Download OLS simple example.{{% /staticref %}}
+{{<icon name="file-excel" pack="fas" >}} {{% staticref "media/econometrics/03_OLS/OLS (simple example).xlsx" %}}Download OLS simple example.{{% /staticref %}}
 
 
 ---
 ## How useful are univariate regressions?
-Using a single regressor has very limited *practical* applications. Most regressions use several regressors in order to (1) achieve a better estimation of the dependent variable and (2) obtain a more accurate intepretation of the $betas$. 
+Using a single regressor has very limited *practical* applications. Most regressions use several regressors in order to (1) achieve a better estimation of the dependent variable and (2) obtain a more accurate interpretation of the $betas$.
 
 However, a univariate regression is very useful *pedagogically* because it offers a simple way to understand what a statistical software is doing behind the scenes when you run a regression. The most important lesson of this section is to understand what OLS is doing, and how it is doing it.
 
-
-
 <!-- FOOTNOTES -->
-[^1]: Of course, the regressors may also be stochastic variables. However, a regression **assumes** they are deterministic. 
+[^1]: Of course, the regressors may also be stochastic variables. However, a regression **assumes** they are deterministic.
 
-[^2]: A more precise exposition of the *error* and *residual* would be in conditional terms. For instance, the average mileage (mpg) of a car conditional on having a specific weight. Cars with different weights will have a random distribution of different mileage around their mean. The error term would be $Y_i - E[Y|x_i]$. 
+[^2]: A more precise exposition of the *error* and *residual* would be in conditional terms. For instance, the average mileage (mpg) of a car conditional on having a specific weight. Cars with different weights will have a random distribution of different mileage around their mean. The error term would be $Y_i - E[Y|x_i]$.
