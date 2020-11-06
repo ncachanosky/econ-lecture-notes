@@ -57,6 +57,10 @@ R^2 &= 1 - \frac{\sum e_i^2}{\sum (y_i - \bar{y})^2}, \in [0, 1]
 \end{aligned}
 $$ 
 
+{{% callout note%}}
+$\bar{R}^2$ measures the percent of the variations of $y$ arounds its mean by a regression.
+{{% /callout %}}
+
 The higher $R^2$ is, the closer the estimation $(\hat{y}_i)$ is to the real and observed data $(y_i)$. In plan words, $R^2$ measures the *percentage* of the variance of $y$ that the model can explain and has the following properties.
 
 * Since $TSS = ESS + RSS$ and all three terms are positive, $R^2$ is between zero and one.
@@ -87,7 +91,17 @@ This *inflation* of the $R^2$ is particularly problematic when comparing differe
 
 ### The $\bar{R}^2$ (adjusted R-squared)
 
+The $\bar{R}^2$ includes the trade-off between adding explanatory power (information) and loss of freedom. $\bar{R}^2$ only increases **if** the new regressors adds more information that the cost of loosing a degree of freedom. Assuming there are $K$ variables plus the constnat, then the degree of freedom adjustment works the following way
 
+$$
+\bar{R}^2 = 1- \frac{N-K-1}{N-1} \frac{RSS}{TSS}
+$$
+
+{{% callout note%}}
+$\bar{R}^2$ measures the percent of the variations of $y$ arounds its mean by a regression, **adjusted by the degrees of freedom**.
+{{% /callout %}}
+
+Adding an irrelevant variable (no explanatory power) makes $\bar{R}^2$ decrease. The new regressor adds little information but harms the esimtation of the other regressors by reducing the amount of information (datapoints) availabe to estimate the $betas$.
 
 ---
 
@@ -115,7 +129,7 @@ $$
 &= \sum_i \left( (\hat{y}_i - \bar{y})^2 + e_i^2 + 2 \sum_i (y_i - \bar{y}) e_i \right) \\\\[10pt]
 &= \sum_i (\hat{y}_i - \bar{y})^2 + \sum_i e_i^2 + 2 \sum_i e_i (\hat{\beta}_0 + \hat{\beta}_1 x\_{1,i} + ... + \hat{\beta}_K x\_{K,i} - \bar{y}) \\\\[10pt]
 &= \sum_i (y_i - \hat{y})^2 + \sum_i e_i^2 + 2 (\hat{\beta}_0 - \bar{y}) \overbrace{\sum_i e_i}^{0} + 2 \hat{\beta}_1 \overbrace{\sum_i e_i x\_{1,i}}^{0} + ... + 2 \hat{\beta}_K \overbrace{\sum_i e_i x\_{K,i}}^{0} \\\\[10pt]
-\underbrace{\sum_i (y_i - \bar{y})^2}\_{TSS} &= \underbrace{\sum_i (y_i - \hat{y})^2}\_{ESS} + \underbrace{\sum_i e_i^2}\_{RSS} \\\\[10pt]
+\underbrace{\sum_i (y_i - \bar{y})^2}\_{\text{TSS}} &= \underbrace{\sum_i (y_i - \hat{y})^2}\_{\text{ESS}} + \underbrace{\sum_i e_i^2}\_{\text{RSS}} \\\\[10pt]
 \end{align}
 $$
 

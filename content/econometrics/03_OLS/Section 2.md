@@ -138,10 +138,6 @@ A **multivariate regression** estimates the change in the dependent variable whe
 We can split the regressors into two groups. On one side, those regressors of which we are interested in estimating their marginal effects (the coefficients). On the other side, those regressors which we have no interest in the value of their coefficients, but we need them in the model to serve as control variables such that we can properly interpret the coefficient of the variables of interest. Let $x_i$ denote four variables of interest and $z_j$ denote seven control variables. Then, the model can be represented the following way.
 
 $$
-y_i = \beta_0 + \overbrace{\beta_1 x_1 + ... + \beta_4 x_4}^{\text{variables of interest}} + \overbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}^{\text{control variables}} + \varepsilon
-$$
-
-$$
 y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_4}\_{\text{variables of interest}} + \underbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}\_{\text{control variables}} + \varepsilon
 $$
 
