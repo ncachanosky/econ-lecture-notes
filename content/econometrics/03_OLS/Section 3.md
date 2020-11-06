@@ -43,9 +43,20 @@ $$
 \end{align}
 $$
 
-
+This expression separates the total variance of the observed data between the explained and residual (non-explained) variance produced by the model. We can now build the $R^2$.
 
 ### The $R^2$ (R-squared)
+
+$R^2$, the *[coefficient of determination](https://en.wikipedia.org/wiki/Coefficient_of_determination)* is the simplest and most common measure of goodness of fit. In simple terms, $R^2$ is the **ratio of the explained variations over total variations** of the dependent variable.
+
+$$
+\begin{\aligned}
+R^2 &= \frac{ESS}{TSS} \\\\
+R^2 &= 1 - \frac{RSS}{TSS} \\\\
+R^2 &= 1 - \frac{\sum e_i^2}{\sum(y_i - \bar{y})^2}
+\end{\aligned}
+$$
+
 
 ### The $\bar{R}^2$ (adjusted R-squared)
 
@@ -73,12 +84,26 @@ $$
 &= \sum_i \left( (\hat{y}_i - \bar{y}) + (y_i - \hat{y}_i) \right)^2 \\\\
 &= \sum_i \left( (\hat{y}_i - \bar{y}) + e_i \right)^2 \\\\
 &= \sum_i \left( (\hat{y}_i - \bar{y})^2 + e_i^2 + 2 \sum_i (y_i - \bar{y}) e_i \right) \\\\
-&= \sum_i (\hat{y}_i - \bar{y})^2 + \sum_i e_i^2 + 2 \sum_i e_i (\hat{\beta}_0 + \hat{\beta}_1 x_{1,i} + ... + \hat{\beta}_K x_{K,i} - \bar{y}) \\\\
-&= \sum_i (y_i - \hat{y})^2 + \sum_i e_i^2 + 2 (\hat{\beta}_0 - \bar{y}) \overbrace{\sum_i e_i}^{0} + 2 \hat{\beta}_1 \overbrace{\sum_i e_i x_{1,i}}^{0} + ... + 2 \hat{\beta}_K \overbrace{\sum_i e_i x_{K,i}}^{0} \\\\
+&= \sum_i (\hat{y}_i - \bar{y})^2 + \sum_i e_i^2 + 2 \sum_i e_i (\hat{\beta}_0 + \hat{\beta}_1 x\_{1,i} + ... + \hat{\beta}_K x\_{K,i} - \bar{y}) \\\\
+&= \sum_i (y_i - \hat{y})^2 + \sum_i e_i^2 + 2 (\hat{\beta}_0 - \bar{y}) \overbrace{\sum_i e_i}^{0} + 2 \hat{\beta}_1 \overbrace{\sum_i e_i x\_{1,i}}^{0} + ... + 2 \hat{\beta}_K \overbrace{\sum_i e_i x\_{K,i}}^{0} \\\\
 \sum_i (y_i - \bar{y})^2 &= \sum_i (y_i - \hat{y})^2 + \sum_i e_i^2 \\\\
 TSS &= ESS + RSS
 \end{align}
 $$
+
+\begin{align}
+\sum_i (y_i - \bar{y})^2 &= \sum_i (y_i - \bar{y} + \hat{y}_i - \hat{y}_i)^2 \\\\
+&= \sum_i \left( (\hat{y}_i - \bar{y}) + (y_i - \hat{y}_i) \right)^2 \\\\
+&= \sum_i \left( (\hat{y}_i - \bar{y}) + e_i \right)^2 \\\\
+&= \sum_i \left( (\hat{y}_i - \bar{y})^2 + e_i^2 + 2 \sum_i (y_i - \bar{y}) e_i \right) \\\\
+&= \sum_i (\hat{y}_i - \bar{y})^2 + \sum_i e_i^2 + 2 \sum_i e_i (\hat{\beta}_0 + \hat{\beta}_1 x\_{1,i} + ... + \hat{\beta}_K x\_{K,i} - \bar{y}) \\\\
+&= \sum_i (y_i - \hat{y})^2 + \sum_i e_i^2 + 2 (\hat{\beta}_0 - \bar{y}) \overbrace{\sum_i e_i}^{0} + 2 \hat{\beta}_1 \overbrace{\sum_i e_i x\_{1,i}}^{0} + ... + 2 \hat{\beta}_K \overbrace{\sum_i e_i x\_{K,i}}^{0} \\\\
+\sum_i (y_i - \bar{y})^2 &= \sum_i (y_i - \hat{y})^2 + \sum_i e_i^2 \\\\
+TSS &= ESS + RSS
+\end{align}
+
+
+
 
 <!-- FOOTNOTES -->
 [^1]: Recall that the variance of a **random** variable $x$ is: $\sum_i = p_i (x_i - \bar{x})^2$ (where $0 < p_i< 1$). If all values of $x$ have the same probability and there are $n$ observations, then $p_i = \frac{1}{n}$.
