@@ -81,7 +81,7 @@ The objective of a good econometric model is not to maximize $R^2$. That can be 
 
 The role of the model is to find the **right** value of $R^2$. Ideally, the model will givea precise estimation of hoy much of the variations of $y$ can be explained with your regressors. An accurate estimation of what the **model does not explain** is valuable information as well that can lead to further research questions. Different subjects have different $R^2$. For instance, is likely to get a high $R^2$ with time-series because of correlation in time-trends. On the other hand, cross-sectional data looking at different countries may have a low $R^2$ because there are important differences across countries that are not easy to quantify.
 
-This *inflation* of the $R^2$ is particularly problematic when comparing different models that have different number of regressors. The adjusted R-square, adj-$R^2$, or $\bar{R}^2$ is corrected version of $R^2$ that takes into account differences in degrees of freedom.
+This *inflation* of the $R^2$ is particularly problematic when comparing different models that have different number of regressors. The adjusted R-square, adj-$R^2$, or $\bar{R}^2$ is an extended version of $R^2$ that takes into account differences in degrees of freedom.
 
 ### The $\bar{R}^2$ (adjusted R-squared)
 
