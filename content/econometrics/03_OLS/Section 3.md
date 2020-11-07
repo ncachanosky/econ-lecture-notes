@@ -181,15 +181,27 @@ $$
 We can now use $p_H^*$ to get the value maximum likelihood value:
 
 $$
-\begin{aligned}
+\begin{align}
 \mathfrak{L}(p_H^*) &= \left( \frac{2}{3} \right)^2 \left( 1 - \frac{2}{3} \right) \\\\[10pt]
 \mathfrak{L}(p_H^*) &\approx 0.14
-\end{aligned}
+\end{align}
 $$
 
 This means that an unfair coind with $2/3$ probability of producing a *heads* (and therefore a $1/3$ probability of producing a *tail*) is the more likely coin to produce the observed $\{HHT\}$. The plot below depicts the MLE problem we just solved analytically.
 
 {{< figure library="true" src="econometrics/03_OLS/Fig_07.png" >}}  
+
+Finally, note that the likelihood function **is not** a probability distribution. This means that the integral of $\mathfrak{L}$ must not equal 1.
+
+$$
+\begin{align}
+\int_0^1 \left(p_H^2 (1-p_h)\right) dp_H &= \int_0^1 \left(p_H^2 - p_H^3\right) dp_H \\\\[10pt]
+&= \frac{1}{3} p_H^3 - \frac{1}{4}p_H^4 + C \right|_0^1 \\\\[10pt]
+&= \left(\frac{1}{3} - \frac{1}{4} +C \right) - \left(0 - 0 + C \right) \\\\[10pt]
+&= \frac{1}{12}
+\end{align}
+$$
+
 
 ### AIC: Akaike Information Criterion
 
