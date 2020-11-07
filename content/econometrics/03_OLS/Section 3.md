@@ -196,7 +196,7 @@ Finally, note that the likelihood function **is not** a probability distribution
 $$
 \begin{align}
 \int_0^1 \left(p_H^2 (1-p_h)\right) dp_H &= \int_0^1 \left(p_H^2 - p_H^3\right) dp_H \\\\[10pt]
-&= \frac{1}{3} p_H^3 - \frac{1}{4}p_H^4 + C \right|_0^1 \\\\[10pt]
+&= \frac{1}{3} p_H^3 - \frac{1}{4}p_H^4 + C |_0^1 \\\\[10pt]
 &= \left(\frac{1}{3} - \frac{1}{4} +C \right) - \left(0 - 0 + C \right) \\\\[10pt]
 &= \frac{1}{12}
 \end{align}
