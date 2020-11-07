@@ -45,7 +45,7 @@ $$
 
 This expression separates the total variance of the observed data between the explained and residual (non-explained) variance produced by the model. We can now build the $R^2$. It is easier to understand the relationship between $TSS$, $ESS$, and $RSS$ in a scatter plot. The figure below shows this relationship. See how the regression line goes through the mean of $y$ and $x$ and what the estimation is doing is measuring deviation from the mean of the dependent variable for each $x_i$.
 
-{{< figure library="true" src="econometrics/03_OLS/Fig_06.png" numbered="true" title=" Scatter plot: Partition of sum of squares">}}  
+{{< figure library="true" src="econometrics/03_OLS/Fig_06.png" >}}  
 
 ### The $R^2$ (R-squared)
 
@@ -107,9 +107,89 @@ Adding an irrelevant variable (no explanatory power) makes $\bar{R}^2$ decrease.
 
 ---
 
+## Mean Squared Error (MSE)
+
+The [Mean Squared Error (MSE)](https://en.wikipedia.org/wiki/Mean_squared_error) measures the average of the squared errors of the regression.
+
+By construct, MSE is always positive, with a value of zero only in the case of a perfect fit. Differently to $R^2$ and $\hat{R}^2$, is not bounded between zero and one and its unit of measure is the squared of the unit of measure of the dependent variable. For instance, if the dependent variable is miles per gallon $(mpg)$, then MSE is measred in $mpg^2$.
+
+MSE is calculated the following way:
+
+$$
+\begin{align}
+MSE &= \frac{1}{N} \sum_{i=1}^N \left(y_i - \hat{y}_i \right)^2 \\\\[10pt]
+MSE &= \frac{1}{N} \sum_{i=1}^N e_i^2
+\end{align}
+$$
+
+---
+
 ## Information criteria
 
+There are three popular **information criteria** measures that evaluate the quality of regression by accounting for the trade-off between new information added to the model and information lost. In other words, these measures try to balance the risk of *overfitting* as well as the risk of *underfitting*.
+
+The three information criteria are:
+
+1. The Akaike Information Criterion (AIC)
+2. The Bayesian Information Criterion (BIC)
+3. The Hannan-Quinn Information Criterion (HQC)
+
+However, before looking at these into more detail, we need to make stop at one of their main component, the **maximun likelihood**.
+
 ### Maximum likelihood
+
+Assume you have a sample of $N$N random observations. The randonmess of this information means that it was originated from a probability function. It is possible that the probability function that produced your data is unknown.
+
+The maximum likelihood is the probability distribution that is more likely to have produced the data in your sample. For instance, you know that your sample comes from a normal distribution, but you don't know the mean, standard devaition, skeweness, and curtosis of the function. A maximum likelihood estimatino (MLE) would use the data in the sample to estimate the mean, standard deviation, skewness, and kurtosis of the normal distribion more likely to produce your sample.
+
+The [likelihood function](https://en.wikipedia.org/wiki/Likelihood_function) measures the likelihood of a probability function with respect to its parameters. If the function has a peak, then the parameters that produces that maximum define the probability function with a maximum likelihood. The stability of the MLE depends of the curvature of the likelihood function around the peak.
+
+For computational simiplicity, the solution to this problme is then using a log-transformatio of the probability function, and therefore it can reportes in terms of a *log-likelihood*.
+
+Let $\mathfrak{L(\theta)}$ by the likelihood function, where $\theta$ is the probability function parameters. MLE finds the $\theta^*$ that maximizies $\mathfrak{L}(\theta^*)$. The simple example below illustrates how MLE works.
+
+### A simple example
+
+Assume you have a coin which you flip three times. You get two *heads* (H) and one *tail*. That is, you observe $\{HHT\}$. If you know for sure this is a fair coin, then you know that the probability of heads is $1/2$ and probabilty ot tail is $1/2$. Knowing for sure this is a fair coin means that we already know the probability distribution of *heads* and *tails* in this coin.
+
+However, we don't know if this is a fair coin or not. The MLE question is what are the probabilities of *heads* and *tails* more likely to produce $\{HHT\}$.
+
+Let $0 \leq p_H \leq 1$ be the probability of *heads* and $1-p_H$ be the probability of *tails*. Since we got two *heads* and one *tail*, we need to find the value of $p_H$ that maximizes $p_H^2 (1-p_H)$.
+
+$$
+\operatorname*{max}_{p_H} \mathfrak{L}(p_H) = {p_H}^2 (1 - p_H)
+$$
+
+This example allows for an easy analytical solution. Take the first derivative and solve for $p_H$.
+
+$$
+\begin{aligned}
+\mathfrak{L}(p_H) &= {p_H}^2 (1 - p_H) \\\\[10pt]
+\frac{\mathfrak{L}(p_H)}{\partial p_H} &= 2p_H - 3{p_H}^2 = 0 \\\\[10pt]
+{p_H}^* &= \frac{2}{3}
+\end{aligned}
+$$
+
+The second order condition confirms this is a maximum.
+
+$$
+\begin{aligned}
+\frac{\partial ^2 \mathfrak{L}(p_H)}{\partial {p_H}^2} = -3 < 0
+\end{aligned}
+$$
+
+We can now use $p_H^*$ to get the value maximum likelihood value:
+
+$$
+\begin{aligned}
+\mathfrak{L}(p_H^*) &= \left( \frac{2}{3} \right)^2 \left( 1 - \frac{2}{3} \right) \\\\[10pt]
+\mathfrak{L}(p_H^*) &\approx 0.14
+\end{aligned}
+$$
+
+This means that an unfair coind with $2/3$ probability of producing a *heads* (and therefore a $1/3$ probability of producing a *tail*) is the more likely coin to produce the observed $\{HHT\}$. The plot below depicts the MLE problem we just solved analytically.
+
+{{< figure library="true" src="econometrics/03_OLS/Fig_07.png" >}}  
 
 ### AIC: Akaike Information Criterion
 

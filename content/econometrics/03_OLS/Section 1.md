@@ -55,7 +55,7 @@ twoway scatter mpg weight, ///
 *==============================================================================*
 ```
 
-{{< figure library="true" src="econometrics/03_OLS/Fig_01.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
+{{< figure library="true" src="econometrics/03_OLS/Fig_01.png" >}}  
 
 Looking at the scatter plot, we can imagine an infinite number of lines that can go through all those points. But, we are not looking for *any* line, we are looking for the line that would minimize deviations between a predicted mileage and the observed mileage when looking at the weight of a car. OLS is a method to find such line.
 
@@ -133,7 +133,7 @@ twoway scatter mpg weight, ///
 *==============================================================================*
 ```
 
-{{< figure library="true" src="econometrics/03_OLS/Fig_02.png" numbered="true" title=" Scatter plot: Mileage versus Weight">}}  
+{{< figure library="true" src="econometrics/03_OLS/Fig_02.png" >}}  
 
 The dashed line plots the fitted line, that is, all the $\hat{y}$ values estimated by the regression. This line can be interpreted as the expected value of $y$ conditional on a given value of $x$. Because $e$ is random, $E[y|x] = \hat{y}$.
 
