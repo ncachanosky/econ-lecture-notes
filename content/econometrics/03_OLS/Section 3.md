@@ -150,7 +150,7 @@ Let $\mathfrak{L(\theta)}$ by the likelihood function, where $\theta$ is the pro
 
 ### A simple example
 
-Assume you have a coin which you flip three times. You get two *heads* (H) and one *tail*. That is, you observe $\{HHT\}$. If you know for sure this is a fair coin, then you know that the probability of heads is $1/2$ and probabilty ot tail is $1/2$. Knowing for sure this is a fair coin means that we already know the probability distribution of *heads* and *tails* in this coin.
+Assume you have a coin which you flip three times. You get two *heads* (H) and one *tail*. That is, you observe ${HHT}$. If you know for sure this is a fair coin, then you know that the probability of heads is $1/2$ and probabilty ot tail is $1/2$. Knowing for sure this is a fair coin means that we already know the probability distribution of *heads* and *tails* in this coin.
 
 However, we don't know if this is a fair coin or not. The MLE question is what are the probabilities of *heads* and *tails* more likely to produce $\{HHT\}$.
 
@@ -197,11 +197,10 @@ $$
 \begin{aligned}
 \int_0^1 \left(p_H^2 (1-p_h)\right) dp_H &= \int_0^1 \left(p_H^2 - p_H^3\right) dp_H \\\\[10pt]
 &= \frac{1}{3} p_H^3 - \frac{1}{4}p_H^4 + C |_0^1 \\\\[10pt]
-&= \left(\frac{1}{3} - \frac{1}{4} +C \right) - \left(0 - 0 + C \right) \\\\[10pt]
+&= \left(\frac{1}{3} - \frac{1}{4} +C \right) - \left(\frac{1}{3} \cdot 0 - \frac{1}{4} \cdot 0 + C \right) \\\\[10pt]
 &= \frac{1}{12}
 \end{aligned}
 $$
-
 
 ### AIC: Akaike Information Criterion
 
