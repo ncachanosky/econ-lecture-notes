@@ -183,7 +183,7 @@ We can now use $p_H^*$ to get the value maximum likelihood value:
 $$
 \begin{aligned}
 \mathfrak{L}(p_H^*) &= \left( \frac{2}{3} \right)^2 \left( 1 - \frac{2}{3} \right) \\\\[10pt]
-\mathfrak{L}(p_H^*) &\approx 0.14
+\mathfrak{L}(p_H) &\approx 0.14
 \end{aligned}
 $$
 
