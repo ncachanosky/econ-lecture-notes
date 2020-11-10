@@ -204,6 +204,22 @@ $$
 
 ### AIC: Akaike Information Criterion
 
+[AIC](https://en.wikipedia.org/wiki/Akaike_information_criterion) is an estimation of *out-of-sample* prediction errors. The AIC is a *relative* statistic, meaning it is only informative when compared with the AIC of other models. Different to, for instance, $R^2$ which can be read for one and only regression, AIC is used to compare *different models*. For instance, AIC will not tell you if all your models are bad fits, it will only rank from worse to less worse.
+
+The maximum likelihood is the way AIC rewards goodness of fit. The higher the likelihood of the probability function producing the observed data, the more accurate predictions should be. AIC penalizes loss of information and the risk of overfitting by counting the number estimated parameters.
+
+LEt the model have $K$ parameters to be estimated (this includes the constant) and let $\mathfrak{L^*}$ the value of the maximum likelihood function. Then, AIC is calculated the following way
+
+$$
+AIC = 2K - 2ln(\mathfrak{L^*})
+$$
+
+Note that the goodness of fit has a negative sign and that the number of regressors of positive signs. This means that the *more negative* the number is, the better. An AIC of 10 is better than an AIC of 100. And an AIC of -100 is better than an AIC of -10.[^2]
+
+{{< figure library="true" src="econometrics/03_OLS/Fig_08.png" >}}
+
+AIC is an asymptotic measure, which means that it requires a large sample size to offer reliable estimations to make relative comparisons. If the sample size is small, then AIC can selected models that have too many parameters (risk of overfitting).
+
 ### BIC: Bayesian Information Criterion
 
 ### HQC: Hannan-Quinn Information Criterion
@@ -228,3 +244,5 @@ $$
 
 <!-- FOOTNOTES -->
 [^1]: Recall that the variance of a **random** variable $x$ is: $\sum_i = p_i (x_i - \bar{x})^2$ (where $0 < p_i< 1$). If all values of $x$ have the same probability and there are $n$ observations, then $p_i = \frac{1}{n}$.
+
+[^2]: AIC is an asymptotic measure, which means that it requires a large sample size to offer reliable estimations to make relative comparisons. If the sample size is small, then AIC can selected models that have too many parameters (risk of overfitting). Let $AICc$ be the AIC corrected for small samples, then: $AICc = AIC \frac{2K^2 + 2K}{N - K - 1}$.
