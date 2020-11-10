@@ -220,9 +220,45 @@ Note that the goodness of fit has a negative sign and that the number of regress
 
 AIC is an asymptotic measure, which means that it requires a large sample size to offer reliable estimations to make relative comparisons. If the sample size is small, then AIC can selected models that have too many parameters (risk of overfitting).
 
-### BIC: Bayesian Information Criterion
+### BIC: Bayesian Information Criterion (or Schwarz Information Criterio -SIC)
+
+[BIC](https://en.wikipedia.org/wiki/Bayesian_information_criterion) (or SIC) follows a similar approach to that of AIC.
+
+The main difference between BIC and AIC is the penalty measure of how many coefficients are being estimated. The BIC formula is:
+
+$$
+BIC = K \cdot ln(N) - 2ln(\mathfrak{L^*})
+$$
+
+Similar to AIC, BIC works better with a large sample size (with respect to $K$) and the *more negative* the value of BIC the better.
+
+Even though AIC and BIC look very similar, their different foundations suggest they are better fit for different tasks. BIC is more appropriate to select the *true model* **if** the true model is included among the candidates. Put it differently, BIC tends to choose the true model with probability 1 as the sample size increases $(N \rightarrow \infty)$. AIC, however, offers a probability less than one of choosing the right model under similar conditions. BIC is asymptotically efficient, while AIC is not.
+
+On the other hand, it is very unlikely that the true model will be one of the candidates. AIC offers a better selection mechanism to pick the model that minimizes least mean squared errors. Put it differently, AIC is more useful to find an approximation model assuming the true model is not included among the candidates. 
+
+Look at the AIC and BIC formulas. AIC includes a linear penalty term with respect to the number of coefficients to estimate. BIC penalty term is increasing with respect to the sample size. Therefore, a large sample can produce a high penalty and a low likelihood value if the data is used in a bad model.
 
 ### HQC: Hannan-Quinn Information Criterion
+
+Finally. [HQC](https://en.wikipedia.org/wiki/Hannan%E2%80%93Quinn_information_criterion) offers an alternative information criterion to AIC and BIC. HQC is calculated in the following way:
+
+$$
+HQC = 2K \cdot ln \left(ln(N) \right) - 2 ln (\mathfrak{L^*})
+$$
+
+Like AIC and BIC, the *more negative* HQC is, the better. Unlike AIC, but like BIC, HQC is asymptotically effiicient (tends to chose the true model when $N \rightarrow \infty)$.
+
+---
+
+## How to use all this information
+
+We have gone through the more common, but not all, tools of model selection among different candidates.
+
+In principle you want to look at all of them, but remain careful in how you interpret them. For instance, the R-squared measures goodness of fit in-sample, while the information criteria are looking out-of-sample expected fit. 
+
+It would be ideal if all the selection criteria methods point out to the same model. But this is not always the case. The fact that you are running a regression does not mean you stop being an economist. Besides looking at all these measures, you should also ask yourself which model makes more economic sense? None of these methods is perfect, and the risk remains that a variable would accidentally improve $\bar{R}^2$. This may produce an unexpected sign, such an upward sloping demand. However, another problem is that such model would produce biased estimations *even if* it has a higher $\bar{R}^2$ than an alternative model. This is an example of overfitting.
+
+
 
 ---
 
