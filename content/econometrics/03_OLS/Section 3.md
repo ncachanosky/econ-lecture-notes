@@ -138,7 +138,7 @@ However, before looking at these into more detail, we need to make stop at one o
 
 ### Maximum likelihood
 
-Assume you have a sample of $N$N random observations. The randonmess of this information means that it was originated from a probability function. It is possible that the probability function that produced your data is unknown.
+Assume you have a sample of $N$ random observations. The randonmess of this information means that it was originated from a probability function. It is possible that the probability function that produced your data is unknown.
 
 The maximum likelihood is the probability distribution that is more likely to have produced the data in your sample. For instance, you know that your sample comes from a normal distribution, but you don't know the mean, standard devaition, skeweness, and curtosis of the function. A maximum likelihood estimatino (MLE) would use the data in the sample to estimate the mean, standard deviation, skewness, and kurtosis of the normal distribion more likely to produce your sample.
 
@@ -148,7 +148,7 @@ For computational simiplicity, the solution to this problme is then using a log-
 
 Let $\mathfrak{L(\theta)}$ by the likelihood function, where $\theta$ is the probability function parameters. MLE finds the $\theta^*$ that maximizies $\mathfrak{L}(\theta^*)$. The simple example below illustrates how MLE works.
 
-### A simple example
+#### A simple example
 
 Assume you have a coin which you flip three times. You get two *heads* (H) and one *tail*. That is, you observe ${HHT}$. If you know for sure this is a fair coin, then you know that the probability of heads is $1/2$ and probabilty ot tail is $1/2$. Knowing for sure this is a fair coin means that we already know the probability distribution of *heads* and *tails* in this coin.
 
