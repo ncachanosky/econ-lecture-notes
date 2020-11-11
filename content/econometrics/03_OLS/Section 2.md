@@ -11,20 +11,21 @@ type: book  # Do not modify.
 
 ---
 
-## What is a multivariate regression
+## What is multivariate regression
 
 ### Multiple regressors
 
 It is very unlikely that a dependent variable can be properly *explained* (in the econometrics sense) by a single regressor. In most cases, regression analyses will use several regressors.
 
-For instance, let the price of houses be the dependent variable $(y_i)$. The price of houses obviously depends on its size. But, it also depends on other variables such as how old the house is, distance to highways, quality of the district high-school, location of the neighborhood, safety, and so on. Let $j = 1, ..., K$ be the number of regressors; then:
+For instance, let the price of houses be the dependent variable $(y_i)$. The price of houses obviously depends on its size. But, house prices also depends on other variables such as how old the house is, distance to highways, quality of the district high-school, location of the neighborhood, safety, and so on. Let $j = 0, ..., K$ be the number of regressors; then:
 
-1. $x_1$: size of the house,
-2. $x_2$: age of the house,
-3. $x_3$: distance to highways and public transportation,
-4. $x_4$: high-school quality in the area,
-5. $x_5$: neighborhood location,
-6. $x_6$: safety.
+1. $x_0$: the constant term
+2. $x_1$: size of the house,
+3. $x_2$: age of the house,
+4. $x_3$: distance to highways and public transportation,
+5. $x_4$: high-school quality in the area,
+6. $x_5$: neighborhood location,
+7. $x_6$: safety.
 
 In this case we have six regressors, which can be used to build the following theoretical linear relationship:
 
@@ -57,15 +58,15 @@ The second reason is that a regressor attached to a $beta$ with a high value may
 
 The mathematical interpretation of $\beta_0$ is straightforward. It is the expected value of $y$ when **all** regressors are equal to zero $(x_1 = ... = x_6 = 0)$.
 
-The conceptual interpretation of $\beta_0$ is a little more challenging. In the above model, if all the regressors are zero, then a house with zero size located directly over a highway will have some positive expected value. The issue is that $\beta_0$ is merging several components of the regression model. Inside $\beta_0$ we have:
+The conceptual, or economic, interpretation of $\beta_0$ is a little more challenging. In the above model, if all the regressors are zero, then a house with zero size located directly over a highway will have some positive expected value. This situation, of course, does not make sense. If the constant term has no economic meaning, what is its purpose? The issue is that $\beta_0$ includes several components of the regression model. Inside $\beta_0$ we have:
 
 1. The true value of $\beta_0$ (which may or may not be equal to zero)
-2. A *constant impact* of any specification error (the equation of the model is wrong).
+2. A *constant impact* of any specification error (such as if the equation of the model is wrong).
 3. The mean of $\varepsilon$ conditional on your model being correctly specified.
 
 We can translate this into simpler terms. Remember that OLS is fitting the line that minimizes the squared residuals. This line has two components, the *slope* of the line and its *level* (or intercept). OLS is not just about finding the right *slope*, is also about finding the right *vertical location* of the best line.
 
-If you drop from the equation the constant term because it has no clear economic meaning, you run the risk of mispecifying your model. Dropping the constant term is forcing the model to find the best slope when the intercept is zero: $y_i = 0 + \beta_1 x_1 + \varepsilon$.
+If you drop from the equation the constant term because it has no clear economic meaning, you run the risk of wrongly specifying your model. Dropping the constant term is forcing the model to find the best slope when the intercept is zero: $y_i = 0 + \beta_1 x_1 + \varepsilon$.
 
 Another way to see that $\beta_0$ is to be included for *technical* reasons more than because of its economic interpretation is that in most cases, the domain of the value of the regressors does not include zero, therefore the constant term falls outside the region of relevant data of the regression (see the plot below). For instance, we know that there are no houses of zero size.
 
@@ -108,9 +109,13 @@ twoway scatter mpg weight, ///
 
 {{< figure library="true" src="econometrics/03_OLS/Fig_05.png" >}}
 
-The blue dashed line is the best estimation, the one that minimizes the squared residuals by estimating both the constant and the slope of the fitted line. The green solid line is the estimation that drops the constant and only estimates the slope. As mentioned above, dropping the constant is telling the model you want the constant to be zero, therefore OLS will estimate the slope that minimizes the squared errors **conditional** on the constant being zero (if you project the green line all the way to the left it will cross the $(0, 0)$ point). In this example, the effect is not just a slightly different slope, but having the opposite sign. The best line has a negative slope, but by setting the constant to be zero now the model estimates a positive relationship between weight (lbs.) and mileage (mpg).
+The blue dashed line is the best estimation possible with the given data, the one that minimizes the squared residuals by estimating both the constant and the slope of the fitted line. The green solid line is the estimation that drops the constant and only estimates the slope. As mentioned above, dropping the constant is telling the model you want the constant to be zero, therefore OLS will estimate the slope that minimizes the squared errors **conditional** on the constant being zero (if you project the green line all the way to the left it will cross the $(0, 0)$ point). In this example, the effect is not just a slightly different slope, but having the opposite sign. The best line has a negative slope, but by setting the constant to be zero now the model estimates a positive relationship between weight (lbs.) and mileage (mpg).
 
 The reason to keep the constant in your model is not because of its economic interpretation, if it has any. The reason is that by having OLS the option to also estimate the constant it has more variables at its disposal to find the best line possible. The best line is constructed with **two** variables, *slope* and *intercept*.
+
+{{% callout warning %}}
+To be correctly specified, your model must include a constant term **even if* it odes not have an economic interpretation
+{{% /callout %}}
 
 ---
 
@@ -121,21 +126,21 @@ The above discussion already points to a reason for preferring a multivariate re
 However, there are other two important reasons of why multivariate regression are preferred over univariate regression:
 
 1. The role of control variables
-1. To avoid the serious problem of ommited variable bias
+1. To avoid the serious problem of omitted variable bias
 
 ### Control variables
 
 Let's assume we run a univariate regression, where the price of houses is the dependent variable and the size of the house is the regressor. The model will find the best fit using this single regressor. However, the coefficient of the size of the house **does not capture** the *ceteris paribus* relationship between the price and size of houses.
 
-The problem is that when OLS is looking at two houses, they may differ in other variables other than price and size. Maybe one house is better located than the other or is closer to a highway. In other words, the regression is *implicitly* affected by changes in all **non-included** regressors.
+The problem is that when OLS is looking at two houses, they may differ in variables other than price and size. Maybe one house is better located than the other, or maybe is closer to a highway. In other words, the regression is *implicitly* affected by changes in all **non-included** regressors.
 
-To avoid this issue, the model must include *all* variables we want to hold constant, just as if we were in a chemistry lab. If we add a second regressor looking at the age of the house, then OLS can look at the impact of size on price *keeping the age of the house constant*. This is why regressors are also referred as **control variables**, because they control variation on other variables allowing to read a coefficient as the effect of its regressors *maintaining all other variables constant*. For the econometric model to be able to isolate the effect of the size of the house on its price keeping other variables constant (and the other way around), it needs to be able to match different sizes with same age to different prices. If the age of the house is not included in the model, then the data is missing and the model cannot isolate both effects.
+To avoid this issue, the model must include *all* variables we want to hold constant, just as if we were in a chemistry lab. If we add a second regressor looking at the age of the house, then OLS can look at the impact of size on price *keeping the age of the house constant*. This is why regressors are also referred as **control variables**, because they control variations on other variables allowing to read a coefficient as the effect of its regressors *maintaining all other variables constant*. For the econometric model to be able to isolate the effect of the size of the house on its price keeping other variables constant (and the other way around), it needs to be able to match different sizes with same age to different prices. If the age of the house is not included in the model, then the data is missing and the model cannot isolate both effects.
 
 {{% callout note%}}
 A **multivariate regression** estimates the change in the dependent variable when there is a **one-unit** increase in a dependent variable *holding all other **included** regressors constant*.
 {{% /callout %}}
 
-We can split the regressors into two groups. On one side, those regressors of which we are interested in estimating their marginal effects (the coefficients). On the other side, those regressors which we have no interest in the value of their coefficients, but we need them in the model to serve as control variables such that we can properly interpret the coefficient of the variables of interest. Let $x_i$ denote four variables of interest and $z_j$ denote seven control variables. Then, the model can be represented the following way.
+We can split the regressors into two groups. On one side, those regressors of which we are interested in estimating their marginal effects (the coefficients). On the other side, those regressors which we have no interest in the value of their coefficients *per se*, but we need them in the model to serve as control variables such that we can properly interpret the coefficient of the variables of interest. Let $x_i$ denote four variables of interest and $z_j$ denote seven control variables. Then, the model can be represented the following way.
 
 $$
 y_i = \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_4 x_4}\_{\text{variables of interest}} + \underbrace{\gamma_1 z_1 + ... + \gamma_7 z_7}\_{\text{control variables}} + \varepsilon
@@ -160,6 +165,13 @@ Let **$y$** denote a $(N \times 1)$ column that includes all $N$ observations of
 The **constant** and **all** $K$ regressors (controls and variables of interest) are now included in the $X$ matrix, which has a $N \times K$ dimension. The first column is the constant term, which is represented by all ones. This way, $\beta_0$ captures the whole value of the constant term. Columns 2 to $K$ capture all the remaining regressors.
 
 There is subtle but important difference with our treatment so far. Previously, we talked about the *constant term plus the variables*. This is because, other than the constant, the value of each regressor value can change with each observation. Then, we have *regressors* and *variables*. The former are all the columns of the $X$ matrix including the constant term. The latter are the regressors which values can change, such as $x_1, ..., x_6$ in our previous example. In this sense, the number of regressors is $1 + \text{number of variables}$.
+
+$$
+\begin{align}
+y_i &= \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_K x_K}_{\text{variables}} + \varepsilon_i \\\\[10pt]
+y_i &= \underbrace{\beta_0 + \beta_1 x_1 + ... + \beta_K x_K}_{\text{regressors}} + \varepsilon_i
+\end{align}
+$$
 
 Next we have a $N \times 1$ vector that includes all the coefficient of all the regressors $(\beta)$ (recall, including the constant).
 
@@ -246,4 +258,4 @@ $$
 \hat{\beta}^{*} = \left( X'X \right)^{-1} \left( X'y \right)
 $$
 
-Note how much simpler and straightforward matrix algebra is with respect to the analytical approach we used in the univariate regression. Also, note that for the $beta$ vector to exist, the inverse of $(X'X)$ must exist. This means that the $(X'X)$ matrix must be *full-rank*; an important topic in the issue of multicollinearity.
+Note how much simpler and straightforward matrix algebra is with respect to the analytical approach we used in the univariate regression. $K$ can be small or very large, and yet the calculation to obtain the $betas$ will be the same. Also, note that for the $beta$ vector to exist, the inverse of $(X'X)$ must exist. This means that the $(X'X)$ matrix must be *full-rank*; an important topic in the issue of multicollinearity.

@@ -14,7 +14,7 @@ type: book  # Do not modify.
 
 ## What is Ordinary Least Squares (OLS)?
 
-[OLS](https://en.wikipedia.org/wiki/Ordinary_least_squares) is the most common method to estimate the *parameters* of a linear regression such that the sum of the **squared errors** is minimized. In more general terms, OLS is one application of a group of [*linear least squares*](https://en.wikipedia.org/wiki/Linear_least_squares) methods.
+[OLS](https://en.wikipedia.org/wiki/Ordinary_least_squares) is the most common method to estimate the *parameters* of a **linear** regression such that the sum of the **squared errors** is minimized. In more general terms, OLS is one application of a group of [*linear least squares*](https://en.wikipedia.org/wiki/Linear_least_squares) methods.
 
 Assume we want to estimate the linear relationship between mileage (mpg) $(y)$ of autombiles with respect to its weight $(x)$. The dependent variable is $y$ and $x$ is the regressor. Then, we are assuming that $y$ has a linear relationship with respect to its weight. Let $i = 1,...,N$ be the number of observations; that is, how many mileage and weight observations we have at our disposal. The theoretical representation of this relationship is the following:
 
@@ -25,7 +25,7 @@ y_n   &= \beta_0 + \beta_1 x_i + \varepsilon_i
 \end{align}
 $$
 
-The error term $(\varepsilon)$ is capturing random situations that would affect the mileage of the car, such as weather conditions, altitude, or different inclinations of the roads. The error term is purely random and captures the variations of $y$ that cannot be explained by $x$. We can then split an econometric regression in two parts. A **deterministic** component (the constant plus the regressors) and a **stochastic** component (the error term). Because $y$ is modeled as a function of a deterministic and a random variable, $y$ is also a random variable: $y = f(x, e)$. There is an assymmetry in how variables are treated; while the dependent variable is assumed to be *stochastic*, the regressors are assumed to be *deterministic*.[^1]
+The error term $(\varepsilon)$ is capturing random situations that would affect the mileage of the car, such as weather conditions, altitude, or roads with different inclinations. The error term is purely random and captures the variations of $y$ that cannot be explained by $x$. We can then split an econometric regression in two parts. A **deterministic** component (the constant plus the regressors) and a **stochastic** component (the error term). Because $y$ is modeled as a function of a deterministic and a random variable, $y$ is also a random variable: $y = f(x, e)$. There is an assymmetry in how variables are treated; while the dependent variable is assumed to be *stochastic*, the regressors are assumed to be *deterministic*.[^1]
 
 We can also see that $\beta_1$ is the **marginal effect** of $x$ on $Y$: $\frac{\partial y}{\partial x} = \beta_1$.
 
@@ -76,10 +76,10 @@ Do not confuse the [**error term** with the **residual**](https://en.wikipedia.o
 
 ---
 **The error $(\varepsilon)$ term**  
-The *error* is the difference between the **expected** value of the dependent variable $(E[y])$ and a random observation taken from the sample: $\varepsilon_i = E[y] - y_i$. If the mean mileage of a car is 27 mpg and a randomly observed car has an mpg of 25, then the error is 2 mpg. A regression assumes these errors are random. The error term captures random effects that make the dependent variable deviate from its mean (for instance random measurement errors).
+The *error* is the difference between the **expected** value of the dependent variable $(E[y])$ and a random observation $(y_i)$ taken from the sample: $\varepsilon_i = E[y] - y_i$. If the mean mileage of a car is 27 mpg and a randomly observed car has an mpg of 25, then the error is 2 mpg. A regression assumes these errors are random and make the dependent variable deviate from its mean (for instance random measurement errors).
 
 **The residual $(e)$**  
-The residual (or fitting deviation) is the difference between an observed value $(y_i)$ and its prediction $(\hat{y_i})$: $e_i = y_i - \hat{y_i}$. For instance, the observe mileage of a car if 27 mpg and the model predicts 23 mpg, then the residual is 4 mpg (the unexplained residue of the model). In this sense, the *residual* is an estimation of the unovserbable *error*.
+The residual (or fitting deviation) is the difference between an observed value $(y_i)$ and a model's prediction $(\hat{y_i})$: $e_i = y_i - \hat{y_i}$. For instance, the observed mileage of a car is 27 mpg and the model predicts 23 mpg, then the residual is 4 mpg (the unexplained residue of the model). In this sense, the *residual* is an estimation of the unobservable *error*.
 {{% /callout %}}
 
 Our example has 74 observations. Given that the model can predict one $mpg$ for each car $weight$, there is one *residual* for each observation. Because $\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$, we can see that
@@ -91,7 +91,7 @@ e_i &= y_i - (\hat{\beta_0} + \hat{\beta_1} x_i)
 \end{align}
 $$
 
-Yet, there is still a situation that requires a workaround. We can fit an infinite number of lines that will make the sumation of all the *residuals* equal to zero $(\sum^{74}_{i=1} e_i = 0)$ (residuals cancel out). Canceling the residuals is not enough because only one of those infinite lines is the one we are looking for. To find the line we are looking for, OLS minimizes the **squared** residuals. We can now state the OLS problem in more precise terms:
+Yet, there is still a situation that requires a workaround. We can fit an infinite number of lines that will make the sumation of all the *residuals* equal to zero $(\sum^{74}_{i=1} e_i = 0)$ (residuals cancel out). Canceling the residuals is not enough because only one of those infinite number of lines is the one we are looking for. To find the line we are looking for, OLS minimizes the **squared** residuals. We can now state the OLS problem in more precise terms:
 
 $$
 \operatorname*{min}_{\beta_{0},\beta_{1}} \sum_i e_i^2 = \operatorname*{min}_{\beta_{0},\beta{1}} \sum_n (y_i - \hat{\beta_0} - \hat{\beta_1} x_i)^2
@@ -135,9 +135,9 @@ twoway scatter mpg weight, ///
 
 {{< figure library="true" src="econometrics/03_OLS/Fig_02.png" >}}  
 
-The dashed line plots the fitted line, that is, all the $\hat{y}$ values estimated by the regression. This line can be interpreted as the expected value of $y$ conditional on a given value of $x$. Because $e$ is random, $E[y|x] = \hat{y}$.
+The dashed line plots the fitted line, that is, all the $\hat{y}$ values estimated by the regression. This line can be interpreted as the expected value of $y$ conditional on a given value of $x$. Because $e$ is random with zero mean $(E[\varepsilon]=0$), $E[y|x] = \hat{y}$.
 
-We can use the same dataset to illustrate the importance of having a large and representative sample. The `STATA` code below splits the 74 observations in two random groups of 37 each. The figure shows how each  sample taken the same population (all 74 datapoints) can lead to different regression results (because the code uses random values, your own result will not coincide with the one shown below)
+We can use the same dataset to illustrate the importance of having a large and representative sample. The `STATA` code below splits the 74 observations in two random groups of 37 each. The figure shows how each sample, taken the same population, can lead to different regression results (because the code uses random values, your own result will not coincide with the one shown below)
 
 ```stata
 *==============================================================================*
