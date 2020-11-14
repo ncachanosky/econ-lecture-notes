@@ -24,7 +24,12 @@ A good quality econometric model should check the following boxes:
 - [x] Is the regression free of econometric problems? (later chapters)
 - [x] How close to real data does are the model estimations? (this chapter)
 
-This chapter deals with the last question. Namely, how good the *fit* of the model is. There are different ways to measure the goodness of fit of the model. First, we will go through the **coefficient of determination**. Second, we will see the mean squared error. Third, we will go through three common **information criteria** indicators.
+This chapter deals with the last question. Namely, how good the *fit* of the model is. There are different ways to measure the goodness of fit of the model. We will go through the following four evaluations:
+
+1. Normality of the residuals
+2. Coefficient of determination
+3. Mean squared error
+4. Three information criteria
 
 ## Coefficients of determination
 
