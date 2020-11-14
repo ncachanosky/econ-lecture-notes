@@ -255,6 +255,14 @@ Like AIC and BIC, the *more negative* HQC is, the better. Unlike AIC, but like B
 
 ---
 
+## The normality of the residuals
+
+Finally, residuals can also help diagnose if anything is wrong with the regression. As suggested so far, and we will see in more detail in the next chapters, a good regression will produce normally distributed residuals. Therefore, an indication that something may be wrong with the model is when residuals deviate from a normal distribution.
+
+As we move forward, we will see how to formally test for residuals having a normal distribution and what other tests can be done to assess the quality of the regression. Right now, the important message is that residuals are a very important source of information regarding the quality and characteristics of the regression model.
+
+---
+
 ## How to use all this information
 
 We have gone through the more common, but not all, tools of model selection among different candidates.
