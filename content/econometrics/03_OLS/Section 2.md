@@ -81,8 +81,8 @@ The effect of dropping the constant can be seen in the plot below. Let's use aga
 
 *|CELL 1|----------------------------------------------------------------------*
 *|Settings and required data
-set scheme scientific  // Set plot scheme
-sysuse auto  // Load 1978 Automobile Data from STATA
+set scheme s1color  // Set plot scheme
+sysuse auto, clear  // Load 1978 Automobile Data from STATA
 
 regress mpg weight, noconst
 predict y_hat, xb

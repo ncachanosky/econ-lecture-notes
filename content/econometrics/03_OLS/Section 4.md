@@ -9,4 +9,31 @@ type: book  # Do not modify.
 ---
 
 ---
-Section 4
+
+---
+
+## Organize and clean your data
+
+---
+
+## Familiarize your self with the data
+
+### Statistical summary
+
+### Histograms
+
+### Correlation matrices
+
+### Scatter plots
+
+---
+
+## Define your models
+
+---
+
+## Run your regressions
+
+---
+
+## Evaluate the quality of your models

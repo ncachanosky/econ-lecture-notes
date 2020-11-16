@@ -41,7 +41,7 @@ Let's use the 1978 automobile dataset in `STATA` to illustrate how OLS works. Th
 *|CELL 1|----------------------------------------------------------------------*
 *|Settings and required data
 set scheme s1color  // Set plot scheme
-sysuse auto  // Load 1978 Automobile Data from STATA
+sysuse auto, clear  // Load 1978 Automobile Data from STATA
 
 *|CELL 2|----------------------------------------------------------------------*
 *|Build scatter plots
@@ -114,7 +114,7 @@ The OLS estimation fits the *best* line through the points in the scatter plot. 
 *|CELL 1|----------------------------------------------------------------------*
 *|Settings and required data
 set scheme s1color  // Set plot scheme
-sysuse auto  // Load 1978 Automobile Data from STATA
+sysuse auto, clear  // Load 1978 Automobile Data from STATA
 
 *|CELL 2|----------------------------------------------------------------------*
 *|Build scatter plots
@@ -149,7 +149,7 @@ We can use the same dataset to illustrate the importance of having a large and r
 *|CELL 1|----------------------------------------------------------------------*
 *|Settings and required data
 set scheme s1color  // Set plot scheme
-sysuse auto  // Load 1978 Automobile Data from STATA
+sysuse auto, clear  // Load 1978 Automobile Data from STATA
 
 *|CELL 2|----------------------------------------------------------------------*
 *|Sort the dataset randomly
