@@ -34,7 +34,7 @@ Unless the data you need is already in a dataset (of one format or another, you 
 
 Let us use an hypothetical example (unrelated to the automobile exercise) to show how you can organize your dataset to make it easy to read and explore. Assume you are looking at data for the 50 U.S. states.
 
-Data is usually organized the following way. Regressors are columns and rows are observations. In addition, you know you have three types of variables: (1) the **dependent** variable, (2) your regressors **of interest**, (3) and our **control** variables. Then, you can start with some metadata such as the observation number and the U.S. state. Each row is one observation (or one state). This metadata helps to identify each row. Then you can identify (with borders or different colors) your dependent variable. To the right you can have your variable(s) of interest. Finally, the last set of columns can be your control variables. You may also want to consider other *format* edits that will facilitate your reading of the data such as number of decimals, or horizontal lines every a few observations, and so on).
+Data is usually organized the following way. Regressors are columns and rows are observations. In addition, you know you have three types of variables: (1) the **dependent** variable $(y)$, (2) your regressors **of interest** $(x_i)$, (3) and our **control** variables $(z_i)$. Then, you can start with some metadata such as the observation number and the U.S. state. Each row is one observation (or one state). This metadata helps to identify each row. Then you can identify (with borders or different colors) your dependent variable. To the right you can have your variable(s) of interest. Finally, the last set of columns can be your control variables. You may also want to consider other *format* edits that will facilitate your reading of the data such as number of decimals, or horizontal lines every a few observations, and so on).
 
 The figure below is an example of how a user-friendly dataset in Excel may look like.
 
@@ -42,7 +42,9 @@ The figure below is an example of how a user-friendly dataset in Excel may look 
 
 {{<icon name="file-excel" pack="fas" >}} {{% staticref "media/econometrics/03_OLS/Dataset format example.xlsx" %}}Download Excel sample file.{{% /staticref %}}
 
-A user-friendly format of your dataset is important because you may need to some data exploration at some point in your regression exercise. The easier it is to look at the screen when you need to identify particular observations, the easier and quicker you can find what you are looking for.
+A user-friendly format of your dataset is important because you may need to do some data exploration at some point in your regression exercise. And if you want to go back to the original file, then you want the information in that file as easy to read and navigate as possible. It is also a good gesture towards third-parties using your dataset as well. 
+
+Besides a thinking of format that would facilitate the visual navigation of the file, you also want to think what format can produce errors when importing an `Excel` or `.csv` file into your statistical software. You will learn this with experience and use of your statistical software of choice. Just to give a couple of examples. If the first column has the regressor's names, then you may need to avoid `spaces` and resort to `underscores` (for instance, `Varialbe_1` instead of `Variable 1`). Another potential issue may the use of thousand delimiter (use `10000` instead of `10,000`).
 
 ---
 
