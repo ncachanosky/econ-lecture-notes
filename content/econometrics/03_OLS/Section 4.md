@@ -85,6 +85,7 @@ After looking at the correlation matrix, you suspect that `weight` and `legnth` 
 {{< figure library="true" src="econometrics/03_OLS/OLS Example 05.png" >}}
 
 
+
 ---
 
 ## Define your models
