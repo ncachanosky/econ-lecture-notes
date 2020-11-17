@@ -44,13 +44,23 @@ The figure below is an example of how a user-friendly dataset in Excel may look 
 
 A user-friendly format of your dataset is important because you may need to do some data exploration at some point in your regression exercise. And if you want to go back to the original file, then you want the information in that file as easy to read and navigate as possible. It is also a good gesture towards third-parties using your dataset as well. 
 
-Besides a thinking of format that would facilitate the visual navigation of the file, you also want to think what format can produce errors when importing an `Excel` or `.csv` file into your statistical software. You will learn this with experience and use of your statistical software of choice. Just to give a couple of examples. If the first column has the regressor's names, then you may need to avoid `spaces` and resort to `underscores` (for instance, `Varialbe_1` instead of `Variable 1`). Another potential issue may the use of thousand delimiter (use `10000` instead of `10,000`).
+Besides a thinking of format that would facilitate the visual navigation of the file, you also want to think what format can produce errors when importing an `Excel` or `.csv` file into your statistical software. You will learn this with experience and use of your statistical software of choice. Just to give a couple of examples. If the first column has the regressor's names, then you may need to avoid `spaces` and resort to `underscores` (for instance, `Variable_1` instead of `Variable 1`). Another potential issue may the use of thousand delimiter (use `10000` instead of `10,000`).
+
+The following `STATA` code produces all the output shared below.
 
 ---
 
 ## Familiarize your self with the data
 
 ### Statistical summary
+
+Statistical summaries are a first approach to see how your data looks like. This is particularly useful in very large datasets where a detailed view of the whole information may not be feasible.
+
+The following table provides the number of available observations for each regressor (each column), the mean, standard deviation, and minimum and maximum values.
+
+{{< figure library="true" src="econometrics/03_OLS/OLS Example 01.png" >}}
+
+Recall that an econometric regression is *explaining* variations. That is, how much of the variations of $y$ around its mean can be explained by variations of the regressors $x$ around their means. A regressor with low standard deviation (in relation to the mean) suggests that such variable may not have explanatory power (is similar to a constant, it does not vary). On the other hand, a dependent variable with a low standard deviation (in relation to its mean) suggests that there is not much to *explain* in that variable.
 
 ### Correlation matrices
 
