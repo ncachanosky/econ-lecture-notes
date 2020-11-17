@@ -79,7 +79,9 @@ A correlation matrix is a first look at which variables have a positive or negat
 After looking at the correlation matrix, you suspect that `weight` and `legnth` may be good candidates for your regression. These are likely to be good control variables because the `mileage` of a car is not independent of its `weight` or `length`. Let's look, then, at three scatter plots, one for each regressor with respect to the dependent variable.
 
 {{< figure library="true" src="econometrics/03_OLS/OLS Example 03.png" >}}
+
 {{< figure library="true" src="econometrics/03_OLS/OLS Example 04.png" >}}
+
 {{< figure library="true" src="econometrics/03_OLS/OLS Example 05.png" >}}
 
 
