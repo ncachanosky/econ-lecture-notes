@@ -84,7 +84,9 @@ After looking at the correlation matrix, you suspect that `weight` and `legnth` 
 
 {{< figure library="true" src="econometrics/03_OLS/OLS Example 05.png" >}}
 
+The scatter plots reflect the negative and positive slopes you saw in the correlation matrix. Look at the first plot, where there seems to be an [outlier](https://en.wikipedia.org/wiki/Outlier). Is that point accurate or is there a typo in your source? If the data is correct, then you need to decide if you want to keep it your regression or not. The answer that questions depends on what information you want from your regression. You want to capture the relatonship of the whole sample or you want an estimation of the relationship of *normal* (average) cars?
 
+Look now at the second and third scatter plots. You can see that to the left side of the graph, dots are closer to the fitted line than dots to the right side of the graph. We will get back to this issue in a later chapter. But, the looks of these scatter plots suggest that, for `weight` and `length` the accuracy of the model prediction is not even. The model is more accurate for lighter and shorter cars than is for heavier and longer cars.  
 
 ---
 
