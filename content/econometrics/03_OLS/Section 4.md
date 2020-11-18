@@ -86,11 +86,43 @@ After looking at the correlation matrix, you suspect that `weight` and `legnth` 
 
 The scatter plots reflect the negative and positive slopes you saw in the correlation matrix. Look at the first plot, where there seems to be an [outlier](https://en.wikipedia.org/wiki/Outlier). Is that point accurate or is there a typo in your source? If the data is correct, then you need to decide if you want to keep it your regression or not. The answer that questions depends on what information you want from your regression. You want to capture the relatonship of the whole sample or you want an estimation of the relationship of *normal* (average) cars?
 
-Look now at the second and third scatter plots. You can see that to the left side of the graph, dots are closer to the fitted line than dots to the right side of the graph. We will get back to this issue in a later chapter. But, the looks of these scatter plots suggest that, for `weight` and `length` the accuracy of the model prediction is not even. The model is more accurate for lighter and shorter cars than is for heavier and longer cars.  
+Look now at the second and third scatter plots. You can see that to the left side of the graph, dots are closer to the fitted line than dots to the right side of the graph. We will get back to this issue in a later chapter. But, the looks of these scatter plots suggest that, for `weight` and `length` the accuracy of the model prediction is not even. A univariate model would be more accurate for lighter and shorter cars than would be for heavier and longer cars.  
 
 ---
 
 ## Define your models
+
+Having now an impression of how data looks like, we can develop our regression models. Remember our objective, to find the relationship between `price` and `mileage`. We know, however, that we also need control variables if we want to obtain an unbiased estimation.
+
+For this purpose, we are going to build a base model and then run different versions of the model for **robustness checking**. Remember that every regressor we add to the model brings information but consumes a degree of freedom. Therefore, we can specify different models with different regressors and see if, all of them, provide more or less similar results.
+
+The relevant question is what other variables have an effect on the `price` of cars besides its `mileage`. It seems that all our regressors can contribute to explain car prices. `Mileage` is important, but so is the car' (1) weight, (2) length, (3) how many repairs it had since 1978, (4) its headroom, and (5) the trunk size.
+
+Our base model, then, has a total of one variable of interest $(x)$ and 5 control variables ($z_1, ..., z_5)$:
+
+$$
+y_i = \beta_0 + \beta_1 x_i + \gamma_1 z_{1,i} + \gamma_2 z_{2,i} + \gamma_3 z_{3,i} + \gamma_4 z_{4,1} + \gamma_5 z_{5,1} + \varepsilon_i
+$$
+
+Before discussing different versions of the base model, let us run this regression in `STATA` and see what output we get. There is plenty of information here, and we are still not able to read all of it. But, we can start by learning how to read what we learn so far in a typical regression output.
+
+{{< figure library="true" src="econometrics/03_OLS/OLS Example 06.png" >}}
+
+The estimation of the model is in the second table. The header's row shows `price` as the dependent variable. The regressors are located below (in the same order used in the code) with the constant (`_const`) at the end. The second row shows the $betas$. In this model, for instance, a change of one unit in the `mileage` (mpg) explains, **in average**, a fall of 101.4388 units in the `price` variable. We will discuss how to read the other columns to the right as we move through the next chapters. The coefficients of the output say our base model looks the following way (allowing for rounding):
+
+$$
+\hat{y_i} = 12,266 - 101.44 x_i + 4.95 z_{1,i} - 112.41 z_{2,i} + 889.67 z_{3,1} - 652.13 z_{4,i} + 80.29 z_{5,i}
+$$
+
+We can now look at the data above the coefficient's table. The first information that appears to the left is the [partition of sum of squares](https://econ-lecture-notes.netlify.app/econometrics/03_ols/section-3/#partition-of-sum-of-squares). We have $ESS$ (model), $RSS$ (residual), and $TSS$ (total) respectively. You can see that $model + residual = total$. 
+
+On the right side there is some regression evaluation information. You have the total number of observations $(N=69$), the $R^2$, the $\bar{R}^2$, and the $RMSE$. You can see that $R^2 = \frac{model}{total}$. Finally, note that $\bar{R}^2 < R^2$.
+
+We do not know, yet, if our base model is the best one. We need to look at the output, data information, and think if a different model specification may produce a better outcome. 
+
+Have a look at the correlation matrix. We see that both `weight` and `length` are correlated with `price`, and therefore we probably want them in our model as controls. However, `weight` and `length` have a positive correlation of 0.9478. These two variables have a very similar behavior. Maybe we do not need both in the model since we may be duplicating the information (a problem will discuss later as *multicollinearity*). Here are two options then. Run two more regressions, one with `weight` and the other one with `length`. Since both variable move so similarly, maybe we can save a degree of freedom by having only one of those two variables. We have now, **three** models in total.
+
+
 
 ---
 
