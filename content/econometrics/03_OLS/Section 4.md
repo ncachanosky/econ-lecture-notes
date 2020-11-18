@@ -440,5 +440,20 @@ There are a number of issues to pay attention to. Look **first** at how some coe
 
 ### Looking at the residuals
 
+We can look at the residuals of each of the five models in three different ways:
 
+1. Compare the observable $y_i$ with the predicted $\hat{y_i}$.
+2. Look how the residuals are distributed around our variable of interest, `mileage` (mpg).
+3. Compare the residual's distribution with a normal distribution.
 
+Below are the five sets of plots with the residuals for each one of the five models. The **first** plot shows in the observed $y_i$ in <span style="color:blue">**blue**</span> and the predicted values $\hat{y_i}$ in <span style="color:red">**red**</span>. The **second** plot shows the location of the residuals around `mileage`. The vertical axis shows a *zero* because we are looking at estimation errors (that cancel out). The **third** plot shows the histogram of the residuals along a normal distribution. You need to spend some time looking and comparing these plots.
+
+{{< figure library="true" src="econometrics/03_OLS/OLS Example 08.png" >}}
+
+{{< figure library="true" src="econometrics/03_OLS/OLS Example 09.png" >}}
+
+{{< figure library="true" src="econometrics/03_OLS/OLS Example 10.png" >}}
+
+{{< figure library="true" src="econometrics/03_OLS/OLS Example 11.png" >}}
+
+{{< figure library="true" src="econometrics/03_OLS/OLS Example 12.png" >}}
