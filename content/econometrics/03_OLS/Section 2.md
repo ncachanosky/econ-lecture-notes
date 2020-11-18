@@ -11,7 +11,7 @@ type: book  # Do not modify.
 
 ---
 
-## What is multivariate regression
+## What is a multivariate regression
 
 ### Multiple regressors
 
@@ -54,7 +54,7 @@ The first one is that the size of the $betas$ depends on the unit of measure of 
 
 The second reason is that a regressor attached to a $beta$ with a high value may depict very little variability, while another regressors with more varibility is attached to a $beta$ with a lower value. In other words, a high $beta$ may not produce much of an effect on $Y$ because its regressor hardly moves, while another $beta$ with a lower value is attached to a regressor that moves more. This is why you may want to consider not just the value of the $betas$, but the $betas$ times the standard deviation of its regressor: $\beta_i \sigma_{x_1}$.
 
-### What is the meaning of the intercept ($\beta_0$)?
+### What is the meaning of the intercept ($\beta_0$)
 
 The mathematical interpretation of $\beta_0$ is straightforward. It is the expected value of $y$ when **all** regressors are equal to zero $(x_1 = ... = x_6 = 0)$.
 

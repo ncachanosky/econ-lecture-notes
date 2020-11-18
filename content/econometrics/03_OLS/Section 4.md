@@ -333,7 +333,8 @@ twoway scatter resid1 mpg, msize(vsmall) mcolor(blue%50) ///
 
 graph combine model1_resid3.gph model2_resid3.gph model3_resid3.gph ///
               model4_resid3.gph model5_resid3.gph, ///
-              cols(1) ysize(15) title("Residual histogram: All models", size(small))				  
+              cols(1) ysize(15) ///
+              title("Residual histogram: All models", size(small)
 				  
 * Compare scatter of residuals
 *==============================================================================*
@@ -450,6 +451,7 @@ Below are the five sets of plots with the residuals for each one of the five mod
 
 {{< figure library="true" src="econometrics/03_OLS/OLS Example 08.png" >}}
 
+
 {{< figure library="true" src="econometrics/03_OLS/OLS Example 09.png" >}}
 
 {{< figure library="true" src="econometrics/03_OLS/OLS Example 10.png" >}}
@@ -457,3 +459,44 @@ Below are the five sets of plots with the residuals for each one of the five mod
 {{< figure library="true" src="econometrics/03_OLS/OLS Example 11.png" >}}
 
 {{< figure library="true" src="econometrics/03_OLS/OLS Example 12.png" >}}
+
+The first two plots for each model can help identify a number of issues, such as an omitted relevant regressors. Once you can identify in your friendly-looking dataset which observations have the larger residuals, you may be able to recognize a pattern. Such pattern can reflect a missing variable. For instance, the `mileage` of sport sedans is different than non-sport sedans. Therefore, adding a regressor that takes into account the type of car can improve the overall fitting of the model and minimize biases in the coefficient of other regressors. This residual evaluation is an exploratory exercise, and how you read the data in front of you depends on your knowledge of the subject as well as on your subjective intuition.
+
+The third plot for each model compares the distribution of the residuals with a normal distribution. We have not seen yet how to run a formal test of normality. However, visual inspection seems to confirm that Model 1 is offers the best from all of your five specifications.
+
+Before some final thoughts, let us put all the residuals together. The first graph below shows the residuals of all five models in the same scatter plot. Can you see how the <span style="color:blue">****blue****</span> dots (Model 1) seem to be closer to the zero (vertical axis) than the dots from the other models? The second plot shows all histograms next to each other to facilitate the visual comparison.
+
+{{< figure library="true" src="econometrics/03_OLS/OLS Example 13.png" >}}
+
+{{< figure library="true" src="econometrics/03_OLS/OLS Example 14.png" >}}
+
+---
+
+## Some final thoughts
+
+This is a running-your-first-regression exercise. We can summarize our steps in the following list:
+
+1. Get or build your data and, if needed, give it a user-friendly format.
+2. Familiarize yourself with the data
+   * Statistical summary
+   * Correlation matrix
+   * Scatter plots
+3. Define your base model and alternative versions
+4. Evaluate the quality of each model
+   * Coefficient of determination $(R^2, \bar{R}^2$)
+   * Root Mean Squared Error $(RMSE)$
+   * Information Criteria $(AIC, BIC)$
+   * Distribution of the residuals
+
+You can probably see that running this regression involves a combination of technical steps (such as how to estimate the coefficient or read the output) as well as subjective inputs in terms of what control variables to include or which model makes more economic sense (for instance, to avoid over-fitting).
+
+However, there is plenty more than must be taken into consideration when evaluating a model, for instance:
+
+1. What hypothesis tests can we perform?
+2. Is the model correctly specified?
+3. Is there heteroskedasticity?
+4. Is there serial correlation?
+5. Is there multicollinearity?
+6. Is there endogeneity?
+
+Before discussing these topics, we must study the classical assumptions used in a regression analysis.

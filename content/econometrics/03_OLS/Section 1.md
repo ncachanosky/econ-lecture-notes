@@ -261,9 +261,10 @@ There is one more lesson to get from this excercise. As you can probably imagine
 
 {{<icon name="file-excel" pack="fas" >}} {{% staticref "media/econometrics/03_OLS/OLS (simple example).xlsx" %}}Download OLS simple example.{{% /staticref %}}
 
-
 ---
-## How useful are univariate regressions?
+
+## How useful are univariate regressions
+
 Using a single regressor has very limited *practical* applications. Most regressions use several regressors in order to (1) achieve a better estimation of the dependent variable and (2) obtain a more accurate interpretation of the $betas$.
 
 However, a univariate regression is very useful *pedagogically* because it offers a simple way to understand what a statistical software is doing behind the scenes when you run a regression. The most important lesson of this section is to understand what OLS is doing, and how it is doing it.

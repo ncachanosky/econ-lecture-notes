@@ -99,7 +99,7 @@ What type of econometric techniques can be used depends on the type of data you 
 
 Before moving into the next chapter and delving into the details of econometric analysis, a recommendation and a word of advice
 
-### A recommendation: *Think of econometrics more as an art more than as hard-science*
+### A recommendation: Think of econometrics more as an art than as hard-science
 
 Econometrics can be highly technical and theoretical. There is a reason why econometrics has the fame of being a difficulty subject. However, you should remember that econometrics is the applciation of **statistical** methods. This has two important implications.
 
@@ -111,7 +111,7 @@ These implications mean that, even if an estimatino is obtained following strict
 
 Therefore, econometrics is not only a scientific application, it also an **art**, in the sense that each econometric application is driven by a subjective point of view that can vary from person to person. Forgetting the subjctive component of applied econometrics can make this subject harder than it has to be.
 
-### A word of advice: *Do not confuse econometrics with economics*
+### A word of advice: Do not confuse econometrics with economics
 
 Even thouth econometrics is an important field in economics, neither econometrics is economics nor economics is econometrics.
 
