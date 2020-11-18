@@ -90,7 +90,7 @@ Look now at the second and third scatter plots. You can see that to the left sid
 
 ---
 
-## Define your models
+## Define and run your models
 
 Having now an impression of how data looks like, we can develop our regression models. Remember our objective, to find the relationship between `price` and `mileage`. We know, however, that we also need control variables if we want to obtain an unbiased estimation.
 
@@ -122,12 +122,24 @@ We do not know, yet, if our base model is the best one. We need to look at the o
 
 Have a look at the correlation matrix. We see that both `weight` and `length` are correlated with `price`, and therefore we probably want them in our model as controls. However, `weight` and `length` have a positive correlation of 0.9478. These two variables have a very similar behavior. Maybe we do not need both in the model since we may be duplicating the information (a problem will discuss later as *multicollinearity*). Here are two options then. Run two more regressions, one with `weight` and the other one with `length`. Since both variable move so similarly, maybe we can save a degree of freedom by having only one of those two variables. We have now, **three** models in total.
 
+Looking at the summary statistics and correlation matrix you also wonder about whether reparation since 1978 (`rep78`) should be included in the model. This variable a very low correlation with `price` and what seems to be a low standard deviation. Therefore, to complete the robustness check, we will run other two models, with and without `rep78` for each one of the two above specifications. 
 
 
----
+To make it easier to compare all these models, it is customary to put them all in one table next to each other. This is what we have in the output below.
 
-## Run your regressions
+{{< figure library="true" src="econometrics/03_OLS/OLS Example 07.png" >}}
 
 ---
 
 ## Evaluate the quality of your models
+
+There are a number of issues to pay attention to. Look **first** at how some coefficients significantly change in value, such as `mileage`, `length`, `trunk`, and even the `constant`. Some of them even change their sign. This illustrates the importance of evaluating a regression and thinking about which one makes economic sense in order to get the more accurate coefficient estimation. This variance in the estimated coefficients is also a typical indicator *multicollinearity* in the regressors, which we do not know yet how to assess and deal with.
+
+**Second**, look at the bottom part of the table. You can see the degrees of freedom for each model as well as information about the quality of the model. Consider the $R^2$ information. As expected, the model with more regressors has the higher $R^2$. It also happens to have the higher $\bar{R}^2$. Compare, however, the $\bar{R}^2$ of models 3 and 4. Model 3 has less regressors than model 4, and yet has a higher $\bar{R}^2$.
+
+**Third**, look at $RMSE$. According to this measure, model 1 is also the best choice.
+
+**Fourth**, there is the information criteria measures of $AIC$ and $BIC$. According to these measures, Model 1 is also the best model. But, not by much with respect to Model 2.
+
+
+
