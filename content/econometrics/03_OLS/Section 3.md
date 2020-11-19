@@ -114,18 +114,18 @@ Adding an irrelevant variable (no explanatory power) makes $\bar{R}^2$ decrease.
 
 ---
 
-## Mean Squared Error (MSE)
+## Root Mean Squared Error (RMSE)
 
-The [Mean Squared Error (MSE)](https://en.wikipedia.org/wiki/Mean_squared_error) measures the average of the squared errors of the regression.
+The [Root Mean Squared Error (RMSE)](https://en.wikipedia.org/wiki/Root-mean-square_deviation) measures the average of the squared errors of the regression.
 
-By construct, MSE is always positive, with a value of zero only in the case of a perfect fit. Differently to $R^2$ and $\hat{R}^2$, MSA has a unit of measure which is the squared of the unit of measure of the dependent variable. For instance, if the dependent variable is miles per gallon $(mpg)$, then MSE is measred in $mpg^2$.
+By construct, RMSE is always positive (the negative result of the square root is ignored), with a value of zero only in the case of a perfect fit. Differently to $R^2$ and $\hat{R}^2$, RMSA has a unit of measure which coincides with the unit of measure of the dependent variable. For instance, if the dependent variable is miles per gallon $(mpg)$, then RMSE is also measured in $mpg$.
 
-MSE is calculated the following way:
+RMSE is calculated the following way:
 
 $$
 \begin{align}
-MSE &= \frac{1}{N} \sum_{i=1}^N \left(y_i - \hat{y}_i \right)^2 \\\\[10pt]
-MSE &= \frac{1}{N} \sum_{i=1}^N e_i^2
+RMSE &= \sqrt{\frac{1}{N} \sum_{i=1}^N \left(y_i - \hat{y}_i \right)^2} \\\\[10pt]
+RMSE &= \sqrt{\frac{1}{N} \sum_{i=1}^N e_i^2}
 \end{align}
 $$
 
