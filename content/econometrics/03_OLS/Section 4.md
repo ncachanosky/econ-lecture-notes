@@ -159,24 +159,24 @@ estout M1 M2 M3 M4 M5, title(Robustness check) ///
 quietly{
 * Residuals model 1
 twoway scatter price mpg, nodraw saving(model1_resid1, replace) ///
-               msize(small) mcolor(blue%50) ///
-               xlabel(10(5)45) ///
-               ylabel(2000(4000)16000) ytitle("Price") ///
-               xlabel(, grid labsize(small)) xtitle(, size(small)) ///
-               ylabel(, grid labsize(small)) ytitle(, size(small)) ///
+          msize(small) mcolor(blue%50) ///
+          xlabel(10(5)45) ///
+          ylabel(2000(4000)16000) ytitle("Price") ///
+          xlabel(, grid labsize(small)) xtitle(, size(small)) ///
+          ylabel(, grid labsize(small)) ytitle(, size(small)) ///
      ||scatter y_hat1 mpg, ///
-               msize(small) mcolor(red%50) ///
-               legend(label(1 "Observation") label(2 "Estimation") ///
-                      size(small) region(lstyle(none))) 
+          msize(small) mcolor(red%50) ///
+          legend(label(1 "Observation") label(2 "Estimation") ///
+                 size(small) region(lstyle(none))) 
 
 twoway scatter resid1 mpg, nodraw saving(model1_resid2, replace) ///
-               msize(small) mcolor(red%50) ///
-               xlabel(10(5)45) ///
-               ylabel(-6000(2000)6000) ///
-               ytitle("Residuals, model 1") ///
-               yline(0, lstyle(foreground)) ///
-               xlabel(, grid labsize(small)) xtitle(, size(small)) ///
-               ylabel(, grid labsize(small)) ytitle(, size(small))
+          msize(small) mcolor(red%50) ///
+          xlabel(10(5)45) ///
+          ylabel(-6000(2000)6000) ///
+          ytitle("Residuals, model 1") ///
+          yline(0, lstyle(foreground)) ///
+          xlabel(, grid labsize(small)) xtitle(, size(small)) ///
+          ylabel(, grid labsize(small)) ytitle(, size(small))
 
 histogram resid1, nodraw saving(model1_resid3, replace) ///
           start(-8000) color(red%50) normal normopts(lcolor(black%75)) ///
@@ -191,25 +191,25 @@ graph combine model1_resid1.gph model1_resid2.gph model1_resid3.gph, ///
 * Residuals model 2
 quietly{
 twoway scatter price mpg, nodraw saving(model2_resid1, replace) ///
-               msize(small) mcolor(blue%50) ///
-               xlabel(10(5)45) ///
-               ylabel(2000(4000)16000) ytitle("Price") ///
-               xlabel(, grid labsize(small)) xtitle(, size(small)) ///
-               ylabel(, grid labsize(small)) ytitle(, size(small)) ///
+          msize(small) mcolor(blue%50) ///
+          xlabel(10(5)45) ///
+          ylabel(2000(4000)16000) ytitle("Price") ///
+          xlabel(, grid labsize(small)) xtitle(, size(small)) ///
+          ylabel(, grid labsize(small)) ytitle(, size(small)) ///
      ||scatter y_hat2 mpg, ///
-               msize(small) mcolor(red%50) ///
-               legend(label(1 "Observation") label(2 "Estimation") ///
-                      size(small) region(lstyle(none)))
+          msize(small) mcolor(red%50) ///
+          legend(label(1 "Observation") label(2 "Estimation") ///
+                 size(small) region(lstyle(none)))
 
 twoway scatter resid2 mpg, nodraw saving(model2_resid2, replace) ///
-               msize(small) mcolor(red%50) ///
-               xlabel(10(5)45) ///
-               ylabel(-6000(2000)6000) ///
-               ytitle("Residuals, model 1") ///
-               yline(0, lstyle(foreground)) ///
-               xlabel(, grid labsize(small)) xtitle(, size(small)) ///
-               ylabel(, grid labsize(small)) ytitle(, size(small))
- 
+          msize(small) mcolor(red%50) ///
+          xlabel(10(5)45) ///
+          ylabel(-6000(2000)6000) ///
+          ytitle("Residuals, model 1") ///
+          yline(0, lstyle(foreground)) ///
+          xlabel(, grid labsize(small)) xtitle(, size(small)) ///
+          ylabel(, grid labsize(small)) ytitle(, size(small))
+
 histogram resid2, nodraw saving(model2_resid3, replace) ///
           start(-8000) color(red%50) normal normopts(lcolor(black%75)) ///
           xtitle(, size(small)) ytitle(, size(small)) ///
@@ -223,25 +223,25 @@ graph combine model2_resid1.gph model2_resid2.gph model2_resid3.gph, ///
 * Residuals model 3
 quietly{
 twoway scatter price mpg, nodraw saving(model3_resid1, replace) ///
-               msize(small) mcolor(blue%50) ///
-               xlabel(10(5)45) ///
-               ylabel(2000(4000)16000) ytitle("Price") ///
-               xlabel(, grid labsize(small)) xtitle(, size(small)) ///
-               ylabel(, grid labsize(small)) ytitle(, size(small)) ///
+          msize(small) mcolor(blue%50) ///
+          xlabel(10(5)45) ///
+          ylabel(2000(4000)16000) ytitle("Price") ///
+          xlabel(, grid labsize(small)) xtitle(, size(small)) ///
+          ylabel(, grid labsize(small)) ytitle(, size(small)) ///
      ||scatter y_hat3 mpg, ///
-               msize(small) mcolor(red%50) ///
-               legend(label(1 "Observation") label(2 "Estimation") ///
-                      size(small) region(lstyle(none)))
- 
+          msize(small) mcolor(red%50) ///
+          legend(label(1 "Observation") label(2 "Estimation") ///
+                 size(small) region(lstyle(none)))
+
 twoway scatter resid3 mpg, nodraw saving(model3_resid2, replace) ///
-               msize(small) mcolor(red%50) ///
-               xlabel(10(5)45) ///
-               ylabel(-6000(2000)6000) ///
-               ytitle("Residuals, model 1") ///
-               yline(0, lstyle(foreground)) ///
-               xlabel(, grid labsize(small)) xtitle(, size(small)) ///
-               ylabel(, grid labsize(small)) ytitle(, size(small))
- 
+          msize(small) mcolor(red%50) ///
+          xlabel(10(5)45) ///
+          ylabel(-6000(2000)6000) ///
+          ytitle("Residuals, model 1") ///
+          yline(0, lstyle(foreground)) ///
+          xlabel(, grid labsize(small)) xtitle(, size(small)) ///
+          ylabel(, grid labsize(small)) ytitle(, size(small))
+
 histogram resid3, nodraw saving(model3_resid3, replace) ///
           start(-8000) color(red%50) normal normopts(lcolor(black%75)) ///
           xtitle(, size(small)) ytitle(, size(small)) ///
@@ -255,30 +255,31 @@ graph combine model3_resid1.gph model3_resid2.gph model3_resid3.gph, ///
 * Residuals model 4
 quietly{
 twoway scatter price mpg, nodraw saving(model4_resid1, replace) ///
-               msize(small) mcolor(blue%50) ///
-               xlabel(10(5)45) ///
-               ylabel(2000(4000)16000) ytitle("Price") ///
-               xlabel(, grid labsize(small)) xtitle(, size(small)) ///
-               ylabel(, grid labsize(small)) ytitle(, size(small)) ///
+          msize(small) mcolor(blue%50) ///
+          xlabel(10(5)45) ///
+          ylabel(2000(4000)16000) ytitle("Price") ///
+          xlabel(, grid labsize(small)) xtitle(, size(small)) ///
+          ylabel(, grid labsize(small)) ytitle(, size(small)) ///
      ||scatter y_hat4 mpg, ///
-               msize(small) mcolor(red%50) ///
-               legend(label(1 "Observation") label(2 "Estimation") ///
-                      size(small) region(lstyle(none)))
- 
+          msize(small) mcolor(red%50) ///
+          legend(label(1 "Observation") label(2 "Estimation") ///
+                 size(small) region(lstyle(none)))
+
 twoway scatter resid4 mpg, nodraw saving(model4_resid2, replace) ///
-               msize(small) mcolor(red%50) ///
-               xlabel(10(5)45) ///
-               ylabel(-6000(2000)6000) ///
-               ytitle("Residuals, model 1") ///
-               yline(0, lstyle(foreground)) ///
-               xlabel(, grid labsize(small)) xtitle(, size(small)) ///
-               ylabel(, grid labsize(small)) ytitle(, size(small))
- 
+          msize(small) mcolor(red%50) ///
+          xlabel(10(5)45) ///
+          ylabel(-6000(2000)6000) ///
+          ytitle("Residuals, model 1") ///
+          yline(0, lstyle(foreground)) ///
+          xlabel(, grid labsize(small)) xtitle(, size(small)) ///
+          ylabel(, grid labsize(small)) ytitle(, size(small))
+
 histogram resid4, nodraw saving(model4_resid3, replace) ///
           start(-8000) color(red%50) normal normopts(lcolor(black%75)) ///
           xtitle(, size(small)) ytitle(, size(small)) ///
-          ylabel(, grid labsize(small) angle(0))
- 
+          ylabel(, grid labsize(small) angle(0)) ///
+          xlabel(, grid labsize(small))
+
 graph combine model4_resid1.gph model4_resid2.gph model4_resid3.gph, ///
               cols(1) ysize(10) title("Model 4: Residuals", size(small))
 }
@@ -286,30 +287,30 @@ graph combine model4_resid1.gph model4_resid2.gph model4_resid3.gph, ///
 * Residuals model 5
 quietly{
 twoway scatter price mpg, nodraw saving(model5_resid1, replace) ///
-               msize(small) mcolor(blue%50) ///
-               xlabel(10(5)45) ///
-               ylabel(2000(4000)16000) ytitle("Price") ///
-               xlabel(, grid labsize(small)) xtitle(, size(small)) ///
-               ylabel(, grid labsize(small)) ytitle(, size(small)) ///
+          msize(small) mcolor(blue%50) ///
+          xlabel(10(5)45) ///
+          ylabel(2000(4000)16000) ytitle("Price") ///
+          xlabel(, grid labsize(small)) xtitle(, size(small)) ///
+          ylabel(, grid labsize(small)) ytitle(, size(small)) ///
      ||scatter y_hat5 mpg, ///
-               msize(small) mcolor(red%50) ///
-               legend(label(1 "Observation") label(2 "Estimation") ///
-                      size(small) region(lstyle(none)))
+          msize(small) mcolor(red%50) ///
+          legend(label(1 "Observation") label(2 "Estimation") ///
+                 size(small) region(lstyle(none)))
 
 twoway scatter resid5 mpg, nodraw saving(model5_resid2, replace) ///
-               msize(small) mcolor(red%50) ///
-               xlabel(10(5)45) ///
-               ylabel(-6000(2000)6000) ///
-               ytitle("Residuals, model 1") ///
-               yline(0, lstyle(foreground)) ///
-               xlabel(, grid labsize(small)) xtitle(, size(small)) ///
-               ylabel(, grid labsize(small)) ytitle(, size(small))
- 
+          msize(small) mcolor(red%50) ///
+          xlabel(10(5)45) ///
+          ylabel(-6000(2000)6000) ///
+          ytitle("Residuals, model 1") ///
+          yline(0, lstyle(foreground)) ///
+          xlabel(, grid labsize(small)) xtitle(, size(small)) ///
+          ylabel(, grid labsize(small)) ytitle(, size(small))
+
 histogram resid5, nodraw saving(model5_resid3, replace) ///
           start(-8000) color(red%50) normal normopts(lcolor(black%75)) ///
           xtitle(, size(small)) ytitle(, size(small)) ///
           ylabel(, grid labsize(small) angle(0)) ///
-          ylabel(, grid labsize(small) angle(0))
+          xlabel(, grid labsize(small))
 
 graph combine model5_resid1.gph model5_resid2.gph model5_resid3.gph, ///
               cols(1) ysize(10) title("Model 5: Residuals", size(small))
@@ -322,7 +323,7 @@ twoway scatter resid1 mpg, msize(vsmall) mcolor(blue%50) ///
           ylabel(-8000(2000)8000, grid labsize(small) angle(0)) ///
           xtitle(, size(small)) ytitle(, size(small)) ///
      ||scatter resid2 mpg, msize(vsmall) mcolor(green%50) ///
-     |scatter resid3 mpg, msize(vsmall) mcolor(yellow%50) ///
+     ||scatter resid3 mpg, msize(vsmall) mcolor(yellow%50) ///
      ||scatter resid4 mpg, msize(vsmall) mcolor(teal%50) ///
      ||scatter resid5 mpg, msize(vsmall) mcolor(gray%50) ///
            legend(rows(2) size(small) region(lstyle(none)) ///
@@ -336,7 +337,7 @@ graph combine model1_resid3.gph model2_resid3.gph model3_resid3.gph ///
               model4_resid3.gph model5_resid3.gph, ///
               cols(1) ysize(20) xsize(10) ///
               title("Residual histogram: All models", size(small))
- 
+
 
 *==============================================================================*
 *|THE END|=====================================================================*
