@@ -1,6 +1,6 @@
 ---
 # Title, summary, and page position.
-linktitle: "The Sample Distribution of beta"
+linktitle: "The Sample Distribution of $\hat{\beta}$"
 weight: 3
 
 # Page metadata.
