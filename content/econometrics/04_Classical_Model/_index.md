@@ -1,10 +1,10 @@
 ---
 # Title, summary, and page position.
-linktitle: "Ordinary Least Squares (OLS)"
-weight: 2
+linktitle: "The Classical Model"
+weight: 4
 
 # Page metadata.
-title: Ordinary Least Squares (OLS)
+title: The Classical Model
 type: book  # Do not modify.
 ---
 

@@ -1,7 +1,7 @@
 ---
 # Title, summary, and page position.
 linktitle: "Introduction to Econometrics"
-weight: 1
+weight: 2
 
 # Page metadata.
 title: Introduction to Econometrics
