@@ -47,7 +47,25 @@ $$
 y = e^{\beta_0} x_1^{\beta_1} ... x_k^{\beta_k} e^{\varepsilon}
 $$
 
-After collecting data
+You can easily linearize this model by applying logs (where $y^* = ln(y)$):
+
+$$
+\begin{aligned}
+ln(y_i) =& \beta_0 + \beta_1 x_{1,i} + ... + \beta_K x_{K,i} + \varepsilon_i \\\\[10pt]
+y^*_i =& \beta_0 + \beta_1 x_{1,i} + ... + \beta_K x_{K,i} + \varepsilon_i
+\end{aligned}
+$$
+
+In general terms, a linear in the coefficients model has the following functional form: $f(y) = \beta_0 + \beta_1 f(x_1) + ... + \beta_K f(x_K)$.
+
+An example of a model non-linear in the coefficients would be $y = \beta_0 + x_1^{\beta_1} + ... + x_k^{\beta_K}$. There is no arrangement that would make this equation linear on the $betas$.
+
+There two other important conditions in this assumption:
+
+1. The model is correctly specified, meaning there is no **omitted variables**
+2. The error term is additive to the model and cannot be multiplied by or divided by any other regressor(s) included in the model
+
+**Assumption 1** requires that your econometric model can be represented as a model linear *on the coefficients*, even if the regressors do not have a linear behavior or if the underlying theory is not linear.
 
 ---
 
