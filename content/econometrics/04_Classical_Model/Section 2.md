@@ -34,8 +34,8 @@ Consider first a linear model with non-linear regressors. Let the first model ha
 
 $$
 \begin{align}
-y_i =& \beta_0 + \beta_1 \underbrace{z_i^2}_{x_1} + ... + \beta_k \underbrace{x_K^2}_{x_K} + \varepsilon_i \\\\[10pt]
-y_i =& \beta_0 + \beta_1 \underbrace{ln(z_1)}_{x_1} + ... + \beta_k \underbrace{ln(z_K)}_{x_k} + \varepsilon_i
+y_i =& \beta_0 + \beta_1 \underbrace{z_i^2}/_{x_1} + ... + \beta_k \underbrace{x_K^2}/_{x_K} + \varepsilon_i \\\\[10pt]
+y_i =& \beta_0 + \beta_1 \underbrace{ln(z_1)}/_{x_1} + ... + \beta_k \underbrace{ln(z_K)}/_{x_k} + \varepsilon_i
 \end{align}
 $$
 
