@@ -33,10 +33,10 @@ However, the classical assumption requires the model to be linear on the coeffic
 Consider first a linear model with non-linear regressors. Let the first model have $w_i^2$ regressors and the second model have $ln(w_i)$ regressors. In both cases, regressors are no linear. These two examples are easy to linearize, just define $x_i = w_i^2$ in the first model and $x_i = ln(w_i)$ in the second model. Then:
 
 $$
-\begin{aligned}
+\begin{align}
 y_i =& \beta_0 + \beta_1 \underbrace{z_i^2}_{x_1} + ... + \beta_k \underbrace{x_K^2}_{x_K} + \varepsilon_i \\\\[10pt]
 y_i =& \beta_0 + \beta_1 \underbrace{ln(z_1)}_{x_1} + ... + \beta_k \underbrace{ln(z_K)}_{x_k} + \varepsilon_i
-\end{aligned}
+\end{align}
 $$
 
 *Econometrically speaking*, both models are identical in the sense that both are linear and with the same number of regressors. Of course, since we are looking at different data the estimated $betas$ will differ. Yet, both models are identical in the sense of how they are represented and how the $betas$ are estimated.
@@ -50,10 +50,10 @@ $$
 You can easily linearize this model by applying logs (where $y^* = ln(y)$):
 
 $$
-\begin{aligned}
+\begin{align}
 ln(y_i) =& \beta_0 + \beta_1 x_{1,i} + ... + \beta_K x_{K,i} + \varepsilon_i \\\\[10pt]
 y^*_i =& \beta_0 + \beta_1 x_{1,i} + ... + \beta_K x_{K,i} + \varepsilon_i
-\end{aligned}
+\end{align}
 $$
 
 In general terms, a linear in the coefficients model has the following functional form: $f(y) = \beta_0 + \beta_1 f(x_1) + ... + \beta_K f(x_K)$.
