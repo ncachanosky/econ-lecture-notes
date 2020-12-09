@@ -69,7 +69,6 @@ There two other important conditions in this assumption:
 
 {{% callout note %}}
 **Assumption 1** requires that:
-
 1. Your econometric model can be represented as a model linear *on the coefficients*, even if the regressors do not have a linear behavior or if the underlying theory is not linear
 2. All important regressors are included in the model
 3. The error can be represented as an additive term independent of all regressors
