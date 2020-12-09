@@ -74,7 +74,7 @@ There two other important conditions in this assumption:
 2. All important regressors are included in the model
 3. The error can be represented as an additive term independent of all regressors
 
-{{% /callout }
+{{% /callout }}
 
 ---
 
