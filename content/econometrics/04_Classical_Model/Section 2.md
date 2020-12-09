@@ -97,14 +97,14 @@ y_i =& \beta^*_0 + + \beta_1 x_{1,i} + ... + \beta_K x_{k,i} + \varepsilon^*_i
 \end{aligned}
 $$
 
-where $\beta^*_0 = \beta_0 - \xi$ and $\varepsilon^*_i = \varepsilon_i + \xi$.
+where $\beta^*\_0 = \beta_0 - \xi$ and $\varepsilon^*\_i = \varepsilon_i + \xi$.
 
 Therefore, your model will fulfill assumption 2 as long as it has a constant term. In other words, the constant term will move up or down as necessary to guarantee that $E[\varepsilon]=0$.
 
 {{% callout note %}}
 **Assumption 2** requires that:
 1. The mean of the error term is zero: $E[\varepsilon]=0$
-2. No assumption is made on the standard deviation $(\sigma)$ or type of distribution of $\varepsilon$
+2. No requirement is made on the standard deviation $(\sigma)$ or type of distribution of error term
 {{% /callout %}}
 
 ---
