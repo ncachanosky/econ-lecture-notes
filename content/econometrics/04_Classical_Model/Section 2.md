@@ -30,10 +30,8 @@ Consider two examples of non-linear regressors. Let the first one has squared re
 
 $$
 \begin{aligned}
-y_i =& \beta_0 + \beta_1 \underbrace{z_i^2}\_{x_1} + ... + \beta_k \underbrace{x_K^2}\_{x_K} + \varepsilon_i \\\\
-y_i =& \beta_0 + \beta_1 x_1 + .... + \beta_K x_K + \varepsilon \\\\[10pt]
-y_i =& \beta_0 + \beta_1 \underbrace{ln(z_1)}\_{x_1} + ... + \beta_k \underbrace{ln(z_K)}\_{x_k} + \varepsilon_i \\\\
-y_i =& \beta_0 + \beta_1 x_1 + .... + \beta_K x_K + \varepsilon
+y_i =& \beta_0 + \beta_1 \underbrace{z_i^2}\_{x_1} + ... + \beta_k \underbrace{x_K^2}\_{x_K} + \varepsilon_i \\\\[10pt]
+y_i =& \beta_0 + \beta_1 \underbrace{ln(z_1)}\_{x_1} + ... + \beta_k \underbrace{ln(z_K)}\_{x_k} + \varepsilon_i
 \end{aligned}
 $$
 
@@ -77,6 +75,37 @@ There two other important conditions in this assumption:
 ---
 
 ## Assumption 2: The error term has zero population mean
+
+The error term, which has a random or stochastic behavior, captures variations of the dependent variable unexplained by the regressors. Each observation has its own error term. Assumption 2 requires the mean of the errors to be zero (where $E[\cdot]$ denotes the expected value):
+
+$$
+E[\varepsilon] = 0
+$$
+
+The intuition behind this asspmition is that errors should cancel out. The following figure depicts the distribution of an hypothetical error term. You can see that the mean is zero with <span style="color:red">negative</span> and <span style="color:blue">positive</span> errors. You can also see that the majority of the errors are small (close to zero) and only a few errors are large (far away from zero). **Importantly**, even though the error term in the figure looks like it has a normal distribution, Assumption 2 does not require errors to have a normal distribution, only to have a zero mean value. However, a normal distribution of the errors is a desirable condition (wait until Assumption 7).
+
+{{< figure library="true" src="econometrics/04_Classical_Model/Fig_01.png" >}}
+
+To be more price, assumption 2 builds over an asymptotic condition. In a small sample, it is possible that the mean of the error term is not exactly equal to zero. What is required is that the mean of the error term converges to zero as the sample size increases to infinity $(n \rightarrow \infty \therefore E[\varepsilon] \rightarrow 0)$
+
+Assumption 2 is another reason to include a constant term in your model. Assume the mean of the error term has a non-zero value (positive or negative) of $\xi \neq 0$. Then you can re-write your model in the following way:
+
+$$
+\begin{aligned}
+y_i =& \left(\beta_0 - \xi \right) + \beta_1 x_{1,i} + ... + \beta_K x_{k,i} + \left(\varepsilon_i + \xi \right) \\\\[10pt]
+y_i =& \beta^*_0 + + \beta_1 x_{1,i} + ... + \beta_K x_{k,i} + \varepsilon^*_i
+\end{aligned}
+$$
+
+where $\beta^*_0 = \beta_0 - \xi$ and $\varepsilon^*_i = \varepsilon_i + \xi$.
+
+Therefore, your model will fulfill assumption 2 as long as it has a constant term. In other words, the constant term will move up or down as necessary to guarantee that $E[\varepsilon]=0$.
+
+{{% callout note %}}
+**Assumption 2** requires that:
+1. The mean of the error term is zero: $E[\varepsilon]=0$
+2. No assumption is made on the standard deviation $(\sigma)$ or type of distribution of $\varepsilon$
+{{% /callout %}}
 
 ---
 
