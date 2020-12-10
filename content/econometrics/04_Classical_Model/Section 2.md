@@ -226,8 +226,36 @@ More common than **perfect** multicollinearity is the presence of **imperfect** 
 
 ## Assumption 7: The error term is normally distributed
 
+Assumption 2 states the error term should have a zero mean, and assumption 5 states that the standard deviation of the errors is constant. There is no requirement, however, that the error terms must have a [**normal** distribution](https://en.wikipedia.org/wiki/Normal_distribution). Assumption 7 requires the errors to have a normal distribution: $\varepsilon ~ N(0, \sigma_{\varepsilon})$
 
+It is important to be careful about the normality distribution of the errors:
+
+1. OLS estimation **does not need** the errors to have a normal distribution
+2. Errors normality is important for hypothesis testing (next chapter), not to OLS estimation of the coefficients.
+
+To be precise, assumption 7 is **not needed** to run an efficient OLS regression. However, it is very convenient when moving from regression estimation to hypothesis testing. If errors are not normally distributed, then the typical strategy of hypothesis testing is invalid (specially when working with small samples).
+
+{{% callout note %}}
+**Assumption 7** requires that:
+1. Errors have a normal distribution: $\varepsilon ~ N(0, \sigma_{\varepsilon})$
+---
+This assumption usually holds when:
+    * Errors are random
+    * You have a large sample size $(N \rightarrow \infty)$
+{{% /callout %}}
 
 ---
 
 ## Summary of the Classical Assumptions
+
+The following table summarizes the seven assumptions of the classical model.
+
+| Assumption # | Description | Mathematical condition |
+|--------------|-------------|------------------------|
+| Assumption 1 | The model is linear | $f(y) = \beta_0 + \beta_1 f(x_1) + ... + \beta_K f(x_K)$ |
+| Assumption 2 | The error has a zero mean | $E[\varepsilon] = 0$ |
+| Assumption 3 | Regressors and errors are uncorreleated | $\rho(x, \varepsilon) = 0$|
+| Assumption 4 | No serial correlation | $\rho(\varepsilon_i, \varepsilon_j) = 0 \; \forall i \neq j$|
+| Assumption 5 | Errors are homoskedastic | $\sigma_{\varepsilon, i} = \bar{\sigma_{\varepsilon}}$ |
+| Assumption 6 | No multicollinearity | $\nexists \omega_j \text{s.t.} x_i = \sum_{j} \omega_j x_j \; \forall j \neq i$|
+| Assumption 7 | Errors have a normal distribution | $varepsilon ~ N(0, \bar{\sigma_{\varepsilon}})$ |
