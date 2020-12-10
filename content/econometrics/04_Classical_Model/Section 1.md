@@ -30,7 +30,7 @@ The following are the seven classical assumptions:
 1. The model is linear
 2. The error term has zero population mean
 3. All explanatory variables are uncorrelated with the error term
-4. Observations of the error term are uncorrelated with each other
+4. Observations of the error term are uncorrelated with each other (no serial correlation)
 5. The error term has a constant variance (homoskedasticity)
 6. No explanatory variable is a perfect linear combination of other(s) explanatory variable(s)
 7. The error term is normally distributed

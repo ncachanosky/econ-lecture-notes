@@ -146,7 +146,22 @@ This assumption is usually violated in two situations:
 
 ---
 
-## Assumption 4: Observations of the error term are uncorrelated with each other
+## Assumption 4: Observations of the error term are uncorrelated with each other (no serial correlation)
+
+Your model should be free of **serial correlation**. This means that errors are uncorrelated with each other: $\rho(\varepsilon_i, \varepsilon_j) = 0//; //; //; //; \forall i \neq j$.
+
+In **cross-section** data this means that the observation error of the United States has no effect on the observation error of any other country. Since in cross-section data there is no order of data that must be followed, it can be difficult to spot serial correlation (for instance, it does not matter if you order your country-level observations alphabetically or randomly). A positive (negative) error in any given observation should have no effect on whether any other observation has a positive (negative) error.
+
+Serial correlation is a more intuitive concept in the case of **time-series**. In this case, assumption 4 requires that the error in period $t$ has no effect on future period errors. For instance, an unexpected monetary shock (or natural disaster) in year $t$ should have no effect on the errors in the following years. A positive (negative) error in observation $t$ should have no effect on whether the errors of future observations are positive (negative).
+
+This assumption is important because if errors are serially correlated, then the standard deviation of the $betas$ can be inflated, leading to inefficient coefficient estimations.
+
+Serial correlation is particularly important in the case of time-series data. In this context, serial correlation can lead to biased estimations of the coefficients, and not only to an inefficient estimation of the coefficients.
+
+
+**Assumption 4** requires that:
+1. Observations of the error term are uncorrelated: $\rho (\varepsilon_i, \varepsilon_j) = 0 \\;\\;\\;\\; \forall i \neq j$  
+{{% /callout %}}
 
 ---
 
