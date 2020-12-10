@@ -46,4 +46,37 @@ You can see that because $\varepsilon$ is a random variable, so is each $\hat{\b
 
 ### Unbiasedness
 
+An estimation is unbiased if its expected value coincides with the true value under estimation. A biased estimation would be the opposite, when the expected value of the estimation diverges from the true value under estimation. 
+
+Consider the following example. The bullseye of a target is the true value. The darts you through are your estimations. If your darts miss but fall around the target, your estimations are unbiased. If you average all your estimations you get the true value. If, however, your darts fall in average to the side of the target, then your estimation is biased. You tend to err more to one side in such that if you average all your estimations you do not get the true value under estimation. In addition, how far away from each other each dart is represents the standard deviation of your estimation technique.
+
+We can represent an unbiased and biased estimation the following way:
+
+1. Unbiased estimation: $E[\hat{\beta}] = \beta$
+2. Biased estimation: $E[\hat{\beta}] = \beta + \xi, \; \xi \neq 0$
+
+You already know that your estimation will not be perfect. But, you **do not want** your estimation to be biased.
+
+If assumptions 1 to 6 of the classical model hold, then OLS produces unbiased estimators.
+
+$$
+\begin{aligned}
+\hat{\beta} =& \beta + \left(X'X \right)^{-1} X' \varepsilon \\\\[10pt]
+E[\hat{\beta}] =& E \left[ \beta + \left(X'X \right)^{-1} X' \varepsilon \right] \\\\[10pt]
+E[\hat{\beta}] =& \beta + \left(X'X \right)^{-1} X' E[\varepsilon] \\\\[10pt]
+E[\hat{\beta}] =& \beta
+\end{aligned}
+$$
+
+If *assumption 2** does not hold, then $E[\varepsilon] \neq 0$ and therefore $E[\hat{\beta}] \neq 0$. Recall that a reason why $E[\varepsilon] \neq 0$ is omitting a significant variable $(Z)$:
+
+$$
+\begin{aligned}
+\varepsilon =& \varepsilon^* + \gamma Z \\\\[10pt]
+E[\varepsilon] =& E\left[ \varepsilon^* + \gamma Z \right] \\\\[10pt]
+E[\varepsilon] =& E[\varepsilon^*] + E[\gamma Z] \\\\[10pt]
+E[\varepsilon] =& \gamma Z \neq 0
+\end{aligned}
+$$
+
 ### Efficiency
