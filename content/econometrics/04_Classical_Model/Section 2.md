@@ -148,7 +148,7 @@ This assumption is usually violated in two situations:
 
 ## Assumption 4: Observations of the error term are uncorrelated with each other (no serial correlation)
 
-Your model should be free of **serial correlation**. This means that errors are uncorrelated with each other: $\rho(\varepsilon_i, \varepsilon_j) = 0//; //; //; //; \forall i \neq j$.
+Your model should be free of **serial correlation**. This means that errors are uncorrelated with each other: $\rho(\varepsilon_i, \varepsilon_j) = 0 //; //; //; //; \forall i \neq j$.
 
 In **cross-section** data this means that the observation error of the United States has no effect on the observation error of any other country. Since in cross-section data there is no order of data that must be followed, it can be difficult to spot serial correlation (for instance, it does not matter if you order your country-level observations alphabetically or randomly). A positive (negative) error in any given observation should have no effect on whether any other observation has a positive (negative) error.
 
