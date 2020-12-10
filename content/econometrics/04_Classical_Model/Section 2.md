@@ -138,6 +138,7 @@ Another situation likely to violate assumption 3 is when your model has an indep
 {{% callout note %}}
 **Assumption 3** requires that:
 1. All regressors are uncorrelated with the error term: $\rho (x_i, \varepsilon) = 0 \\;\\;\\;\\; \forall j = 1, ..., K$  
+---
 This assumption is usually violated in two situations:
    * You omit a significant variable, which is correlated with at least one regressor included in the model
    * Your model has a bi-directional causal effect (simultaneity) between the independent variable and at least one of the regressors
