@@ -114,7 +114,7 @@ Therefore, your model will fulfill assumption 2 as long as it has a constant ter
 All regressors should be uncorrelated with the error term. Let $\rho$ denote correlation, then:
 
 $$
-\rho(x_j, e) = 0 \;\;\;\; \forall j = 1, ..., K
+\rho(x_j, e) = 0 \\;\\;\\;\\; \forall j = 1, ..., K
 $$
 
 If this condition is violated, then the estimation of the coefficients of the regressors included in the model may be biased. Every omitted variable is part of the error term. Assume you forget to include regressor $z_i$ in your model. If the pure error term is $\varepsilon$, then the error term of your model becomes $\varepsilon^* = \varepsilon + \gamma z_i$.
@@ -133,21 +133,15 @@ If $\rho (x_1, z) > 0$, then you should expect for $\hat{\beta_1}$ to capture no
 
 It is possible, but unlikely, that $\gamma > 0 \wedge \rho (x_j, z) = 0 \; \forall j = 1, ..., K$. In this hypothetical case, omitting a significant variable has no effect on the estimation of the other regressor's coefficients.
 
-Another situation likely to violate assumption 3 is when your model has an independent variable with a simultaneous relationship with at least one regressor. This means that there is a two-direction causal effect between $y$ and $x_j$. This is the problem of $endogeneity$. The regression requires that the causal effects goes from $x \to y$. But, if the relationship is mutual $(x \leftrightarrow y)$, then your model suffers from endogeneity and coefficient estimation will be biased. This **system of equations** requires a joint estimation rather than independent models.
+Another situation likely to violate assumption 3 is when your model has an independent variable with a simultaneous relationship with at least one regressor. This means that there is a two-direction causal effect between $y$ and $x_j$. This is the problem of **endogeneity**. The regression requires that the causal effects goes from $x \to y$. But, if the relationship is mutual $(x \leftrightarrow y)$, then your model suffers from endogeneity and coefficient estimation will be biased. This **system of equations** requires a joint estimation rather than independent models.
 
 {{% callout note %}}
 **Assumption 3** requires that:
-1. All regressors are uncorrelated with the error term: $\rho (x_i, \varepsilon) = 0 \;\;\; \forall j = 1, ..., K$  
+1. All regressors are uncorrelated with the error term: $\rho (x_i, \varepsilon) = 0 \\;\\;\\;\\; \forall j = 1, ..., K$  
 This assumption is usually violated in two situations:
-1. You omit a significant variable, which is correlated with at least one regressors included in the model
-2. Your model has a bi-directional causal effect (simultaneity) between the independent variable and at least one of the regressors
+* You omit a significant variable, which is correlated with at least one regressors included in the model
+* Your model has a bi-directional causal effect (simultaneity) between the independent variable and at least one of the regressors
 {{% /callout %}}
-
->**Assumption 3** requires that:
->1. All regressors are uncorrelated with the error term: $\rho (x_i, \varepsilon) = 0 \;\;\; \forall j = 1, ..., K$  
->This assumption is usually violated in two situations:
->1. You omit a significant variable, which is correlated with at least one regressors included in the model
->2. Your model has a bi-directional causal effect (simultaneity) between the independent variable and at least one of the regressors
 
 ---
 
