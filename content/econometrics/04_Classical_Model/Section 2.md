@@ -1,10 +1,10 @@
 ---
 # Title, summary, and page position.
-linktitle: "The Classical Assumptions"
+linktitle: "The Gauss-Markov Theorem"
 weight: 2
 
 # Page metadata.
-title: The Classical Assumptions
+title: The Gauss-Markov Theorem
 type: book  # Do not modify.
 ---
 
@@ -12,7 +12,9 @@ type: book  # Do not modify.
 
 ---
 
-## Assumption 1: The model is linear
+## The Classical Model assumptions
+
+### Assumption 1: The model is linear
 
 This assumption requires the model to be **linear** and, of course, be correctly specified (are you forgetting any important regressor?) However, we need to be careful with what we mean by **linear** in this context.
 
@@ -72,9 +74,7 @@ There two other important conditions in this assumption:
 3. The error can be represented as an additive term independent of all regressors
 {{% /callout %}}
 
----
-
-## Assumption 2: The error term has zero population mean
+### Assumption 2: The error term has zero population mean
 
 The error term, which has a random or stochastic behavior, captures variations of the dependent variable unexplained by the regressors. Each observation has its own error term. Assumption 2 requires the mean of the errors to be zero (where $E[\cdot]$ denotes the expected value):
 
@@ -107,9 +107,7 @@ Therefore, your model will fulfill assumption 2 as long as it has a constant ter
 2. No requirement is made on the standard deviation $(\sigma)$ or type of distribution of error term
 {{% /callout %}}
 
----
-
-## Assumption 3: All explanatory variables are uncorrelated with the error term
+### Assumption 3: All explanatory variables are uncorrelated with the error term
 
 All regressors should be uncorrelated with the error term. Let $\rho$ denote correlation, then:
 
@@ -144,9 +142,7 @@ This assumption is usually violated in two situations:
    * Your model has a bi-directional causal effect (simultaneity) between the independent variable and at least one of the regressors
 {{% /callout %}}
 
----
-
-## Assumption 4: Observations of the error term are uncorrelated with each other (no serial correlation)
+### Assumption 4: Observations of the error term are uncorrelated with each other (no serial correlation)
 
 Your model should be free of **serial correlation**. This means that errors are uncorrelated with each other: $\rho(\varepsilon_i, \varepsilon_j) = 0 \; \; \; \; \forall i \neq j$.
 
@@ -159,15 +155,12 @@ This assumption is important because if errors are serially correlated, then the
 Serial correlation is particularly important in the case of time-series data. In this context, serial correlation can lead to biased estimations of the coefficients, and not only to an inefficient estimation of the coefficients.
 
 
-
 {{% callout note %}}
 **Assumption 4** requires that:
 1. Observations of the error term are uncorrleated: $\rho(\varepsilon,i, \varepsilon_j) = 0 \\;\\;\\;\\; \forall i \neq j $  
 {{% /callout %}}
 
----
-
-## Assumption 5: The error term has a constant variance (homoskedasticity)
+### Assumption 5: The error term has a constant variance (homoskedasticity)
 
 If the standard deviation $(\sigma)$ of the errors is constant across the sample, then the errors are **homoskedastic**. If, on the contrary, the standard deviation of the errors is not constant across the sample, then the errors are **heteroskedastic**.
 
@@ -186,9 +179,7 @@ If the errors are heteroskedastic, then the standard deviation of the estimated 
 1. Observations of the error term are uncorrelated: $\rho (\varepsilon_i, \varepsilon_j) = 0 \\;\\;\\;\\; \forall i \neq j$  
 {{% /callout %}}
 
----
-
-## Assumption 6: No explanatory variable is a perfect linear combination of other(s) explanatory variable(s) (multicollinearity)
+### Assumption 6: No explanatory variable is a perfect linear combination of other(s) explanatory variable(s) (multicollinearity)
 
 The idea behind assumption 6 is that each regressor should have information that is independent of the other regressors. Once again, remember than an econometric model is explaining *variations* of $y$ with *variations* of $x_i$. 
 
@@ -222,9 +213,7 @@ More common than **perfect** multicollinearity is the presence of **imperfect** 
 1. No regressor is a **perfect** linear combination of any other regressor(s) 
 {{% /callout %}}
 
----
-
-## Assumption 7: The error term is normally distributed
+### Assumption 7: The error term is normally distributed
 
 Assumption 2 states the error term should have a zero mean, and assumption 5 states that the standard deviation of the errors is constant. There is no requirement, however, that the error terms must have a [**normal** distribution](https://en.wikipedia.org/wiki/Normal_distribution). Assumption 7 requires the errors to have a normal distribution: $\varepsilon ~ N(0, \sigma_{\varepsilon})$
 
@@ -237,16 +226,14 @@ To be precise, assumption 7 is **not needed** to run an efficient OLS regression
 
 {{% callout note %}}
 **Assumption 7** requires that:
-1. Errors have a normal distribution: $\varepsilon ~ N(0, \sigma_{\varepsilon})$
+1. Errors have a normal distribution: $\varepsilon \sim N(0, \sigma_{\varepsilon})$
 ---
 This assumption usually holds when:
     * Errors are random
     * You have a large sample size $(N \rightarrow \infty)$
 {{% /callout %}}
 
----
-
-## Summary of the Classical Assumptions
+### Summary of the Classical Assumptions
 
 The following table summarizes the seven assumptions of the classical model.
 
@@ -257,5 +244,10 @@ The following table summarizes the seven assumptions of the classical model.
 | Assumption 3 | Regressors and errors are uncorreleated | $\rho(x, \varepsilon) = 0$|
 | Assumption 4 | No serial correlation | $\rho(\varepsilon_i, \varepsilon_j) = 0 \; \forall i \neq j$|
 | Assumption 5 | Errors are homoskedastic | $\sigma_{\varepsilon, i} = \bar{\sigma_{\varepsilon}}$ |
-| Assumption 6 | No multicollinearity | $\nexists \omega_j \text{s.t.} x_i = \sum_{j} \omega_j x_j \; \forall j \neq i$|
-| Assumption 7 | Errors have a normal distribution | $varepsilon ~ N(0, \bar{\sigma_{\varepsilon}})$ |
+| Assumption 6 | No multicollinearity | $\nexists \; \omega_j \; \text{s.t.} \; x_i = \sum_{j} \omega_j x_j \; \forall j \neq i$|
+| Assumption 7 | Errors have a normal distribution | $\varepsilon \sim N(0, \bar{\sigma_{\varepsilon}})$ |
+
+---
+
+## The Gauss-Markov Theorem
+
