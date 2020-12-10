@@ -233,7 +233,7 @@ This assumption usually holds when:
     * You have a large sample size $(N \rightarrow \infty)$
 {{% /callout %}}
 
-### Summary of the Classical Assumptions
+### Summary
 
 The following table summarizes the seven assumptions of the classical model.
 
