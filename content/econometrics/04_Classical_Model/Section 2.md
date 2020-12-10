@@ -182,17 +182,51 @@ $$
 If the errors are heteroskedastic, then the standard deviation of the estimated $betas$ will be inflated. That is, your model will produce an inefficient estimation of the coefficients.
 
 {{% callout note %}}
-**Assumption 4** requires that:
+**Assumption 5** requires that:
 1. Observations of the error term are uncorrelated: $\rho (\varepsilon_i, \varepsilon_j) = 0 \\;\\;\\;\\; \forall i \neq j$  
 {{% /callout %}}
 
 ---
 
-## Assumption 6: No explanatory variable is a perfect linear combination of other(s) explanatory variable(s)
+## Assumption 6: No explanatory variable is a perfect linear combination of other(s) explanatory variable(s) (multicollinearity)
+
+The idea behind assumption 6 is that each regressor should have information that is independent of the other regressors. Once again, remember than an econometric model is explaining *variations* of $y$ with *variations* of $x_i$. 
+
+To regressors are perfectly **collinear** if their behavior looks the same, even if they have different absolute values. For instance, you include two regressors for income, one in hundreds and other one in thousands. These two regressors have different levels even if the carry the same information.
+
+Two cases of collinearity is when one regressor is a multiple of another regressor or equals another regressor plus a constant.
+
+1. $x_1 = \omega x_2 \; (\omega \neq 0)$
+2. $x_1 = x_2 \pm c \;(c \neq 0)$
+
+**Multicollinearity** is collinearity with more than one regressor. Your data has perfect multicollinearity if you can write any regressor as a *[linear combination](https://en.wikipedia.org/wiki/Linear_combination)* of other regressors. You have perfect multicollinearity if you can find values of $\omega$ such that:
+
+$$
+x_K = \omega_1 x_1 + ... + \omega_{K-1} x_{K-1}
+$$
+
+If a linear combination exists for $x_K$, then it also exists for any other regressor. You can just re-arrange terms and get a similar expression for $x_1$ or any other regressor:
+
+$$
+x_1 = -\frac{\omega_2}{\omega_1} x_2 - ... - \frac{\omega_{K-1}}{\omega_1} x_{K-1} + \frac{1}{\omega_1} x_K
+$$
+
+You can now see that collinearity is a particular (simple) case of multicollinearity (when there is only one $\omega \neq 0$. If you have two or more regressors that behave similarly, then you have repeated information. The movements of one variables are matched (correlated) with the movements of some combination of other regressors. When this happens, OLS estimation is unable to distinguish the movements in one regressor from the movements in another regressors. In some occasions, this can be problematic.
+
+OLS cannot estimate the coefficients in the presence of perfect multicollinearity (or collinearity). This is because the inverse of $(X'X)^{-1}$ does not exist. Perfect multicollinearity usually occurs when we include an identity in the model such as GDP and all its components, or when the same variable is included twice with a different scaling factor.
+
+More common than **perfect** multicollinearity is the presence of **imperfect** multicollinearity. This is the information of a regressor can be replicated to a large extent, but not totally, by some combination of the other regressors. Even if OLS is able to produce estimation of the $betas$, such estimations can have some problems as well. However, assumption 6 refers to the case of **perfect** multicollinearity.
+
+{{% callout note %}}
+**Assumption 6** requires that:
+1. No regressor is a **perfect** linear combination of any other regressor(s) 
+{{% /callout %}}
 
 ---
 
 ## Assumption 7: The error term is normally distributed
+
+
 
 ---
 
