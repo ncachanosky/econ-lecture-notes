@@ -68,17 +68,6 @@ E[\hat{\beta}] =& \beta
 \end{aligned}
 $$
 
-If *assumption 2** does not hold, then $E[\varepsilon] \neq 0$ and therefore $E[\hat{\beta}] \neq 0$. Recall that a reason why $E[\varepsilon] \neq 0$ is omitting a significant variable $(Z)$:
-
-$$
-\begin{aligned}
-\varepsilon =& \varepsilon^* + \gamma Z \\\\[10pt]
-E[\varepsilon] =& E\left[ \varepsilon^* + \gamma Z \right] \\\\[10pt]
-E[\varepsilon] =& E[\varepsilon^*] + E[\gamma Z] \\\\[10pt]
-E[\varepsilon] =& \gamma Z \neq 0
-\end{aligned}
-$$
-
 ### Efficiency
 
 Efficiency relates to how close or far from the **true** beta estimations fall. The lower (higher) the variance of an estimation, the more (less) estimations will be close to the **true** value under estimation. In our above throwing-darts example, how far away from each other each dart is represents the standard deviation of your estimation technique.

@@ -144,7 +144,7 @@ This assumption is usually violated in two situations:
 
 ### Assumption 4: Observations of the error term are uncorrelated with each other (no serial correlation)
 
-Your model should be free of **serial correlation**. This means that errors are uncorrelated with each other: $\rho(\varepsilon_i, \varepsilon_j) = 0 \; \; \; \; \forall i \neq j$.
+Your model should be free of **serial correlation**. This means that errors are uncorrelated with each other: $\rho(\varepsilon_i, \varepsilon_j) = 0 \\; \\; \\; \\; \forall i \neq j$.
 
 In **cross-section** data this means that the observation error of the United States has no effect on the observation error of any other country. Since in cross-section data there is no order of data that must be followed, it can be difficult to spot serial correlation (for instance, it does not matter if you order your country-level observations alphabetically or randomly). A positive (negative) error in any given observation should have no effect on whether any other observation has a positive (negative) error.
 
@@ -187,8 +187,8 @@ To regressors are perfectly **collinear** if their behavior looks the same, even
 
 Two cases of collinearity is when one regressor is a multiple of another regressor or equals another regressor plus a constant.
 
-1. $x_1 = \omega x_2 \; (\omega \neq 0)$
-2. $x_1 = x_2 \pm c \;(c \neq 0)$
+1. $x_1 = \omega x_2 \\; (\omega \neq 0)$
+2. $x_1 = x_2 \pm c \\;(c \neq 0)$
 
 **Multicollinearity** is collinearity with more than one regressor. Your data has perfect multicollinearity if you can write any regressor as a *[linear combination](https://en.wikipedia.org/wiki/Linear_combination)* of other regressors. You have perfect multicollinearity if you can find values of $\omega$ such that:
 
@@ -229,8 +229,8 @@ To be precise, assumption 7 is **not needed** to run an efficient OLS regression
 1. Errors have a normal distribution: $\varepsilon \sim N(0, \sigma_{\varepsilon})$
 ---
 This assumption usually holds when:
-    * Errors are random
-    * You have a large sample size $(N \rightarrow \infty)$
+   * Errors are random
+   * You have a large sample size $(N \rightarrow \infty)$
 {{% /callout %}}
 
 ### Summary
@@ -244,5 +244,5 @@ The following table summarizes the seven assumptions of the classical model.
 | Assumption 3 | Regressors and errors are uncorreleated | $\rho(x, \varepsilon) = 0$|
 | Assumption 4 | No serial correlation | $\rho(\varepsilon_i, \varepsilon_j) = 0 \; \forall i \neq j$|
 | Assumption 5 | Errors are homoskedastic | $\sigma_{\varepsilon, i} = \bar{\sigma_{\varepsilon}}$ |
-| Assumption 6 | No multicollinearity | $\nexists \; \omega_j \; \text{s.t.} \; x_i = \sum_{j} \omega_j x_j \; \forall j \neq i$|
+| Assumption 6 | No multicollinearity | $\nexists \\; \omega_j \\; \text{s.t.} \\; x_i = \sum_{j} \omega_j x_j \\; \forall j \neq i$|
 | Assumption 7 | Errors have a normal distribution | $\varepsilon \sim N(0, \bar{\sigma_{\varepsilon}})$ |

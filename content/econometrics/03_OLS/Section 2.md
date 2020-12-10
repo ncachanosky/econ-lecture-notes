@@ -114,7 +114,7 @@ The blue dashed line is the best estimation possible with the given data, the on
 The reason to keep the constant in your model is not because of its economic interpretation, if it has any. The reason is that by having OLS the option to also estimate the constant it has more variables at its disposal to find the best line possible. The best line is constructed with **two** variables, *slope* and *intercept*.
 
 {{% callout warning %}}
-To be correctly specified, your model must include a constant term **even if* it odes not have an economic interpretation
+To be correctly specified, your model must include a constant term **even if** it does not have an economic interpretation
 {{% /callout %}}
 
 ---
@@ -168,8 +168,8 @@ There is subtle but important difference with our treatment so far. Previously, 
 
 $$
 \begin{align}
-y_i &= \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_K x_K}_{\text{variables}} + \varepsilon_i \\\\[10pt]
-y_i &= \underbrace{\beta_0 + \beta_1 x_1 + ... + \beta_K x_K}_{\text{regressors}} + \varepsilon_i
+y_i &= \beta_0 + \underbrace{\beta_1 x_1 + ... + \beta_K x_K}\_{\text{variables}} + \varepsilon_i \\\\[10pt]
+y_i &= \underbrace{\beta_0 + \beta_1 x_1 + ... + \beta_K x_K}\_{\text{regressors}} + \varepsilon_i
 \end{align}
 $$
 
