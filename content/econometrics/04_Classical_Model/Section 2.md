@@ -158,7 +158,7 @@ This assumption is important because if errors are serially correlated, then the
 
 Serial correlation is particularly important in the case of time-series data. In this context, serial correlation can lead to biased estimations of the coefficients, and not only to an inefficient estimation of the coefficients.
 
-
+{{% callout note %}}
 **Assumption 4** requires that:
 1. Observations of the error term are uncorrelated: $\rho (\varepsilon_i, \varepsilon_j) = 0 \\;\\;\\;\\; \forall i \neq j$  
 {{% /callout %}}
