@@ -74,7 +74,7 @@ $$
 
 Efficiency relates to how close or far from the **true** beta estimations fall, even if in average your estimations are unbiased. The lower (higher) the variance of an estimation, the more (less) estimations will be close to the **true** value under estimation. In our above throwing-darts example, how far away from each other each dart is represents the standard deviation of your estimation technique.
 
-Let's say $\beta = 0$ and you have two sets of two estimations. The **first** set of estimation yields $(\hat{\beta}_{1,1}, \hat{\beta}\_{1,2}) = (-1, 1)$. The second **set** of estimation yields $(\hat{\beta}\_{1,1}, \hat{\beta}_{1,2}) = (-2, 2)$. Both sets of estimation give, in average, the true $\beta$. However, the first set of estimation is better in the sense that the estimated values are closer to the true $\beta$ than those of the second set of estimations.
+Let's say $\beta = 0$ and you have two sets of two estimations. The **first** set of estimation yields $(\hat{\beta}\_{1,1}, \hat{\beta}\_{1,2}) = (-1, 1)$. The second **set** of estimation yields $(\hat{\beta}\_{1,1}, \hat{\beta}_{1,2}) = (-2, 2)$. Both sets of estimation give, in average, the true $\beta$. However, the first set of estimation is better in the sense that the estimated values are closer to the true $\beta$ than those of the second set of estimations.
 
 To evaluate the efficiency of the OLS estimation we need to apply the variance $(V)$ operator.
 
