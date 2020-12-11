@@ -74,7 +74,7 @@ $$
 
 Efficiency relates to how close or far from the **true** beta estimations fall, even if in average your estimations are unbiased. The lower (higher) the variance of an estimation, the more (less) estimations will be close to the **true** value under estimation. In our above throwing-darts example, how far away from each other each dart is represents the standard deviation of your estimation technique.
 
-Let's say $\beta = 0$ and you have two sets of two estimations. The **first** set of estimation yields $(\hat{\beta}\_{1,1}, \hat{\beta}\_{1,2}) = (-1, 1)$. The second **set** of estimation yields $(\hat{\beta}\_{1,1}, \hat{\beta}_{1,2}) = (-2, 2)$. Both sets of estimation give, in average, the true $\beta$. However, the first set of estimation is better in the sense that the estimated values are closer to the true $\beta$ than those of the second set of estimations.
+Let's say $\beta = 0$ and you have two sets of two estimations. The **first** set of estimations yields $(\hat{\beta}\_{1,1}, \hat{\beta}\_{1,2}) = (-1, 1)$. The second **set** of estimations yields $(\hat{\beta}\_{1,1}, \hat{\beta}_{1,2}) = (-2, 2)$. Both sets of estimations give, in average, the true $\beta$. However, the first set of estimations is better in the sense that the estimated values are closer to the true $\beta$ than those of the second set of estimations.
 
 To evaluate the efficiency of the OLS estimation we need to apply the variance $(V)$ operator.
 
@@ -94,6 +94,6 @@ The efficient estimation is the one that produces the lowest possible variance o
 
 ### Bias and efficiency plotted
 
-The following plot depicts different scenarios. The <span style="color:blue">blue</span> depicts an unbiased and efficient estimation of $\beta$. You can see that the mean of this estimation coincides with the true $\beta$. The <span style="color:green">green</span> depicts an unbiased but inefficient estimation of $\beta$/ You can see that, with respect to the <span style="color:blue">blue</span> estimation, is less likely that you will get the true $\beta$ and more likely that you will get an estimation farther away from the true value. Finally, the <span style="color:red">red</span> estimatino is both biased and inefficient. It is biased because its expected value has a $\xi \neq 0$ deviation from the true $\beta$. It is inefficient because it has a larger variance than the <span style="color:blue">blue</span> estimation.
+The following plot depicts different scenarios. The <span style="color:blue">blue</span> depicts an unbiased and efficient estimation of $\beta$. You can see that the mean of this estimation coincides with the true $\beta$. The <span style="color:green">green</span> depicts an unbiased but inefficient estimation of $\beta$/ You can see that, with respect to the <span style="color:blue">blue</span> estimation, is less likely that you will get the true $\beta$ and more likely that you will get an estimation farther away from the true value. Finally, the <span style="color:red">red</span> estimation is both biased and inefficient. It is biased because its expected value has a $\xi \neq 0$ deviation from the true $\beta$. It is inefficient because it has a larger variance than the <span style="color:blue">blue</span> estimation.
 
 {{< figure library="true" src="econometrics/04_Classical_Model/Fig_02.png" >}}
