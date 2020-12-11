@@ -70,7 +70,7 @@ E[\tilde{\beta}] =& BX \beta
 \end{aligned}
 $$
 
-$E[\tilde{\beta}] = \beta \iff BX = I$.
+You can see that $E[\tilde{\beta}] = \beta \iff BX = I$.
 
 In the case of OLS estimation:
 
@@ -82,16 +82,18 @@ E[\hat{\beta}] =& \beta
 \end{aligned}
 $$
 
-However, if $DX \neq 0 \to E[\tilde{\beta}] \neq \beta$
+However, if $BX \neq I \to E[\tilde{\beta}] \neq \beta$
 
 $$
 \begin{aligned}
 E[\tilde{\beta}] =& \left( (X'X )^{-1} X' + D \right) X \beta \\\\[10pt]
 E[\tilde{\beta}] =& (X'X)^{-1} (X'X) \beta + DX \beta \\\\[10pt]
-E[\tilde{\beta}] =& \beta + DX \beta \\\\[10pt]
+E[\tilde{\beta}] =& \beta + \underbrace{DX \beta}\_{\xi} \\\\[10pt]
 E[\tilde{\beta}] \neq& \beta
 \end{aligned}
 $$
+
+The above excercise means that the condition for the coefficient to be unbiased is that the deviation from the OLS estimation $(D)$ multiplied with your data $(X)$ is zero ($D$ and $X$ are orthogonal).
 
 ### Proof of efficiency
 
@@ -99,13 +101,13 @@ Let $\tilde{\beta}$ be an unbiased non-OLS estimation. Because $\tilde{\beta}$ i
 
 $$
 \begin{aligned}
-\tilde{\beta} =& \beta + \left[ (X'X)^{-1}X' + D \right]\varepsilon \\\\[10pt]
-V[\tilde{\beta}] =& \left[(X'X)^{-1} + D \right] \sigma^{2}_{\varepsilon} \left[(X'X)^{-1} X' + D \right]' \\\\[10pt]
-V[\tilde{\beta}] =& \left[(X'X)^{-1} (X'X) (X'X)^{-1} + (X'X)^{-1} X'D' + DX (X'X)^{-1} + DD'\right] \sigma^{2}_{\varepsilon} \\\\[10pt]
-V[\tilde{\beta}] =& \left[(X'X)^{-1} +DD' \right] \sigma^{2}_{\varepsilon}
+\tilde{\beta} =& \beta + \left[ (X'X)^{-1} X' + D \right]\varepsilon \\\\[10pt]
+V[\tilde{\beta}] =& \left[(X'X)^{-1} + D \right] \sigma^{2}\_{\varepsilon} \left[(X'X)^{-1} X' + D \right]' \\\\[10pt]
+V[\tilde{\beta}] =& \left[(X'X)^{-1} (X'X) (X'X)^{-1} + (X'X)^{-1} X'D' + DX (X'X)^{-1} + DD'\right] \sigma^{2}\_{\varepsilon} \\\\[10pt]
+V[\tilde{\beta}] =& \left[(X'X)^{-1} +DD' \right] \sigma^{2}\_{\varepsilon}
 \end{aligned}
 $$
 
-Because $DD'$ is semi-positive-definite ($psd$), $V[\tilde{\beta}] > V[\hat{\beta}]$.
+Because $DD'$ is semi-positive-definite ($psd$), $V[\tilde{\beta}] > V[\hat{\beta}]$. This results shows that **even if** $\tilde{\beta}$ is unbiased, it is still less efficient than the OLS estimation. 
 
 ### Proof of consistency
