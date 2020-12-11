@@ -97,7 +97,7 @@ The above excercise means that the condition for the coefficient to be unbiased 
 
 ### Proof of efficiency
 
-Let $\tilde{\beta}$ be an unbiased non-OLS estimation. Because $\tilde{\beta}$ is unbiased $DX=0$.
+Let $\tilde{\beta}$ be an unbiased non-OLS estimation. Because $\tilde{\beta}$ is unbiased $DX=X'D'=0$.
 
 $$
 \begin{aligned}
@@ -108,6 +108,12 @@ V[\tilde{\beta}] =& \left[(X'X)^{-1} +DD' \right] \sigma^{2}\_{\varepsilon}
 \end{aligned}
 $$
 
-Because $DD'$ is semi-positive-definite ($psd$), $V[\tilde{\beta}] > V[\hat{\beta}]$. This results shows that **even if** $\tilde{\beta}$ is unbiased, it is still less efficient than the OLS estimation. 
+Because $DD'$ is [positive-semi-definite](https://en.wikipedia.org/wiki/Definite_symmetric_matrix) ($psd$)[^1], $V[\tilde{\beta}] > V[\hat{\beta}]$. This result shows that **even if** $\tilde{\beta}$ is unbiased, it is still less efficient than the OLS estimation. 
 
 ### Proof of consistency
+
+
+
+
+<!-- FOOTNOTES -->
+[^1]: A symmetric matrix $M$ is positive definite if $v'Mv$ produces a strictly positive scalar (where $v$ is a vector). A matrix $M$ is positive-semi-definite if $v'Mv$ produces a non-negative scalar (zero or positive). Matrix $M$ would be negative-definite or negative-semi-definite under the opposite conditions.
