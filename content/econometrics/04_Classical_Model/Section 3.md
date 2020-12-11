@@ -63,7 +63,7 @@ $$
 \begin{aligned}
 \hat{\beta} =& \beta + \left(X'X \right)^{-1} X' \varepsilon \\\\[10pt]
 E[\hat{\beta}] =& E \left[ \beta + \left(X'X \right)^{-1} X' \varepsilon \right] \\\\[10pt]
-E[\hat{\beta}] =& \beta + \left(X'X \right)^{-1} X' E[\varepsilon] \\\\[10pt]
+E[\hat{\beta}] =& \beta + \left(X'X \right)^{-1} X' \underbrace{E[\varepsilon]}\_{0} \\\\[10pt]
 E[\hat{\beta}] =& \beta
 \end{aligned}
 $$
