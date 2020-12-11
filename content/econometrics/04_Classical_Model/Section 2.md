@@ -215,7 +215,7 @@ More common than **perfect** multicollinearity is the presence of **imperfect** 
 
 ### Assumption 7: The error term is normally distributed
 
-Assumption 2 states the error term should have a zero mean, and assumption 5 states that the standard deviation of the errors is constant. There is no requirement, however, that the error terms must have a [**normal** distribution](https://en.wikipedia.org/wiki/Normal_distribution). Assumption 7 requires the errors to have a normal distribution: $\varepsilon ~ N(0, \sigma_{\varepsilon})$
+Assumption 2 states the error term should have a zero mean, and assumption 5 states that the standard deviation of the errors is constant. There is no requirement, however, that the error terms must have a [**normal** distribution](https://en.wikipedia.org/wiki/Normal_distribution). Assumption 7 requires the errors to have a normal distribution: $\varepsilon \sim N(0, \sigma_{\varepsilon})$
 
 It is important to be careful about the normality distribution of the errors:
 
