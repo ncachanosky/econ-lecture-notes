@@ -133,7 +133,7 @@ $$
 \begin{aligned}
 \hat{\beta} =& \beta + (X'X)^{-1} X' \varepsilon \\\\[10pt]
 \hat{\beta} =& \beta + \left(\frac{1}{N} X'X \right)^{-1} \frac{1}{N} X' \varepsilon \\\\[10pt]
-\lim\limits_{N \to \infty} =& \beta + \left(\lim\limits_{N \to \infty} \frac{1}{N} X'X \right)^{-1} \cdot \lim\limits_{N \to \infty} E[X' \varepsilon] \\\\[10pt]
+\lim\limits_{N \to \infty} \hat{\beta} =& \beta + \left(\lim\limits_{N \to \infty} \frac{1}{N} X'X \right)^{-1} \cdot \lim\limits_{N \to \infty} E[X' \varepsilon] \\\\[10pt]
 \lim\limits_{N \to \infty} \hat{\beta} =& \beta + \left(\lim\limits_{N \to \infty} \frac{1}{N} X'X \right)^{-1} \cdot 0\\\\[10pt]
 \lim\limits_{N \to \infty} \hat{\beta} \to& \beta
 \end{aligned}
