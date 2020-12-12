@@ -157,7 +157,7 @@ Serial correlation is particularly important in the case of time-series data. In
 
 {{% callout note %}}
 **Assumption 4** requires that:
-1. Observations of the error term are uncorrleated: $\rho(\varepsilon,i, \varepsilon_j) = 0 \\;\\;\\;\\; \forall i \neq j $  
+1. Observations of the error term are uncorrleated: $\rho(\varepsilon_i, \varepsilon_j) = 0 \\;\\;\\;\\; \forall i \neq j $  
 {{% /callout %}}
 
 ### Assumption 5: The error term has a constant variance (homoskedasticity)

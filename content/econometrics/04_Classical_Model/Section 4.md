@@ -24,7 +24,7 @@ Let $\hat{\beta}$ denote the OLS estimation and $\tilde{\beta}$ denote an altern
 
 1. Unbiased: $E[\hat{\beta}] = \beta$
 2. Efficient: $\sigma_{\hat{\beta}} \leq \sigma_{\tilde{\beta}}$
-3. Consistent: $\lim\limits_{N \to \infty} V[\hat{\beta}] \to \therefore plim (\hat{\beta}) \to \beta$
+3. Consistent: $\lim\limits_{N \to \infty} V[\hat{\beta}] \to plim (\hat{\beta}) \to \beta$
 
 You are already familiar with the concepts of **unbiased** and **efficient** estimator. Here is a new concept, that of **consistency**, which states that as the sample increases the probability of your estimation converging to the true value converges to one. This occurs because the variance of your estimation converges to zero around the true value under estimation.
 
@@ -104,7 +104,7 @@ $$
 \tilde{\beta} =& \beta + \left[ (X'X)^{-1} X' + D \right]\varepsilon \\\\[10pt]
 V[\tilde{\beta}] =& \left[(X'X)^{-1} + D \right] \sigma^{2}\_{\varepsilon} \left[(X'X)^{-1} X' + D \right]' \\\\[10pt]
 V[\tilde{\beta}] =& \left[(X'X)^{-1} (X'X) (X'X)^{-1} + (X'X)^{-1} X'D' + DX (X'X)^{-1} + DD'\right] \sigma^{2}\_{\varepsilon} \\\\[10pt]
-V[\tilde{\beta}] =& \left[(X'X)^{-1} +DD' \right] \sigma^{2}\_{\varepsilon}
+V[\tilde{\beta}] =& \left[(X'X)^{-1} +DD' \right] \sigma^{2}\_{\varepsilon} > V[\hat{\beta}]
 \end{aligned}
 $$
 
@@ -112,8 +112,34 @@ Because $DD'$ is [positive-semi-definite](https://en.wikipedia.org/wiki/Definite
 
 ### Proof of consistency
 
+Let $\hat{\beta}]$ by the OLS estimation. We need to show that as the sample size increases, (1) $V[\hat{\beta}]$ converges to zero and (2) that $\hat{\beta}$ converges to $\beta$ (the true value).
 
+Let's start with the variance of $\hat{\beta}$. We are going to multiply and divide the variance by $N$ and apply the limit operator.
 
+$$
+\begin{aligned}
+V[\hat{\beta}] =& \sigma^{2}_{\varepsilon} (X'X)^{-1} \\\\[10pt]
+V[\hat{\beta}] =& \sigma^{2}_{\varepsilon} \frac{1}{N} \left(\frac{1}{N} X'X \right)^{-1} \\\\[10pt]
+\lim\limits_{N \to \infty} V[\hat{\beta}] =& \sigma^{2}_{\varepsilon} \cdot 0 \cdot \lim\limits_{N \to \infty} \left(\frac{1}{N} X'X \right)^{-1} \\\\[10pt]
+\lim\limits_{N \to \infty} V[\hat{\beta}] \to& 0
+\end{aligned}
+$$
+
+This condition holds because, according to the classical assumptions, $\left(\frac{1}{N} X'X \right)^{-1}$ is finite.
+
+We can proceed to check the second condition, that $\hat{\beta} \to \beta$ as $N \to \infty$. We can also proceed by multiplying and dividing by the sample size $(N)$ and apply the limit operator. Recall that under the classical model assumption $E[X' \varepsilon] = 0$.
+
+$$
+\begin{aligned}
+\hat{\beta} =& \beta + (X'X)^{-1} X' \varepsilon \\\\[10pt]
+\hat{\beta} =& \beta + \left(\frac{1}{N} X'X \right)^{-1} \frac{1}{N} X' \varepsilon \\\\[10pt]
+\lim\limits_{N \to \infty} =& \beta + \left(\lim\limits_{N \to \infty} \frac{1}{N} X'X \right)^{-1} \cdot \lim\limits_{N \to \infty} E[X' \varepsilon] \\\\[10pt]
+\lim\limits_{N \to \infty} =& \beta + \left(\lim\limits_{N \to \infty} \frac{1}{N} X'X \right)^{-1} \cdot 0\\\\[10pt]
+\lim\limits_{N \to \infty} =& \beta
+\end{aligned}
+$$
+
+This second result complements the first one. As the variance of the estimation approaches zero, the value of the estimation approaches the true value under estimation.
 
 <!-- FOOTNOTES -->
 [^1]: A symmetric matrix $M$ is positive definite if $v'Mv$ produces a strictly positive scalar (where $v$ is a vector). A matrix $M$ is positive-semi-definite if $v'Mv$ produces a non-negative scalar (zero or positive). Matrix $M$ would be negative-definite or negative-semi-definite under the opposite conditions.
