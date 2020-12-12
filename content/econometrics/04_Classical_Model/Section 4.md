@@ -118,9 +118,9 @@ Let's start with the variance of $\hat{\beta}$. We are going to multiply and div
 
 $$
 \begin{aligned}
-V[\hat{\beta}] =& \sigma^{2}_{\varepsilon} (X'X)^{-1} \\\\[10pt]
-V[\hat{\beta}] =& \sigma^{2}_{\varepsilon} \frac{1}{N} \left(\frac{1}{N} X'X \right)^{-1} \\\\[10pt]
-\lim\limits_{N \to \infty} V[\hat{\beta}] =& \sigma^{2}_{\varepsilon} \cdot 0 \cdot \lim\limits_{N \to \infty} \left(\frac{1}{N} X'X \right)^{-1} \\\\[10pt]
+V[\hat{\beta}] =& \sigma^{2}\_{\varepsilon} (X'X)^{-1} \\\\[10pt]
+V[\hat{\beta}] =& \sigma^{2}\_{\varepsilon} \frac{1}{N} \left(\frac{1}{N} X'X \right)^{-1} \\\\[10pt]
+\lim\limits_{N \to \infty} V[\hat{\beta}] =& \sigma^{2}\_{\varepsilon} \cdot 0 \cdot \lim\limits_{N \to \infty} \left(\frac{1}{N} X'X \right)^{-1} \\\\[10pt]
 \lim\limits_{N \to \infty} V[\hat{\beta}] \to& 0
 \end{aligned}
 $$
