@@ -14,11 +14,11 @@ type: book  # Do not modify.
 
 ## Coefficients estimation and sample distribution
 
-Recall that a regression **estimates** a value of an unobserved/unknown **true** $beta$. Your $\hat{\beta}$ is an estimated, and therefore it has a probability distribution.
+Recall that a regression **estimates** a value of an unobserved/unknown **true** $beta$. Because $\hat{\beta}$ is an estimation it has a probability distribution.
 
-Every different sample taken from the total population will produce different values of $\hat{\beta}$. From all the potential different samples you can get, you get to work with only one. That is, from all the potential different values of $\hat{\beta}$ you can calculated, you only get to observe one.
+Every different sample taken from the same population will produce different values of $\hat{\beta}$. From all the potential different samples you can get, you get to work with only one. That is, from all the potential different values of $\hat{\beta}$ you can calculate, your regression will only give you one $beta$. Therefore, it is important to understand the $\hat{\beta}$ distribution.
 
-A good sample and a good estimation technique will increase the likelihood that $\hat{\beta}$ will be close to $\beta$. To understand how this works, we need to have a closer look at the OLS coefficient estimation.
+A good sample and a good estimation technique will increase the likelihood that the $\hat{\beta}$ you estimate will be close to the true $\beta$. To understand how this works, we need to have a closer look at the OLS coefficient estimation.
 
 Recall that (using matrix notation):
 
@@ -40,7 +40,7 @@ $$
 \end{aligned}
 $$
 
-You can see that because $\varepsilon$ is a random variable, so is each $\hat{\beta_i}$. You can also see that your $betas$ have the same distribution than $\varepsilon$. Therefore, each $\hat{\beta}$ has a mean and a standard deviation. Mean and deviation are related to the concept of unbiased and efficiency respectively.
+You can see that because $\varepsilon$ is a random variable, so is each $\hat{\beta_i}$. Therefore, your $\hat{\beta}$ has a mean and a standard deviation. Mean and deviation are related to the concept of unbiased and efficiency respectively. You can also see that your $betas$ have the same distribution than $\varepsilon$ (recall the classical model assumption 7).
 
 ---
 
@@ -50,16 +50,16 @@ You can see that because $\varepsilon$ is a random variable, so is each $\hat{\b
 
 An estimation is unbiased if its expected value coincides with the true value under estimation. You have a biased estimation when the expected value of the estimation diverges from the true value under estimation.
 
-Consider the following example. The bullseye of a target represents the true value that your are trying to estimate. The darts you through are your econometric estimations. If your darts miss but fall around the target, your estimations are unbiased. If you average all your estimations you get the true value you are trying to estimate. However, if your darts fall (in average) to either side of the target, then your estimation is biased. You tend to err more to one side such that if you average all your estimations you do not get the true value under estimation.
+Consider the following example. The bullseye of a target represents the true value that your are trying to estimate. The darts you through are your econometric estimations. If your darts miss but fall around the target, your estimations are unbiased. If you average all your estimations you get the true value you are trying to estimate (errors cancel out). However, if your darts fall (in average) to either side of the target, then your estimation is biased. You tend to err more to one side such that if you average all your estimations you do not get the true value under estimation.
 
 We can represent an unbiased and biased estimation in the following way:
 
 1. Unbiased estimation: $E[\hat{\beta}] = \beta$
 2. Biased estimation: $E[\hat{\beta}] = \beta + \xi, \; \xi \neq 0$
 
-You already know that your estimation not be perfect. It is very unlikely you will get the **true** $beta$. But, you **do not want** your estimation to be biased. You are going to miss the bullseye, but you want to aim right.
+You already know that your estimation will probably not be just on target. It is very unlikely you will get the **true** $beta$. But, you **do not want** your estimation to be biased. You are going to miss the bullseye, but you want to aim right be as close to your target as possible. Remember, in a regression you get to through only only one dart, you want to make it count.
 
-If assumptions 1 to 6 of the classical model hold, then OLS produces unbiased estimators.
+If assumptions 1 to 6 of the classical model hold $(\rho(X,e)=0$ and $E[\varepsilon]=0)$, then OLS produces unbiased estimators.
 
 $$
 \begin{aligned}
@@ -72,9 +72,9 @@ $$
 
 ### Efficiency
 
-Efficiency relates to how close or far from the **true** beta estimations fall, even if in average your estimations are unbiased. The lower (higher) the variance of an estimation, the more (less) estimations will be close to the **true** value under estimation. In our above throwing-darts example, how far away from each other each dart is represents the standard deviation of your estimation technique.
+Efficiency relates to how close or far from the **true** beta estimations fall, even if in average your estimations are unbiased. The lower (higher) the variance of an estimation, the more (less) estimations will be close to the **true** value under estimation. In our above throwing-darts example, the distance between the dart represent the standard deviation of your estimation technique.
 
-Let's say $\beta = 0$ and you have two sets of two estimations. The **first** set of estimations yields $(\hat{\beta}\_{1,1}, \hat{\beta}\_{1,2}) = (-1, 1)$. The second **set** of estimations yields $(\hat{\beta}\_{1,1}, \hat{\beta}_{1,2}) = (-2, 2)$. Both sets of estimations give, in average, the true $\beta$. However, the first set of estimations is better in the sense that the estimated values are closer to the true $\beta$ than those of the second set of estimations.
+Let's assume $\beta = 0$ and you have two sets of two estimations. The **first** set of estimations yields $(\hat{\beta}\_{1,1}, \hat{\beta}\_{1,2}) = (-1, 1)$. The second **set** of estimations yields $(\hat{\beta}\_{2,1}, \hat{\beta}_{2,2}) = (-2, 2)$. Both sets of estimations give, in average, the true $\beta$. However, the first set of estimations is better in the sense that the estimated values are closer to the true $\beta$ than those of the second set of estimations.
 
 To evaluate the efficiency of the OLS estimation we need to apply the variance $(V)$ operator.
 
@@ -88,9 +88,7 @@ V[\hat{\beta}] =& \sigma^2_{\varepsilon} \left( X'X \right)^{-1} \\\\[10pt]
 \end{aligned}
 $$
 
-The efficiency of $\hat{\beta}$ depends not only on $\left(X'X\right)$, but also on the variance of the errors $(\sigma^2\_\varepsilon)$. You can see now that a well specified model that includes all relevant regressors will reduce the errors and, therefore, reduce the variance of the estimation increasing the efficiency ("precision") of the model.
-
-The efficient estimation is the one that produces the lowest possible variance of your estimated $betas$.
+The efficiency of $\hat{\beta}$ depends not only on $\left(X'X\right)$, but also on the variance of the errors $(\sigma^2\_\varepsilon)$. The efficient estimation is the one that produces the lowest possible variance of your estimated $betas$.
 
 ### Bias and efficiency plotted
 

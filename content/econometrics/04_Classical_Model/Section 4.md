@@ -14,11 +14,11 @@ type: book  # Do not modify.
 
 ## The Gauss-Markov theorem
 
-The [Gauss-Markov Theorem](https://en.wikipedia.org/wiki/Gauss%E2%80%93Markov_theorem#Remarks_on_the_proof) proves important conditions of OLS coefficient estimation. The exact nature of these conditions depend on whether **assumptions 1 to 6** or **assumptions 1 to 7** are met.
+The [Gauss-Markov Theorem](https://en.wikipedia.org/wiki/Gauss%E2%80%93Markov_theorem#Remarks_on_the_proof) formally proves important conditions of OLS coefficient estimation. The exact nature of these conditions depend on whether **assumptions 1 to 6** or **assumptions 1 to 7** are met.
 
 ### BLUE coefficients
 
-**If assumptions 1 to 6** hold (everything except the normal distribution of the errors), then the estimated $betas$ are the **B**est **L**inear **U**nbiased **E**estimator (BLUE). They key word in BLUE is *best*, which means that the variance of the estimated $betas$ is the minimum possible. Any estimation method other than OLS will produce $betas$ with a similar or larger variance.
+If **assumptions 1 to 6** hold (everything except the normal distribution of the errors), then the estimated $betas$ are the **B**est **L**inear **U**nbiased **E**stimator (BLUE). They key word in BLUE is *best*, which means that the variance of the estimated $betas$ is the minimum possible. Any linear estimation method other than OLS will produce $betas$ with a similar or larger variance.
 
 Let $\hat{\beta}$ denote the OLS estimation and $\tilde{\beta}$ denote an alternative (not OLS) estimation. Then, if assumptions 1 to 6 hold, the Gauss-Markov theorem states that OLS coefficients are (see proofs in the appendix):
 
@@ -26,17 +26,17 @@ Let $\hat{\beta}$ denote the OLS estimation and $\tilde{\beta}$ denote an altern
 2. Efficient: $\sigma_{\hat{\beta}} \leq \sigma_{\tilde{\beta}}$
 3. Consistent: $\lim\limits_{N \to \infty} V[\hat{\beta}] \to plim (\hat{\beta}) \to \beta$
 
-You are already familiar with the concepts of **unbiased** and **efficient** estimator. Here is a new concept, that of **consistency**, which states that as the sample increases the probability of your estimation converging to the true value converges to one. This occurs because the variance of your estimation converges to zero around the true value under estimation.
+You are already familiar with the concepts of **unbiased** and **efficient** estimator from the previous section. Here we introduce a new concept, that of **consistency**, which states that as the sample size increases the probability of your estimation converging to the true value converges to one. This occurs because the variance of your estimation converges to zero around the true value under estimation.
 
 The Gauss-Markov theorem shows in more detail the significance of the classical model assumptions. As long as your data conforms with these assumptions, your OLS estimation will be the best among all possible linear estimations and will be consistent (it improves in precision the larger the dataset is).
 
-There are two important characteristics to keep in mind:
+There are two important issues to keep in mind:
 1. The Gauss-Markov theorem **is not** saying that your estimation is a *good* one, the theorem is saying that if the classical model conditions hold, your estimation is the *best among all linear estimations* as good or bad as it may be
 2. The Gauss-Markov theorem **does not** need the errors to have a normal distribution.
 
 ### BUE Coefficients
 
-If the errors have a normal distribution (assumption 7), then the OLS estimation is not only BLUE, it is also the **B**est **U**nbiased **Estimator** (BUE). Now your OLS coefficients are the best among all other linear and non-linear estimation.
+If **the errors have a normal distribution** (assumption 7), then the OLS estimation is not just BLUE, it is also the **B**est **U**nbiased **Estimator** (BUE). Now your OLS coefficients are the best among all linear and non-linear estimation.
 
 If errors are normally distributed, then the Gauss-Markov theorem implies that:
 
@@ -108,11 +108,11 @@ V[\tilde{\beta}] =& \left[(X'X)^{-1} +DD' \right] \sigma^{2}\_{\varepsilon} > V[
 \end{aligned}
 $$
 
-Because $DD'$ is [positive-semi-definite](https://en.wikipedia.org/wiki/Definite_symmetric_matrix) ($psd$)[^1], $V[\tilde{\beta}] > V[\hat{\beta}]$. This result shows that **even if** $\tilde{\beta}$ is unbiased, it is still less efficient than the OLS estimation. 
+Because $DD'$ is [positive-semi-definite](https://en.wikipedia.org/wiki/Definite_symmetric_matrix) ($psd$)[^1], $V[\tilde{\beta}] > V[\hat{\beta}]$. This result shows that **even if** $\tilde{\beta}$ is unbiased, it is still less efficient than the OLS estimation.
 
 ### Proof of consistency
 
-Let $\hat{\beta}]$ by the OLS estimation. We need to show that as the sample size increases, (1) $V[\hat{\beta}]$ converges to zero and (2) that $\hat{\beta}$ converges to $\beta$ (the true value).
+Let $\hat{\beta}$ be the OLS estimation. We need to show that as the sample size increases, (1) $V[\hat{\beta}]$ converges to zero and (2) that $\hat{\beta}$ converges to $\beta$ (the true value).
 
 Let's start with the variance of $\hat{\beta}$. We are going to multiply and divide the variance by $N$ and apply the limit operator.
 
@@ -127,7 +127,7 @@ $$
 
 This condition holds because, according to the classical assumptions, $\left(\frac{1}{N} X'X \right)^{-1}$ is finite.
 
-We can proceed to check the second condition, that $\hat{\beta} \to \beta$ as $N \to \infty$. We can also proceed by multiplying and dividing by the sample size $(N)$ and apply the limit operator. Recall that under the classical model assumption $E[X' \varepsilon] = 0$.
+We can proceed to check the second condition, that $\hat{\beta} \to \beta$ as $N \to \infty$. We can also proceed by multiplying and dividing by the sample size $(N)$ and apply the limit operator. Recall that under the classical model assumption $\rho(X' \varepsilon) = 0$.
 
 $$
 \begin{aligned}

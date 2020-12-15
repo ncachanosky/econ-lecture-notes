@@ -16,7 +16,7 @@ type: book  # Do not modify.
 
 ### Assumption 1: The model is linear
 
-This assumption requires the model to be **linear** and, of course, be correctly specified (are you forgetting any important regressor?) However, we need to be careful with what we mean by **linear** in this context.
+This assumption requires the model to be **linear** and, of course, be correctly specified (are you forgetting any important regressors?) However, we need to be careful with what we mean by **linear** in this context.
 
 The following is a typical linear model with an additive error term:
 
@@ -28,7 +28,7 @@ The expression **linear model** can be confusing. We tend to think in *math term
 
 However, the classical assumption requires the model to be linear on the **coefficients**. As long as there are independent additive terms with linear coefficients, then the model is linear. Remember that what we are estimating is the $betas$, no the regressors.
 
-Consider two examples of non-linear regressors. Let the first one has squared regressors $(w_i^2)$ and the second one has logarithmic regressors $(ln(w_i))$ regressors. In both cases, regressors are no linear. These two examples are easy to linearize, just define $x_i = w_i^2$ in the first model and $x_i = ln(w_i)$ in the second model. Then:
+Consider two examples of a linear model with non-linear regressors. Let the first one have squared regressors $(w_i^2)$ and the second one have logarithmic regressors $(ln(w_i))$ regressors. These two examples are easy to linearize, just define $x_i = w_i^2$ in the first model and $x_i = ln(w_i)$ in the second model. Then:
 
 $$
 \begin{aligned}
@@ -60,16 +60,16 @@ $$
 f(y) = \beta_0 + \beta_1 f(x_1) + ... + \beta_K f(x_K)
 $$
 
-An example of a model non-linear in the coefficients would be $y = \beta_0 + x_1^{\beta_1} + ... + x_k^{\beta_K}$. There is no arrangement that would make this equation linear on the $betas$.
+An example of a model non-linear in the coefficients would be $y = \beta_0 + x_1^{\beta_1} + ... + x_k^{\beta_K}$. There is no algebraic arrangement that would make this equation linear on the $betas$.
 
-There two other important conditions in this assumption:
+There are two other important conditions in this assumption:
 
 1. The model is correctly specified, meaning there is no **omitted variables**
 2. The error term is additive to the model and cannot be multiplied by or divided by any other regressor(s) included in the model
 
 {{% callout note %}}
 **Assumption 1** requires that:
-1. Your econometric model can be represented as a model linear *on the coefficients*, even if the regressors do not have a linear behavior or if the underlying theory is not linear
+1. Your econometric model can be represented as a model linear *on the coefficients*, even if the regressors do not have a linear behavior or if the underlying theory is not linear: $f(y) = \beta_0 + \beta_1 f(x_1) + ... + \beta_K f(x_K) + \varepsilon$
 2. All important regressors are included in the model
 3. The error can be represented as an additive term independent of all regressors
 {{% /callout %}}
@@ -82,11 +82,11 @@ $$
 E[\varepsilon] = 0
 $$
 
-The intuition behind this asspmition is that errors should cancel out. The following figure depicts the distribution of an hypothetical error term. You can see that the mean is zero with <span style="color:red">negative</span> and <span style="color:blue">positive</span> errors. You can also see that the majority of the errors are small (close to zero) and only a few errors are large (far away from zero). **Importantly**, even though the error term in the figure looks like it has a normal distribution, Assumption 2 does not require errors to have a normal distribution, only to have a zero mean value. However, a normal distribution of the errors is a desirable condition (wait until Assumption 7).
+The intuition behind this assumption is that random errors should cancel out. The following figure depicts the distribution of an hypothetical error term. You can see that the mean is zero with <span style="color:red">negative</span> and <span style="color:blue">positive</span> errors. You can also see that the majority of the errors are small (close to zero) and only a few errors are large (far away from zero). Importantly, even though the error term in the figure looks like it has a normal distribution, **Assumption 2 does not require errors to have a normal distribution**, only to have a zero mean value. However, a normal distribution of the errors is a desirable condition (wait until Assumption 7).
 
 {{< figure library="true" src="econometrics/04_Classical_Model/Fig_01.png" >}}
 
-To be more price, assumption 2 builds over an asymptotic condition. In a small sample, it is possible that the mean of the error term is not exactly equal to zero. What is required is that the mean of the error term converges to zero as the sample size increases to infinity $(n \rightarrow \infty \therefore E[\varepsilon] \rightarrow 0)$
+To be more precise, assumption 2 builds over an asymptotic condition. In a small sample, it is possible that the mean of the error term is not exactly equal to zero. What is required is that the mean of the error term converges to zero as the sample size increases to infinity $(n \rightarrow \infty \therefore E[\varepsilon] \rightarrow 0)$
 
 Assumption 2 is another reason to include a constant term in your model. Assume the mean of the error term has a non-zero value (positive or negative) of $\xi \neq 0$. Then you can re-write your model in the following way:
 
@@ -107,15 +107,15 @@ Therefore, your model will fulfill assumption 2 as long as it has a constant ter
 2. No requirement is made on the standard deviation $(\sigma)$ or type of distribution of error term
 {{% /callout %}}
 
-### Assumption 3: All explanatory variables are uncorrelated with the error term
+### Assumption 3: All regressors are uncorrelated with the error term
 
-All regressors should be uncorrelated with the error term. Let $\rho$ denote correlation, then:
+Let $\rho$ denote correlation, then:
 
 $$
 \rho(x_j, e) = 0 \\;\\;\\;\\; \forall j = 1, ..., K
 $$
 
-If this condition is violated, then the estimation of the coefficients of the regressors included in the model may be biased. Every omitted variable is part of the error term. Assume you forget to include regressor $z_i$ in your model. If the pure error term is $\varepsilon$, then the error term of your model becomes $\varepsilon^* = \varepsilon + \gamma z_i$.
+If this condition is violated, then the estimation of the coefficients of the regressors included in the model may be biased. This bias occurs because every omitted variable is part of the error term. Assume you forget to include regressor $z_i$ in your model. If the pure error term is $\varepsilon$, then the error term of your model becomes $\varepsilon^* = \varepsilon + \gamma z_i$.
 
 $$
 \begin{aligned}
@@ -131,7 +131,7 @@ If $\rho (x_1, z) > 0$, then you should expect for $\hat{\beta_1}$ to capture no
 
 It is possible, but unlikely, that $\gamma > 0 \wedge \rho (x_j, z) = 0 \; \forall j = 1, ..., K$. In this hypothetical case, omitting a significant variable has no effect on the estimation of the other regressor's coefficients.
 
-Another situation likely to violate assumption 3 is when your model has an independent variable with a simultaneous relationship with at least one regressor. This means that there is a two-direction causal effect between $y$ and $x_j$. This is the problem of **endogeneity**. The regression requires that the causal effects goes from $x \to y$. But, if the relationship is mutual $(x \leftrightarrow y)$, then your model suffers from endogeneity and coefficient estimation will be biased. This **system of equations** requires a joint estimation rather than independent models.
+Another situation likely to violate assumption 3 is when your model has an independent variable with a simultaneous relationship with at least one regressor. This means that there is a two-direction causal effect between $y$ and $x_j$. This is the problem of **endogeneity**. The regression requires that the causal effects goes from $x \to y$. But, if the relationship is mutual $(x \leftrightarrow y)$, then your model suffers from endogeneity and coefficient estimation will be biased. This **system of equations** requires a joint estimation rather than independent models. We will cover this issue at a later chapter.
 
 {{% callout note %}}
 **Assumption 3** requires that:
@@ -139,7 +139,7 @@ Another situation likely to violate assumption 3 is when your model has an indep
 ---
 This assumption is usually violated in two situations:
    * You omit a significant variable, which is correlated with at least one regressor included in the model
-   * Your model has a bi-directional causal effect (simultaneity) between the independent variable and at least one of the regressors
+   * Your model has a bi-directional causal effect (endogeneity) between the independent variable and at least one of the regressors
 {{% /callout %}}
 
 ### Assumption 4: Observations of the error term are uncorrelated with each other (no serial correlation)
@@ -150,10 +150,9 @@ In **cross-section** data this means that the observation error of the United St
 
 Serial correlation is a more intuitive concept in the case of **time-series**. In this case, assumption 4 requires that the error in period $t$ has no effect on future period errors. For instance, an unexpected monetary shock (or natural disaster) in year $t$ should have no effect on the errors in the following years. A positive (negative) error in observation $t$ should have no effect on whether the errors of future observations are positive (negative).
 
-This assumption is important because if errors are serially correlated, then the standard deviation of the $betas$ can be inflated, leading to inefficient coefficient estimations. No serial correlation builds on the assumption that errors are $iid$, independently and identically distributed. Each observation is an independent random draw from the same probability distribution.
+This assumption is important because if errors are serially correlated, then the standard deviation of the $betas$ can be inflated, leading to inefficient coefficient estimations. The assumption of no serial correlation builds on the idea that errors are $iid$, independently and identically distributed. Each observation is an independent random draw from the same probability distribution.
 
 Serial correlation is particularly important in the case of time-series data. In this context, serial correlation can lead to biased estimations of the coefficients, and not only to an inefficient estimation of the coefficients.
-
 
 {{% callout note %}}
 **Assumption 4** requires that:
@@ -181,11 +180,11 @@ If the errors are heteroskedastic, then the standard deviation of the estimated 
 
 ### Assumption 6: No explanatory variable is a perfect linear combination of other(s) explanatory variable(s) (multicollinearity)
 
-The idea behind assumption 6 is that each regressor should have information that is independent of the other regressors. Once again, remember than an econometric model is explaining *variations* of $y$ with *variations* of $x_i$. 
+The idea behind assumption 6 is that each regressor should have information that is independent of the information included in other regressors. Once again, remember than an econometric model is explaining *variations* of $y$ with *variations* of $x_i$. 
 
-To regressors are perfectly **collinear** if their behavior looks the same, even if they have different absolute values. For instance, you include two regressors for income, one in hundreds and other one in thousands. These two regressors have different levels even if the carry the same information.
+Two regressors are perfectly **collinear** if their behavior looks the same, even if they have different absolute values. For instance, you include two regressors for income, one in hundreds and other one in thousands. These two regressors have different levels even if the carry the exact same information. There is no point in including these two regressors, one is enough because there is nothing new the second regressor will add to the model.
 
-Two cases of collinearity is when one regressor is a multiple of another regressor or equals another regressor plus a constant.
+An intuitive examples of collinearity is when one regressor is a multiple of another regressor or equals another regressor plus a constant.
 
 1. $x_1 = \omega x_2 \\; (\omega \neq 0)$
 2. $x_1 = x_2 \pm c \\;(c \neq 0)$
@@ -202,15 +201,15 @@ $$
 x_1 = -\frac{\omega_2}{\omega_1} x_2 - ... - \frac{\omega_{K-1}}{\omega_1} x_{K-1} + \frac{1}{\omega_1} x_K
 $$
 
-You can now see that collinearity is a particular (simple) case of multicollinearity (when there is only one $\omega \neq 0$. If you have two or more regressors that behave similarly, then you have repeated information. The movements of one variables are matched (correlated) with the movements of some combination of other regressors. When this happens, OLS estimation is unable to distinguish the movements in one regressor from the movements in another regressors. In some occasions, this can be problematic.
+You can now see that collinearity is a particular (simple) case of multicollinearity (when there is only one $\omega \neq 0$. If you have two or more regressors that behave similarly, then you have repeated information. The movements of one variable are matched (correlated) with the movements of some combination of other regressors. When this happens, OLS estimation is unable to distinguish the movements in one regressor from the movements in another regressors. In some occasions, this can be problematic.
 
-OLS cannot estimate the coefficients in the presence of perfect multicollinearity (or collinearity). This is because the inverse of $(X'X)^{-1}$ does not exist. Perfect multicollinearity usually occurs when we include an identity in the model such as GDP and all its components, or when the same variable is included twice with a different scaling factor.
+OLS **cannot** estimate the coefficients in the presence of perfect multicollinearity (or collinearity). This is because the inverse of $(X'X)^{-1}$ does not exist. Perfect multicollinearity usually occurs when we include an identity in the model such as GDP and all its components, or when the same variable is included twice with a different scaling factor (just as income in hundreds and thousands).
 
-More common than **perfect** multicollinearity is the presence of **imperfect** multicollinearity. This is the information of a regressor can be replicated to a large extent, but not totally, by some combination of the other regressors. Even if OLS is able to produce estimation of the $betas$, such estimations can have some problems as well. However, assumption 6 refers to the case of **perfect** multicollinearity.
+More common than **perfect** multicollinearity is the presence of **imperfect** multicollinearity. This is the situation when information of one regressor can be replicated to a **large extent**, but not totally, by some linear combination of the other regressors. Even if OLS is able to produce estimation of the $betas$, such estimations can have some problems as well. However, assumption 6 refers to the case of **perfect** multicollinearity.
 
 {{% callout note %}}
 **Assumption 6** requires that:
-1. No regressor is a **perfect** linear combination of any other regressor(s) 
+1. No regressor is a **perfect** linear combination of any other regressor(s): $\nexists \\; \omega_j \\; \text{s.t.} \\; x_i = \sum_{j} \omega_j x_j \\; \forall j \neq i$
 {{% /callout %}}
 
 ### Assumption 7: The error term is normally distributed
@@ -220,9 +219,9 @@ Assumption 2 states the error term should have a zero mean, and assumption 5 sta
 It is important to be careful about the normality distribution of the errors:
 
 1. OLS estimation **does not need** the errors to have a normal distribution
-2. Errors normality is important for hypothesis testing (next chapter), not to OLS estimation of the coefficients.
+2. Errors normality is important for hypothesis testing (next chapter), not for OLS coefficient estimation
 
-To be precise, assumption 7 is **not needed** to run an efficient OLS regression. However, it is very convenient when moving from regression estimation to hypothesis testing. If errors are not normally distributed, then the typical strategy of hypothesis testing is invalid (specially when working with small samples).
+To be precise, assumption 7 is **not needed** to run an efficient OLS regression. However, it is very convenient when moving from regression estimation to hypothesis testing. If errors are not normally distributed, then the typical strategy of hypothesis testing is invalid (specially if working with small samples).
 
 {{% callout note %}}
 **Assumption 7** requires that:
@@ -233,7 +232,9 @@ This assumption usually holds when:
    * You have a large sample size $(N \rightarrow \infty)$
 {{% /callout %}}
 
-### Summary
+---
+
+## Summary
 
 The following table summarizes the seven assumptions of the classical model.
 
