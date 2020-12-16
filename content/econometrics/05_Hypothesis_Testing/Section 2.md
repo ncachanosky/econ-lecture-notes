@@ -4,7 +4,7 @@ linktitle: "The t-test"
 weight: 2
 
 # Page metadata.
-title: The *t*-test
+title: The _t_-test
 type: book  # Do not modify.
 ---
 
