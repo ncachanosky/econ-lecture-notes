@@ -89,3 +89,19 @@ The **crossover error rate** (CER) is the the point at which the probability of 
 
 ## Decision rules in hypothesis testing
 
+### Critical values
+
+The hypothesis test produces a value that is compared with a threshold that serves as the decision rule of whether to accept or reject the null hypothesis. For instance, let the threshold to reject the null that $\phi = 0$ is 10. Then, if the difference (in absolute value) between $\hat{\phi}$ and $\phi$ is more than 10, we reject the null and assume that $\phi \neq 0$. But, if the difference is 10, then according to our decision rule the difference is not enough to conclude, with a degree of confidence, that $\phi =neq 0$.
+
+How is the threshold level decided? In two steps. The **first** one is the desired probability of having a Type I error; this probability is usually denoted as $\alpha$. The **second** one is obtaining the value of the threshold from the probability distribution of the estimation. Use the chosen value of $\alpha$ to get the value that, in the probability distribution of $\hat{\phi}$, would produce a probability of $\alpha$. Let $f(\hat{\phi})$ denote the probability distribution of $\hat{\phi}$ and $\phi_C$ the critical (threshold) value. Then: $f(|\phi|>|\phi_C|) = \alpha$. 
+
+The following figure depicts a typical hypothesis testing. The <span style="color:blue">blue</span> line represents the probability distribution of $\hat{\phi}$ assuming that $H_0$ is true. The <span style="color:red">red</span> denotes the critical values that delimit the rejection and fail to reject ("acceptance") regions of $H_0$. Any $\hat{\phi}$ that falls in between $(-\phi_C, \phi_C)$ means that the difference $\hat{\phi} - H_0$ is not enough to reject $H_0$. Alternatively, any $\hat{\phi}$ that falls outside the range $(-\phi_C, \phi_C)$ means that the difference $\hat{\phi} - H_0$ is large enough to reject $H_0$. You can also see that the specific values of $-\phi_C$ and $\phi_C$ depend on the chosen value of $\alpha$ (the probability of having a Type I error).
+
+
+{{< figure library="true" src="econometrics/05_Hypothesis_Testing/Fig_01.png" >}}
+
+How is $\alpha$ chosen? The easiest way is to follow already stablished conventions. In economics is typically to use 1%, 5%, and 10%, being 5% the most common. A different route would be to consider in more detail the nature of the problem and distribution of the data. If the cost of a Type I error is large, you may want to use a smaller value of $alpha$ (sending astronauts to the moon, or clearing a new vaccine to the general population).
+
+### p-values
+
+### Confidence intervals
