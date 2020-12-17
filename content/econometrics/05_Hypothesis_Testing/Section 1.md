@@ -121,23 +121,42 @@ Even though the p-value is very useful and convenient, it is also subject to [mi
 
 {{% callout warning %}}
 The p-value measures the probability that $H_0$ can produce your observation, not the probability that $H_0$ is true given your observation.
+
 ---
-$$
-
-$$
-{{% \callout %}}
-
-> 1. **The p-value is *not* the probability that $H_0$ is true**
-> The p-value **is not** the probability that $H_0$ would produce your estimation. The p-value **is** the probability that, given your dataset, the $H_0$ can produce an extreme observation at least the value of your estimation. In other words $pr(\hat{\phi}|H_0) \neq pr(H_0|\hat{\phi})$ The p-value is a measure of the former, not the latter.
-> This confusion is also known as the [prosecutor's fallacy](https://en.wikipedia.org/wiki/Prosecutor%27s_fallacy). Let $P(E|I)$ be the probability that the "damning evidence" would be observed with if the accused is innocent (false positive), and let $P(I|E)$ by the probability that the accused is innocent despite the presence of the "damning evidence". The fact that $P(I|E)$ is small **does not mean** that $P(E|I)$ is also small. Recall bayes theorem: $P(I|E) = P(E|I) \frac{P(I)}{P_E)}$, where in our context $P(I)$ is the probability of innocence *independent* of "damning evidence" and $P(E)$ is the probability of "damning evidence" *independent* of innocence.
-
-
-### Confidence intervals
 
 $$
 \underbrace{pr(\hat{\theta}|H_0)}_{p-value} \neq pr(H_0|\hat{\theta})
 $$
+{{% \callout %}}
+
+As illustrated by the [prosector's fallacy](https://en.wikipedia.org/wiki/Prosecutor%27s_fallacy), this confusion can be important. The fallacy consists in concluding that the low likelihood that damning evidence (such as a DNA test result) would show up if the accused is innocent implies a low likelihood that the accused is innocent in the presence of damning evidence. How so? The fallacy is easy to see making use of [Bayes' theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem).
+
+Let $P(E)$ represent the probability of finding damning evidence $(E)$ independent of the innocence o the accused; $P(I)$ by the probability of innocence regardless of the presence of damning evidence, $P(E|I)$ be the probability of finding damning evidence conditional on the accused being innocent, and $P(I|E)$ by the probability of the accused being innocent conditional on the presence of damning evidence. Then:
+
+$$
+P(I|E) = P(E|I) \frac{P(I)}{P(E)}
+$$
+
+The fact that $P(E|I)$ is low does not necessarily mean that P(I|E) is low because $\frac{P(I)}{P(E)}$ can be high. Consider the following example. A prosecutor commits a fallacy when accusing a lottery winner of cheating given the low probability of winning the lotter. This prosecutor oversaw that probability of **anyone** winning the lottery given the total number of people that play the game.
+
+### False positives
+
+A decision rule (the value of $\alpha$) is chosen by deciding the maximum probability of having a Type I error (false positive). Yet, the more tests are run, the more likely there will be at least one Type I error. This is called the family-wise-error rate (FWER):
+
+$$
+FWER = 1 - (1 - \alpha)^j
+$$
+
+where $j$ denotes the number of tests.
 
 ---
 
 ## Statistical versus economic significance
+
+The p-value is a measure of the likelihood of finding your observation assuming the null hypothesis is true, it is not a measure of how relevant the regressor is in the real world.
+
+You may have a very low p-value of a very small number. You feel very confident in rejecting the null hypothesis that the coefficient is different than zero. It is very unlikely that you would run into your estimated $\hat{\beta}$ if the true $beta$ were zero. But, your estimation has a very small value in the sense that the impact of your regressor on the dependent variable is negligent in **economic terms**.
+
+You can be **statistically** very confident that a change in taxes has some effect on inflation, however, such effect is **very small** and only correlates with a very low effect on the inflation rate.
+
+It is very important to remember the difference between **statistical** and **economic** significance. Regression results talk about statistical effects, not economic relevance.
