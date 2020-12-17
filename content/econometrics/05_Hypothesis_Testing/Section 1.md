@@ -127,7 +127,7 @@ The p-value measures the probability that $H_0$ can produce your observation, no
 $$
 \underbrace{pr(\hat{\theta}|H_0)}_{p-value} \neq pr(H_0|\hat{\theta})
 $$
-{{% \callout %}}
+{{% /callout %}}
 
 As illustrated by the [prosector's fallacy](https://en.wikipedia.org/wiki/Prosecutor%27s_fallacy), this confusion can be important. The fallacy consists in concluding that the low likelihood that damning evidence (such as a DNA test result) would show up if the accused is innocent implies a low likelihood that the accused is innocent in the presence of damning evidence. How so? The fallacy is easy to see making use of [Bayes' theorem](https://en.wikipedia.org/wiki/Bayes%27_theorem).
 
