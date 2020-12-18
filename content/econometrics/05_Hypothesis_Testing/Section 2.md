@@ -12,5 +12,17 @@ type: book  # Do not modify.
 
 ---
 
-## The Classical Model
+## What does the $t$-test do?
+
+---
+
+## Building the t-test
+
+### The Student's $t$-distribution
+
+### The t-statistic
+
+---
+
+## Limitations of the $t$-test
 
