@@ -110,7 +110,9 @@ twoway scatter price length, ///
 *|CELL 5|----------------------------------------------------------------------*
 *|Run base model
 
-regress price $regressors
+regress price $regressors, ///
+		cformat(%9.2f) ///
+		pformat(%9.4f)
 
 
 *|CELL 6|----------------------------------------------------------------------*

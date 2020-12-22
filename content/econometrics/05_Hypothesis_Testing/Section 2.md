@@ -14,15 +14,15 @@ type: book  # Do not modify.
 
 ## What does the $t$-test do?
 
-The $t$-test is a s typical test used to test the null hypothesis that a coefficient is different than zero. If this is the case, then the *marginal effect* of its regressors is different than zero and, therefore, said regressor has some explanatory power over the variations of the dependent variable. If the coefficient of a regressor were to be zero $(\beta = 0)$, then said regressor is unrelated with the dependent variable.
+The $t$-test is a s typical test used to test the **null hypothesis** that a coefficient is different than zero. If this is the case, then the *marginal effect* of the corresponding regressors is different than zero and, therefore, said regressor has some explanatory power over the variations of the dependent variable. If the coefficient of a regressor were to be zero $(\beta = 0)$, then said regressor is unrelated with the dependent variable. Remember that in the context of econometrics *explanatory power* means that variations of $y$ can be explains, to some extent, by variations of $x$.
 
-A coefficient different than zero can follow in any of the three following categories (number three is unlikely, but not impossible):
+A coefficient different than zero can fall in any of the three following categories (number three is unlikely, but not impossible):
 
 1. The regressor is economically significant
 2. The regressor is economically insignificant
 3. The regressor adds information, but not enough to compensate the loss of degrees of freedom (for instance, $\bar{R}^2$ decreases)
 
-In its most common specification, the $t$-test null hypothesis is that a coefficient is different than zero (two-tailed test), regardless of the sign. An alternative specification would be to test of a given coefficient is positive or negative (one-tailed test).
+In its most common specification, the $t$-test null hypothesis is that a coefficient is different than zero regardless of the sign (two-tailed test). An alternative specification would be to test if a given coefficient is positive or negative (one-tailed test).
 
 ---
 
@@ -30,36 +30,53 @@ In its most common specification, the $t$-test null hypothesis is that a coeffic
 
 ### The Student's $t$-distribution
 
-The **t-statistic** is the test-statistic of the $t$-test. The t-statistic has a [Student's t-distribution](https://en.wikipedia.org/wiki/Student%27s_t-distribution).
+The **t-statistic** is the test-statistic of the $t$-test. If certain conditions hold, the t-statistic has the convenient [Student's t-distribution](https://en.wikipedia.org/wiki/Student%27s_t-distribution).
 
-The t-distribution captures the probability distribution when estimating the mean of a normally-distributed population when (1) the sample size is small and (2) the standard deviation is unknown. Visually, the t-distribution looks like a normal distribution with higher tails.
+The t-distribution captures the probability distribution when estimating the mean of a normally-distributed population in the presence of (1) a sample size is small and (2) an unknown standard deviation. Visually, the t-distribution looks like a normal distribution with higher tails.
 
 The exact shape of the t-student distribution depends on the degrees of freedom of your model. The larger the degrees of freedom, the more similar to the standard normal distribution the t-distribution looks like.
 
 {{% callout warning %}}
-For the $t$-test to be a valid test, $\hat{\beta}$ must have a normal distribution. From our previous chapter we know that for $\hat{\beta}$ to have a normal distribution, the errors must have a normal distribution.
+**Condition for the $t$-test to have a Student's t-distribution**
 
-If the errors **do not** have a normal distribution, then you cannot do a $t$-test.
+* $\hat{\beta}$ must have a normal distribution
+* For $\hat{\beta}$ to have a norma distirbution, the errors must have a normal distribution (see [The Sample Distribution of the beta](../04_Classical_Model/Section%203.md))
+ 
+---
+
+If the errors do not have a normal distribution, then the t-test **is invalid**
 {{% /callout %}}
 
 ### The t-statistic
 
-If your model has a constant and $K$ regressors, then you will have $K+1$ t-tests, one **independent** test for each coefficient. 
+If your model has a constant and $K$ regressors, then you will have $K+1$ t-tests, one **independent** test for each coefficient including the constant term.
 
-Let the null hypothesis be $\beta_j$ $(j = 0, ..., K)$, $t_j$ be the t-statistic of each test, $t_C$ be the critical (threshold) value, and $DF$ be the degrees of freedom. Then:
+Let the null hypothesis be $\beta_j = 0$ $(j = 0, ..., K)$, $t_j$ be the t-statistic of each test, $t_C$ be the critical (threshold) value, and $DF$ be the degrees of freedom. Then:
 
 $$
 \begin{aligned}
 H_0 :& \beta_j = 0 \\\\[10pt]
 H_A :& \beta_j \neq 0 
 \\\\[10pt]
-t_j =& \frac{\hat{\beta}_{j} - 0}{\hat{\sigma}_{\hat{\beta}}} \sim t_{DF}
+t_j =& \frac{\hat{\beta}\_{j} - 0}{\hat{\sigma}\_{\hat{\beta}}} \sim t_{DF}
 \end{aligned}
 $$
 
-Each $t$-test is *solved* by comparing the value of $t_j$ with the value of $t_C$ (that depends on your confidence level $\alpha$). Alternatively, you can compare the p-value of each $t_j$ with your desired confidence value.
-
 If you look at the denominator, you will see that the t-statistic is built with the **estimation** of the standard deviation of the estimated coefficient.
+
+As discussed in the previous section, there are two ways we can *solve* the hypothesis test:
+
+* Compare each $t_j$ with $t_C$
+  * $H_0$ is **rejected** if $|t_j| > |t_C$
+  * The value of $t_C$ depends on (a) your chosen value of $\alpha$ (confidence level) and (b) the degrees of freedom in your test
+* Compare the p-value of each $t_j$ with your chosen value of $\alpha$
+  * $H_0$ is **rejected** if p-value $> \alpha$
+
+It is important to be careful about the alternative outcome. If the conditions to **reject** $H_0$ are not met, then we **fail to reject** $H_0$. We **do not confirm** $H_0$.
+
+{{% callout warning %}}
+An hypothesis test either **rejects** or **fails to reject** the null hypothesis. Hypothesis testing **does not confirm** the null nor the alternative hypotheses.
+{{% /callout %}}
 
 ### Example
 
@@ -67,9 +84,78 @@ Let's look again at our first regression.
 
 {{< figure library="true" src="econometrics/03_OLS/OLS Example 06.png" >}}
 
-We can now make sense of the data to the right of **each** coefficient. The `Std. Err.` is the estimated standard error of each coefficient $(\hat{\sigma}_{\hat{\beta}})$ (that is, the numerator of the t-statistic). The column that follows (`t`) are the values of the t-statistics; because the null hypothesis is $\beta=0$, you can see that $t_j = \hat{\beta}/\hat{\sigma}_{\hat{\beta}}$. The next piece of information are the `p-values` associated with each $t_j$. As you can see, it is easier to compare the p-values with your desired level of $\alpha$ than comparing each $t_j$ with the $t_C$ (which needs to be estimated for each different value of degrees of freedom). Finally, the `confidence interval` is calculated making use of the standard error of each coefficient.
+We can now make sense of the data to the right of **each** coefficient. From right to left, next to the value of each coefficient we have:
+
+1. The standard error of the estimated coefficient
+2. The $t$-statistic
+3. The p-value of the $t$-statistic
+4. The lower and upper limits of a 95% [confidence interval](https://en.wikipedia.org/wiki/Confidence_interval)
+
+Let's translate the numbers in the table into their equivalent econometric symbols.
+
+|$y$  | Coef.   | Std. Err.      | $t$-statistic | p-value       | Confidence interval                                  |
+|-----|---------|----------------|---------------|---------------|------------------------------------------------------|
+|$x_1$|$\beta_1$|$\hat{\sigma}_1$| $t_1$         | p-value($t_1$)| $\hat{\beta_1} \pm t_{\alpha/2} \cdot \hat{\sigma_1}$|
+|$x_2$|$\beta_2$|$\hat{\sigma}_2$| $t_2$         | p-value($t_2$)| $\hat{\beta_2} \pm t_{\alpha/2} \cdot \hat{\sigma_2}$|
+|$x_3$|$\beta_3$|$\hat{\sigma}_3$| $t_3$         | p-value($t_3$)| $\hat{\beta_3} \pm t_{\alpha/2} \cdot \hat{\sigma_3}$|
+|$x_4$|$\beta_4$|$\hat{\sigma}_4$| $t_4$         | p-value($t_4$)| $\hat{\beta_4} \pm t_{\alpha/2} \cdot \hat{\sigma_4}$|
+|$x_5$|$\beta_5$|$\hat{\sigma}_5$| $t_1$         | p-value($t_5$)| $\hat{\beta_5} \pm t_{\alpha/2} \cdot \hat{\sigma_5}$|
+|$x_6$|$\beta_6$|$\hat{\sigma}_6$| $t_1$         | p-value($t_6$)| $\hat{\beta_6} \pm t_{\alpha/2} \cdot \hat{\sigma_6}$|
+|$x_0$|$\beta_0$|$\hat{\sigma}_0$| $t_0$         | p-value($t_0$)| $\hat{\beta_0} \pm t_{\alpha/2} \cdot \hat{\sigma_0}$|
+
+Let' now move the table where we show 5 regression models next to each other.
+
+{{< figure library="true" src="econometrics/03_OLS/OLS Example 07.png" >}}
+
+In this case each coefficient has its estimated standard deviation below in parenthesis. However, there is no information about the $t$-statistic or p-value of each coefficent. Instead, there are asterisks (*). The asterisks provide the following information:
+
+* Statistically different than zero at $\alpha = 10%$: *
+* Statistically different than zero at $\alpha = 05%$: **
+* Statistically different than zero at $\alpha = 01%$: ***
+
+We can also plot the coefficients with their respective confidence intervals to see how far or close they are to the null hypothesis ($\beta_j = 0)$. For scaling purposes we drop the constant. Compare the figure below with the econometric results above.
+
+```
+*==============================================================================*
+* HYPOTHESIS TESTING
+* Plot coefficient intervals
+* Code sample: 4.1
+*==============================================================================*
+
+*|CELL 1|----------------------------------------------------------------------*
+*|Settings and required data
+ssc install coefplot, replace
+set scheme s1color  // Set plot scheme
+sysuse auto, clear  // Load 1978 Automobile Data from STATA
+
+
+*|CELL 2|----------------------------------------------------------------------*
+*|Run the model and plot coefficients
+
+global    regressors mpg weight length rep78 headroom trunk
+regress price $regressors
+
+coefplot, ///
+    xline(0, lcolor("green")) ///
+    drop(_cons)
+
+*==============================================================================*
+*|THE END|=====================================================================*
+*==============================================================================*
+```
+
+{{< figure library="true" src="econometrics/05_Hypothesis_Testing/Fig_02.png" >}}
 
 ---
 
-## Limitations of the $t$-test
+## What to do with $t$-test results
 
+What you do with the result of your $t$-tests depends on what you are trying to do with your model and your subjective interpretation of the results.
+
+An intuitive reaction is to use the $t$-tests results to adjust your model to maximize $\bar{R}^2$ or the information criteria. Find the *best* model according to these goodness of fit measures. An alternative is to keep regressors to show that they are not statistically different than zero. An absence of *asterisks* is also information. In other words, it is not the same if you want just predictions or add empirical context to an economic theory.
+
+Yet, not matter what your are looking for, remember to check that the errors have a normal distribution before reading the $t$-tests included in the regression output.
+
+{{% callout information %}}
+By default, most econometric softwares automatically provide $t$-test results. Those results **assume** that the errors have a normal distribution.
+{{% /callout %}}
