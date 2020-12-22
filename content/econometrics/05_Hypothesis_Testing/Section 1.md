@@ -63,7 +63,7 @@ The **second** component of an hypothesis test is a measure of variation of the 
 
 The second component component of an hypothesis test is: $\sigma_{\hat{\phi}}$
 
-This second component is used to scale the difference between $\hat{\phi}$ and $H_0$ to a meaningful measure: $\frac{\hat{\phi} - H_0}{\sigma_{\hat{\phi}}}$
+This second component is used to scale the difference between $\hat{\phi}$ and $H_0$ to a meaningful measure, usually in the form of $\frac{Z}{S}$, where $Z$ is some measure of challenge to $H_0$ (for instance how different your observation is from your assumption) and $S$ is a scaling factor (such as the standard deviation of your estimation).
 
 The **third** components (probability distribution of $\hat{\phi}$) is used along the **fourth** component (decision rule). The probability distribution is used to get the likelihood that $\hat{\phi} \neq H_0$. At which value of probability we decide that $H_0$ is rejected is the decision rule. We sill see this in more detail below and in the next two sections (*t*-test and F-test).
 
