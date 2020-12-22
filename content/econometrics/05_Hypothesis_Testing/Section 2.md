@@ -158,4 +158,6 @@ Yet, not matter what your are looking for, remember to check that the errors hav
 
 {{% callout information %}}
 By default, most econometric softwares automatically provide $t$-test results. Those results **assume** that the errors have a normal distribution.
+
+If the errors do not have a normal distribution, the $t$-test information provided by the software is invalid.
 {{% /callout %}}
