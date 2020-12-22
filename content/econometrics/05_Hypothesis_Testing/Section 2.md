@@ -156,7 +156,7 @@ An intuitive reaction is to use the $t$-tests results to adjust your model to ma
 
 Yet, not matter what your are looking for, remember to check that the errors have a normal distribution before reading the $t$-tests included in the regression output.
 
-{{% callout alert %}}
+{{% callout note %}}
 By default, most econometric softwares automatically provide $t$-test results. Those results **assume** that the errors have a normal distribution.
 
 If the errors do not have a normal distribution, the $t$-test information provided by the software is invalid.
