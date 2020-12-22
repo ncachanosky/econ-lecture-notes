@@ -24,6 +24,10 @@ A coefficient different than zero can fall in any of the three following categor
 
 In its most common specification, the $t$-test null hypothesis is that a coefficient is different than zero regardless of the sign (two-tailed test). An alternative specification would be to test if a given coefficient is positive or negative (one-tailed test).
 
+The plot below depicts the normal distribution (black) and the $t$-student distribution for selected degrees of freedom (shades of <span style="color:blue">blue</span>).
+
+{{< figure library="true" src="econometrics/05_Hypothesis_Testing/Fig_02.png" >}}
+
 ---
 
 ## Building the t-test
@@ -144,7 +148,7 @@ coefplot, ///
 *==============================================================================*
 ```
 
-{{< figure library="true" src="econometrics/05_Hypothesis_Testing/Fig_02.png" >}}
+{{< figure library="true" src="econometrics/05_Hypothesis_Testing/Fig_03.png" >}}
 
 ---
 
@@ -157,7 +161,7 @@ An intuitive reaction is to use the $t$-tests results to adjust your model to ma
 Yet, not matter what your are looking for, remember to check that the errors have a normal distribution before reading the $t$-tests included in the regression output.
 
 {{% callout note %}}
-By default, most econometric softwares automatically provide $t$-test results. Those results **assume** that the errors have a normal distribution.
+By default, most econometric software automatically provide $t$-test results. Those results **assume** that the errors have a normal distribution.
 
 If the errors do not have a normal distribution, the $t$-test information provided by the software is invalid.
 {{% /callout %}}
