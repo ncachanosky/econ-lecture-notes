@@ -95,19 +95,7 @@ We can now make sense of the data to the right of **each** coefficient. From rig
 3. The p-value of the $t$-statistic
 4. The lower and upper limits of a 95% [confidence interval](https://en.wikipedia.org/wiki/Confidence_interval)
 
-Let's translate the numbers in the table into their equivalent econometric symbols.
-
-|$y$  | Coef.   | Std. Err.      | $t$-statistic | p-value       | Confidence interval                                  |
-|-----|---------|----------------|---------------|---------------|------------------------------------------------------|
-|$x_1$|$\beta_1$|$\hat{\sigma}_1$| $t_1$         | p-value($t_1$)| $\hat{\beta_1} \pm t_{\alpha/2} \cdot \hat{\sigma_1}$|
-|$x_2$|$\beta_2$|$\hat{\sigma}_2$| $t_2$         | p-value($t_2$)| $\hat{\beta_2} \pm t_{\alpha/2} \cdot \hat{\sigma_2}$|
-|$x_3$|$\beta_3$|$\hat{\sigma}_3$| $t_3$         | p-value($t_3$)| $\hat{\beta_3} \pm t_{\alpha/2} \cdot \hat{\sigma_3}$|
-|$x_4$|$\beta_4$|$\hat{\sigma}_4$| $t_4$         | p-value($t_4$)| $\hat{\beta_4} \pm t_{\alpha/2} \cdot \hat{\sigma_4}$|
-|$x_5$|$\beta_5$|$\hat{\sigma}_5$| $t_1$         | p-value($t_5$)| $\hat{\beta_5} \pm t_{\alpha/2} \cdot \hat{\sigma_5}$|
-|$x_6$|$\beta_6$|$\hat{\sigma}_6$| $t_1$         | p-value($t_6$)| $\hat{\beta_6} \pm t_{\alpha/2} \cdot \hat{\sigma_6}$|
-|$x_0$|$\beta_0$|$\hat{\sigma}_0$| $t_0$         | p-value($t_0$)| $\hat{\beta_0} \pm t_{\alpha/2} \cdot \hat{\sigma_0}$|
-
-Let' now move the table where we show 5 regression models next to each other.
+Let's now see the table that includes 5 regression models next to each other.
 
 {{< figure library="true" src="econometrics/03_OLS/OLS Example 07.png" >}}
 
