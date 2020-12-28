@@ -27,11 +27,11 @@ Note that econometrics uses the values of **observable** economic **variables** 
 
 Econometrics is a technique that can be used in different ways such as:
 
-* To test an hypothesis
+* To test a hypothesis
 * To make an economic description
 * To forecast or predict the unobserved value of economic variables
 
-For instance, you may want to test the hunch or intuition (the hypothesis) that the [elasiticy](https://en.wikipedia.org/wiki/Elasticity_(economics)) of the demand function equals 1 at a given price.[^1] Alternatively, you may just be interested in what the slope of the demand is at a given price point, so that you can plan your business strategy accordingly. Finally, you may want to estimate what the quantity demanded of a gadget you produce would be in a country where you do not operate by looking at data from countries where you do have business operations.
+For instance, you may want to test the hunch or intuition (the hypothesis) that the [elasticity](https://en.wikipedia.org/wiki/Elasticity_(economics)) of the demand function equals 1 at a given price.[^1] Alternatively, you may just be interested in what the slope of the demand is at a given price point, so that you can plan your business strategy accordingly. Finally, you may want to estimate what the quantity demanded of a gadget you produce would be in a country where you do not operate by looking at data from countries where you do have business operations.
 
 These are three very distinctive uses of econometrics. These different uses also shows that econometrics, and doing empirical work, is not just about testing hypothesis. It can also be descriptive or predictive. Furthermore, this also means that, epistemologically speaking, doing econometrics and empirical work does not mean one is necessarily being a logical positivist (later known as [logical empiricism](https://plato.stanford.edu/entries/logical-empiricism/)).
 
