@@ -45,7 +45,7 @@ There are different ways to estimate the value of a parameter, such as the slope
 
 The estimation of the slope of a demand function makes use (ideally) of a large set of prices and quantities. All these prices and quantities do not offer a perfect match to one and unique slope of the demand function. Therefore, we need a *rule* to decide how the slope must be estimated. Econometrics is a technique  built to minimize mistakes between what the econometric model estimates and the observed data.
 
-### An illustrative example
+### An example
 
 Let the quantity demanded of a good $(q^D)$ depend on its price $p$, the price of a substitute good $p_S$, and the level of disposable income of potential customers $Y_D$. Then, we can represent this relationship in the following way
 
@@ -62,16 +62,18 @@ At this point is enough to point to two issues. The first one is that there is *
 Now, some terminology. The left-hand variable $(q^D)$ is called the dependent variable. The right-hand variables are called the **regressors** (the *independent* variables).
 
 {{% callout warning %}}
-In econometrics, the word **explanation** means that a change of a variable is correlated ("explains") part of the change of the dependent variable.
+In econometrics, the word **explanation** means that **changes in a regressor** are correlated with **changes** in the dependent variable.
 
-In econometrics, the word **explanation** does not have a *cause-effect* meaning: It does not mean that a change of a regressor is the cause of a change in the dependent variable
+The **change** in one regressor *explains* **part** of the **change** of the dependent variable.
+
+In econometrics, the word **explanation** does not have a *cause-effect* meaning. An econometric model is silent about whether the **change** in one regressor is the **cause** of changes in the dependent variable.
 {{% /callout %}}
 
-## Regression and causality
+### Regression and causality
 
-*Cause and effect* relationships belong to the realm of economic *theory*. Econometrics is about *measurement*. A regression captures correlations between variables, that is, co-movements. Regardless of how strong a correlation is, the fact that two variables are somehow correlated does not mean in itself there is a cause-effect relationship between them.
+**Cause and effect** relationships belong to the realm of economic **theory**. Econometrics is about **measurement**. A regression captures correlations between variables, that is, co-movements. Regardless of how strong a correlation is, the fact that two variables are somehow correlated does not mean in itself there is a cause-effect relationship between them.
 
-The fact that an econometrics model is built over an economic theory, or over some cause-effect hunch, does not mean a regression is showing causality. For instance, variables $x$ and $y$ may have no causality relationship and still be correlated if both of them are independnetly related to the same variable $z$. The overlap of a regression over a theory should not led us to confussion about what a regression can and cannot show.
+The fact that an econometrics model is built over an economic theory, or over some cause-effect theory, does not mean a regression is showing causality. For instance, variables $x$ and $y$ may have no causality relationship and still be correlated if both of them are independently related to the same variable $z$. The overlap of a regression over a theory should not led us to confussion about what a regression can and cannot show.
 
 {{% callout note %}}
 A regression shows **correlations**, it does not show or prove **causality**.
@@ -87,7 +89,7 @@ What type of econometric techniques can be used depends on the type of data you 
 2. Time-series
 3. Panel data (also known as longitudinal data)
 
-**Cross-sectional** data includes number of *sections* and one time-period only. For instance, income and unemployment information for the 50 U.S. states for the year 1930.
+**Cross-sectional** data includes number of *sections* and one time-period only. For instance, income and unemployment information for the 50 U.S. states in the year 1930.
 
 **Time-series** data is the inverse situation. The dataset has information of one section for a number of years. For instance, the unemployment rate of the state of Colorado between 1920 and 1950.
 
@@ -105,13 +107,13 @@ Econometrics can be highly technical and theoretical. There is a reason why econ
 
 First, there is no unique answer to the question of what value is the right estimation of your unknown parameters. This means that different people will disagree on what the right approach should be in different cases. And in many times there is no definite way to sort out those disagreements. 
 
-Second, there is no unique method or *model specification* that can be used to make an estimation. Several regression analyses may be possible. Again, different people can disagreee on what the best application is, without a definite way to sort out the difference of opinion. Your focus should be on what are the *reasonable* ways to answer your questions, not in finding the unique proper solution to an econometric problem.
+Second, there is no unique method or *model specification* that can be used to make an estimation. Several regression analyses may be possible. Again, different people can disagree on what the best application is, without a definite way to sort out the difference of opinion. Your focus should be on what are the *reasonable* ways to answer your questions, not in finding the unique proper solution to an econometric problem.
 
-These implications mean that, even if an estimatino is obtained following strict and precise theoretical methods, the estimation output is open to interpretation. While regression analysis can be objective, in the sense of following a specific methods and theories, model applicaiton and interpretation is subjective. How to apply and read a model requires the economist intuition of what is happening behind the scences (unobservable) and what the proper reading of the outout should be.
+These implications mean that, even if an estimation is obtained following strict and precise theoretical methods, the estimation output is open to interpretation. While regression analysis can be objective, in the sense of following a specific methods and theories, model application and interpretation is subjective. How to apply and read a model requires the economist intuition of what is happening behind the scenes (unobservable) and what the proper reading of the output should be.
 
-Therefore, econometrics is not only a scientific application, it also an **art**, in the sense that each econometric application is driven by a subjective point of view that can vary from person to person. Forgetting the subjctive component of applied econometrics can make this subject harder than it has to be.
+Therefore, econometrics is not only a scientific application, it also an **art**, in the sense that each econometric application is driven by a subjective point of view that can vary from person to person. Forgetting the subjective component of applied econometrics can make this subject harder than it has to be.
 
-### A word of advice: Do not confuse econometrics with economics
+### A word of advice: Econometrics is not economics (and the other way around)
 
 Even thouth econometrics is an important field in economics, neither econometrics is economics nor economics is econometrics.
 
@@ -119,7 +121,7 @@ Anyone can be an excellent economist and at the same time have a very limited kn
 
 Inversely, someone can be an outstanding econometrician while being clueless about economics. Economics is a way of thinking (theory) about how the world works. Economics itself is not a way of testing an hypothesis. Statistics without a theory is not economics, it is just statistics. To wit, [economics is not statistics (and vice versa)](https://www.peterleeson.com/Economics_is_Not_Statistics.pdf).
 
-To sum, you can be a great economists with little knowledge of econometrics, such as you can become a great econometrician but not be a great economist.
+To sum, you can be a good economists with little knowledge of econometrics, such as you can become a great econometrician but not become a good economist.
 
 <!-- FOOTNOTES -->
 [^1]: Recall that the point price-elasticity of demand is: $|\epsilon| = \frac{\partial Q^D}{\partial p} \cdot \frac{p}{Q^D}.$
