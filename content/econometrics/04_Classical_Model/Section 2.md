@@ -119,7 +119,7 @@ If this condition is violated, then the estimation of the coefficients of the re
 
 $$
 \begin{aligned}
-y+i = \beta_0 + \beta_1 x_{1,i} + ... + \beta_K x_{K,i} + \underbrace{\left(\varepsilon_i + \gamma z_i \right)}_{\varepsilon^*} 
+y_i = \beta_0 + \beta_1 x_{1,i} + ... + \beta_K x_{K,i} + \underbrace{\left(\varepsilon_i + \gamma z_i \right)}_{\varepsilon^*} 
 \end{aligned}
 $$
 
