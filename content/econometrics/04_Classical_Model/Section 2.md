@@ -175,7 +175,7 @@ If the errors are heteroskedastic, then the standard deviation of the estimated 
 
 {{% callout note %}}
 **Assumption 5** requires that:
-1. Observations of the error term are uncorrelated: $\rho (\varepsilon_i, \varepsilon_j) = 0 \\;\\;\\;\\; \forall i \neq j$  
+1. The variance of the errors is constant: $\sigma (\varepsilon_i) = \bar{\sigma}_\varepsilon$  
 {{% /callout %}}
 
 ### Assumption 6: No explanatory variable is a perfect linear combination of other(s) explanatory variable(s) (multicollinearity)
