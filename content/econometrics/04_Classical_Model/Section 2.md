@@ -178,7 +178,7 @@ If the errors are heteroskedastic, then the standard deviation of the estimated 
 1. The variance of the errors is constant: $\sigma (\varepsilon_i) = \bar{\sigma}_\varepsilon$  
 {{% /callout %}}
 
-### Assumption 6: No explanatory variable is a perfect linear combination of other(s) explanatory variable(s) (multicollinearity)
+### Assumption 6: No explanatory variable is a perfect linear combination of other explanatory variable(s) (multicollinearity)
 
 The idea behind assumption 6 is that each regressor should have information that is independent of the information included in other regressors. Once again, remember than an econometric model is explaining *variations* of $y$ with *variations* of $x_i$. 
 
