@@ -80,8 +80,8 @@ To evaluate the efficiency of the OLS estimation we need to apply the variance $
 
 $$
 \begin{aligned}
-\hat{\beta} =& \left( X'X \right)^{-1} X' \varepsilon \\\\[10pt]
-V[\hat{\beta}] =& V \left[ \left( X'X \right)^{-1} X' \varepsilon \right] \\\\[10pt]
+\hat{\beta} =& \beta + \left( X'X \right)^{-1} X' \varepsilon \\\\[10pt]
+V[\hat{\beta}] =& V \left[\beta + \left( X'X \right)^{-1} X' \varepsilon \right] \\\\[10pt]
 V[\hat{\beta}] =& \left( X'X \right)^{-1} X' \\; V[\varepsilon] \\; X \left( X'X \right)^{-1} \\\\[10pt]
 V[\hat{\beta}] =& \left( X'X \right)^{-1} X' \left(I \sigma^2_{\varepsilon} \right) X \left( X'X \right)^{-1} \\\\[10pt]
 V[\hat{\beta}] =& \sigma^2_{\varepsilon} \left( X'X \right)^{-1} \\\\[10pt]

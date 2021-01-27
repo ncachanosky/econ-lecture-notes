@@ -22,9 +22,11 @@ If **assumptions 1 to 6** hold (everything except the normal distribution of the
 
 Let $\hat{\beta}$ denote the OLS estimation and $\tilde{\beta}$ denote an alternative (not OLS) estimation. Then, if assumptions 1 to 6 hold, the Gauss-Markov theorem states that OLS coefficients are (see proofs in the appendix):
 
-1. Unbiased: $E[\hat{\beta}] = \beta$
-2. Efficient: $\sigma_{\hat{\beta}} \leq \sigma_{\tilde{\beta}}$
-3. Consistent: $\lim\limits_{N \to \infty} V[\hat{\beta}] \to plim (\hat{\beta}) \to \beta$
+| Condition  | Mathematical expression  |
+|------------|--------------------------|
+| Unbiased   | $E[\hat{\beta}] = \beta$ |
+| Efficient  | $\sigma^2_{\hat{\beta}} \leq \sigma^2_{\tilde{\beta}}$ |
+| Consistent | $\lim\limits_{N \to \infty} V[\hat{\beta}] \to plim (\hat{\beta}) \to \beta$ |
 
 You are already familiar with the concepts of **unbiased** and **efficient** estimator from the previous section. Here we introduce a new concept, that of **consistency**, which states that as the sample size increases the probability of your estimation converging to the true value converges to one. This occurs because the variance of your estimation converges to zero around the true value under estimation.
 
@@ -40,12 +42,14 @@ If **the errors have a normal distribution** (assumption 7), then the OLS estima
 
 If errors are normally distributed, then the Gauss-Markov theorem implies that:
 
-1. Unbiased: $E[\hat{\beta}] = \beta$
-2. Efficient: $\sigma_{\hat{\beta}} \leq \sigma_{\tilde{\beta}}$
-3. Consistent: $\lim\limits_{N \to \infty} V[\hat{\beta}] \to \therefore plim (\hat{\beta}) \to \beta$
-4. Coefficients are normally distributed: $\hat{\beta} \sim N\left(\beta, V(\hat{\beta})\right)$
+| Condition  | Mathematical expression  |
+|------------|--------------------------|
+| Unbiased   | $E[\hat{\beta}] = \beta$ |
+| Efficient  | $\sigma^2_{\hat{\beta}} \leq \sigma^2_{\tilde{\beta}}$ |
+| Consistent | $\lim\limits_{N \to \infty} V[\hat{\beta}] \to plim (\hat{\beta}) \to \beta$ |
+| Coefficients are normally distributed | $\hat{\beta} \sim N\left(\beta, V(\hat{\beta})\right)$ |
 
-Implication 4 states that if errors have a normal distribution, then the distribution of your estimated coefficients is also normal. This is very important for hypothesis testing (next chapter).
+Condition 4 states that if errors have a normal distribution, then the distribution of your estimated coefficients is also normal. This is very important for hypothesis testing (next chapter).
 
 ---
 
