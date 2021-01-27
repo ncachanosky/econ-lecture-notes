@@ -55,7 +55,7 @@ Consider the following example. The bullseye of a target represents the true val
 We can represent an unbiased and biased estimation in the following way:
 
 1. Unbiased estimation: $E[\hat{\beta}] = \beta$
-2. Biased estimation: $E[\hat{\beta}] = \beta + \xi, \; \xi \neq 0$
+2. Biased estimation: $E[\hat{\beta}] = \beta + \xi, \\; \xi \neq 0$
 
 You already know that your estimation will probably not be just on target. It is very unlikely you will get the **true** $beta$. But, you **do not want** your estimation to be biased. You are going to miss the bullseye, but you want to aim right be as close to your target as possible. Remember, in a regression you get to through only only one dart, you want to make it count.
 
