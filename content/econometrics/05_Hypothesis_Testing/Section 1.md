@@ -18,7 +18,7 @@ In econometrics, most [hypotheses tests](https://en.wikipedia.org/wiki/Statistic
 
 A reason for this setting is that it is not possible to prove an hypothesis, but only to reject or falsify it with certain probability or likelihood. For instance, we cannot prove that a given $\beta$ is equal to zero, we can only show the likelihood that, being zero, we would get the estimated value in front of us.
 
-An hypothesis test usually has four components:
+A typical hypothesis test usually has four components:
 
 1. The assumed value (the hypothesis)
 2. The estimated value (such as a $\hat{\beta})$
