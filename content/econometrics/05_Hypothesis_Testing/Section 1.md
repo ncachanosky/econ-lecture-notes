@@ -23,7 +23,7 @@ A typical hypothesis test usually has four components:
 1. The assumed value (the hypothesis)
 2. The estimated value (such as a $\hat{\beta})$
 3. The probability distribution of the estimation
-4. A decision rule to decide whether or not the hypothesis is rejected
+4. A decision rule to decide whether the hypothesis is rejected
 
 The hypothesis under evaluation is presented the following way. The **null hypothesis** $(H_0)$ is the assumption being tested. The **alternative assumption** $(H_A)$ captures all the alternative values the estimation can have.
 
@@ -51,7 +51,7 @@ Let $\hat{\phi}$ be the estimation of the unobserved value $\phi$.
 >
 >If you can, with some confidence, reject $H_0$, then it has to be the case that there is a likelihood that the true $\phi$ is different than zero.
 
-We can now put together then general structure that most hypothesis testing follow one way or another.
+We can now put together the general structure that most hypothesis testing follows one way or another.
 
 The **first** component is the distance or deviation between the estimated value and the null hypothesis. Consider example 2. Even if it is the case that $\phi = 0$, it is very likely the estimated value will not be exactly zero.
 
@@ -59,7 +59,7 @@ The first component of an hypothesis test is: $\hat{\phi} - H_0$.
 
 However, looking this difference is not enough to reach a decision., we need to decide if the difference between the estimated value and $H_0$ is **enough** to conclude that is unlikely that the true value of $\phi$ is actually zero.
 
-The **second** component of an hypothesis test is a measure of variation of the estimated value. Assume the difference between the estimated value and $H_0$ is 10. This can be small if the standard deviation of $\hat{\phi}$ is 1,000 and it can be big if the standard deviation of $\hat{\phi"}$ is 0.1.
+The **second** component of an hypothesis test is a measure of variation of the estimated value. Assume the difference between the estimated value and $H_0$ is 10. This can be small if the standard deviation of $\hat{\phi}$ is 1,000 and it can be big if the standard deviation of $\hat{\phi}$ is 0.1.
 
 The second component component of an hypothesis test is: $\sigma_{\hat{\phi}}$
 
