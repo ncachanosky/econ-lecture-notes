@@ -46,6 +46,58 @@ $$
 
 Because the $F$-distribution is built with squared values, it can only take positive values. The shape of the $F$-distribution depends on both degrees of freedom.
 
+The following `STAT` code plots a few $F$-distributions with different degrees of freedom.
+
+```
+*==============================================================================*
+* HYPOTHESIS TESTING
+* Create F-distributions
+* Code sample: 4.1
+*==============================================================================*
+
+*|CELL 1|----------------------------------------------------------------------*
+*|Settings
+set scheme s1color  // Set plot scheme
+
+*|CELL 2|----------------------------------------------------------------------*
+*|Create required data
+drop _all
+set obs 201
+
+gen   N = _n
+label variable N "Observation"
+tsset N
+
+generate x = 0 in 1/201
+replace  x = 10/200 + L.x in 2/201
+
+*|CELL 3|----------------------------------------------------------------------*
+*|Create F-distributions
+gen F11  = Fden(  1,  1,x)
+gen F21  = Fden(  2,  1,x)
+gen F12  = Fden(  1,  2,x)
+gen F42  = Fden(  4,  2,x)
+gen F24  = Fden(  2,  4,x)
+gen F10  = Fden( 10, 10,x)
+gen F100 = Fden(100,100,x)
+
+label variable F11  "F(1,1)"
+label variable F21  "F(2,1)"
+label variable F12  "F(1,2)"
+label variable F42  "F(4,2)"
+label variable F24  "F(2,4)"
+label variable F10  "F(10,10)"
+label variable F100 "F(100,100)"
+
+*|CELL 4|----------------------------------------------------------------------*
+*|Creat plot
+line F11 F21 F12 F42 F24 F10 F100 x, ///
+	 title("F-distribution (p.d.f.) with different degrees of freedom", ///
+	       size(medsmall)) ///
+	 legend(rows(1) size(small) region(lstyle(none))) ///
+	 xlabel(,nolabels noticks) ylabel(,nolabels noticks)
+```
+
 {{< figure library="true" src="econometrics/05_Hypothesis_Testing/Fig_04.png" >}}
 
 ### The $F$-statistic

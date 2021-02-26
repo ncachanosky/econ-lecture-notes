@@ -26,6 +26,57 @@ In its most common specification, the $t$-test null hypothesis is that a coeffic
 
 The plot below depicts the normal distribution (black) and the $t$-student distribution for selected degrees of freedom (shades of <span style="color:blue">blue</span>).
 
+The following `STATA` code plots four $t$-student distributions with different degrees of freedom along a standard normal distribution
+
+```
+*==============================================================================*
+* HYPOTHESIS TESTING
+* Create t-Student distributions
+* Code sample: 4.1
+*==============================================================================*
+
+*|CELL 1|----------------------------------------------------------------------*
+*|Settings
+set scheme s1color  // Set plot scheme
+
+*|CELL 2|----------------------------------------------------------------------*
+*|Create required data
+drop _all
+set obs 201
+
+gen   N = _n
+label variable N "Observation"
+tsset N
+
+generate x = 0 in 1/201
+replace  x = 10/200 + L.x in 2/201
+
+*|CELL 3|----------------------------------------------------------------------*
+*|Create standard normal distriubtion and t-distributions
+gen z = normalden(x)
+label variable z "N(0,1)"
+
+gen t1  = tden(1, x)
+gen t5  = tden(5, x)
+gen t10 = tden(10, x)
+gen t20 = tden(20, x)
+
+label variable t1  "t(df=1)"
+label variable t5  "t(df=5)"
+label variable t10 "t(df=10)"
+label variable t20 "t(df=20)"
+
+*|CELL 4|----------------------------------------------------------------------*
+*|Create plot
+line t1 t2 t5 t10 t20 z x, ///
+	 title("N(0,1) and t-Student with different degrees of freedom", ///
+	       size(medsmall)) ///
+	 lcolor(red%10 red%30 red%50 red%60 red%90 black) ///
+	 legend(rows(1) size(small) region(lstyle(none))) ///
+	 xlabel(,nolabels noticks) ylabel(,nolabels noticks)
+
+```
+
 {{< figure library="true" src="econometrics/05_Hypothesis_Testing/Fig_02.png" >}}
 
 ---
@@ -111,7 +162,7 @@ We can also plot the coefficients with their respective confidence intervals to 
 *==============================================================================*
 * HYPOTHESIS TESTING
 * Plot coefficient intervals
-* Code sample: 4.1
+* Code sample: 4.2
 *==============================================================================*
 
 *|CELL 1|----------------------------------------------------------------------*
