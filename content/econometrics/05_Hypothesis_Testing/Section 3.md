@@ -113,8 +113,8 @@ $$
 \begin{align}
 F(d_1, d_2) &= \frac{(SSR_r - SSR_u)/q}{SSR_u/(N-K-1)} \sim F_{q, N-K-1} \\\\[10pt]
 F(d_1, d_2) &= \frac{(TSS(1-R^2_r) - TSS (1-R^2_u)/q}{TSS(1-R^2_u/(N-K-1)} \sim F_{q, N-K-1} \\\\[10pt]
-F(d_1, d_2) &= \frac{TSS ((1-R^2_r) (1-R^2_u))/q}{TSS(1-R^2_u)/(N-K-1)} \sim F_{q, N-K-1} \\\\[10pt]
-F(d_1, d_2) &= \frac{(R^2_u - R^2_r)/q}{(1-R^2_u)/(N-K-1)}
+F(d_1, d_2) &= \frac{TSS ((1-R^2_r) - (1-R^2_u))/q}{TSS(1-R^2_u)/(N-K-1)} \sim F_{q, N-K-1} \\\\[10pt]
+F(d_1, d_2) &= \frac{(R^2_u - R^2_r)/q}{(1-R^2_u)/(N-K-1)} \sim F_{q, N-K-1}
 \end{align}
 $$
 
