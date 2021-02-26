@@ -52,7 +52,7 @@ The following `STAT` code plots a few $F$-distributions with different degrees o
 *==============================================================================*
 * HYPOTHESIS TESTING
 * Create F-distributions
-* Code sample: 4.1
+* Code sample: 4.3
 *==============================================================================*
 
 *|CELL 1|----------------------------------------------------------------------*
@@ -178,7 +178,7 @@ The following `STATA` code (1) replicates the $F$-test reported as part of a reg
 *==============================================================================*
 * ORDINARLY LEAST SQUARES
 * The F-test
-* Code sample: 4.2
+* Code sample: 4.4
 *==============================================================================*
 
 *|CELL 1|----------------------------------------------------------------------*
