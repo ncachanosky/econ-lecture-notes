@@ -43,6 +43,8 @@ E[\hat{\beta}^*] &= \beta + \xi
 \end{align}
 $$
 
+The bias of each $beta$ depends on the coefficients of the omitted variables $(\gamma)$ and on the interaction (correlation) between the included and omitted variables $(X'Z)$.
+
 ---
 
 ## Irrelevant variable inefficiency
