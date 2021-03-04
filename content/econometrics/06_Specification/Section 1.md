@@ -35,8 +35,8 @@ Let $X$ and $\beta$ be the matrix and coefficient-vector of the included regress
 
 $$
 \begin{align}
-\hat{\beta}^* &= \beta + (X'X)^{-1} \varepsilon^* \\\\[1opt]
-\hat{\beta}^* &= \beta + (X'X)^{-1} (\varepsilon + Z\gamma) 
+\hat{\beta}^*    &= \beta + (X'X)^{-1} \varepsilon^* \\\\[10pt]
+\hat{\beta}^*    &= \beta + (X'X)^{-1} (\varepsilon + Z\gamma) \\\\[10pt]
 E[\hat{\beta}^*] &= \beta + (X'X)^{-1} (\varepsilon + Z\gamma) \\\\[10pt]
 E[\hat{\beta}^*] &= \beta + \xi
 \end{align}
