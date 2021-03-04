@@ -38,12 +38,12 @@ $$
 \hat{\beta}^*    &= \beta + (X'X)^{-1} X' \varepsilon^* \\\\[10pt]
 \hat{\beta}^*    &= \beta + (X'X)^{-1} X' (\varepsilon + Z\gamma) \\\\[10pt]
 E[\hat{\beta}^*] &= E \left[ \beta + (X'X)^{-1} X' (\varepsilon + Z\gamma) \right] \\\\[10pt]
-E[\hat{\beta}^*] &= \beta + (X'X)^{-1} \underbrace{E[X'\varepsilon]}\_{\text{0}} + E[(X'X)^{-1} X'Z \gamma] \\\\[10pt]
+E[\hat{\beta}^*] &= \beta + (X'X)^{-1} \underbrace{E[X'\varepsilon]}\_{\text{0}} + \underbrace{E[(X'X)^{-1} X'Z \gamma]}\_{\xi} \\\\[10pt]
 E[\hat{\beta}^*] &= \beta + \xi
 \end{align}
 $$
 
-The bias of each $beta$ depends on the coefficients of the omitted variables $(\gamma)$ and on the interaction (correlation) between the included and omitted variables $(X'Z)$.
+The bias of each $beta$ depends on the coefficients of the omitted variables $(\gamma)$ and on the interaction ("correlation") between the included and omitted variables $(X'Z)$.
 
 ---
 
