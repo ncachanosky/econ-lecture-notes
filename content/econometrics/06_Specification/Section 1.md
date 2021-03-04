@@ -37,7 +37,8 @@ $$
 \begin{align}
 \hat{\beta}^*    &= \beta + (X'X)^{-1} \varepsilon^* \\\\[10pt]
 \hat{\beta}^*    &= \beta + (X'X)^{-1} (\varepsilon + Z\gamma) \\\\[10pt]
-E[\hat{\beta}^*] &= \beta + (X'X)^{-1} (\varepsilon + Z\gamma) \\\\[10pt]
+E[\hat{\beta}^*] &= E \left[ \beta + (X'X)^{-1} (\varepsilon + Z\gamma) \right] \\\\[10pt]
+E[\hat{\beta}^*] &= \beta + E[(X'X)^{-1}Z\gamma]
 E[\hat{\beta}^*] &= \beta + \xi
 \end{align}
 $$
