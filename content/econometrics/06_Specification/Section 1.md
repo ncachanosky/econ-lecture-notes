@@ -43,7 +43,7 @@ E[\hat{\beta}^*] &= \beta + \xi
 \end{align}
 $$
 
-The bias of each $beta$ depends on the coefficients of the omitted variables $(\gamma)$ and on the interaction ("correlation") between the included and omitted variables $(X'Z)$.
+Unless $\gamma=0$ (irrelevant variables) or $(X'Z)=0$ ("uncorrelation" between the included and omitted regressors), $\hat{\beta}$ will be biased. The bias of each $beta$ depends on the coefficients of the omitted variables $(\gamma)$ and on the interaction between the included and omitted variables.
 
 ---
 

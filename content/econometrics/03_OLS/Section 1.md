@@ -230,7 +230,7 @@ $$
 \hat{\beta_1} &= \frac{\sum y_i x_i - \sum \bar{y} x_i}{\sum x_i^2 - \sum \bar{x} x_i} \\\\[10pt]
 \hat{\beta_1} &= \frac{\sum y_i x_i - \bar{y} \sum x_i}{\sum x_i^2 - \bar{x} \sum x_i} \\\\[10pt]
 \hat{\beta_1} &= \frac{\sum y_i x_i - N \bar{y} \bar{x}}{\sum x_i^2 - N \bar{x}^2} \\\\[10pt]
-\hat{\beta_1}^* &= \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^*}
+\hat{\beta_1}^* &= \frac{\sum (x_i - \bar{x})(y_i - \bar{y})}{\sum (x_i - \bar{x})^2}
 \end{align}
 $$
 
