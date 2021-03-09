@@ -53,3 +53,52 @@ Each column in $P_{X,Z}$ includes the OLS slope between each included and exclud
 ---
 
 ## Irrelevant variable inefficiency
+
+An irrelevant variable has a coefficient of zero. The inclusion of irrelevant variables in the model is the converse problem of omitted variable bias. You are adding unnecessary regressors to the model. This **does not** bias your coefficients, but, it **does** make them inefficient. This is easy to see.
+
+Assume the following:
+
+1. True model: $y = \beta_0 + \beta_1 X_1 + \varepsilon$
+2. Your model: $y = \beta_0^* + \beta_1^* X_1 + \beta_2^* X_2 + \varepsilon^*$
+
+First, look at the **unbiasedness** of the OLS estimation
+
+$$
+\begin{aligned}
+E\begin{bmatrix}
+        \beta_1 \\\\
+        \beta_2
+ \end{bmatrix} &= 
+ \begin{pmatrix}
+        \beta_1 \\\\
+        0
+ \end{pmatrix} + 
+\left(
+    \begin{pmatrix}
+    X_1 & X_2
+ \end{pmatrix}'
+ \begin{pmatrix} 
+    X_1 & X_2
+ \end{pmatrix}
+ \right)^{-1}
+ \begin{pmatrix} 
+    X_1 & X_2
+ \end{pmatrix}' E[\varepsilon] \\\\[10pt]
+ E\begin{bmatrix}
+        \beta_1 \\\\
+        \beta_2
+ \end{bmatrix} &= 
+ \begin{pmatrix}
+        \beta_1 \\\\
+        0
+ \end{pmatrix}
+\end{aligned}
+$$
+
+Second, look at the **efficiency** of the OLS estimation
+
+$$
+\begin{aligned}
+S^2 = \frac{SSR}{N - K_1 - K_2} > \frac{SSR}{N - K_1}
+\end{aligned}
+$$

@@ -125,7 +125,7 @@ $$
 
 Because of the second term in the last line, the expected value of $e$ may or may equal the expected value of $\varepsilon$. There is no guarantee that the expected value of the second term is zero.
 
-We need an unbias estimator of $\sigma^2\_{\hat{\beta}}$. Before finding the estimation of the standard deviation of the coefficients is convenient to define the following matrices (where $P$ is known as the [**projection matrix**](https://en.wikipedia.org/wiki/Projection_matrix).
+We need an unbias estimator of $V[\hat{\beta}]$. Before finding the estimation of the standard deviation of the coefficients is convenient to define the following matrices (where $P$ is known as the [**projection matrix**](https://en.wikipedia.org/wiki/Projection_matrix)).
 
 $$
 \begin{aligned}
@@ -150,7 +150,7 @@ e &= My = M(X \beta + \varepsilon) = M\varepsilon
 \end{aligned}
 $$
 
-Using $P$, $M$ and the [trace of a matrix](https://en.wikipedia.org/wiki/Trace_(linear_algebra)) we can get an unbias estimation of the variance of the estimated coefficients[^1]. The following develops an expression of $\sigma_{\varepsilon}^2$ as a function of $SSR$ (sum of squred residuals).
+Using $P$, $M$ and the [trace of a matrix](https://en.wikipedia.org/wiki/Trace_(linear_algebra)) we can get an unbias estimation of the variance of the estimated coefficients[^1]. The following develops an expression of $\sigma_{\varepsilon}^2$ as a function of $SSR$ (sum of squred residuals). Let $N$ be the sample size and $K$ the number of regressors (including the constant).
 
 $$
 \begin{aligned}
