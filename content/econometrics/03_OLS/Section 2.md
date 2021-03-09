@@ -216,7 +216,7 @@ $$
 \end{pmatrix}
 $$
 
-### Finding the $betas$
+### Finding the coefficients
 
 To find the OLS solution to the problem of minimizing the square residuals we proceed in a similar way than we did in the univariate regression. We start with squaring the residual and then we proceed to find the optimal $betas$.
 

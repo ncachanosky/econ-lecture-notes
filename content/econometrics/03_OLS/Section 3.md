@@ -96,6 +96,12 @@ The role of the model is to find the **right** value of $R^2$. Ideally, the mode
 
 This *inflation* of the $R^2$ is particularly problematic when comparing different models that have different number of regressors. The adjusted R-square, adj-$R^2$, or $\bar{R}^2$ is an extended version of $R^2$ that takes into account differences in degrees of freedom.
 
+{{% callout alert%}}
+In some books:
+$SSE$: Error Sum of Squares ($RSS$ above)
+$SSR$: Regression Sum of Squares ($ESS$ above)
+{{% /callout %}}
+
 ### The $\bar{R}^2$ (adjusted R-squared)
 
 The $\bar{R}^2$ includes the trade-off between adding explanatory power (information) and loss of freedom. $\bar{R}^2$ only increases **if** the new regressors adds more information that the cost of loosing a degree of freedom. Assuming there are $K$ variables plus the constnat, then the degree of freedom adjustment works the following way
