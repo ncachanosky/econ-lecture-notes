@@ -16,7 +16,7 @@ type: book  # Do not modify.
 
 [OLS](https://en.wikipedia.org/wiki/Ordinary_least_squares) is the most common method to estimate the *parameters* of a **linear** regression such that the sum of the **squared errors** is minimized. In more general terms, OLS is one application of a group of [*linear least squares*](https://en.wikipedia.org/wiki/Linear_least_squares) methods.
 
-Assume we want to estimate the linear relationship between mileage (mpg) $(y)$ of autombiles with respect to its weight $(x)$. The dependent variable is $y$ and $x$ is the regressor. Then, we are assuming that $y$ has a linear relationship with respect to its weight. Let $i = 1,...,N$ be the number of observations; that is, how many mileage and weight observations we have at our disposal. The theoretical representation of this relationship is the following:
+Assume we want to estimate the linear relationship between mileage (mpg) $(y)$ of automobiles with respect to its weight $(x)$. The dependent variable is $y$ and $x$ is the regressor. Then, we are assuming that $y$ has a linear relationship with respect to its weight. Let $i = 1,...,N$ be the number of observations; that is, how many mileage and weight observations we have at our disposal. The theoretical representation of this relationship is the following:
 
 $$
 \begin{align}
@@ -91,10 +91,10 @@ e_i &= y_i - (\hat{\beta_0} + \hat{\beta_1} x_i)
 \end{align}
 $$
 
-Yet, there is still a situation that requires a workaround. We can fit an infinite number of lines that will make the sumation of all the *residuals* equal to zero $(\sum^{74}_{i=1} e_i = 0)$ (residuals cancel out). Canceling the residuals is not enough because only one of those infinite number of lines is the one we are looking for. To find the line we are looking for, OLS minimizes the **squared** residuals. We can now state the OLS problem in more precise terms:
+Yet, there is still a situation that requires a workaround. We can fit an infinite number of lines that will make the summation of all the *residuals* equal to zero $(\sum^{74}_{i=1} e_i = 0)$ (residuals cancel out). Canceling the residuals is not enough because only one of those infinite number of lines is the one we are looking for. To find the line we are looking for, OLS minimizes the **squared** residuals. We can now state the OLS problem in more precise terms:
 
 $$
-\operatorname*{min}_{\beta_{0},\beta_{1}} \sum_i e_i^2 = \operatorname*{min}_{\beta_{0},\beta{1}} \sum_n (y_i - \hat{\beta_0} - \hat{\beta_1} x_i)^2
+\operatorname*{min}_{\beta_{0},\beta_{1}} \sum_i e_i^2 = \operatorname*{min}_{\beta_{0},\beta_{1}} \sum_n (y_i - \hat{\beta_0} - \hat{\beta_1} x_i)^2
 $$
 
 Squaring the residuals has the following two attributes:

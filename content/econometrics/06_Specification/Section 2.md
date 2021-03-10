@@ -93,7 +93,7 @@ The inverse model: $y = \beta_0 + \beta_1 \frac{1}{x} + \varepsilon$
 
 * The effect of $x$ on $Y$ approaches 0 when $x \rightarrow \infty$
 
-This model captures reciprocal relationship between the variables (such as in the original treatment of the Phllips curve). The model assumes that as $x \rightarrow \infty$, $y \rightarrow \beta_0 + \varepsilon$.
+This model captures reciprocal relationship between the variables (such as in the original treatment of the Phillips curve). The model assumes that as $x \rightarrow \infty$, $y \rightarrow \beta_0 + \varepsilon$.
 
 $$
 \frac{\Delta y}{\Delta x} = \frac{-\beta_1}{x^2}
@@ -115,38 +115,38 @@ Matrix notation and OLS estimation does not change with different "functional fo
 
 
 $$
-\underbrace{ \\\\
+\underbrace{
 \begin{pmatrix}
     y_1     \\\\
     y_2     \\\\
     y_3     \\\\
     \vdots  \\\\
     y_N
-\end{pmatrix}}_{y} =
-\underbrace{ \\\\
+\end{pmatrix}}\_{y} =
+\underbrace{
 \begin{pmatrix}
     1       & x_{1,1} & x_{1,1}^2 & ln(x_{1,2}) & \frac{1}{x_{1,3}}  \\\\
     1       & x_{2,1} & x_{2,1}^2 & ln(x_{2,2}) & \frac{1}{x_{2,3}}  \\\\
     1       & x_{3,1} & x_{3,1}^2 & ln(x_{3,2}) & \frac{1}{x_{3,3}}  \\\\
     \vdots  & \cdots  & \cdots    & \cdots      & \vdots   \\\\
     1       & x_{N,2} & x_{N,1}^2 & ln(x_{N,2}) & \frac{1}{x_{N,3}}
-\end{pmatrix}}_{X}
-\underbrace{ \\\\
+\end{pmatrix}}\_{X}
+\underbrace{
 \begin{pmatrix}
     \beta_0 \\\\
     \beta_1 \\\\
     \beta_2 \\\\
     \beta_3 \\\\
     \beta_4
-\end{pmatrix}}_{\beta} + 
-\underbrace{ \\\\
+\end{pmatrix}}\_{\beta} + 
+\underbrace{
 \begin{pmatrix}
     \varepsilon_1 \\\\
     \varepsilon_2 \\\\
     \varepsilon_3 \\\\
     \vdots        \\\\
     \varepsilon_N
-\end{pmatrix}}_{\varepsilon}
+\end{pmatrix}}\_{\varepsilon}
 $$
 
 ---
