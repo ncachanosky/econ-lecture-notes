@@ -149,21 +149,84 @@ $$
 \end{pmatrix}}_{\varepsilon}
 $$
 
-### Summary
-
-| Functional form | Equation                                        | Effect of $x$ on $y$ |
-|-----------------|-------------------------------------------------|------------------|
-| Linear          | $y = \beta_0 + \beta_1 x + \varepsilon$         | If $\Delta x = 1 \rightarrow \Delta y = 1$ |
-| Log-Log         | $ln(y) = \beta_0 + \beta_1 ln(x) + \varepsilon$ | If $\Delta x = 1$% $\rightarrow \Delta y = \beta_1$% |
-| Lin-Log         | $y = \beta_0 + \beta_1 ln(x) + \varepsilon$     | If $x$ |
-| Log-Lin         | No serial correlation | $\rho(\varepsilon_i, \varepsilon_j) = 0 \; \forall i \neq j$|
-| Polynomial      | Errors are homoskedastic | $\sigma_{\varepsilon, i} = \bar{\sigma_{\varepsilon}}$ |
-| Inverse         | No multicollinearity | $\nexists \\; \omega_j \\; 
-
 ---
 
 ## Choosing the right functional form
 
+If your model is trying to capture the relationship between variables according to a theory, then the model functional form should match the theoretical functional forms. If you deviate from the theoretical relationship, then the coefficients may not be a good representation of the theory.
+
+| Functional form | Equation                                        | Effect of $x$ on $y$ (theory) |
+|-----------------|-------------------------------------------------|------------------|
+| Linear          | $y = \beta_0 + \beta_1 x + \varepsilon$         | If $\Delta x = 1 \rightarrow \Delta y = 1$ |
+| Log-Log         | $ln(y) = \beta_0 + \beta_1 ln(x) + \varepsilon$ | If $\Delta x = 1$% $\rightarrow \Delta y = \beta_1$% |
+| Lin-Log         | $y = \beta_0 + \beta_1 ln(x) + \varepsilon$     | If $\Delta x = 1$% $\rightarrow \Delta y = \beta_1$ |
+| Log-Lin         | $\ln(y) = \beta_0 + \beta_1 x$                  | If $\Delta x = 1 \rightarrow \Delta y \approx \beta_1$%|
+| Quadratic      | $y = \beta_0 + \beta_1 x + \beta_2 x^2 + \varepsilon$ | If $\Delta x = 1 \rightarrow \Delta y = (\beta_1 + \beta_2 x)$ |
+| Inverse         | $y = \beta_0 + \beta_1 \frac{1}{x}$             | If $x \rightarrow \infty \rightarrow \frac{\Delta y}{\Delta x} \rightarrow 0$ |
 ---
 
 ## Example
+
+Using a wrong functional from can likely show up as incorrect looking residuals. If the model is correctly specified, then the residuals should look random with a normal-type of distribution. 
+
+Because what is not included in the model falls into the residuals, residuals provide diagnosis information.
+
+The following `STATA` code builds a polynomial functional form and then fits a correct and incorrect (linear) models. Residuals from both models are compared.
+
+```
+*==============================================================================*
+* MODEL SPECIFICATION
+* Create a model misspecification
+* Code sample: 5.1
+*==============================================================================*
+
+*|CELL 1|----------------------------------------------------------------------*
+*|Settings
+set scheme s1color  // Set plot scheme
+
+*|CELL 2|----------------------------------------------------------------------*
+*|Create required data
+drop _all
+set obs 100
+
+gen   X = _n
+label variable X "X"
+tsset X
+
+generate Y = 5000 - 80*X + X^2 + rnormal(0, 250)
+label variable Y "Y"
+
+*|Create incorrect fit: Keep y_hat and residuals
+regress Y X
+predict Y_hat1, xb
+predict resid1, residuals
+
+*|Create correct fit: Keep y_hat and residuals
+gen X2 = X^2
+regress Y X X2
+predict Y_hat2, xb
+predict resid2, residuals
+
+*|Creat plots
+twoway scatter Y X, nodraw saving(plot1, replace) ///
+	   mcolor(green%75) msize(vsmall) ///
+	 ||lfit Y X, ///
+	   lcolor(red%75) ///
+	 ||line Y_hat2 X, ///
+	   lcolor(green%75) ///
+	   legend(off)
+	   
+twoway scatter resid1 X, nodraw saving(plot2, replace) ///
+	   mcolor(red%75) lcolor(red) msize(vsmall) ///
+	   yline(0, lcolor(black))
+
+twoway scatter resid2 X, nodraw saving(plot3, replace) ///
+	   mcolor(green%75) lcolor(green%75) msize(vsmall) ///
+	   yline(0, lcolor(black))
+
+graph combine plot1.gph plot2.gph plot3.gph, ///
+	  cols(1) rows (3) ysize(20) xsize(10) ///
+	  title("Correct versus incorrect model specification", size(small))
+```
+
+{{< figure library="true" src="econometrics/06_Specification/Fig_01.png" >}}
