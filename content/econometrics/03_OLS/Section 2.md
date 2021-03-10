@@ -201,9 +201,9 @@ $$
     1       & x_{N,2} & x_{N,3} & x_{N,4} & \cdots & x_{N,K}
 \end{pmatrix}
 \begin{pmatrix}
+    \beta_0 \\\\
     \beta_1 \\\\
     \beta_2 \\\\
-    \beta_3 \\\\
     \vdots  \\\\
     \beta_{K}
 \end{pmatrix} + 
