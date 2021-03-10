@@ -115,7 +115,7 @@ Matrix notation and OLS estimation does not change with different "functional fo
 
 
 $$
-\underbrace{
+\underbrace{ \\\\
 \begin{pmatrix}
     y_1     \\\\
     y_2     \\\\
@@ -123,7 +123,7 @@ $$
     \vdots  \\\\
     y_N
 \end{pmatrix}}_{y} =
-\underbrace{
+\underbrace{ \\\\
 \begin{pmatrix}
     1       & x_{1,1} & x_{1,1}^2 & ln(x_{1,2}) & \frac{1}{x_{1,3}}  \\\\
     1       & x_{2,1} & x_{2,1}^2 & ln(x_{2,2}) & \frac{1}{x_{2,3}}  \\\\
@@ -131,7 +131,7 @@ $$
     \vdots  & \cdots  & \cdots    & \cdots      & \vdots   \\\\
     1       & x_{N,2} & x_{N,1}^2 & ln(x_{N,2}) & \frac{1}{x_{N,3}}
 \end{pmatrix}}_{X}
-\underbrace{
+\underbrace{ \\\\
 \begin{pmatrix}
     \beta_0 \\\\
     \beta_1 \\\\
@@ -139,7 +139,7 @@ $$
     \beta_3 \\\\
     \beta_4
 \end{pmatrix}}_{\beta} + 
-\underbrace{
+\underbrace{ \\\\
 \begin{pmatrix}
     \varepsilon_1 \\\\
     \varepsilon_2 \\\\
