@@ -22,10 +22,10 @@ We already used some of this assumptions in our previous examples. Therefore, so
 
 In this chapter we will go through two important implications of the **classical assumptions**:
 
-1. The sample distribution of $\hat{\beta}$
+1. The distribution of $\hat{\beta}$
 2. The Gauss-Markov Theorem
 
-The following are the seven classical assumptions:
+The seven classical assumptions are:
 
 1. The model is linear
 2. The error term has zero population mean

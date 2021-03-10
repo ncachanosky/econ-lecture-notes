@@ -32,8 +32,8 @@ Consider two examples of a linear model with non-linear regressors. Let the firs
 
 $$
 \begin{aligned}
-y_i =& \beta_0 + \beta_1 \underbrace{z_i^2}\_{x_1} + ... + \beta_k \underbrace{x_K^2}\_{x_K} + \varepsilon_i \\\\[10pt]
-y_i =& \beta_0 + \beta_1 \underbrace{ln(z_1)}\_{x_1} + ... + \beta_k \underbrace{ln(z_K)}\_{x_k} + \varepsilon_i
+y =& \beta_0 + \beta_1 \underbrace{z_1^2}\_{x_1} + ... + \beta_k \underbrace{x_K^2}\_{x_K} + \varepsilon \\\\[10pt]
+y =& \beta_0 + \beta_1 \underbrace{ln(z_1)}\_{x_1} + ... + \beta_k \underbrace{ln(z_K)}\_{x_k} + \varepsilon
 \end{aligned}
 $$
 
@@ -57,7 +57,7 @@ $$
 In general terms, a model linear in the coefficients has the following functional form:
 
 $$
-f(y) = \beta_0 + \beta_1 f(x_1) + ... + \beta_K f(x_K)
+f(y) = \beta_0 + \beta_1 f(x_1) + ... + \beta_K f(x_K) + \varepsilon
 $$
 
 An example of a model non-linear in the coefficients would be $y = \beta_0 + x_1^{\beta_1} + ... + x_k^{\beta_K}$. There is no algebraic arrangement that would make this equation linear on the $betas$.
