@@ -199,7 +199,50 @@ twoway line Y1 Y4 X, ///
 
 ---
 
+Each dummy variable consumes a degree of freedom, just like any other regressor. However, dummy variables allow to use the information in the whole dataset rather than splitting the sample and run a different regression for each category with a smaller sample size.
+
 ## Example: The Gender Wage Gap
 
-Consider the issue of the *gender wage gap* as an example. Let's say the working population is separated between `males` and `females`. Then, a dummy variable $D$ will take a value of 1 if the person is male (female) and a value of 0 is the person is (female) male. It does not matter which category gets the 1 and which category gets the 0. It just a matter of consistently interpreting the results. Say $D$ is 0 if the person is `male` and 1 if the person is `female`. Then, a regression looking at wages would show the relative impact of female wages with respect to men. This is, for instance, the way in which the *gender wage gap* is presented.
+Consider the issue of the *gender wage gap* as an example. In the United States, in **average**, women are paid around 80 cents per dollar with respect to men.
 
+There are many possible explanations of this difference. Discrimination is one of them. However, economic reasoning raises doubts about the discrimination argument for the gender wage gap. If hiring women is 20-percent cheaper than hiring men, why don't firms just hire women. This, would rise their wages with respect to men to the point where wages among women and men are equal.
+
+The following model compares the average wage $(w)$ of men and women.
+
+$$
+w = \beta_0 + \gamma D + \varepsilon
+$$
+
+where $D = 0$ if men and $D = 1$ if women. In this equation, $\beta_0$ is the wage of men, and $\beta_0 + \gamma$ is the wage of women. 
+
+A value of $\gamma = 0$ means that, in **average**, men and women are paid the same. A value of $\gamma < 0$ indicates that, in **average**, men are paid more than women. And a value of $\gamma > 0$ indicates that, in **average**, women are paid more than men.
+
+This model, however, is missing something very important: control variables. It is possible that men and women have, in average, different job, therefore they will have, in average, different pay, and still be the case that all else equal, men and women are paid the same.
+
+For instance, in average men may be more inclined than women to work in high risk jobs, such as being a fishermen in Alaska. In average, men may be more inclined to work extra hours or travel for work (spend less times with family, relatives, and friends). If you are a lawyer in a murder case, you don't get to go home until the work is done, a person's life is in your hands. If you are lawyer dealing with a multimillion lawsuit, you don't get to take a break until the case is done. These demands are paid extra than a job that has regular working hours with low demands outside its regular hours.
+
+A complete model will include a list of other variables that affect the wage. As an example, consider the following list:
+
+1. $D$: Gender (male or female)
+2. $x_1$: Years of experience
+3. $x_2$: Willingness to travel
+4. $x_3$: Willingness to work extra hours
+5. $R$: Risk level of the job
+6. $I_j$: $j = 1, ..., J$ dummy variables for different industry classifications
+7. $E_q$: $q = 1, ..., Q$ dummy variables for different degree fields
+
+The above list is incomplete, but illustrates the point. A complete model will look the following way.
+
+$$
+w = \beta_0 + \gamma D + \underbrace{\beta_1 x_1 + ... + \beta_3 x_3 + \rho R + \theta_1 I_1 + ...+\theta_J I_J + \eta_1 E_1 + ...+ \eta_Q E_Q}_{\text{control variables}} + \varepsilon
+$$
+
+Now the estimated value of $\gamma$ is comparing pay between men and women keeping all your control variables constant. When this is done, the gender wage gap is estimated to fall from 0.80 cents per dollar to 0.95 cents per dollar. The 5-percent difference can still be to a number of reasons such as:
+
+1. Discrimination
+2. Statistical error (we can't tell wages are actually different)
+3. An omitted variable
+
+There is one more issue to consider from the above discussion. The gender wage gap is looking at monetary pay in exchange of work. However, there are also nonmonetary compensation. Typical compensations include health insurance coverage, vacation time, and so on. However, a lower paid job can have the benefit of being more safe, free from having to work extra hours, and so on. In summary, high risk and high stressful job have to pay premium to compensate for less nonmonetary benefits of the job.
+
+{{< figure library="true" src="econometrics/06_Specification/Fig_05.png" >}}
