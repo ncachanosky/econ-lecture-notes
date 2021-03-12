@@ -93,6 +93,110 @@ y =
     (\beta_0 + \gamma_0) + (\beta_1 + \gamma_1) x + \varepsilon & \quad \text{if } D=1
 \end{cases}
 $$
+
+Dummy effects in a graph
+
+The plots below depict (1) level, (2) slope, and (3) the combined effects of a dummy variable in a regression. Plots are built with the following `STATA` code.
+
+```
+*==============================================================================*
+* MODEL SPECIFICATION
+* Create a model misspecification
+* Code sample: 5.2
+*==============================================================================*
+
+*|CELL 1|----------------------------------------------------------------------*
+*|Settings
+set scheme s1color  // Set plot scheme
+
+*|CELL 2|----------------------------------------------------------------------*
+*|Create X-axis and dummy variables
+drop _all
+set obs 100
+
+gen   X = _n
+label variable X "X"
+tsset X
+
+gen     D = 1
+label   variable D "dummy"
+
+*|Create dummy effects
+generate Y1 = 10 + 0.5*X
+label variable Y1 "Y (without dummy)"
+generate Y1_dots = .
+replace  Y1_dots = 10 + 0.5*X + rnormal(0,2) in 1/20
+replace  Y1_dots = 10 + 0.5*X + rnormal(0,2) in 60/80
+
+generate Y2 = (10 + 20*D) + 0.5*X
+label variable Y2 "Y (with intercept dummy)"
+generate Y2_dots = .
+replace  Y2_dots = (10 + 20*D) + 0.5*X + rnormal(0,2) in 21/45
+replace  Y2_dots = (10 + 20*D) + 0.5*X + rnormal(0,2) in 81/100
+
+generate Y3 = 10 + (0.5 + D)*X
+label variable Y3 "Y (with slope dummy)"
+generate Y3_dots = .
+replace  Y3_dots = 10 + (0.5 + D)*X + rnormal(0,2) in 21/45
+replace  Y3_dots = 10 + (0.5 + D)*X + rnormal(0,2) in 81/100
+
+generate Y4 = (10 + 20*D) + (0.5 + D)*X
+label variable Y4 "Y (with slope and intercept dummy)"
+generate Y4_dots = .
+replace  Y4_dots = (10 + 20*D) + (0.5 + D)*X + rnormal(0,2) in 21/45
+replace  Y4_dots = (10 + 20*D) + (0.5 + D)*X + rnormal(0,2) in 81/100
+
+*|Create plots: Level effect
+twoway line Y1 Y2 X, ///
+	   title("Dummy level (intercept) effect", size(small)) ///
+	   lcolor(blue%75 green%75) ///
+	   xlabel(,labsize(vsmall)) ylabel(,labsize(vsmall)) ///
+	   xtitle("X", size(vsmall))  ytitle("Y", size(vsmall)) ///
+	   text(10 -4 "{&beta}{sub:0}", placement(w) size(vsmall) color(blue)) ///
+	   text(30 -4 "{&beta}{sub:0}+{&gamma}", placement(w) size(vsmall) color(green)) ///
+	   text(33 50 "slope: {&beta}{sub:1}", placement(e) size(vsmall) color(blue)) ///
+	   text(53 50 "slope: {&beta}{sub:1}", placement(e) size(vsmall) color(green)) ///
+	   legend(off) ///
+	 ||scatter Y1_dots X, mcolor(blue%50) msize(vsmall) ///
+	 ||scatter Y2_dots X, mcolor(green%50) msize(vsmall)
+
+*|Create plots: Slope effect
+twoway line Y1 Y3 X, ///
+	   title("Dummy marginal (slope) effect", size(small)) ///
+	   lcolor(black%75 black%75) ///
+	   xlabel(,labsize(vsmall)) ylabel(,labsize(vsmall)) ///
+	   xtitle("X", size(vsmall))  ytitle("Y", size(vsmall)) ///
+	   text(10 -4 "{&beta}{sub:0}", placement(w) size(vsmall)) ///
+	   text(33 50 "slope: {&beta}{sub:1}", placement(e) size (vsmall) color(blue)) ///
+	   text(83 50 "slope: {&beta}{sub:1} + {&gamma}", placement(e) size (vsmall) color(green)) ///
+	   legend(off) ///
+	 ||scatter Y1_dots X, mcolor(blue%50) msize(vsmall) ///
+	 ||scatter Y3_dots X, mcolor(green%50) msize(vsmall)
+	   
+*|Create plots: Level and slope effect
+twoway line Y1 Y4 X, ///
+	   title("Dummy level (intercept) and marginal (slope) effect", size(small)) ///
+	   lcolor(blue%75 green%75) ///
+	   xlabel(,labsize(vsmall)) ylabel(,labsize(vsmall)) ///
+	   xtitle("X", size(vsmall))  ytitle("Y", size(vsmall)) ///
+	   text(10 -4 "{&beta}{sub:0}", placement(w) size(vsmall) color(blue)) ///
+	   text(30 -4 "{&beta}{sub:0}+{&gamma}", placement(w) size(vsmall) color(green)) ///
+	   text(33 50 "slope: {&beta}{sub:1}", placement(e) size (vsmall) color(blue)) ///
+	   text(103 50 "slope: {&beta}{sub:1} + {&gamma}", placement(e) size (vsmall) color(green)) ///
+	   legend(off) ////
+	 ||scatter Y1_dots X, mcolor(blue%50) msize(vsmall) ///
+	 ||scatter Y4_dots X, mcolor(green%50) msize(vsmall) 
+```
+
+
+{{< figure library="true" src="econometrics/06_Specification/Fig_02.png" >}}
+
+
+{{< figure library="true" src="econometrics/06_Specification/Fig_03.png" >}}
+
+
+{{< figure library="true" src="econometrics/06_Specification/Fig_04.png" >}}
+
 ---
 
 ## Example: The Gender Wage Gap
