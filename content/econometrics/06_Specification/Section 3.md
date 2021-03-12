@@ -234,7 +234,7 @@ A complete model will include a list of other variables that affect the wage. As
 The above list is incomplete, but illustrates the point. A complete model will look the following way.
 
 $$
-w = \beta_0 + \gamma D + \underbrace{\beta_1 x_1 + ... + \beta_3 x_3 + \rho R + \theta_1 I_1 + ...+\theta_J I_J + \eta_1 E_1 + ...+ \eta_Q E_Q}_{\text{control variables}} + \varepsilon
+w = \beta_0 + \gamma D + \underbrace{\sum_{i=1}^3 \beta_i x_i + \rho R + \sum_{j=1}^J \theta_j I_j + \sum_{q=1}^Q \eta_q E_q}_{\text{control variables}} + \varepsilon
 $$
 
 Now the estimated value of $\gamma$ is comparing pay between men and women keeping all your control variables constant. When this is done, the gender wage gap is estimated to fall from 0.80 cents per dollar to 0.95 cents per dollar. The 5-percent difference can still be to a number of reasons such as:
