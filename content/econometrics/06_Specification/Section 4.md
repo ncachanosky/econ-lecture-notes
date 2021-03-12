@@ -1,10 +1,10 @@
 ---
 # Title, summary, and page position.
-linktitle: "Dummy regressors"
-weight: 3
+linktitle: "The Ramsey RESET Test"
+weight: 4
 
 # Page metadata.
-title: Dummy regressors
+title: The Ramsey RESET Test
 type: book  # Do not modify.
 ---
 
