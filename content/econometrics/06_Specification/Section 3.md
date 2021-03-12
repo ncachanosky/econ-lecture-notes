@@ -12,5 +12,11 @@ type: book  # Do not modify.
 
 ---
 
-## Title 1
+## What are dummy variables
+
+---
+
+## Level and slope effects
+
+
 
